@@ -1,0 +1,236 @@
+% Created 2025-01-14 mar 15:37
+% Intended LaTeX compiler: pdflatex
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usetheme{metropolis}
+\usetheme{default}
+\author{Tu Nombre}
+\date{\today{}}
+\title{Gestión de Grandes Volúmenes de Datos: Hadoop y Spark}
+\hypersetup{
+ pdfauthor={Tu Nombre},
+ pdftitle={Gestión de Grandes Volúmenes de Datos: Hadoop y Spark},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.6.18)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\begin{frame}[label={sec:org69217f2}]{Introducción}
+La gestión de grandes volúmenes de datos en clústeres requiere plataformas robustas como:
+\begin{itemize}
+\item \alert{\alert{Hadoop}}: Especializado en almacenamiento y procesamiento batch.
+\item \alert{\alert{Spark}}: Enfocado en rapidez y análisis en tiempo real.
+\end{itemize}
+
+---
+\end{frame}
+
+\begin{frame}[label={sec:org5e8c861}]{Apache Hadoop: Almacenamiento y Procesamiento Batch}
+\begin{block}{Características Clave}
+\begin{enumerate}
+\item \alert{\alert{HDFS (Hadoop Distributed File System):}}
+\begin{itemize}
+\item Almacenamiento distribuido con replicación.
+\end{itemize}
+\item \alert{\alert{MapReduce:}}
+\begin{itemize}
+\item Procesamiento en paralelo basado en tareas.
+\end{itemize}
+\item \alert{\alert{Tolerancia a Fallos:}}
+\begin{itemize}
+\item Réplicas de datos en nodos múltiples.
+\end{itemize}
+\item \alert{\alert{Alta Escalabilidad:}}
+\begin{itemize}
+\item Agrega nodos para manejar mayores volúmenes de datos.
+\end{itemize}
+\end{enumerate}
+\end{block}
+
+\begin{block}{Componentes Clave}
+\begin{itemize}
+\item \alert{\alert{HDFS:}} Sistema de archivos distribuido.
+\item \alert{\alert{YARN:}} Gestor de recursos.
+\item \alert{\alert{MapReduce:}} Motor de procesamiento distribuido.
+\end{itemize}
+\end{block}
+
+\begin{block}{Ventajas}
+\begin{itemize}
+\item Robusto para datos estructurados y no estructurados.
+\item Amplio ecosistema de herramientas.
+\item Ideal para procesamiento batch.
+\end{itemize}
+\end{block}
+
+\begin{block}{Desventajas}
+\begin{itemize}
+\item Latencia alta.
+\item Complejidad en la programación.
+\end{itemize}
+\end{block}
+
+\begin{block}{Casos de Uso}
+\begin{itemize}
+\item Análisis de logs.
+\item Procesamiento de grandes volúmenes de datos históricos.
+\item Indexación en motores de búsqueda.
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org516b06a}]{Apache Spark: Rapidez y Flexibilidad}
+\begin{block}{Características Clave}
+\begin{enumerate}
+\item \alert{\alert{Procesamiento en Memoria:}}
+\begin{itemize}
+\item Los datos se almacenan y procesan en RAM, acelerando las operaciones.
+\end{itemize}
+\item \alert{\alert{Modelo Versátil:}}
+\begin{itemize}
+\item API en Python, Scala, Java y R.
+\end{itemize}
+\item \alert{\alert{Procesamiento en Tiempo Real:}}
+\begin{itemize}
+\item Spark Streaming para flujos de datos.
+\end{itemize}
+\item \alert{\alert{Compatibilidad con Hadoop:}}
+\begin{itemize}
+\item Utiliza HDFS como sistema de almacenamiento.
+\end{itemize}
+\end{enumerate}
+\end{block}
+
+\begin{block}{Componentes Clave}
+\begin{itemize}
+\item \alert{\alert{Spark Core:}} Motor de procesamiento.
+\item \alert{\alert{Spark SQL:}} Procesamiento estructurado con SQL.
+\item \alert{\alert{Spark Streaming:}} Datos en tiempo real.
+\item \alert{\alert{MLlib:}} Machine learning.
+\item \alert{\alert{GraphX:}} Análisis de grafos.
+\end{itemize}
+\end{block}
+
+\begin{block}{Ventajas}
+\begin{itemize}
+\item Extremadamente rápido.
+\item Soporte para machine learning y análisis avanzado.
+\item Facilidad de uso con APIs intuitivas.
+\end{itemize}
+\end{block}
+
+\begin{block}{Desventajas}
+\begin{itemize}
+\item Requiere mucha memoria.
+\item Depende de sistemas externos para almacenamiento.
+\end{itemize}
+\end{block}
+
+\begin{block}{Casos de Uso}
+\begin{itemize}
+\item Análisis en tiempo real.
+\item Machine learning.
+\item Procesamiento predictivo.
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org29edeea}]{Comparación: Hadoop vs Spark}
+\begin{center}
+\begin{table}{\textwidth}{lll}
+\alert{\alert{Aspecto}} & \alert{\alert{Hadoop}} & \alert{\alert{Spark}}\\[0pt]
+\hline
+\alert{\alert{Modelo de Procesamiento}} & Disco (MapReduce). & En memoria, con soporte de disco.\\[0pt]
+\alert{\alert{Velocidad}} & Más lento. & Muy rápido.\\[0pt]
+\alert{\alert{Tiempo Real}} & Integración externa necesaria. & Spark Streaming nativo.\\[0pt]
+\alert{\alert{Lenguajes}} & Java. & Python, Scala, Java, R.\\[0pt]
+\alert{\alert{Facilidad de Uso}} & Configuración avanzada. & Más amigable.\\[0pt]
+\alert{\alert{Casos de Uso}} & Batch y análisis históricos. & Tiempo real y machine learning.\\[0pt]
+\end{table}
+\end{center}
+
+---
+\end{frame}
+
+\begin{frame}[label={sec:orgee3dfcb}]{Gestión de Clústeres}
+\begin{block}{Hadoop}
+\begin{itemize}
+\item \alert{\alert{YARN:}} Administra tareas y recursos.
+\item \alert{\alert{Réplicas:}} Asegura tolerancia a fallos.
+\item \alert{\alert{Alta Escalabilidad:}} Se pueden añadir nodos fácilmente.
+\end{itemize}
+\end{block}
+
+\begin{block}{Spark}
+\begin{itemize}
+\item \alert{\alert{Standalone Mode:}} Gestor de clústeres propio.
+\item \alert{\alert{Integración con YARN y Mesos:}} Uso avanzado de recursos.
+\item \alert{\alert{Requiere Memoria Alta:}} Para optimizar el rendimiento.
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org1cdbac6}]{Escenarios de Uso Combinado}
+\begin{enumerate}
+\item \alert{\alert{Hadoop como Almacenamiento y Spark como Procesador:}}
+\begin{itemize}
+\item HDFS almacena datos, mientras Spark procesa en memoria.
+\end{itemize}
+\item \alert{\alert{Flujos de Trabajo Híbridos:}}
+\begin{itemize}
+\item MapReduce para datos históricos.
+\item Spark Streaming para datos en tiempo real.
+\end{itemize}
+\end{enumerate}
+
+---
+\end{frame}
+
+\begin{frame}[label={sec:org1238446}]{Herramientas Complementarias}
+\begin{block}{Hadoop Ecosystem}
+\begin{itemize}
+\item \alert{\alert{Hive:}} SQL sobre Hadoop.
+\item \alert{\alert{Pig:}} Procesamiento de datos.
+\item \alert{\alert{Sqoop:}} Integración con bases de datos.
+\end{itemize}
+\end{block}
+
+\begin{block}{Spark Ecosystem}
+\begin{itemize}
+\item \alert{\alert{MLlib:}} Machine Learning.
+\item \alert{\alert{GraphX:}} Grafos.
+\item \alert{\alert{Structured Streaming:}} Datos en tiempo real.
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:orgf606b0c}]{Conclusión}
+\begin{itemize}
+\item \alert{\alert{Hadoop:}} Robusto para almacenamiento distribuido y procesamiento batch.
+\item \alert{\alert{Spark:}} Destaca por su velocidad y capacidades en tiempo real.
+\item Usar en combinación maximiza las fortalezas de ambas plataformas.
+\end{itemize}
+\end{frame}
+\end{document}

@@ -1,0 +1,150 @@
+% Created 2024-11-28 jue 13:49
+% Intended LaTeX compiler: pdflatex
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usetheme{metropolis}
+\usetheme{default}
+\author{Tu Nombre}
+\date{\today{}}
+\title{Introducción al Almacenamiento en Big Data}
+\hypersetup{
+ pdfauthor={Tu Nombre},
+ pdftitle={Introducción al Almacenamiento en Big Data},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.1 (Org mode 9.6.17)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\begin{frame}[label={sec:org1fd29bb}]{Introducción}
+El almacenamiento en Big Data es esencial para gestionar grandes volúmenes de información de manera eficiente.
+\begin{itemize}
+\item Fuentes: redes sociales, IoT, aplicaciones empresariales, logs de sistemas.
+\item Desafíos: infraestructura escalable, rápida y segura.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[label={sec:orge94a22b}]{Conceptos Fundamentales}
+\begin{block}{Tipos de Almacenamiento}
+Existen tres categorías principales:
+\begin{enumerate}
+\item Almacenamiento por Bloques
+\item Almacenamiento de Archivos
+\item Almacenamiento de Objetos
+\end{enumerate}
+
+\begin{block}{Almacenamiento por Bloques}
+\begin{itemize}
+\item \alert{\alert{Descripción:}} Divide datos en bloques de tamaño fijo con identificadores únicos.
+\item \alert{\alert{Características:}} Alto rendimiento en acceso aleatorio.
+\item \alert{\alert{Usos:}} Bases de datos, sistemas de alto rendimiento.
+\item \alert{\alert{Ejemplos:}} Amazon EBS, Azure Disk Storage, Google Persistent Disk.
+\end{itemize}
+\end{block}
+
+\begin{block}{Almacenamiento de Archivos}
+\begin{itemize}
+\item \alert{\alert{Descripción:}} Organiza datos en estructuras jerárquicas de directorios.
+\item \alert{\alert{Características:}} Eficiente para grupos pequeños de datos.
+\item \alert{\alert{Usos:}} Servidores de archivos, colaboración empresarial.
+\item \alert{\alert{Ejemplos:}} Azure Files, Amazon FSx, Google Filestore.
+\end{itemize}
+\end{block}
+
+\begin{block}{Almacenamiento de Objetos}
+\begin{itemize}
+\item \alert{\alert{Descripción:}} Maneja grandes volúmenes de datos no estructurados como "objetos".
+\item \alert{\alert{Características:}} Escalabilidad, acceso basado en API.
+\item \alert{\alert{Usos:}} Multimedia, logs de servidores, datos IoT.
+\item \alert{\alert{Ejemplos:}} Amazon S3, Google Cloud Storage, Azure Blob Storage.
+\end{itemize}
+\end{block}
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:orgcb09d12}]{Retos Principales}
+\begin{block}{Volumen y Escalabilidad}
+\begin{itemize}
+\item Los datos crecen rápidamente.
+\item Soluciones: Escalado horizontal.
+\end{itemize}
+\end{block}
+
+\begin{block}{Variedad de Datos}
+\begin{itemize}
+\item Datos estructurados, semi-estructurados y no estructurados.
+\item Desafío: almacenamiento y recuperación.
+\end{itemize}
+\end{block}
+
+\begin{block}{Velocidad de Acceso}
+\begin{itemize}
+\item Procesamiento en tiempo real o casi en tiempo real.
+\end{itemize}
+\end{block}
+
+\begin{block}{Durabilidad y Disponibilidad}
+\begin{itemize}
+\item Garantizar redundancia y acceso constante.
+\end{itemize}
+\end{block}
+
+\begin{block}{Costos}
+\begin{itemize}
+\item Soluciones en la nube pueden ser costosas.
+\end{itemize}
+\end{block}
+
+\begin{block}{Seguridad}
+\begin{itemize}
+\item Protección contra accesos no autorizados. Normativas como GDPR o HIPAA.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org94d77d2}]{Soluciones Comunes}
+\begin{block}{Sistemas Distribuidos}
+\begin{itemize}
+\item Ejemplo: Hadoop Distributed File System (HDFS).
+\end{itemize}
+\end{block}
+
+\begin{block}{Almacenamiento en la Nube}
+\begin{itemize}
+\item Servicios escalables y flexibles.
+\item Ejemplo: Amazon S3, Azure Blob Storage, Google Cloud Storage.
+\end{itemize}
+\end{block}
+
+\begin{block}{Compresión y Optimización}
+\begin{itemize}
+\item Técnicas: compresión, deduplicación, almacenamiento jerárquico.
+\end{itemize}
+\end{block}
+
+\begin{block}{Automatización y Gestión}
+\begin{itemize}
+\item Herramientas: Apache Hive, AWS Glue.
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org75918b3}]{Resumen}
+El almacenamiento en Big Data combina soluciones escalables, seguras y
+rentables. Los métodos como almacenamiento en bloques, archivos y
+objetos permiten adaptarse a necesidades específicas.
+\end{frame}
+\end{document}

@@ -1,0 +1,64 @@
+::RGPD1::¿Cuál de las siguientes opciones es considerada dato personal según el RGPD?
+{
+=Dirección IP
+~Temperatura ambiental
+~Horas de apertura de un local
+~Velocidad del viento
+}
+
+::RGPD2::El principio de **minimización** implica:
+{
+=Recoger sólo los datos necesarios para la finalidad prevista
+~Recolectar el máximo número de datos para análisis futuros
+~Eliminar cualquier dato numérico
+~Cifrar los datos personales
+}
+
+::RGPD3::El derecho al olvido exige:
+{
+=Eliminar los datos personales del interesado en todas las capas donde existan
+~Borrar únicamente los datos de la base de datos principal
+~Eliminar sólo los datos si el usuario está en la UE
+~Guardar siempre una copia por seguridad
+}
+
+::RGPD4::¿Cuál es un ejemplo de brecha de seguridad NO causada por un ataque?
+{
+=Buckets o almacenamientos mal configurados
+~Ransomware
+~Phishing
+~Malware remoto
+}
+
+::RGPD5::¿Qué principio se vulnera si se usan datos recogidos para educación con fines publicitarios?
+{
+=Limitación de la finalidad
+~Exactitud
+~Integridad
+~Minimización
+}
+
+::RGPD6::En un sistema Big Data distribuido, el mayor reto del “derecho al olvido” es:
+{
+=Eliminar los datos en todas las copias y sistemas replicados
+~Calcular la media de los datos
+~Gestionar modelos predictivos
+~Uso de CPU en clusters
+}
+
+::RGPD7::Una DPIA (Evaluación de Impacto) es obligatoria cuando:
+{
+=Existe un tratamiento de alto riesgo (perfiles masivos, datos sensibles, IA)
+~Se trata cualquier base de datos con más de 1000 filas
+~Se usa un sistema Linux
+~Una empresa lo considera opcional
+}
+
+::RGPD8::¿Qué técnica favorece el cumplimiento del RGPD en Big Data?
+{
+=Anonimización o pseudoanonimización
+~Duplicación de datos
+~Exportar datos a terceros sin control
+~Mantener logs indefinidamente
+}
+

@@ -1,0 +1,219 @@
+% Created 2024-12-10 mar 16:19
+% Intended LaTeX compiler: pdflatex
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\setbeamertemplate{headline}{}
+\usefonttheme{serif}
+\usetheme{metropolis}
+\usetheme{default}
+\author{Tu Nombre}
+\date{\today{}}
+\title{Bases de Datos NoSQL: MongoDB y Cassandra}
+\hypersetup{
+ pdfauthor={Tu Nombre},
+ pdftitle={Bases de Datos NoSQL: MongoDB y Cassandra},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.6.18)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\begin{frame}[label={sec:org621383a}]{Introducción}
+Las bases de datos NoSQL han ganado popularidad en Big Data:
+\begin{itemize}
+\item Manejan datos no estructurados y semi-estructurados.
+\item Ofrecen escalabilidad horizontal.
+\end{itemize}
+
+En esta presentación, profundizaremos en:
+\begin{itemize}
+\item \alert{\alert{MongoDB}}.
+\item \alert{\alert{Cassandra}}.
+\end{itemize}
+
+---
+\end{frame}
+
+\begin{frame}[label={sec:org2994fa3}]{MongoDB: Base de Datos Documental}
+\begin{block}{Características Clave}
+\begin{enumerate}
+\item \alert{\alert{Modelo de Documentos}}:
+\begin{itemize}
+\item Estructuras en JSON o BSON.
+\item Datos complejos y anidados sin esquema fijo.
+\end{itemize}
+\item \alert{\alert{Escalabilidad Horizontal}}:
+\begin{itemize}
+\item Soporta \alert{\alert{sharding}} para distribuir datos.
+\end{itemize}
+\item \alert{\alert{Consulta Flexible}}:
+\begin{itemize}
+\item Operaciones avanzadas como agregaciones y búsquedas geoespaciales.
+\end{itemize}
+\item \alert{\alert{Alta Disponibilidad}}:
+\begin{itemize}
+\item Réplicas con Replica Sets.
+\end{itemize}
+\item \alert{\alert{Compatibilidad Multiplataforma}}:
+\begin{itemize}
+\item Integración con aplicaciones modernas.
+\end{itemize}
+\end{enumerate}
+\end{block}
+
+\begin{block}{Ventajas}
+\begin{itemize}
+\item Flexibilidad con datos dinámicos.
+\item Rendimiento alto en escrituras.
+\item Estructura intuitiva para desarrolladores.
+\end{itemize}
+\end{block}
+
+\begin{block}{Desventajas}
+\begin{itemize}
+\item Consistencia eventual en entornos distribuidos.
+\item Mayor consumo de almacenamiento con BSON.
+\end{itemize}
+\end{block}
+
+\begin{block}{Casos de Uso}
+\begin{itemize}
+\item Aplicaciones web y móviles dinámicas.
+\item Gestión de catálogos de productos.
+\item Búsquedas avanzadas geoespaciales.
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org652cd06},fragile]{Ejemplo Práctico: MongoDB}
+ \begin{block}{Gestión de un Catálogo de Productos}
+Ejemplo de documento en JSON:
+\begin{verbatim}
+{
+  "productId": "12345",
+  "name": "Laptop",
+  "brand": "TechBrand",
+  "specifications": {
+    "processor": "Intel i7",
+    "RAM": "16GB",
+    "storage": "512GB SSD"
+  },
+  "price": 1200,
+  "categories": ["Electronics", "Computers"]
+}
+\end{verbatim}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org43493f4}]{Cassandra: Base de Datos de Columnas Anchas}
+\begin{block}{Características Clave}
+\begin{enumerate}
+\item \alert{\alert{Modelo de Columnas Anchas}}:
+\begin{itemize}
+\item Organiza datos en filas y columnas con número variable de columnas.
+\end{itemize}
+\item \alert{\alert{Alta Escalabilidad Horizontal}}:
+\begin{itemize}
+\item Escala hasta miles de nodos sin impacto en rendimiento.
+\end{itemize}
+\item \alert{\alert{Consistencia Configurable}}:
+\begin{itemize}
+\item Modelo CAP: consistencia fuerte o eventual.
+\end{itemize}
+\item \alert{\alert{Replicación Inteligente}}:
+\begin{itemize}
+\item Garantiza tolerancia a fallos y alta disponibilidad.
+\end{itemize}
+\item \alert{\alert{Altamente Disponible}}:
+\begin{itemize}
+\item Sin puntos únicos de fallo.
+\end{itemize}
+\end{enumerate}
+\end{block}
+
+\begin{block}{Ventajas}
+\begin{itemize}
+\item Escalabilidad para grandes volúmenes de datos.
+\item Tolerancia a fallos integrada.
+\item Rendimiento óptimo en escrituras masivas.
+\end{itemize}
+\end{block}
+
+\begin{block}{Desventajas}
+\begin{itemize}
+\item Complejidad en configuración.
+\item Operaciones limitadas comparadas con SQL.
+\end{itemize}
+\end{block}
+
+\begin{block}{Casos de Uso}
+\begin{itemize}
+\item Monitoreo de IoT.
+\item Gestión de logs distribuidos.
+\item Análisis de datos financieros.
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org6219490},fragile]{Ejemplo Práctico: Cassandra}
+ \begin{block}{Registro de Logs de Servidores}
+Modelo de tabla en CQL:
+\begin{minted}[]{sql}
+
+CREATE TABLE server_logs (
+  log_id UUID PRIMARY KEY,
+  timestamp TIMESTAMP,
+  server_id TEXT,
+  log_message TEXT
+);
+\end{minted}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:orgda32e5c}]{Comparación: MongoDB vs Cassandra}
+\end{frame}
+\begin{frame}[label={sec:orga2733ac}]{Comparación: MongoDB vs Cassandra}
+\begin{center}
+\begin{tabular}{lll}
+\alert{\alert{Aspecto}} & \alert{\alert{MongoDB}} & \alert{\alert{Cassandra}}\\[0pt]
+\hline
+Modelo de Datos & Documentos (JSON/BSON) & Columnas anchas (Key-Value extendido)\\[0pt]
+Escalabilidad & Alta, mediante sharding & Muy alta, ideal para datos distribuidos\\[0pt]
+Consistencia & Eventual, con ACID parcial & Configurable: eventual o fuerte\\[0pt]
+Rendimiento & Bueno para consultas complejas & Excelente para escrituras masivas\\[0pt]
+Casos de Uso & Aplicaciones dinámicas, catálogos & IoT, logs distribuidos\\[0pt]
+\end{tabular}
+\end{center}
+
+---
+\end{frame}
+
+\begin{frame}[label={sec:org2798ed1}]{Conclusión}
+\begin{itemize}
+\item \alert{\alert{MongoDB}}: Ideal para aplicaciones con datos dinámicos y análisis flexible.
+\item \alert{\alert{Cassandra}}: Perfecta para entornos distribuidos con requisitos de escritura intensiva.
+\item La elección depende del caso de uso y los requisitos específicos del proyecto.
+\end{itemize}
+\end{frame}
+\end{document}

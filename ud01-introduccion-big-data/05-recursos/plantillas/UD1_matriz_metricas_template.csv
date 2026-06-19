@@ -1,0 +1,9 @@
+Dimension,Definicion_breve,Metrica_formula,Antes,Despues,Delta_pp,Notas
+Completitud,% de valores no nulos,1 − nulos(col)/N,,,,
+Unicidad,% de filas con clave única,nunique(id)/N,,,,
+Validez (dominio),% de valores dentro del conjunto permitido,mean(col ∈ dominio),,,,
+Validez (rango),% de valores dentro del rango permitido,mean(min ≤ col ≤ max),,,,
+Conformidad (regex),% que cumple el patrón/formato,mean(fullmatch(regex)),,,,
+Consistencia 1,Regla inter-campo #1 (p.ej. inicio ≤ fin),mean(regla_1),,,,
+Consistencia 2,Regla inter-campo #2 (p.ej. precio≈pu*cant),mean(regla_2),,,,
+Puntualidad (opc.),% dentro del umbral de frescura,mean(now − ts ≤ umbral),,,,

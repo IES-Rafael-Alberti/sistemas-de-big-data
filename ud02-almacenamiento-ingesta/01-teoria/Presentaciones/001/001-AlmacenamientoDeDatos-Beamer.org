@@ -1,0 +1,76 @@
+#+TITLE: Introducción al Almacenamiento en Big Data
+#+AUTHOR: José Manuel Sánchez Álvarez
+#+DATE: \today{}
+#+LATEX_CLASS: beamer
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \usetheme{metropolis}
+
+* Introducción
+El almacenamiento en Big Data es esencial para gestionar grandes volúmenes de información de manera eficiente.
+- Fuentes: redes sociales, IoT, aplicaciones empresariales, logs de sistemas.
+- Desafíos: infraestructura escalable, rápida y segura.
+
+* Conceptos Fundamentales
+** Tipos de Almacenamiento
+Existen tres categorías principales:
+1. Almacenamiento por Bloques
+2. Almacenamiento de Archivos
+3. Almacenamiento de Objetos
+
+*** Almacenamiento por Bloques
+- **Descripción:** Divide datos en bloques de tamaño fijo con identificadores únicos.
+- **Características:** Alto rendimiento en acceso aleatorio.
+- **Usos:** Bases de datos, sistemas de alto rendimiento.
+- **Ejemplos:** Amazon EBS, Azure Disk Storage, Google Persistent Disk.
+
+*** Almacenamiento de Archivos
+- **Descripción:** Organiza datos en estructuras jerárquicas de directorios.
+- **Características:** Eficiente para grupos pequeños de datos.
+- **Usos:** Servidores de archivos, colaboración empresarial.
+- **Ejemplos:** Azure Files, Amazon FSx, Google Filestore.
+
+*** Almacenamiento de Objetos
+- **Descripción:** Maneja grandes volúmenes de datos no estructurados como "objetos".
+- **Características:** Escalabilidad, acceso basado en API.
+- **Usos:** Multimedia, logs de servidores, datos IoT.
+- **Ejemplos:** Amazon S3, Google Cloud Storage, Azure Blob Storage.
+
+* Retos Principales
+** Volumen y Escalabilidad
+- Los datos crecen rápidamente.
+- Soluciones: Escalado horizontal.
+
+** Variedad de Datos
+- Datos estructurados, semi-estructurados y no estructurados.
+- Desafío: almacenamiento y recuperación.
+
+** Velocidad de Acceso
+- Procesamiento en tiempo real o casi en tiempo real.
+
+** Durabilidad y Disponibilidad
+- Garantizar redundancia y acceso constante.
+
+** Costos
+- Soluciones en la nube pueden ser costosas.
+
+** Seguridad
+- Protección contra accesos no autorizados. Normativas como GDPR o HIPAA.
+
+* Soluciones Comunes
+** Sistemas Distribuidos
+- Ejemplo: Hadoop Distributed File System (HDFS).
+
+** Almacenamiento en la Nube
+- Servicios escalables y flexibles.
+- Ejemplo: Amazon S3, Azure Blob Storage, Google Cloud Storage.
+
+** Compresión y Optimización
+- Técnicas: compresión, deduplicación, almacenamiento jerárquico.
+
+** Automatización y Gestión
+- Herramientas: Apache Hive, AWS Glue.
+
+* Resumen
+El almacenamiento en Big Data combina soluciones escalables, seguras y
+rentables. Los métodos como almacenamiento en bloques, archivos y
+objetos permiten adaptarse a necesidades específicas.

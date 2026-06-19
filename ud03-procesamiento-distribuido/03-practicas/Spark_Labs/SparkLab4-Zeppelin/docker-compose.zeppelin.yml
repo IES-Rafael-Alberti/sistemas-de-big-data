@@ -1,0 +1,25 @@
+services:
+  zeppelin:
+    image: apache/zeppelin:0.11.1
+    container_name: zeppelin
+    environment:
+      - USE_HADOOP=false
+      - ZEPPELIN_NOTEBOOK_STORAGE=org.apache.zeppelin.notebook.repo.VFSNotebookRepo
+      - ZEPPELIN_NOTEBOOK_DIR=/notebook
+
+      # Spark
+      - SPARK_HOME=/opt/spark
+      - MASTER=spark://spark-master:7077
+      - SPARK_MASTER=spark://spark-master:7077
+
+    ports:
+      - "8084:8080"
+    volumes:
+      # Spark binario desde el contenedor spark-master
+      - spark_bin:/opt/spark
+      - ./zeppelin/notebook:/notebook
+      - ./zeppelin/logs:/opt/zeppelin/logs
+      - ./data:/opt/spark-data
+
+volumes:
+  spark_bin:

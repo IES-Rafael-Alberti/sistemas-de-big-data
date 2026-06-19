@@ -1,0 +1,126 @@
+#+LANGUAGE: es
+
+#+TITLE: Bases de Datos en Big Data: SQL vs NoSQL
+#+AUTHOR: Tu Nombre
+#+DATE: \today{}
+#+LATEX_CLASS: beamer
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \usetheme{metropolis}
+
+* Introducción
+Las bases de datos son el núcleo de los sistemas Big Data:
+- Almacenan, organizan y recuperan grandes volúmenes de información.
+- Evolución hacia dos paradigmas principales:
+  - **SQL (relacionales)**.
+  - **NoSQL (no relacionales)**.
+
+---
+
+* Bases de Datos Relacionales (SQL)
+** Características Clave
+1. **Estructura Definida**:
+   - Esquema predefinido con tablas y relaciones.
+2. **Consistencia ACID**:
+   - Atomicidad, Consistencia, Aislamiento, Durabilidad.
+3. **Consulta Eficiente**:
+   - SQL permite consultas complejas sobre grandes volúmenes.
+
+** Ventajas
+- Alta integridad de datos.
+- Estandarización en la industria.
+- Excelente para relaciones complejas (ERP, CRM).
+
+** Desventajas
+- Rigidez ante datos no estructurados.
+- Escalabilidad limitada (vertical).
+- No optimizadas para Big Data.
+
+** Ejemplos
+- **MySQL**: Open source.
+- **PostgreSQL**: Avanzada y flexible.
+- **Oracle Database**: Enfocada en aplicaciones empresariales.
+- **Microsoft SQL Server**: Con herramientas de análisis.
+
+---
+
+* Bases de Datos NoSQL
+** Características Clave
+1. **Flexibilidad en el Modelo de Datos**:
+   - Datos sin esquema predefinido (JSON, documentos, columnas).
+2. **Escalabilidad Horizontal**:
+   - Distribución en múltiples nodos.
+3. **Tipos de Modelos**:
+   - Clave-valor (Redis), Documentales (MongoDB), Columnas (Cassandra), Grafos (Neo4j).
+
+** Ventajas
+- Adaptabilidad a datos no estructurados.
+- Escalabilidad económica y efectiva.
+- Alto rendimiento para aplicaciones en tiempo real.
+
+** Desventajas
+- Consistencia relajada (modelo CAP).
+- Menos ideales para relaciones complejas.
+- Curva de aprendizaje más pronunciada.
+
+** Ejemplos
+- **MongoDB**: Basada en documentos.
+- **Cassandra**: Para grandes volúmenes distribuidos.
+- **Redis**: En memoria, para alta velocidad.
+- **Neo4j**: Optimizada para grafos.
+
+---
+
+* Comparación: SQL vs NoSQL
+\[
+\begin{array}{|l|l|l|}
+\hline
+\textbf{Aspecto}      & \textbf{SQL}                     & \textbf{NoSQL}                         \\
+\hline
+Estructura            & Esquema fijo, tablas.           & Flexible, sin esquema.                 \\
+\hline
+Consistencia          & ACID (total).                  & Relajada (eventual en algunos casos).  \\
+\hline
+Escalabilidad         & Vertical.                      & Horizontal.                            \\
+\hline
+Tipo de Datos         & Estructurados.                 & Semi/no estructurados.                 \\
+\hline
+Relaciones            & Ideal para relaciones.         & Menos optimizado para relaciones.      \\
+\hline
+Ejemplos              & MySQL, PostgreSQL.             & MongoDB, Cassandra.                    \\
+\hline
+\end{array}
+\]
+
+---
+
+* Bases de Datos en Big Data
+** Principales Características
+1. **Alta Escalabilidad**:
+   - Crecimiento horizontal para manejar volúmenes masivos.
+2. **Tolerancia a Fallos**:
+   - Replicación de datos entre nodos.
+3. **Datos No Estructurados**:
+   - Logs, multimedia, JSON, etc.
+4. **Procesamiento Paralelo**:
+   - Integración con Hadoop y Spark.
+
+---
+
+* ¿Cómo Elegir?
+** Usar SQL si:
+- Necesitas transacciones consistentes.
+- Trabajas con datos estructurados y relaciones complejas.
+- Prefieres herramientas estandarizadas.
+
+** Usar NoSQL si:
+- Manejas datos no estructurados o semi-estructurados.
+- Requieres escalabilidad horizontal.
+- Trabajas con redes sociales, IoT o análisis en tiempo real.
+
+---
+
+* Conclusión
+SQL y NoSQL son complementarios:
+- **SQL**: Para datos estructurados y relaciones complejas.
+- **NoSQL**: Para manejar volumen, variedad y velocidad en Big Data.
+- La elección depende de los requisitos de la aplicación y el tipo de datos.

@@ -1,0 +1,118 @@
+{
+  "dataset": "sales",
+  "version": "2025_10_30",
+  "generated_at": "2025-10-30T18:13:24",
+  "summary": {
+    "rows_before": 86536,
+    "rows_after": 83680,
+    "cols": 14,
+    "file_sizes_bytes": {
+      "csv": 3868925,
+      "parquet": 2428102
+    },
+    "partitions": {
+      "2024": [
+        "6",
+        "7",
+        "8"
+      ]
+    }
+  },
+  "metrics": {
+    "before": {
+      "completeness": {
+        "precio": {
+          "value": 0.9801,
+          "threshold": 0.99
+        },
+        "unidades": {
+          "value": 1.0,
+          "threshold": 0.99
+        },
+        "importe": {
+          "value": 0.972,
+          "threshold": 0.99
+        }
+      },
+      "uniqueness": {
+        "fecha_tienda_sku": {
+          "value": 0.8718,
+          "threshold": 1.0
+        }
+      },
+      "validity": {
+        "canal_in_set": {
+          "value": 0.994,
+          "threshold": 1.0
+        },
+        "precio_gt_0": {
+          "value": 0.9801,
+          "threshold": 0.99
+        },
+        "unidades_ge_0": {
+          "value": 0.9917,
+          "threshold": 0.99
+        }
+      },
+      "consistency": {
+        "importe_eq_unidades_x_precio_tol2pct": {
+          "value": 0.9836,
+          "threshold": 0.98
+        }
+      },
+      "timeliness": {
+        "max_date": "2099-01-01",
+        "lag_days": -26726,
+        "sla": "D+1 10:00"
+      }
+    },
+    "after": {
+      "completeness": {
+        "precio": {
+          "value": 1.0,
+          "threshold": 0.99
+        },
+        "unidades": {
+          "value": 1.0,
+          "threshold": 0.99
+        },
+        "importe": {
+          "value": 1.0,
+          "threshold": 0.99
+        }
+      },
+      "uniqueness": {
+        "fecha_tienda_sku": {
+          "value": 0.9289,
+          "threshold": 1.0
+        }
+      },
+      "validity": {
+        "canal_in_set": {
+          "value": 0.9938,
+          "threshold": 1.0
+        },
+        "precio_gt_0": {
+          "value": 1.0,
+          "threshold": 0.99
+        },
+        "unidades_ge_0": {
+          "value": 0.9918,
+          "threshold": 0.99
+        }
+      },
+      "consistency": {
+        "importe_eq_unidades_x_precio_tol2pct": {
+          "value": 0.9918,
+          "threshold": 0.98
+        }
+      },
+      "timeliness": {
+        "max_date": "2024-08-29",
+        "lag_days": 427,
+        "sla": "D+1 10:00"
+      }
+    }
+  },
+  "notes": "Este informe resume métricas clave y decisiones de limpieza básicas."
+}

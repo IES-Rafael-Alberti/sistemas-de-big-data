@@ -1,0 +1,33 @@
+# Rúbrica actividad RGPD: Anonimización + calidad e integración
+
+Puntuación total sugerida: **20 puntos**
+
+## 1. Identificación de datos personales (4 puntos)
+
+- **0–1 pt**: Identificación incompleta o confusa.
+- **2–3 pt**: Clasifica correctamente la mayoría de columnas (directos / indirectos / no personales).
+- **4 pt**: Clasificación completa y justificada con ejemplos.
+
+## 2. Transformación y anonimización (6 puntos)
+
+- **0–2 pt**: Eliminación parcial de datos personales; persisten riesgos claros.
+- **3–4 pt**: Aplica hash, elimina datos directos y generaliza alguna variable (ej. CP, fecha).
+- **5–6 pt**: Anonimización consistente (hash + generalización) explicada y justificada en el informe.
+
+## 3. Integración con ventas (4 puntos)
+
+- **0–1 pt**: Integración incorrecta o con errores de clave.
+- **2–3 pt**: Integración correcta usando `id_hash`, tabla `ventas_clientes_anon` utilizable.
+- **4 pt**: Integración correcta y limpia, sin `id_cliente`, con variables relevantes bien seleccionadas.
+
+## 4. Calidad de datos (3 puntos)
+
+- **0–1 pt**: Aplica pocas reglas o sin interpretación.
+- **2 pt**: Aplica al menos 2–3 reglas (dominio, rango, importe) y comenta resultados.
+- **3 pt**: Aplica reglas de calidad y relaciona resultados con decisiones de anonimización e integración.
+
+## 5. Informe y argumentación RGPD (3 puntos)
+
+- **0–1 pt**: Informe escueto, sin conexión con RGPD.
+- **2 pt**: Explica brevemente decisiones y las relaciona con minimización / anonimización.
+- **3 pt**: Informe claro que vincula las decisiones técnicas con principios RGPD (minimización, finalidad, seguridad).

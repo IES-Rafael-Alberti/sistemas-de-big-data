@@ -1,0 +1,231 @@
+% Created 2025-01-09 jue 14:07
+% Intended LaTeX compiler: pdflatex
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usetheme{metropolis}
+\usepackage{adjustbox}
+\usetheme{default}
+\author{Tu Nombre}
+\date{\today{}}
+\title{Herramientas de Integración y Transferencia de Datos}
+\hypersetup{
+ pdfauthor={Tu Nombre},
+ pdftitle={Herramientas de Integración y Transferencia de Datos},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.1 (Org mode 9.6.17)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\begin{frame}[label={sec:orgb6b4f1b}]{Introducción}
+La transferencia eficiente de datos es crucial en Big Data. Herramientas como:
+\begin{itemize}
+\item \alert{\alert{Apache Sqoop}}: Transferencia de datos estructurados.
+\item \alert{\alert{Apache Flume}}: Ingesta de datos no estructurados.
+\end{itemize}
+
+---
+\end{frame}
+
+\begin{frame}[label={sec:orge5d0d03}]{Apache Sqoop: Transferencia de Datos Estructurados}
+\begin{block}{Características Clave}
+\begin{enumerate}
+\item \alert{\alert{Interoperabilidad con Bases de Datos Relacionales}}:
+\begin{itemize}
+\item Compatible con MySQL, PostgreSQL, Oracle, SQL Server, DB2.
+\end{itemize}
+\item \alert{\alert{Transferencia Bidireccional}}:
+\begin{itemize}
+\item Importar datos desde bases de datos hacia Hadoop.
+\item Exportar datos procesados desde Hadoop hacia las bases de datos.
+\end{itemize}
+\item \alert{\alert{Optimización Automática}}:
+\begin{itemize}
+\item Particionamiento de datos para optimizar la transferencia.
+\end{itemize}
+\item \alert{\alert{Compatibilidad con el Ecosistema Hadoop}}:
+\begin{itemize}
+\item Integración con HDFS, Hive, y HBase.
+\end{itemize}
+\end{enumerate}
+\end{block}
+
+\begin{block}{Ventajas}
+\begin{itemize}
+\item Simplifica la integración de datos estructurados.
+\item Alta escalabilidad y eficiencia.
+\item Compatible con múltiples bases de datos.
+\end{itemize}
+\end{block}
+
+\begin{block}{Desventajas}
+\begin{itemize}
+\item No adecuado para flujos en tiempo real.
+\item Limitado a datos estructurados.
+\end{itemize}
+\end{block}
+
+\begin{block}{Casos de Uso}
+\begin{itemize}
+\item Migración de datos históricos hacia Hadoop.
+\item Integración de datos empresariales.
+\item Exportación de resultados analíticos.
+\end{itemize}
+\end{block}
+
+\begin{block}{Ejemplo Práctico}
+\begin{itemize}
+\item \alert{\alert{Importar datos desde MySQL a HDFS}}:
+```bash
+sqoop import $\backslash$
+  --connect jdbc:mysql://localhost/database\textsubscript{name} $\backslash$
+  --username user $\backslash$
+  --password password $\backslash$
+  --table table\textsubscript{name} $\backslash$
+  --target-dir /user/hadoop/target\textsubscript{directory}
+```
+\item \alert{\alert{Exportar datos desde HDFS a MySQL}}:
+```bash
+sqoop export $\backslash$
+  --connect jdbc:mysql://localhost/database\textsubscript{name} $\backslash$
+  --username user $\backslash$
+  --password password $\backslash$
+  --table table\textsubscript{name} $\backslash$
+  --export-dir /user/hadoop/source\textsubscript{directory}
+```
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org130638b}]{Apache Flume: Transferencia de Datos No Estructurados}
+\begin{block}{Características Clave}
+\begin{enumerate}
+\item \alert{\alert{Ingesta Continua}}:
+\begin{itemize}
+\item Ideal para logs, eventos, y datos en tiempo real.
+\end{itemize}
+\item \alert{\alert{Arquitectura Flexible}}:
+\begin{itemize}
+\item Componentes clave:
+\begin{itemize}
+\item \alert{\alert{Source}}: Captura datos desde logs o eventos.
+\item \alert{\alert{Channel}}: Buffer para garantizar la entrega.
+\item \alert{\alert{Sink}}: Envía los datos al sistema de almacenamiento final.
+\end{itemize}
+\end{itemize}
+\item \alert{\alert{Alta Escalabilidad}}:
+\begin{itemize}
+\item Soporta configuraciones distribuidas.
+\end{itemize}
+\item \alert{\alert{Tolerancia a Fallos}}:
+\begin{itemize}
+\item Garantiza la entrega en caso de fallos.
+\end{itemize}
+\end{enumerate}
+\end{block}
+
+\begin{block}{Ventajas}
+\begin{itemize}
+\item Ideal para flujos en tiempo real.
+\item Arquitectura robusta y escalable.
+\item Compatible con múltiples fuentes y destinos.
+\end{itemize}
+\end{block}
+
+\begin{block}{Desventajas}
+\begin{itemize}
+\item No adecuado para datos estructurados.
+\item Transferencia unidireccional.
+\end{itemize}
+\end{block}
+
+\begin{block}{Casos de Uso}
+\begin{itemize}
+\item Ingesta de logs hacia HDFS.
+\item Flujos de datos IoT.
+\item Captura de eventos en tiempo real.
+\end{itemize}
+\end{block}
+
+\begin{block}{Ejemplo Práctico}
+\begin{itemize}
+\item \alert{\alert{Configurar un flujo de datos de logs a HDFS}}:
+\begin{itemize}
+\item \alert{\alert{Archivo de Configuración (flume.conf):}}
+```properties
+agent.sources = source1
+agent.channels = channel1
+agent.sinks = sink1
+
+agent.sources.source1.type = exec
+agent.sources.source1.command = tail -F /var/log/syslog
+agent.sources.source1.channels = channel1
+
+agent.channels.channel1.type = memory
+agent.channels.channel1.capacity = 1000
+agent.channels.channel1.transactionCapacity = 100
+
+agent.sinks.sink1.type = hdfs
+agent.sinks.sink1.hdfs.path = hdfs://localhost:8020/logs/
+agent.sinks.sink1.hdfs.fileType = DataStream
+```
+\item \alert{\alert{Ejecutar el Agente de Flume}}:
+```bash
+flume-ng agent --conf conf --name agent --conf-file flume.conf
+```
+\end{itemize}
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org04dd658}]{Comparación: Apache Sqoop vs Apache Flume}
+\begin{LATEX}\centering
+\begin{adjustbox}{width=\linewidth}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Aspecto} & \textbf{Apache Sqoop} & \textbf{Apache Flume} \\
+\hline
+Tipo de Datos    & Datos estructurados (bases de datos). & Datos no estructurados (logs, eventos). \\
+Dirección        & Transferencia bidireccional. & Transferencia unidireccional. \\
+Velocidad        & Procesos por lotes (batch). & Flujos en tiempo real (streaming). \\
+Escalabilidad    & Alta, optimizada para grandes volúmenes. & Alta, optimizada para flujos continuos. \\
+Casos de Uso     & Migración de datos entre bases y Hadoop. & Ingesta de logs, eventos y flujos. \\
+\hline
+\end{tabular}
+\end{adjustbox}
+\end{LATEX}
+
+---
+\end{frame}
+
+\begin{frame}[label={sec:org7dfc674}]{Conclusión}
+\begin{itemize}
+\item \alert{\alert{Apache Sqoop}}:
+\begin{itemize}
+\item Ideal para datos estructurados y transferencias bidireccionales.
+\end{itemize}
+\item \alert{\alert{Apache Flume}}:
+\begin{itemize}
+\item Diseñado para flujos en tiempo real y datos no estructurados.
+\end{itemize}
+\item La elección depende del tipo de datos y la necesidad específica del proyecto.
+\end{itemize}
+\end{frame}
+\end{document}

@@ -1,0 +1,67 @@
+#+TITLE: Bases de Datos NoSQL: MongoDB y Cassandra
+#+AUTHOR: José Manuel Sánchez Álvarez
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_TRANS: fade
+#+REVEAL_EXTRA_CSS: custom.css
+#+REVEAL_SCROLL: true
+#+REVEAL_WIDTH: 1200
+#+REVEAL_HEIGHT: 900
+
+
+* Introducción
+Las bases de datos NoSQL han ganado popularidad en Big Data:
+- Manejan datos no estructurados y semi-estructurados.
+- Ofrecen escalabilidad horizontal.
+
+En esta presentación, profundizaremos en:
+- **MongoDB**.
+- **Cassandra**.
+
+---
+
+* MongoDB: Base de Datos Documental
+** Características Clave
+1. **Modelo de Documentos**:
+   - Estructuras en JSON o BSON.
+   - Datos complejos y anidados sin esquema fijo.
+2. **Escalabilidad Horizontal**:
+   - Soporta **sharding** para distribuir datos.
+3. **Consulta Flexible**:
+   - Operaciones avanzadas como agregaciones y búsquedas geoespaciales.
+4. **Alta Disponibilidad**:
+   - Réplicas con Replica Sets.
+5. **Compatibilidad Multiplataforma**:
+   - Integración con aplicaciones modernas.
+
+** Ventajas
+- Flexibilidad con datos dinámicos.
+- Rendimiento alto en escrituras.
+- Estructura intuitiva para desarrolladores.
+
+** Desventajas
+- Consistencia eventual en entornos distribuidos.
+- Mayor consumo de almacenamiento con BSON.
+
+** Casos de Uso
+- Aplicaciones web y móviles dinámicas.
+- Gestión de catálogos de productos.
+- Búsquedas avanzadas geoespaciales.
+
+---
+
+* Ejemplo Práctico: MongoDB
+** Gestión de un Catálogo de Productos
+Ejemplo de documento en JSON:
+```json
+{
+  "productId": "12345",
+  "name": "Laptop",
+  "brand": "TechBrand",
+  "specifications": {
+    "processor": "Intel i7",
+    "RAM": "16GB",
+    "storage": "512GB SSD"
+  },
+  "price": 1200,
+  "categories": ["Electronics", "Computers"]
+}

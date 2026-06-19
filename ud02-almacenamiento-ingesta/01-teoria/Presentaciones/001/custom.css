@@ -1,0 +1,16 @@
+.reveal p, .reveal li {
+  font-size: 0.75em; /* Reduce el tamaño del texto */
+}
+
+.reveal h1 {
+  font-size: 1.45em; /* Ajusta el tamaño de los títulos principales */
+}
+
+.reveal h2 {
+  font-size: 1.15em; /* Ajusta el tamaño de los subtítulos */
+}
+
+.reveal .date::selection {
+  content: "Creado: " attr(data-date);
+  font-size: 1em; /* Ajusta el tamaño si es necesario */
+}

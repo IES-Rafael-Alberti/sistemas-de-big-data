@@ -1,0 +1,77 @@
+# Local/editor state
+.Rhistory
+*.Rhistory
+.RData
+.Rproj.user/
+.atl/
+.DS_Store
+Thumbs.db
+*~
+*.bak
+
+# Python/cache/environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+env/
+
+# Secrets and local config
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*API-key*
+*api-key*
+
+# Generated/published derivatives
+*.html
+*.pdf
+*.pptx
+*.docx
+*.zip
+*.tar.gz
+*.tgz
+*.parquet
+
+# Runtime outputs and generated data lakes
+data_lake/
+bronze/
+silver/
+gold/
+**/data/curated/
+output/
+outputs/
+target/
+logs/
+metastore_db/
+spark-warehouse/
+
+# Student submissions and correction artifacts
+06-Alumnos/
+entregas/
+entregas_extraidas/
+feedback_alumnado/
+calificaciones*.csv
+Calificaciones*.csv
+informe_privado_profesor.md
+informe_correccion.md
+README_CORRECCIONES*.md
+plantilla-ejecucion-correccion.md
+prompt-orquestador-correccion.md
+correcciones/
+Correcciones/
+correccion/
+**/99-profesor/correccion/
+**/90-archivo/tecnico/
+**/90-archivo/airbyte-antiguo/historico/
+**/_profesor/operativa/
+**/_profesor/redpanda-python/
+**/database_script.py
+
+# Non-canonical pending review area
+00-recursos-comunes/pendiente_revision/

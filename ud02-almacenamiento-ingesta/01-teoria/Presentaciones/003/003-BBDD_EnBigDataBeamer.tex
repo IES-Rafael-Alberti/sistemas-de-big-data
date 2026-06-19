@@ -1,0 +1,215 @@
+% Created 2024-12-10 mar 16:09
+% Intended LaTeX compiler: pdflatex
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usetheme{metropolis}
+\usetheme{default}
+\author{Tu Nombre}
+\date{\today{}}
+\title{Bases de Datos en Big Data: SQL vs NoSQL}
+\hypersetup{
+ pdfauthor={Tu Nombre},
+ pdftitle={Bases de Datos en Big Data: SQL vs NoSQL},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.6.18)}, 
+ pdflang={Spanish}}
+\begin{document}
+
+\maketitle
+
+\begin{frame}[label={sec:org0f02cd2}]{Introducción}
+Las bases de datos son el núcleo de los sistemas Big Data:
+\begin{itemize}
+\item Almacenan, organizan y recuperan grandes volúmenes de información.
+\item Evolución hacia dos paradigmas principales:
+\begin{itemize}
+\item \alert{\alert{SQL (relacionales)}}.
+\item \alert{\alert{NoSQL (no relacionales)}}.
+\end{itemize}
+\end{itemize}
+
+---
+\end{frame}
+
+\begin{frame}[label={sec:org97f129f}]{Bases de Datos Relacionales (SQL)}
+\begin{block}{Características Clave}
+\begin{enumerate}
+\item \alert{\alert{Estructura Definida}}:
+\begin{itemize}
+\item Esquema predefinido con tablas y relaciones.
+\end{itemize}
+\item \alert{\alert{Consistencia ACID}}:
+\begin{itemize}
+\item Atomicidad, Consistencia, Aislamiento, Durabilidad.
+\end{itemize}
+\item \alert{\alert{Consulta Eficiente}}:
+\begin{itemize}
+\item SQL permite consultas complejas sobre grandes volúmenes.
+\end{itemize}
+\end{enumerate}
+\end{block}
+
+\begin{block}{Ventajas}
+\begin{itemize}
+\item Alta integridad de datos.
+\item Estandarización en la industria.
+\item Excelente para relaciones complejas (ERP, CRM).
+\end{itemize}
+\end{block}
+
+\begin{block}{Desventajas}
+\begin{itemize}
+\item Rigidez ante datos no estructurados.
+\item Escalabilidad limitada (vertical).
+\item No optimizadas para Big Data.
+\end{itemize}
+\end{block}
+
+\begin{block}{Ejemplos}
+\begin{itemize}
+\item \alert{\alert{MySQL}}: Open source.
+\item \alert{\alert{PostgreSQL}}: Avanzada y flexible.
+\item \alert{\alert{Oracle Database}}: Enfocada en aplicaciones empresariales.
+\item \alert{\alert{Microsoft SQL Server}}: Con herramientas de análisis.
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:orgfdf0edb}]{Bases de Datos NoSQL}
+\begin{block}{Características Clave}
+\begin{enumerate}
+\item \alert{\alert{Flexibilidad en el Modelo de Datos}}:
+\begin{itemize}
+\item Datos sin esquema predefinido (JSON, documentos, columnas).
+\end{itemize}
+\item \alert{\alert{Escalabilidad Horizontal}}:
+\begin{itemize}
+\item Distribución en múltiples nodos.
+\end{itemize}
+\item \alert{\alert{Tipos de Modelos}}:
+\begin{itemize}
+\item Clave-valor (Redis), Documentales (MongoDB), Columnas (Cassandra), Grafos (Neo4j).
+\end{itemize}
+\end{enumerate}
+\end{block}
+
+\begin{block}{Ventajas}
+\begin{itemize}
+\item Adaptabilidad a datos no estructurados.
+\item Escalabilidad económica y efectiva.
+\item Alto rendimiento para aplicaciones en tiempo real.
+\end{itemize}
+\end{block}
+
+\begin{block}{Desventajas}
+\begin{itemize}
+\item Consistencia relajada (modelo CAP).
+\item Menos ideales para relaciones complejas.
+\item Curva de aprendizaje más pronunciada.
+\end{itemize}
+\end{block}
+
+\begin{block}{Ejemplos}
+\begin{itemize}
+\item \alert{\alert{MongoDB}}: Basada en documentos.
+\item \alert{\alert{Cassandra}}: Para grandes volúmenes distribuidos.
+\item \alert{\alert{Redis}}: En memoria, para alta velocidad.
+\item \alert{\alert{Neo4j}}: Optimizada para grafos.
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org7be2788}]{Comparación: SQL vs NoSQL}
+$\backslash$[
+\begin{array}{|l|l|l|}
+\hline
+\textbf{Aspecto}      & \textbf{SQL}                     & \textbf{NoSQL}                         \\
+\hline
+Estructura            & Esquema fijo, tablas.           & Flexible, sin esquema.                 \\
+\hline
+Consistencia          & ACID (total).                  & Relajada (eventual en algunos casos).  \\
+\hline
+Escalabilidad         & Vertical.                      & Horizontal.                            \\
+\hline
+Tipo de Datos         & Estructurados.                 & Semi/no estructurados.                 \\
+\hline
+Relaciones            & Ideal para relaciones.         & Menos optimizado para relaciones.      \\
+\hline
+Ejemplos              & MySQL, PostgreSQL.             & MongoDB, Cassandra.                    \\
+\hline
+\end{array}
+$\backslash$]
+
+---
+\end{frame}
+
+\begin{frame}[label={sec:org19ca14a}]{Bases de Datos en Big Data}
+\begin{block}{Principales Características}
+\begin{enumerate}
+\item \alert{\alert{Alta Escalabilidad}}:
+\begin{itemize}
+\item Crecimiento horizontal para manejar volúmenes masivos.
+\end{itemize}
+\item \alert{\alert{Tolerancia a Fallos}}:
+\begin{itemize}
+\item Replicación de datos entre nodos.
+\end{itemize}
+\item \alert{\alert{Datos No Estructurados}}:
+\begin{itemize}
+\item Logs, multimedia, JSON, etc.
+\end{itemize}
+\item \alert{\alert{Procesamiento Paralelo}}:
+\begin{itemize}
+\item Integración con Hadoop y Spark.
+\end{itemize}
+\end{enumerate}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org1a4e963}]{¿Cómo Elegir?}
+\begin{block}{Usar SQL si:}
+\begin{itemize}
+\item Necesitas transacciones consistentes.
+\item Trabajas con datos estructurados y relaciones complejas.
+\item Prefieres herramientas estandarizadas.
+\end{itemize}
+\end{block}
+
+\begin{block}{Usar NoSQL si:}
+\begin{itemize}
+\item Manejas datos no estructurados o semi-estructurados.
+\item Requieres escalabilidad horizontal.
+\item Trabajas con redes sociales, IoT o análisis en tiempo real.
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org74b86f7}]{Conclusión}
+SQL y NoSQL son complementarios:
+\begin{itemize}
+\item \alert{\alert{SQL}}: Para datos estructurados y relaciones complejas.
+\item \alert{\alert{NoSQL}}: Para manejar volumen, variedad y velocidad en Big Data.
+\item La elección depende de los requisitos de la aplicación y el tipo de datos.
+\end{itemize}
+\end{frame}
+\end{document}

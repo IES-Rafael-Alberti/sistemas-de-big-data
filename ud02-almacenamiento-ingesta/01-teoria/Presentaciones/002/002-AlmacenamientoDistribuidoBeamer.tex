@@ -1,0 +1,228 @@
+% Created 2024-12-10 mar 16:09
+% Intended LaTeX compiler: pdflatex
+\documentclass[presentation]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usetheme{metropolis}
+\usetheme{default}
+\author{José Manuel Sánchez Álvarez}
+\date{\today{}}
+\title{Sistemas de Almacenamiento Distribuido}
+\hypersetup{
+ pdfauthor={José Manuel Sánchez Álvarez},
+ pdftitle={Sistemas de Almacenamiento Distribuido},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 27.1 (Org mode 9.6.18)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+
+\begin{frame}[label={sec:orgc011e4e}]{Introducción}
+El almacenamiento distribuido es clave para gestionar datos en Big Data.
+\begin{itemize}
+\item Divide datos entre múltiples nodos.
+\item Beneficios:
+\begin{itemize}
+\item Escalabilidad.
+\item Tolerancia a fallos.
+\item Rendimiento eficiente.
+\item Durabilidad.
+\end{itemize}
+\end{itemize}
+
+---
+\end{frame}
+
+\begin{frame}[label={sec:org7d37574}]{¿Qué es el almacenamiento distribuido?}
+\begin{block}{Definición}
+\begin{itemize}
+\item Divide los datos en fragmentos y los almacena en múltiples máquinas que simulan un único sistema.
+\item Ventajas:
+\begin{enumerate}
+\item \alert{\alert{Escalabilidad horizontal:}} Agrega nodos para manejar el crecimiento de datos.
+\item \alert{\alert{Tolerancia a fallos:}} Datos accesibles desde nodos redundantes.
+\item \alert{\alert{Eficiencia:}} Reduce cuellos de botella.
+\item \alert{\alert{Durabilidad:}} Resiliencia ante fallos físicos.
+\end{enumerate}
+\end{itemize}
+
+---
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org317cb5a}]{Sistemas Principales}
+\begin{block}{HDFS (Hadoop Distributed File System)}
+\begin{itemize}
+\item Parte del ecosistema Apache Hadoop.
+\item Diseñado para grandes volúmenes de datos.
+\end{itemize}
+
+\begin{block}{Características Clave}
+\begin{itemize}
+\item Alto rendimiento para operaciones secuenciales.
+\item Escalabilidad horizontal.
+\item Replicación de bloques (por defecto 3 veces).
+\item Integración con herramientas como Apache Hive y Spark.
+\end{itemize}
+\end{block}
+
+\begin{block}{Arquitectura}
+\begin{enumerate}
+\item \alert{\alert{NameNode:}} Administra metadatos.
+\item \alert{\alert{DataNodes:}} Almacenan bloques de datos.
+\end{enumerate}
+\end{block}
+
+\begin{block}{Casos de Uso}
+\begin{itemize}
+\item Procesamiento analítico masivo.
+\item Gestión de datos históricos.
+\end{itemize}
+
+---
+\end{block}
+\end{block}
+
+\begin{block}{Amazon S3}
+\begin{itemize}
+\item Servicio de almacenamiento de objetos en la nube de AWS.
+\end{itemize}
+
+\begin{block}{Características Clave}
+\begin{itemize}
+\item Almacenamiento basado en objetos con metadatos únicos.
+\item Escalabilidad automática.
+\item Durabilidad de \alert{\alert{11 nueves}}.
+\item Integración con AWS Lambda, Athena, y más.
+\end{itemize}
+\end{block}
+
+\begin{block}{Clases de Almacenamiento}
+\begin{enumerate}
+\item \alert{\alert{S3 Standard:}} Acceso frecuente.
+\item \alert{\alert{S3 Intelligent-Tiering:}} Ajuste automático según el acceso.
+\item \alert{\alert{S3 Glacier:}} Archivos de largo plazo.
+\end{enumerate}
+\end{block}
+
+\begin{block}{Casos de Uso}
+\begin{itemize}
+\item Almacenamiento multimedia.
+\item Copias de seguridad.
+\item Análisis de Big Data con Amazon EMR.
+\end{itemize}
+
+---
+\end{block}
+\end{block}
+
+\begin{block}{Google Cloud Storage}
+\begin{itemize}
+\item Servicio de almacenamiento de objetos de Google Cloud.
+\end{itemize}
+
+\begin{block}{Características Clave}
+\begin{itemize}
+\item Almacenamiento multirregional para redundancia.
+\item Consistencia fuerte.
+\item Integración con BigQuery.
+\end{itemize}
+\end{block}
+
+\begin{block}{Clases de Almacenamiento}
+\begin{enumerate}
+\item \alert{\alert{Standard Storage:}} Datos de acceso frecuente.
+\item \alert{\alert{Nearline Storage:}} Acceso menos de una vez al mes.
+\item \alert{\alert{Coldline Storage:}} Acceso menos de una vez al año.
+\item \alert{\alert{Archive Storage:}} Archivado de datos.
+\end{enumerate}
+\end{block}
+
+\begin{block}{Casos de Uso}
+\begin{itemize}
+\item Datos IoT.
+\item Logs analíticos.
+\item Archivos multimedia distribuidos globalmente.
+\end{itemize}
+
+---
+\end{block}
+\end{block}
+
+\begin{block}{Azure Blob Storage}
+\begin{itemize}
+\item Sistema de almacenamiento de objetos de Microsoft Azure.
+\end{itemize}
+
+\begin{block}{Características Clave}
+\begin{itemize}
+\item Diseñado para datos no estructurados como imágenes, vídeos y logs.
+\item Escalabilidad automática.
+\end{itemize}
+\end{block}
+
+\begin{block}{Niveles de Almacenamiento}
+\begin{enumerate}
+\item \alert{\alert{Hot Access Tier:}} Acceso frecuente.
+\item \alert{\alert{Cool Access Tier:}} Acceso poco frecuente.
+\item \alert{\alert{Archive Tier:}} Archivado a largo plazo.
+\end{enumerate}
+\end{block}
+
+\begin{block}{Casos de Uso}
+\begin{itemize}
+\item Copias de seguridad empresariales.
+\item Datos analíticos en tiempo real.
+\end{itemize}
+
+---
+\end{block}
+\end{block}
+\end{frame}
+
+\begin{frame}[label={sec:org354575d}]{Comparación de Sistemas}
+$\backslash$[
+\begin{array}{|l|l|l|l|l|l|}
+\hline
+\textbf{Sistema} & \textbf{Tipo} & \textbf{Escalabilidad} & \textbf{Tolerancia a Fallos} & \textbf{Integración} & \textbf{Costo} \\
+\hline
+HDFS & Archivos & Alta & Alta (replicación) & Ecosistema Hadoop & Infraestructura propia \\
+\hline
+Amazon S3 & Objetos & Muy alta & Muy alta & AWS (Lambda, Athena, etc.) & Moderado \\
+\hline
+Google Cloud Storage & Objetos & Muy alta & Muy alta & GCP (BigQuery, Dataflow) & Moderado \\
+\hline
+Azure Blob Storage & Objetos & Muy alta & Muy alta & Azure (Synapse, Data Lake) & Moderado \\
+\hline
+\end{array}
+$\backslash$]
+
+---
+\end{frame}
+
+\begin{frame}[label={sec:org0b9e43f}]{Conclusión}
+Los sistemas de almacenamiento distribuido son esenciales para Big Data.
+\begin{itemize}
+\item \alert{\alert{On-premises:}} HDFS.
+\item \alert{\alert{Nube:}} Amazon S3, Google Cloud Storage, Azure Blob Storage.
+\item La elección depende de:
+\begin{itemize}
+\item Costos.
+\item Integración.
+\item Requisitos de redundancia y durabilidad.
+\end{itemize}
+\end{itemize}
+\end{frame}
+\end{document}

@@ -1,0 +1,144 @@
+#+TITLE: Herramientas de Integración y Transferencia de Datos
+#+AUTHOR: Tu Nombre
+#+DATE: \today{}
+#+LATEX_CLASS: beamer
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \usetheme{metropolis}
+#+LATEX_HEADER: \usepackage{adjustbox}
+
+* Introducción
+La transferencia eficiente de datos es crucial en Big Data. Herramientas como:
+- **Apache Sqoop**: Transferencia de datos estructurados.
+- **Apache Flume**: Ingesta de datos no estructurados.
+
+---
+
+* Apache Sqoop: Transferencia de Datos Estructurados
+** Características Clave
+1. **Interoperabilidad con Bases de Datos Relacionales**:
+   - Compatible con MySQL, PostgreSQL, Oracle, SQL Server, DB2.
+2. **Transferencia Bidireccional**:
+   - Importar datos desde bases de datos hacia Hadoop.
+   - Exportar datos procesados desde Hadoop hacia las bases de datos.
+3. **Optimización Automática**:
+   - Particionamiento de datos para optimizar la transferencia.
+4. **Compatibilidad con el Ecosistema Hadoop**:
+   - Integración con HDFS, Hive, y HBase.
+
+** Ventajas
+- Simplifica la integración de datos estructurados.
+- Alta escalabilidad y eficiencia.
+- Compatible con múltiples bases de datos.
+
+** Desventajas
+- No adecuado para flujos en tiempo real.
+- Limitado a datos estructurados.
+
+** Casos de Uso
+- Migración de datos históricos hacia Hadoop.
+- Integración de datos empresariales.
+- Exportación de resultados analíticos.
+
+** Ejemplo Práctico
+- **Importar datos desde MySQL a HDFS**:
+  ```bash
+  sqoop import \
+    --connect jdbc:mysql://localhost/database_name \
+    --username user \
+    --password password \
+    --table table_name \
+    --target-dir /user/hadoop/target_directory
+  ```
+- **Exportar datos desde HDFS a MySQL**:
+  ```bash
+  sqoop export \
+    --connect jdbc:mysql://localhost/database_name \
+    --username user \
+    --password password \
+    --table table_name \
+    --export-dir /user/hadoop/source_directory
+  ```
+
+---
+
+* Apache Flume: Transferencia de Datos No Estructurados
+** Características Clave
+1. **Ingesta Continua**:
+   - Ideal para logs, eventos, y datos en tiempo real.
+2. **Arquitectura Flexible**:
+   - Componentes clave:
+     - **Source**: Captura datos desde logs o eventos.
+     - **Channel**: Buffer para garantizar la entrega.
+     - **Sink**: Envía los datos al sistema de almacenamiento final.
+3. **Alta Escalabilidad**:
+   - Soporta configuraciones distribuidas.
+4. **Tolerancia a Fallos**:
+   - Garantiza la entrega en caso de fallos.
+
+** Ventajas
+- Ideal para flujos en tiempo real.
+- Arquitectura robusta y escalable.
+- Compatible con múltiples fuentes y destinos.
+
+** Desventajas
+- No adecuado para datos estructurados.
+- Transferencia unidireccional.
+
+** Casos de Uso
+- Ingesta de logs hacia HDFS.
+- Flujos de datos IoT.
+- Captura de eventos en tiempo real.
+
+** Ejemplo Práctico
+- **Configurar un flujo de datos de logs a HDFS**:
+  - **Archivo de Configuración (flume.conf):**
+    ```properties
+    agent.sources = source1
+    agent.channels = channel1
+    agent.sinks = sink1
+
+    agent.sources.source1.type = exec
+    agent.sources.source1.command = tail -F /var/log/syslog
+    agent.sources.source1.channels = channel1
+
+    agent.channels.channel1.type = memory
+    agent.channels.channel1.capacity = 1000
+    agent.channels.channel1.transactionCapacity = 100
+
+    agent.sinks.sink1.type = hdfs
+    agent.sinks.sink1.hdfs.path = hdfs://localhost:8020/logs/
+    agent.sinks.sink1.hdfs.fileType = DataStream
+    ```
+  - **Ejecutar el Agente de Flume**:
+    ```bash
+    flume-ng agent --conf conf --name agent --conf-file flume.conf
+    ```
+
+---
+
+* Comparación: Apache Sqoop vs Apache Flume
+#+ATTR_LATEX: :environment table :align lll :width \linewidth :options \centering
+#+BEGIN_LATEX
+\begin{adjustbox}{width=\linewidth}
+\begin{tabular}{|l|l|l|}
+\hline
+\textbf{Aspecto} & \textbf{Apache Sqoop} & \textbf{Apache Flume} \\
+\hline
+Tipo de Datos    & Datos estructurados (bases de datos). & Datos no estructurados (logs, eventos). \\
+Dirección        & Transferencia bidireccional. & Transferencia unidireccional. \\
+Velocidad        & Procesos por lotes (batch). & Flujos en tiempo real (streaming). \\
+Escalabilidad    & Alta, optimizada para grandes volúmenes. & Alta, optimizada para flujos continuos. \\
+Casos de Uso     & Migración de datos entre bases y Hadoop. & Ingesta de logs, eventos y flujos. \\
+\hline
+\end{tabular}
+\end{adjustbox}
+#+END_LATEX
+
+---
+
+* Conclusión
+- **Apache Sqoop**:
+  - Ideal para datos estructurados y transferencias bidireccionales.
+- **Apache Flume**:
+  - Diseñado para flujos en tiempo real y datos no estructurados.
+- La elección depende del tipo de datos y la necesidad específica del proyecto.

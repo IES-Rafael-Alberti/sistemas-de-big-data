@@ -1,0 +1,132 @@
+#+TITLE: Gestión de Grandes Volúmenes de Datos: Hadoop y Spark
+#+AUTHOR: Tu Nombre
+#+DATE: \today{}
+#+LATEX_CLASS: beamer
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \usetheme{metropolis}
+
+* Introducción
+La gestión de grandes volúmenes de datos en clústeres requiere plataformas robustas como:
+- **Hadoop**: Especializado en almacenamiento y procesamiento batch.
+- **Spark**: Enfocado en rapidez y análisis en tiempo real.
+
+---
+
+* Apache Hadoop: Almacenamiento y Procesamiento Batch
+** Características Clave
+1. **HDFS (Hadoop Distributed File System):**
+   - Almacenamiento distribuido con replicación.
+2. **MapReduce:**
+   - Procesamiento en paralelo basado en tareas.
+3. **Tolerancia a Fallos:**
+   - Réplicas de datos en nodos múltiples.
+4. **Alta Escalabilidad:**
+   - Agrega nodos para manejar mayores volúmenes de datos.
+
+** Componentes Clave
+- **HDFS:** Sistema de archivos distribuido.
+- **YARN:** Gestor de recursos.
+- **MapReduce:** Motor de procesamiento distribuido.
+
+** Ventajas
+- Robusto para datos estructurados y no estructurados.
+- Amplio ecosistema de herramientas.
+- Ideal para procesamiento batch.
+
+** Desventajas
+- Latencia alta.
+- Complejidad en la programación.
+
+** Casos de Uso
+- Análisis de logs.
+- Procesamiento de grandes volúmenes de datos históricos.
+- Indexación en motores de búsqueda.
+
+---
+
+* Apache Spark: Rapidez y Flexibilidad
+** Características Clave
+1. **Procesamiento en Memoria:**
+   - Los datos se almacenan y procesan en RAM, acelerando las operaciones.
+2. **Modelo Versátil:**
+   - API en Python, Scala, Java y R.
+3. **Procesamiento en Tiempo Real:**
+   - Spark Streaming para flujos de datos.
+4. **Compatibilidad con Hadoop:**
+   - Utiliza HDFS como sistema de almacenamiento.
+
+** Componentes Clave
+- **Spark Core:** Motor de procesamiento.
+- **Spark SQL:** Procesamiento estructurado con SQL.
+- **Spark Streaming:** Datos en tiempo real.
+- **MLlib:** Machine learning.
+- **GraphX:** Análisis de grafos.
+
+** Ventajas
+- Extremadamente rápido.
+- Soporte para machine learning y análisis avanzado.
+- Facilidad de uso con APIs intuitivas.
+
+** Desventajas
+- Requiere mucha memoria.
+- Depende de sistemas externos para almacenamiento.
+
+** Casos de Uso
+- Análisis en tiempo real.
+- Machine learning.
+- Procesamiento predictivo.
+
+---
+
+* Comparación: Hadoop vs Spark
+#+ATTR_LATEX: :environment table :align lll :width \textwidth
+| **Aspecto**           | **Hadoop**                              | **Spark**                              |
+|-----------------------|-----------------------------------------|---------------------------------------|
+| **Modelo de Procesamiento** | Disco (MapReduce).                     | En memoria, con soporte de disco.     |
+| **Velocidad**         | Más lento.                              | Muy rápido.                           |
+| **Tiempo Real**       | Integración externa necesaria.          | Spark Streaming nativo.               |
+| **Lenguajes**         | Java.                                   | Python, Scala, Java, R.               |
+| **Facilidad de Uso**  | Configuración avanzada.                 | Más amigable.                         |
+| **Casos de Uso**      | Batch y análisis históricos.            | Tiempo real y machine learning.       |
+
+---
+
+* Gestión de Clústeres
+** Hadoop
+- **YARN:** Administra tareas y recursos.
+- **Réplicas:** Asegura tolerancia a fallos.
+- **Alta Escalabilidad:** Se pueden añadir nodos fácilmente.
+
+** Spark
+- **Standalone Mode:** Gestor de clústeres propio.
+- **Integración con YARN y Mesos:** Uso avanzado de recursos.
+- **Requiere Memoria Alta:** Para optimizar el rendimiento.
+
+---
+
+* Escenarios de Uso Combinado
+1. **Hadoop como Almacenamiento y Spark como Procesador:**
+   - HDFS almacena datos, mientras Spark procesa en memoria.
+2. **Flujos de Trabajo Híbridos:**
+   - MapReduce para datos históricos.
+   - Spark Streaming para datos en tiempo real.
+
+---
+
+* Herramientas Complementarias
+** Hadoop Ecosystem
+- **Hive:** SQL sobre Hadoop.
+- **Pig:** Procesamiento de datos.
+- **Sqoop:** Integración con bases de datos.
+
+** Spark Ecosystem
+- **MLlib:** Machine Learning.
+- **GraphX:** Grafos.
+- **Structured Streaming:** Datos en tiempo real.
+
+---
+
+* Conclusión
+- **Hadoop:** Robusto para almacenamiento distribuido y procesamiento batch.
+- **Spark:** Destaca por su velocidad y capacidades en tiempo real.
+- Usar en combinación maximiza las fortalezas de ambas plataformas.

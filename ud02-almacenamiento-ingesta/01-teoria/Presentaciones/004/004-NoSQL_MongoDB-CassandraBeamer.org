@@ -1,0 +1,130 @@
+#+TITLE: Bases de Datos NoSQL: MongoDB y Cassandra
+#+AUTHOR: Tu Nombre
+#+DATE: \today{}
+#+LATEX_CLASS: beamer
+#+OPTIONS: toc:nil
+#+LATEX_HEADER: \setbeamertemplate{headline}{}
+#+LATEX_HEADER: \usefonttheme{serif}
+#+LATEX_HEADER: \usetheme{metropolis}
+
+* Introducción
+Las bases de datos NoSQL han ganado popularidad en Big Data:
+- Manejan datos no estructurados y semi-estructurados.
+- Ofrecen escalabilidad horizontal.
+
+En esta presentación, profundizaremos en:
+- **MongoDB**.
+- **Cassandra**.
+
+---
+
+* MongoDB: Base de Datos Documental
+** Características Clave
+1. **Modelo de Documentos**:
+   - Estructuras en JSON o BSON.
+   - Datos complejos y anidados sin esquema fijo.
+2. **Escalabilidad Horizontal**:
+   - Soporta **sharding** para distribuir datos.
+3. **Consulta Flexible**:
+   - Operaciones avanzadas como agregaciones y búsquedas geoespaciales.
+4. **Alta Disponibilidad**:
+   - Réplicas con Replica Sets.
+5. **Compatibilidad Multiplataforma**:
+   - Integración con aplicaciones modernas.
+
+** Ventajas
+- Flexibilidad con datos dinámicos.
+- Rendimiento alto en escrituras.
+- Estructura intuitiva para desarrolladores.
+
+** Desventajas
+- Consistencia eventual en entornos distribuidos.
+- Mayor consumo de almacenamiento con BSON.
+
+** Casos de Uso
+- Aplicaciones web y móviles dinámicas.
+- Gestión de catálogos de productos.
+- Búsquedas avanzadas geoespaciales.
+
+---
+
+* Ejemplo Práctico: MongoDB
+** Gestión de un Catálogo de Productos
+Ejemplo de documento en JSON:
+#+BEGIN_EXAMPLE
+{
+  "productId": "12345",
+  "name": "Laptop",
+  "brand": "TechBrand",
+  "specifications": {
+    "processor": "Intel i7",
+    "RAM": "16GB",
+    "storage": "512GB SSD"
+  },
+  "price": 1200,
+  "categories": ["Electronics", "Computers"]
+}
+#+END_EXAMPLE
+
+---
+
+* Cassandra: Base de Datos de Columnas Anchas
+** Características Clave
+1. **Modelo de Columnas Anchas**:
+   - Organiza datos en filas y columnas con número variable de columnas.
+2. **Alta Escalabilidad Horizontal**:
+   - Escala hasta miles de nodos sin impacto en rendimiento.
+3. **Consistencia Configurable**:
+   - Modelo CAP: consistencia fuerte o eventual.
+4. **Replicación Inteligente**:
+   - Garantiza tolerancia a fallos y alta disponibilidad.
+5. **Altamente Disponible**:
+   - Sin puntos únicos de fallo.
+
+** Ventajas
+- Escalabilidad para grandes volúmenes de datos.
+- Tolerancia a fallos integrada.
+- Rendimiento óptimo en escrituras masivas.
+
+** Desventajas
+- Complejidad en configuración.
+- Operaciones limitadas comparadas con SQL.
+
+** Casos de Uso
+- Monitoreo de IoT.
+- Gestión de logs distribuidos.
+- Análisis de datos financieros.
+
+---
+
+* Ejemplo Práctico: Cassandra
+** Registro de Logs de Servidores
+Modelo de tabla en CQL:
+#+begin_src sql
+
+CREATE TABLE server_logs (
+  log_id UUID PRIMARY KEY,
+  timestamp TIMESTAMP,
+  server_id TEXT,
+  log_message TEXT
+);
+#+end_src
+
+---
+
+* Comparación: MongoDB vs Cassandra
+* Comparación: MongoDB vs Cassandra
+| **Aspecto**        | **MongoDB**                            | **Cassandra**                       |
+|---------------------|----------------------------------------|--------------------------------------|
+| Modelo de Datos     | Documentos (JSON/BSON)                | Columnas anchas (Key-Value extendido)|
+| Escalabilidad       | Alta, mediante sharding               | Muy alta, ideal para datos distribuidos |
+| Consistencia        | Eventual, con ACID parcial            | Configurable: eventual o fuerte      |
+| Rendimiento         | Bueno para consultas complejas        | Excelente para escrituras masivas    |
+| Casos de Uso        | Aplicaciones dinámicas, catálogos     | IoT, logs distribuidos               |
+
+---
+
+* Conclusión
+- **MongoDB**: Ideal para aplicaciones con datos dinámicos y análisis flexible.
+- **Cassandra**: Perfecta para entornos distribuidos con requisitos de escritura intensiva.
+- La elección depende del caso de uso y los requisitos específicos del proyecto.

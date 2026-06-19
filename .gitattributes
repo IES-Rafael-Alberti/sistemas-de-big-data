@@ -1,0 +1,19 @@
+# Normalize text files
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.svg text eol=lf
+*.xlsx binary
+*.ipynb text eol=lf
+*.zpln text eol=lf
+
+# Data files are versioned when they are small teaching fixtures,
+# but normalized to avoid CRLF churn.
+*.csv text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.ndjson text eol=lf
