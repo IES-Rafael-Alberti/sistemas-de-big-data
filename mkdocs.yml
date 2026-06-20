@@ -11,8 +11,8 @@ site_dir: site
 # SOLO material para el alumnado.
 # 99-profesor, 90-archivo, _profesor y datos quedan fuera.
 exclude_docs: |
-  */90-archivo/
-  */99-profesor/
+  **/90-archivo/
+  **/99-profesor/
   **/_profesor/
   *.py
   *.csv
