@@ -40,3 +40,7 @@ Ver `00-planificacion/matriz_ra_ce_materiales.md` para el detalle completo.
 - `90-archivo/reforma-arquitecturas-2026/UD1-SGBD-Intro-P3_original_2026-06-17.md` — copia de seguridad del material original antes de la reforma.
 
 La reforma usa referencias externas como contraste, no como copia: materiales IABD de Aitor Medrano para organización y conceptos de arquitectura, y documentación oficial de Databricks/Microsoft para Medallion. La parte de IA/HuggingFace queda fuera del núcleo de SBD arquitectura, salvo como posible conexión posterior con datasets, pipelines o proyectos integrados.
+
+## Cuestionarios semanales (formato Moodle GIFT)
+
+- `04-evaluacion/quiz-ud1.gift` — 8 preguntas en formato GIFT sobre Big Data, EDA, DuckDB, arquitecturas, MongoDB, batch/streaming y coste/calidad/viabilidad.

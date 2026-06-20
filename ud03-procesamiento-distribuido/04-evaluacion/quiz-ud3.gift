@@ -1,0 +1,21 @@
+$CATEGORY: módulo/SBD/UD3
+
+::UD3_01_HadoopSpark::¿Qué afirmación compara mejor Hadoop y Spark?{ =Hadoop se asocia más al almacenamiento y MapReduce, y Spark al procesamiento en memoria #Correcto: esa es la comparación básica. ~Spark solo sirve para almacenamiento #No, Spark es para cómputo. ~Hadoop no trabaja de forma distribuida #Sí trabaja distribuido. }
+
+::UD3_02_DataFrames::En PySpark, un DataFrame representa una tabla distribuida con esquema.{ TRUE #Correcto: es una abstracción tabular distribuida. FALSE #Incorrecto: sí tiene esquema y distribución. }
+
+::UD3_03_SparkSession::SparkSession es el punto de entrada principal para trabajar con Spark en aplicaciones modernas.{ TRUE #Correcto: es la interfaz principal. FALSE #Incorrecto: SparkSession es la forma habitual de entrada. }
+
+::UD3_04_Lazy::¿Cuál es la diferencia correcta entre transformation y action en Spark?{ =Las transformations se evalúan de forma perezosa y las actions disparan la ejecución #Correcto: esa es la lazy evaluation. ~Las actions son perezosas y las transformations ejecutan todo #Está invertido. ~Ambas ejecutan inmediatamente siempre #No es correcto. }
+
+::UD3_05_GroupBy::¿Qué operación se usa para agrupar datos y calcular agregaciones en Spark?{ =groupBy con funciones de agregación #Correcto: permite resumir por claves. ~cache #cache solo persiste. ~collect #collect trae datos al driver. }
+
+::UD3_06_Streaming::Structured Streaming permite procesar flujos de datos de forma continua y escalable.{ TRUE #Correcto: es el motor de streaming estructurado de Spark. FALSE #Incorrecto: sí lo permite. }
+
+::UD3_07_SparkVsPandas::¿Qué diferencia es más correcta entre Spark y pandas?{ =Spark está pensado para datos distribuidos y pandas para análisis local en memoria #Correcto: esa es la diferencia habitual. ~pandas escala mejor que Spark en clústeres grandes #No. ~Spark solo funciona con archivos CSV #No, soporta muchas fuentes. }
+
+::UD3_08_Benchmark::En un benchmark, comparar pandas, DuckDB y Spark ayuda a elegir la herramienta según tamaño y coste de ejecución.{ TRUE #Correcto: la comparación orienta la elección. FALSE #Incorrecto: sí ayuda a decidir. }
+
+::UD3_09_Kibana::Kibana se usa principalmente para visualización y exploración de datos en Elastic Stack.{ TRUE #Correcto: es una herramienta de visualización. FALSE #Incorrecto: esa es su función. }
+
+::UD3_10_Grafana::¿Qué herramienta es más adecuada para monitorizar métricas y dashboards operativos?{ =Grafana #Correcto: Grafana está muy orientada a monitorización. ~Kibana #Kibana se orienta más a búsqueda/visualización en Elastic. ~MongoDB #Es una base de datos. }

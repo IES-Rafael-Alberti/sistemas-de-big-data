@@ -30,4 +30,8 @@ Cubre **RA1.f** y **RA1.g** en el contexto de ML.
 > RA2.d cubierto por LAB1 (regresión con Spark MLlib) conectado al Lab6
 > de UD4 (predicción en dashboard técnico). Ver `matriz_ra_ce_materiales.md`.
 
+## Cuestionarios semanales (formato Moodle GIFT)
+
+- `04-evaluacion/quiz-ud5.gift` — 6 preguntas en formato GIFT sobre Spark MLlib, pipelines, scikit-learn vs Spark y regresión distribuida.
+
 Ver `00-planificacion/matriz_ra_ce_materiales.md` para el detalle completo.

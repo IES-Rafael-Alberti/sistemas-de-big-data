@@ -1,0 +1,17 @@
+$CATEGORY: módulo/SBD/UD1
+
+::UD1_01_4Vs::¿Cuál de las siguientes opciones recoge correctamente las 4 V del Big Data?{ =Volumen, velocidad, variedad y veracidad #Correcto: son las 4 V clásicas. ~Volumen, visualización, virtualización y veracidad #Faltan velocidad y variedad. ~Valor, volumen, validación y visión #No corresponde al modelo clásico. }
+
+::UD1_02_CalidadDatos::¿Qué práctica ayuda más a mejorar la calidad de datos en un análisis exploratorio?{ =Detectar valores nulos y atípicos #Correcto: permite identificar problemas antes del análisis. ~Eliminar toda la información duplicada siempre #No siempre es correcto eliminar duplicados sin criterio. ~Cambiar el tipo de dato al azar #No mejora la calidad. }
+
+::UD1_03_DuckDB::DuckDB está orientado especialmente al procesamiento analítico local y embebido.{ TRUE #Correcto: DuckDB se usa mucho para analítica local y consultas SQL embebidas. FALSE #Incorrecto: esa es una característica real de DuckDB. }
+
+::UD1_04_Arquitecturas::¿Qué capa de la arquitectura Medallion contiene los datos limpios y enriquecidos?{ =Silver #Correcto: Silver suele contener datos depurados y transformados. ~Bronze #Bronze guarda datos crudos. ~Gold #Gold está orientada al consumo analítico final. }
+
+::UD1_05_MongoModelo::En MongoDB, el modelo de documento se basa en estructuras tipo JSON/BSON.{ TRUE #Correcto: MongoDB utiliza documentos flexibles. FALSE #Incorrecto: MongoDB sí usa documentos tipo JSON/BSON. }
+
+::UD1_06_BatchStreaming::¿Cuál es una diferencia correcta entre batch y streaming?{ =Batch procesa datos por lotes, mientras streaming procesa eventos de forma continua #Correcto: esa es la distinción principal. ~Batch siempre es en tiempo real y streaming siempre por lotes #Está invertido. ~Streaming solo sirve para datos históricos #No, se usa para flujos continuos. }
+
+::UD1_07_CosteCalidad::En una solución de datos, si una opción es barata pero de baja calidad, debe evaluarse con la matriz coste-calidad-viabilidad antes de decidir.{ TRUE #Correcto: la decisión debe equilibrar coste, calidad y viabilidad. FALSE #Incorrecto: precisamente se debe evaluar antes de decidir. }
+
+::UD1_08_Viadb::¿Qué tecnología es una base de datos analítica SQL embebida muy útil para prototipos y análisis local?{ =DuckDB #Correcto: DuckDB está pensada para analítica local. ~HDFS #HDFS es almacenamiento distribuido. ~Kibana #Kibana es visualización. }

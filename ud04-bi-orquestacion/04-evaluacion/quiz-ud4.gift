@@ -1,0 +1,13 @@
+$CATEGORY: módulo/SBD/UD4
+
+::UD4_01_BItools::¿Qué afirmación compara mejor Metabase, Superset y Power BI?{ =Son herramientas de BI/visualización, con distintos enfoques de despliegue y conectores #Correcto: las tres son herramientas de BI. ~Solo Power BI sirve para dashboards #No, las otras también. ~Metabase es un motor de almacenamiento #No lo es. }
+
+::UD4_02_Dashboard::Un dashboard bien diseñado debe priorizar claridad, métricas clave y actualización relevante para el usuario.{ TRUE #Correcto: eso mejora la utilidad del cuadro de mando. FALSE #Incorrecto: sí debe priorizar esos aspectos. }
+
+::UD4_03_Airflow::Airflow se usa principalmente para orquestar flujos de trabajo y dependencias entre tareas.{ TRUE #Correcto: es un orquestador de pipelines. FALSE #Incorrecto: esa es su función principal. }
+
+::UD4_04_MedallionDashboard::Un dashboard de monitorización de una pipeline Medallion puede mostrar volumen de registros, errores y tiempos de carga por capa.{ TRUE #Correcto: esas métricas son habituales para monitorizar. FALSE #Incorrecto: son métricas muy útiles para control del proceso. }
+
+::UD4_05_Metadata::¿Qué información es metadata útil de una pipeline de datos?{ =Fecha de carga, origen y estado de validación #Correcto: son metadatos clave. ~El color favorito del analista #No es metadata útil. ~El nombre del navegador web #No aporta al control de pipeline. }
+
+::UD4_06_CalidadLogs::Los logs de calidad de datos ayudan a auditar incidencias y justificar decisiones de integración.{ TRUE #Correcto: mejoran trazabilidad y auditoría. FALSE #Incorrecto: sí ayudan a auditar. }

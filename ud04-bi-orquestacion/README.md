@@ -49,4 +49,8 @@ En SBD se conserva solo la **comparativa conceptual**:
 > Pendiente decidir si se mantienen como demo técnica o pasan a BDA. Ver
 > `matriz_ra_ce_materiales.md` para detalle.
 
+## Cuestionarios semanales (formato Moodle GIFT)
+
+- `04-evaluacion/quiz-ud4.gift` — 6 preguntas en formato GIFT sobre BI tools, dashboards, Airflow y monitorización Medallion.
+
 Ver `00-planificacion/matriz_ra_ce_materiales.md` para el detalle completo.

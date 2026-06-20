@@ -46,6 +46,10 @@ SBD basta con una exigencia más ligera pero imprescindible: el grupo debe saber
 explicar el proceso seguido, qué cambió tras usar IA y qué aprendió al verificar
 o corregir la ayuda recibida.
 
+## Cuestionarios semanales (formato Moodle GIFT)
+
+- `04-evaluacion/quiz-ud6.gift` — 4 preguntas en formato GIFT sobre fases del proyecto, integración multi-módulo e IA.
+
 ## Material archivado
 
 La carpeta antigua `ud06-proyecto-integrador/` se archivó en

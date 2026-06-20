@@ -1,0 +1,17 @@
+$CATEGORY: módulo/SBD/UD2
+
+::UD2_01_HDFS::HDFS se diseñó principalmente para almacenar archivos grandes de forma distribuida y tolerante a fallos.{ TRUE #Correcto: esa es la función principal de HDFS. FALSE #Incorrecto: HDFS sí se diseñó para ese propósito. }
+
+::UD2_02_NoSQL::¿Qué afirmación describe mejor MongoDB y Cassandra?{ =MongoDB es orientada a documentos y Cassandra a familias de columnas #Correcto: representan dos modelos NoSQL distintos. ~Ambas son bases de datos relacionales clásicas #No son relacionales. ~MongoDB es de grafos y Cassandra de clave-valor #No corresponde. }
+
+::UD2_03_SQLvsNoSQL::¿Cuál es una ventaja frecuente de NoSQL frente a SQL en ingestión flexible?{ =Mayor flexibilidad de esquema #Correcto: el esquema suele ser más flexible. ~Siempre mejor integridad referencial #No es una ventaja típica. ~Menor escalabilidad horizontal #No, suele buscarse lo contrario. }
+
+::UD2_04_DLT::En una pipeline dlt, la expectativa es poder declarar transformaciones y gestionar cargas incrementales de forma más simple.{ TRUE #Correcto: dlt busca simplificar pipelines declarativas e incrementales. FALSE #Incorrecto: esa es precisamente su utilidad. }
+
+::UD2_05_CalidadDatos::¿Qué práctica mejora la integración y calidad de datos al ingerir fuentes heterogéneas?{ =Validar formatos, claves y duplicados al cargar #Correcto: evita errores desde la ingestión. ~Cargar sin comprobar nada #Eso degrada la calidad. ~Cambiar manualmente cada registro en producción #No es escalable. }
+
+::UD2_06_RGDP::Anonimizar datos personales ayuda a reducir riesgos de cumplimiento con el RGPD.{ TRUE #Correcto: la anonimización disminuye exposición de datos. FALSE #Incorrecto: es una medida habitual de protección. }
+
+::UD2_07_Matriz::La opción más adecuada en la matriz coste-calidad-viabilidad suele ser la que equilibra los tres factores, no la más barata siempre.{ TRUE #Correcto: la decisión debe ser equilibrada. FALSE #Incorrecto: no siempre gana la opción más barata. }
+
+::UD2_08_Medallion::¿Qué secuencia describe correctamente las capas Medallion?{ =Bronze, Silver, Gold #Correcto: crudo, refinado y consumo. ~Gold, Silver, Bronze #Está invertido. ~Silver, Bronze, Gold #No es el orden habitual. }

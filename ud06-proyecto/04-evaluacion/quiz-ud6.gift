@@ -1,0 +1,9 @@
+$CATEGORY: módulo/SBD/UD6
+
+::UD6_01_FasesProyecto::¿Qué secuencia es más razonable en un proyecto de datos?{ =Análisis, diseño, implementación, validación y entrega #Correcto: sigue una progresión lógica. ~Entrega, análisis, implementación, diseño y validación #Está invertido. ~Solo implementación #Falta el ciclo completo. }
+
+::UD6_02_Integracion::Un proyecto que integra SBD, BDA y PIA debe coordinar datos, procesamiento y presentación de resultados.{ TRUE #Correcto: la integración entre módulos es clave. FALSE #Incorrecto: sí debe coordinar esos elementos. }
+
+::UD6_03_IAdeclaracion::Declarar el uso de IA en el proyecto ayuda a la transparencia académica y a la trazabilidad del trabajo.{ TRUE #Correcto: aporta transparencia. FALSE #Incorrecto: sí es recomendable declararlo. }
+
+::UD6_04_CosteCalidad::En un proyecto final, la evaluación coste-calidad-viabilidad debe considerar también mantenimiento y escalabilidad futura.{ TRUE #Correcto: no basta con construir algo que funcione hoy. FALSE #Incorrecto: esos factores también importan. }

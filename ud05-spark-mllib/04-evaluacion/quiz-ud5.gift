@@ -1,0 +1,13 @@
+$CATEGORY: módulo/SBD/UD5
+
+::UD5_01_MLLib::Spark MLlib está pensada para entrenamiento y evaluación de modelos sobre datos distribuidos.{ TRUE #Correcto: MLlib escala sobre Spark. FALSE #Incorrecto: sí está pensada para eso. }
+
+::UD5_02_Pipeline::¿Cuál es un orden lógico de etapas en una pipeline de ML?{ =Ingesta, preparación, entrenamiento, evaluación y despliegue #Correcto: sigue el flujo general de ML. ~Despliegue, evaluación, entrenamiento, ingesta y preparación #Está desordenado. ~Solo entrenamiento y ya #Falta todo el ciclo. }
+
+::UD5_03_SklearnVsSpark::¿Qué diferencia es más correcta entre scikit-learn y Spark MLlib?{ =scikit-learn suele trabajar en local y Spark MLlib en entorno distribuido #Correcto: esa es la diferencia habitual. ~Spark MLlib solo sirve para imágenes #No. ~scikit-learn necesita obligatoriamente clúster #No. }
+
+::UD5_04_Regression::En Spark, la regresión lineal se puede entrenar usando una API de estimadores y transformadores.{ TRUE #Correcto: el enfoque de Spark ML sigue ese patrón. FALSE #Incorrecto: sí se puede. }
+
+::UD5_05_FeatureEng::La ingeniería de características distribuida permite transformar grandes volúmenes de datos antes del entrenamiento.{ TRUE #Correcto: ayuda a escalar el preprocesado. FALSE #Incorrecto: esa es precisamente su utilidad. }
+
+::UD5_06_Modelo::¿Qué componente de Spark ML define una transformación aprendida o un algoritmo entrenable?{ =Estimator #Correcto: un estimator se ajusta a los datos. ~Action #No es un concepto de MLlib. ~RDD #RDD es una abstracción de datos, no un modelo. }

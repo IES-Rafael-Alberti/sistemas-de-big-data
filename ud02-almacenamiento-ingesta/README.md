@@ -91,3 +91,7 @@ Pendiente docente para verano:
 
 Estas prácticas son **optativas y no bloquean el curso**: la ruta principal local
 queda cubierta por dlt, DuckDB y Parquet.
+
+## Cuestionarios semanales (formato Moodle GIFT)
+
+- `04-evaluacion/quiz-ud2.gift` — 8 preguntas en formato GIFT sobre HDFS, NoSQL, dlt, calidad de datos, RGPD y Medallion.

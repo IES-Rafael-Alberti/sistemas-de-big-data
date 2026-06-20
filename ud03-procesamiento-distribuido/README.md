@@ -6,8 +6,8 @@
 | ------- | --- | ----------: |
 | `01-teoria/` | Fuentes editables y apuntes principales. | 7 |
 | `02-ejemplos/` | Notebooks, scripts y ejemplos no evaluables. | 0 |
-| `03-practicas/` | Guiones de laboratorio y prácticas de aula. | 45 |
-| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | 12 |
+| `03-practicas/` | Guiones de laboratorio y prácticas de aula. | 50 |
+| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | 13 |
 | `05-recursos/` | Datasets, imágenes, plantillas, ZIPs docentes y dependencias. | 4 |
 | `90-archivo/` | Derivados publicados, histórico y material no canónico. | 14 |
 | `99-profesor/` | Notas internas, guías docentes y corrección reutilizable. | 23 |
@@ -43,3 +43,14 @@ Ver `00-planificacion/matriz_ra_ce_materiales.md` para el detalle completo.
 
 - `03-practicas/Spark_Labs/UD3_Lab_Benchmark_Pandas_DuckDB_Spark.md` — laboratorio para comparar pandas, DuckDB y Spark/PySpark con el mismo dataset y justificar selección de herramienta.
 - `05-recursos/benchmark-pandas-duckdb-spark/` — generador de dataset y script de benchmark reproducible.
+
+## Material nuevo — Streaming con Redpanda + Spark Structured Streaming
+
+- `03-practicas/Streaming_Labs/SparkLab5-Streaming/01-SparkLab5-Streaming.md` — laboratorio para introducir procesamiento en streaming con Redpanda (compatible Kafka) y Spark Structured Streaming. Incluye productor Python, consumidor PySpark, docker-compose y ejercicios propuestos.
+- `03-practicas/Streaming_Labs/SparkLab5-Streaming/streaming_producer.py` — script productor que lee CSV o genera datos aleatorios y los envía a un tópico de Redpanda.
+- `03-practicas/Streaming_Labs/SparkLab5-Streaming/streaming_consumer.py` — script consumidor con PySpark Structured Streaming que lee del tópico y agrega en tiempo real.
+- `03-practicas/Streaming_Labs/SparkLab5-Streaming/docker-compose.yml` — compose con Redpanda + Spark para el laboratorio.
+
+## Cuestionarios semanales (formato Moodle GIFT)
+
+- `04-evaluacion/quiz-ud3.gift` — 10 preguntas en formato GIFT sobre Hadoop vs Spark, PySpark, streaming, benchmarks, Kibana y Grafana.
