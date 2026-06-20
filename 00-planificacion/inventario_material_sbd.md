@@ -178,7 +178,7 @@ Ejemplos claros detectados:
 - `skill_builder/Skill Builder Meetings.html`
 - `ud06-proyecto-integrador/99-profesor/git-worktrees-conversacion.md`
 
-No los descartaría todavía. Pero tampoco los pondría como materiales principales sin revisar. ACÁ hay que ser prolijo: si no sabés para qué sirve, no lo metas en una unidad porque “suena parecido”. Después esa deuda se paga cuando el alumnado se pierde.
+No los descartaría todavía. Pero tampoco los pondría como materiales principales sin revisar. Aquí hay que ser cuidadoso: si no sabes para qué sirve, no lo incluyas en una unidad porque “suena parecido”. Después esa deuda se paga cuando el alumnado se pierde.
 
 ## 6. Recomendaciones para la siguiente fase
 

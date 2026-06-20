@@ -1,13 +1,14 @@
 # Pack de clase: Mage AI con Docker Compose
 
 ## Qué incluye
+
 - `docker-compose.yml`: despliegue local de Mage AI.
 - `data/supermarket_sales_small.csv`: dataset pequeño para la práctica.
-- `notebooks/01_mage_ai_profesor.ipynb`: notebook completo, guiado y resuelto.
 - `notebooks/01_mage_ai_alumno.ipynb`: notebook de trabajo para el alumnado.
 - `requirements.txt`: dependencias opcionales para ampliaciones del proyecto.
 
 ## Requisitos
+
 - Docker
 - Docker Compose
 
@@ -17,6 +18,7 @@ docker compose up
 ```
 
 Después abre:
+
 - http://localhost:6789
 
 ## Qué hace el contenedor

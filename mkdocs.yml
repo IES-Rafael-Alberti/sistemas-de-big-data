@@ -17,6 +17,13 @@ exclude_docs: |
   **/Presentaciones/
   **/README_Docente.md
   **/README_Ingesta.md
+  ud01-introduccion-big-data/README.md
+  ud02-almacenamiento-ingesta/README.md
+  ud03-procesamiento-distribuido/README.md
+  ud04-bi-orquestacion/README.md
+  ud05-spark-mllib/README.md
+  ud06-proyecto/README.md
+  plantillas/referencia_meltano.md
   *.py
   *.csv
   *.parquet
@@ -34,6 +41,7 @@ exclude_docs: |
   *.jpeg
   *.gif
   *.svg
+  !ud01-introduccion-big-data/05-recursos/imagenes/*.svg
 
 theme:
   name: material
@@ -65,6 +73,10 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/IES-Rafael-Alberti/sistemas-de-big-data
 
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
 plugins:
   - search
 
@@ -80,6 +92,8 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.arithmatex:
+      generic: true
   - tables
   - toc:
       permalink: true

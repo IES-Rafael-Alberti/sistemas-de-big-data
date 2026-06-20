@@ -461,7 +461,7 @@ Esta práctica reproduce un escenario realista en Big Data:
 
 ### *Ampliación opcional: herramientas del mundo real*
 
-Si querés ver cómo se hace esto mismo con herramientas que se usan en empresa,
+Si quieres ver cómo se hace esto mismo con herramientas que se usan en empresa,
 consultá los materiales en `05-recursos/practica-herramientas-reales/`:
 
 - **Airbyte**: los mismos datos, desde la interfaz gráfica. Sin instalar nada.

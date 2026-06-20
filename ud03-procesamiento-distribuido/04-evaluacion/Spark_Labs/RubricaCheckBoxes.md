@@ -96,7 +96,7 @@ Está pensada para:
 | 2           | 5 – 6        |
 | 1           | < 5          |
 
-*(El profesor puede ajustar según el peso de cada laboratorio)*
+*(La ponderación concreta puede ajustarse según la planificación de aula.)*
 
 ---
 
@@ -139,7 +139,4 @@ Con esto ya tienes:
 * 1 rúbrica común clara
 * RA/CE cubiertos sin ruido
 
-Cuando quieras, el siguiente paso lógico es:
-
-* **documento puente Spark → Kibana**, o
-* **guía de corrección rápida (chuleta para ti)**.
+El siguiente paso lógico es trabajar el puente entre Spark y las herramientas de visualización técnica.

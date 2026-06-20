@@ -86,7 +86,7 @@
 | 2           | 5 – 6        |
 | 1           | < 5          |
 
-*(El profesor puede ajustar según el peso de cada laboratorio)*
+*(La ponderación concreta puede ajustarse según la planificación de aula.)*
 
 ---
 
@@ -117,4 +117,3 @@
 
 > En estos laboratorios se evalúa principalmente **la comprensión y el razonamiento**,
 > no la potencia del equipo ni la perfección técnica.
-

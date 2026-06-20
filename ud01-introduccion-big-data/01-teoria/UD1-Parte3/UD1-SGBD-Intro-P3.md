@@ -431,7 +431,7 @@ Trazabilidad mínima:
 - cambios de esquema,
 - responsable o notebook/script.
 
-Si no podés explicar de dónde salió un KPI, el dashboard no es fiable.
+Si no puedes explicar de dónde ha salido un KPI, el dashboard no es fiable.
 
 ## 12. Parquet, Spark y DuckDB en esta arquitectura
 
@@ -556,4 +556,3 @@ Antes de cerrar una arquitectura:
 - Aitor Medrano — Materiales IABD: `https://aitor-medrano.github.io/iabd/`
 - Databricks — Medallion lakehouse architecture: `https://docs.databricks.com/en/lakehouse/medallion.html`
 - Microsoft Learn / Azure Databricks — Medallion architecture: `https://learn.microsoft.com/en-us/azure/databricks/lakehouse/medallion`
-

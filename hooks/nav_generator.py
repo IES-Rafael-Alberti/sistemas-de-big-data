@@ -4,7 +4,7 @@ from pathlib import Path
 
 EXCLUDE_DIRS = {'90-archivo', '99-profesor', '_profesor', 'Presentaciones', '__pycache__'}
 EXCLUDE_FILES = {
-    'README_Docente.md', 'README_Ingesta.md',
+    'README_Docente.md', 'README_Ingesta.md', 'referencia_meltano.md',
 }
 
 SECTION_ORDER = {
@@ -71,15 +71,9 @@ def scan_files(dirpath, docs_dir):
     return entries
 
 
-def scan_unit(unit_symlink, docs_dir):
+def scan_unit(unit_symlink, docs_dir, index_path):
     """Scan a unit directory via its symlink in docs/."""
-    children = []
-
-    # README first
-    readme = unit_symlink / 'README.md'
-    if readme.is_file():
-        rel = str(readme.relative_to(docs_dir))
-        children.append({'Presentación y guía': rel})
+    children = [{'Guía de la unidad': index_path}]
 
     # Top-level md files besides README (e.g. guion_proyecto.md)
     for item in sorted(os.listdir(unit_symlink)):
@@ -124,12 +118,12 @@ def on_config(config):
     nav = [{'Inicio': 'index.md'}]
 
     UNIT_NAMES = {
-        'ud01-introduccion-big-data': 'UD1 — Introducción Big Data',
-        'ud02-almacenamiento-ingesta': 'UD2 — Almacenamiento e Ingesta',
-        'ud03-procesamiento-distribuido': 'UD3 — Procesamiento Distribuido',
-        'ud04-bi-orquestacion': 'UD4 — BI y Orquestación',
-        'ud05-spark-mllib': 'UD5 — Spark MLlib',
-        'ud06-proyecto': 'UD6 — Proyecto Integrador',
+        'ud01-introduccion-big-data': ('UD1 — Introducción Big Data', 'unidades/ud01.md'),
+        'ud02-almacenamiento-ingesta': ('UD2 — Almacenamiento e Ingesta', 'unidades/ud02.md'),
+        'ud03-procesamiento-distribuido': ('UD3 — Procesamiento Distribuido', 'unidades/ud03.md'),
+        'ud04-bi-orquestacion': ('UD4 — BI y Orquestación', 'unidades/ud04.md'),
+        'ud05-spark-mllib': ('UD5 — Spark MLlib', 'unidades/ud05.md'),
+        'ud06-proyecto': ('UD6 — Proyecto Integrador', 'unidades/ud06.md'),
     }
 
     for unit_dirname in sorted(UNIT_NAMES):
@@ -137,8 +131,8 @@ def on_config(config):
         if not unit_symlink.exists():
             continue
 
-        unit_title = UNIT_NAMES[unit_dirname]
-        children = scan_unit(unit_symlink, docs_dir)
+        unit_title, index_path = UNIT_NAMES[unit_dirname]
+        children = scan_unit(unit_symlink, docs_dir, index_path)
         if children:
             nav.append({unit_title: children})
 
