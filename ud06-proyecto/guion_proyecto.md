@@ -369,12 +369,11 @@ Más ideas orientativas: `05-recursos/ideas_proyecto.md`.
 
 ## Recursos
 
-- [Checklist calidad/RGPD/seguridad](../00-planificacion/plantillas/plantilla_checklist_calidad_rgpd.md)
-- [Plantilla declaración uso de IA](../00-planificacion/plantillas/plantilla_declaracion_uso_ia.md)
-- [Matriz coste-calidad-viabilidad](../00-planificacion/plantillas/plantilla_matriz_coste_calidad_viabilidad.md)
-- [Plantilla planificación técnica](../00-planificacion/plantillas/plantilla_planificacion_tecnica.md)
-- [Rúbrica común SBD](../00-planificacion/plantillas/rubrica_comun_SBD_por_RA_CE.md)
-- [Matriz RA/CE → materiales](../00-planificacion/matriz_ra_ce_materiales.md)
+- [Checklist calidad/RGPD/seguridad](../plantillas/plantilla_checklist_calidad_rgpd.md)
+- [Plantilla declaración uso de IA](../plantillas/plantilla_declaracion_uso_ia.md)
+- [Matriz coste-calidad-viabilidad](../plantillas/plantilla_matriz_coste_calidad_viabilidad.md)
+- [Plantilla planificación técnica](../plantillas/plantilla_planificacion_tecnica.md)
+- [Rúbrica común SBD](../plantillas/rubrica_comun_SBD_por_RA_CE.md)
 - [Ideas orientativas de proyecto](05-recursos/ideas_proyecto.md)
 
 ---

@@ -14,11 +14,6 @@ IES Rafael Alberti
 | [UD5 — Spark MLlib](ud05-spark-mllib/README.md) | ML pipelines, scikit-learn vs Spark, regresión |
 | [UD6 — Proyecto integrador](ud06-proyecto/README.md) | Proyecto multi-módulo SBD + BDA + PIA |
 
-## Planificación
-
-- [Planificación semanal](00-planificacion/PLANIFICACION_SEMANAL_SBD.md)
-- [Plantillas y rúbricas](00-planificacion/plantillas/rubrica_comun_SBD_por_RA_CE.md)
-
 ## Herramientas
 
-- Python, PySpark, DuckDB, Docker, Redpanda, Kibana, Grafana, Metabase, Apache Superset, Airflow
+Python, PySpark, DuckDB, Docker, Redpanda, Kibana, Grafana, Metabase, Apache Superset, Airflow

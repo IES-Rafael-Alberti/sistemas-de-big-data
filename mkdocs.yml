@@ -1,5 +1,5 @@
 site_name: Sistemas de Big Data
-site_description: Material didáctico del módulo Sistemas de Big Data - Curso 2026/2027
+site_description: Material del módulo Sistemas de Big Data - Curso 2026/2027
 site_url: https://ies-rafael-alberti.github.io/sistemas-de-big-data/
 repo_url: https://github.com/IES-Rafael-Alberti/sistemas-de-big-data
 repo_name: IES-Rafael-Alberti/sistemas-de-big-data
@@ -8,9 +8,12 @@ edit_uri: edit/main/docs/
 docs_dir: docs
 site_dir: site
 
+# SOLO material para el alumnado.
+# 99-profesor, 90-archivo, _profesor y datos quedan fuera.
 exclude_docs: |
   */90-archivo/
   */99-profesor/
+  **/_profesor/
   *.py
   *.csv
   *.parquet
@@ -23,6 +26,11 @@ exclude_docs: |
   *.gift
   *.gitignore
   *.gitattributes
+  *.png
+  *.jpg
+  *.jpeg
+  *.gif
+  *.svg
 
 theme:
   name: material
@@ -73,12 +81,6 @@ markdown_extensions:
 
 nav:
   - Inicio: index.md
-  - Planificación:
-    - Semanal: 00-planificacion/PLANIFICACION_SEMANAL_SBD.md
-    - Plantilla técnica: 00-planificacion/plantillas/plantilla_planificacion_tecnica.md
-    - Plantilla IA: 00-planificacion/plantillas/plantilla_declaracion_uso_ia.md
-    - Matriz coste-calidad: 00-planificacion/plantillas/plantilla_matriz_coste_calidad_viabilidad.md
-    - Rúbrica común: 00-planificacion/plantillas/rubrica_comun_SBD_por_RA_CE.md
   - UD1 — Introducción Big Data: ud01-introduccion-big-data/README.md
   - UD2 — Almacenamiento e ingesta: ud02-almacenamiento-ingesta/README.md
   - UD3 — Procesamiento distribuido: ud03-procesamiento-distribuido/README.md
