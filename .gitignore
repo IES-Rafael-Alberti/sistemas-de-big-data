@@ -73,5 +73,8 @@ correccion/
 **/_profesor/redpanda-python/
 **/database_script.py
 
+# MkDocs site build output
+site/
+
 # Non-canonical pending review area
 00-recursos-comunes/pendiente_revision/

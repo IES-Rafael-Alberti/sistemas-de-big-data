@@ -1,0 +1,87 @@
+site_name: Sistemas de Big Data
+site_description: Material didáctico del módulo Sistemas de Big Data - Curso 2026/2027
+site_url: https://ies-rafael-alberti.github.io/sistemas-de-big-data/
+repo_url: https://github.com/IES-Rafael-Alberti/sistemas-de-big-data
+repo_name: IES-Rafael-Alberti/sistemas-de-big-data
+edit_uri: edit/main/docs/
+
+docs_dir: docs
+site_dir: site
+
+exclude_docs: |
+  */90-archivo/
+  */99-profesor/
+  *.py
+  *.csv
+  *.parquet
+  *.zip
+  *.tar.gz
+  *.docx
+  *.rmd
+  *.Rhistory
+  *.json
+  *.gift
+  *.gitignore
+  *.gitattributes
+
+theme:
+  name: material
+  language: es
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Modo oscuro
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/toggle-switch
+        name: Modo claro
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/IES-Rafael-Alberti/sistemas-de-big-data
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - tables
+  - toc:
+      permalink: true
+      title: En esta página
+
+nav:
+  - Inicio: index.md
+  - Planificación:
+    - Semanal: 00-planificacion/PLANIFICACION_SEMANAL_SBD.md
+    - Plantilla técnica: 00-planificacion/plantillas/plantilla_planificacion_tecnica.md
+    - Plantilla IA: 00-planificacion/plantillas/plantilla_declaracion_uso_ia.md
+    - Matriz coste-calidad: 00-planificacion/plantillas/plantilla_matriz_coste_calidad_viabilidad.md
+    - Rúbrica común: 00-planificacion/plantillas/rubrica_comun_SBD_por_RA_CE.md
+  - UD1 — Introducción Big Data: ud01-introduccion-big-data/README.md
+  - UD2 — Almacenamiento e ingesta: ud02-almacenamiento-ingesta/README.md
+  - UD3 — Procesamiento distribuido: ud03-procesamiento-distribuido/README.md
+  - UD4 — BI y orquestación: ud04-bi-orquestacion/README.md
+  - UD5 — Spark MLlib: ud05-spark-mllib/README.md
+  - UD6 — Proyecto integrador: ud06-proyecto/README.md
