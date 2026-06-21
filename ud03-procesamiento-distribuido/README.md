@@ -29,11 +29,23 @@
 | **RA2.c** | Lab Grafana (dashboard monitorización) | Evaluable |
 | **RA2.e** | Lab Grafana (reflexión sobre métricas) | Evaluable |
 
-> Los labs de Grafana y Kibana son material heredado. Cubren RA2 y RA4 pero su
-> ubicación en UD3 es debatible (son visualización/monitorización, no procesamiento
-> distribuido). Pendiente de revisión para próximos cursos.
+> Los labs de Grafana y Kibana son material heredado y quedan como **ampliación**.
+> Cubren RA2 y RA4, pero no forman parte de la ruta principal de UD3 porque su foco
+> es visualización/monitorización, no procesamiento distribuido con Spark. Si se
+> evalúan como monitorización de servicios, encajan mejor en Big Data Aplicado.
 
 Ver `00-planificacion/matriz_ra_ce_materiales.md` para el detalle completo.
+
+## Secuencia didáctica recomendada
+
+| Fase | Material | Evidencia esperada |
+| ---- | -------- | ------------------ |
+| 1. Contexto | `01-teoria/UD3-ProcesamientoDistribuidoAnaliticaEscalable.md` + cápsula Hadoop/Spark | Explicación de cuándo distribuir y qué papel ocupa Spark frente a Hadoop histórico. |
+| 2. Primer contacto Spark | `03-practicas/Spark_Labs/SparkLab1/` | Ejecución reproducible y lectura de datos con Spark. |
+| 3. Medición de rendimiento | `03-practicas/Spark_Labs/SparkLab2/` + benchmark pandas/DuckDB/Spark | Tabla o gráfico con tiempos y justificación de herramienta. |
+| 4. Formatos y particionado | `03-practicas/Spark_Labs/SparkLab3/` | Comparación CSV/Parquet y explicación de particiones. |
+| 5. Streaming | `03-practicas/Streaming_Labs/SparkLab5-Streaming/` | Productor, consumidor, latencia/throughput y reflexión sobre batch vs streaming. |
+| 6. Ampliación | Kibana/Grafana/Zeppelin | Sólo si hay tiempo o se quiere conectar con visualización/observabilidad. |
 
 ## Material nuevo — Hadoop histórico vs Spark actual
 
