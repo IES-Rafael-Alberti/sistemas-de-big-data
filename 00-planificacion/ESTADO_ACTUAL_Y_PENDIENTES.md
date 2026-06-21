@@ -12,7 +12,7 @@ Este documento es la **fuente única de seguimiento** para saber qué está term
 | UD2–UD6 — revisión didáctica | ✅ Cerrada | UD2, UD3, UD4, UD5 y UD6 revisadas. |
 | Alineación curricular RA/CE | ✅ Criterio cerrado | Aplicarlo al revisar cada unidad; no mover materiales sin revisión de unidad. |
 | Arquitecturas Big Data / Medallion | 🟡 Parcialmente hecho | Revisar pendientes derivados y conexión curricular. |
-| Infraestructura docente | 🟡 No bloqueante | Preparar Airbyte/AWS Academy si se quieren usar como ampliación. |
+| Infraestructura docente | ✅ Preparada en documentación | Validar acceso real a Airbyte/Postgres y AWS Academy antes de clase. |
 
 ## Criterio de verdad actual
 
@@ -93,13 +93,14 @@ Fuentes:
 
 ### 4. Infraestructura docente no bloqueante
 
-**Estado:** pendiente, pero no bloquea el curso.
+**Estado:** documentación preparada; validación técnica pendiente antes de usarla en clase.
 
-Las prácticas principales funcionan con herramientas locales. Las tareas siguientes son ampliaciones o preparación docente:
+Las prácticas principales funcionan con herramientas locales. Las ampliaciones de infraestructura quedan preparadas así:
 
-- Instalar Airbyte 1.x en servidor Proxmox y verificar conectividad.
-- Validar que AWS Academy permita S3, Glue Crawler y Athena en los laboratorios.
-- Decidir si se mantiene DuckDB como destino Airbyte o se cambia a Postgres.
+- Airbyte se asume ya instalado en servidor Proxmox.
+- El destino Airbyte queda fijado como **Postgres**, no DuckDB.
+- AWS Academy queda preparada para S3 + Glue Crawler + Athena, con plan B si los permisos del laboratorio no permiten completar la práctica.
+- Antes de impartirla hay que validar acceso real desde el aula, credenciales, conectores, Postgres y permisos AWS Academy.
 
 Fuente:
 

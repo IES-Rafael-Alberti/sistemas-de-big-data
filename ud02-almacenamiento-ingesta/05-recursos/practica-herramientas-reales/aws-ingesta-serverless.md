@@ -13,18 +13,30 @@
 
 ---
 
-## 1. Acceso a AWS
+## 1. Comprobación previa
 
 El docente te indicará cómo acceder a tu laboratorio AWS Academy.
 
-Una vez dentro de la consola AWS, verifica que tienes acceso a:
+Antes de empezar, verifica con el docente:
 
 - **S3** (Simple Storage Service)
 - **AWS Glue** (Crawlers + Data Catalog)
 - **Athena**
+- Región de trabajo permitida.
+- Límite de presupuesto o tiempo del laboratorio.
+- Bucket o prefijo de salida para resultados de Athena.
 
 > Si algún servicio no aparece, avisa al docente. Los laboratorios AWS Academy
 > tienen permisos preconfigurados que pueden variar.
+
+Plan B si el laboratorio no permite completar la práctica:
+
+- S3 disponible, Glue/Athena no: subir datos y analizar qué configuración
+  faltaría para catalogarlos.
+- S3 y Athena disponibles, Glue no: el docente puede mostrar una tabla externa
+  ya creada o explicar el DDL equivalente.
+- Consola no disponible: convertir la actividad en demo docente y completar la
+  comparación dlt/Airbyte/AWS con capturas o guía proyectada.
 
 ---
 
@@ -74,7 +86,7 @@ en el **Data Catalog** para que Athena pueda consultarlos.
    - **Data sources**: S3 → selecciona `sbd-alu-XXXX-raw/raw/`
      (la carpeta raíz, para que escanee todos los subdirectorios).
    - **IAM role**: elige `AWSGlueServiceRole-XXXX` o crea uno nuevo.
-   - **Output database**: crea una base de datos nueva, p.ej. `medallion_airbyte`.
+   - **Output database**: crea una base de datos nueva, p.ej. `medallion_sbd`.
    - **Schedule**: `On-demand` (lo ejecutaremos manualmente).
    - **Create**.
 
@@ -89,17 +101,19 @@ en el **Data Catalog** para que Athena pueda consultarlos.
 ## 4. Consultar con Athena
 
 1. Ve a **Athena**.
-2. Selecciona la base de datos `medallion_airbyte`.
-3. En el editor de consultas, escribe:
+2. Si Athena lo pide, configura antes un bucket o carpeta de resultados, por
+   ejemplo `s3://sbd-alu-XXXX-raw/athena-results/`.
+3. Selecciona la base de datos `medallion_sbd`.
+4. En el editor de consultas, escribe:
 
    ```sql
    SELECT * FROM raw_ventas LIMIT 10;
    ```
 
-4. Athena muestra los datos directamente desde S3. **No moviste los datos
+5. Athena muestra los datos directamente desde S3. **No moviste los datos
    a ningún lado** — los consultas donde están.
 
-5. Prueba una consulta analítica:
+6. Prueba una consulta analítica:
 
    ```sql
    SELECT
@@ -112,7 +126,7 @@ en el **Data Catalog** para que Athena pueda consultarlos.
    ORDER BY dia;
    ```
 
-6. Y con join:
+7. Y con join:
 
    ```sql
    SELECT
@@ -127,6 +141,13 @@ en el **Data Catalog** para que Athena pueda consultarlos.
 > **Nota**: Athena cobra por TB escaneado. Si el laboratorio tiene límites,
 > las consultas sobre estos CSVs pequeños escanean pocos KB y no deberían
 > generar coste significativo.
+
+Buenas prácticas para reducir coste y errores:
+
+- Ejecuta consultas con `LIMIT` antes de lanzar agregaciones.
+- Consulta solo las columnas necesarias.
+- No subas datos personales ni ficheros reales del centro.
+- Elimina recursos al terminar si el laboratorio no se resetea automáticamente.
 
 ---
 
@@ -185,7 +206,23 @@ Preguntas de reflexión:
 
 ---
 
-## 7. Recursos adicionales
+## 7. Limpieza y cierre
+
+Al terminar, si el laboratorio lo permite y no se resetea solo:
+
+1. Borra los objetos del bucket S3: datos raw y resultados de Athena.
+2. Elimina el bucket si no se va a reutilizar.
+3. Borra el crawler de Glue.
+4. Borra la base de datos/tablas del Glue Data Catalog creadas para la práctica.
+
+Anota cualquier limitación encontrada: servicio no disponible, permisos IAM,
+región obligatoria, error de salida de Athena o límite de presupuesto. Esa nota
+es parte del aprendizaje: en cloud, la arquitectura también depende de permisos,
+coste y gobierno.
+
+---
+
+## 8. Recursos adicionales
 
 - [AWS Glue Crawler docs](https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html)
 - [Amazon Athena query examples](https://docs.aws.amazon.com/athena/latest/ug/querying.html)
@@ -197,4 +234,5 @@ Preguntas de reflexión:
 
 | Fecha       | Cambio |
 |-------------|--------|
+| 2026-06-21 | Se añade checklist de AWS Academy, plan B, configuración de resultados de Athena y limpieza. |
 | 2026-06-18 | Creación de la práctica AWS serverless. Servicios pendientes de validación en AWS Academy. |

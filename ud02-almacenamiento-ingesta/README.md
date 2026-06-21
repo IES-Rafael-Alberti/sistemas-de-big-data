@@ -82,7 +82,7 @@ Cubre **RA1.g** de forma explícita.
 
 **Decisión docente**: dlt es la ruta principal porque es Python-nativo,
 ligero, reproducible y no depende de un servidor. Airbyte queda como
-ampliación si el docente consigue montarlo en infraestructura propia.
+ampliación si el servidor Proxmox con Airbyte está disponible.
 
 ## Material optativo — Herramientas reales: Airbyte + AWS Academy
 
@@ -100,9 +100,10 @@ Uso previsto:
 
 Pendiente docente para verano:
 
-- Instalar y probar Airbyte 1.x en servidor Proxmox.
-- Validar que AWS Academy permite S3, Glue Crawler y Athena.
-- Decidir destino Airbyte: DuckDB si está disponible; Postgres como alternativa más segura.
+- Probar desde el aula el Airbyte ya instalado en Proxmox.
+- Crear y validar un destino **Postgres** para Airbyte.
+- Validar que AWS Academy permite S3, Glue Crawler y Athena; si no, usar demo
+  guiada o comparación razonada.
 
 Estas prácticas son **optativas y no bloquean el curso**: la ruta principal local
 queda cubierta por dlt, DuckDB y Parquet.

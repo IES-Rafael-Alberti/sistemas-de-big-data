@@ -7,6 +7,9 @@
 > **Duración estimada**: 30-40 minutos.
 >
 > **Prerrequisito**: Tener la práctica Ruta A (dlt) completada.
+>
+> **Infraestructura**: Airbyte ya está instalado en un servidor Proxmox. El
+> destino de esta práctica es **Postgres**, preparado por el docente.
 
 ---
 
@@ -51,29 +54,35 @@ Repite para los otros archivos:
 
 ---
 
-## 3. Configurar un destino (Destination)
+## 3. Configurar el destino Postgres (Destination)
 
 1. **Destinations → + New destination**.
-2. Busca **DuckDB**.
+2. Busca **Postgres**.
 3. Configura:
-   - **Name**: `DuckDB Medallion`
-   - **Destination path**: `/tmp/medallion_airbyte.duckdb`
+   - **Name**: `Postgres Medallion`
+   - **Host**: lo indicará el docente.
+   - **Port**: `5432`.
+   - **Database**: `sbd_airbyte` o la base asignada.
+   - **Username / Password**: credenciales facilitadas por el docente.
+   - **Default schema name**: `bronze`.
+   - **SSL mode**: el valor indicado por el docente (`disable` en red local
+     controlada o `require` si el servidor lo exige).
 4. **Test** → verde.
 5. **Save**.
 
-Alternativa: si DuckDB no está disponible en la versión de Airbyte, el docente
-indicará un **destino Postgres** (más común en Airbyte). Los conceptos son los
-mismos.
+> Airbyte no "sube ficheros" a Postgres. Lee registros desde el origen y los
+> replica en tablas. Por eso después verificaremos filas y columnas con SQL.
 
 ---
 
 ## 4. Crear conexiones
 
 1. **Connections → + New connection**.
-2. Source: `Ventas Medallion` → Destination: `DuckDB Medallion`.
+2. Source: `Ventas Medallion` → Destination: `Postgres Medallion`.
 3. Configura:
    - **Replication frequency**: `Manual` (ejecutaremos bajo demanda).
-   - **Sync mode**: `Full refresh | Overwrite` (para empezar).
+   - **Sync mode**: `Full refresh | Overwrite` o la opción equivalente que
+     indique Airbyte para sobrescribir en cada ejecución.
    - **Streams**: selecciona `bronze_ventas`.
 4. **Save**.
 
@@ -82,20 +91,27 @@ conexiones y ejecuta un **Sync Now** en cada una.
 
 ---
 
-## 5. Verificar
+## 5. Verificar en Postgres
 
-Pregunta al docente cómo verificar los datos cargados. Si el destino es DuckDB:
-
-```bash
-duckdb /tmp/medallion_airbyte.duckdb \
-  -c "SELECT COUNT(*) FROM bronze_ventas;"
-```
-
-Si es Postgres:
+El docente puede mostrar la verificación desde `psql`, DBeaver, DataGrip o una
+consulta SQL equivalente:
 
 ```sql
-SELECT COUNT(*) FROM bronze_ventas;
+SELECT table_schema, table_name
+FROM information_schema.tables
+WHERE table_schema = 'bronze'
+ORDER BY table_name;
+
+SELECT COUNT(*) AS filas_ventas
+FROM bronze.bronze_ventas;
+
+SELECT *
+FROM bronze.bronze_ventas
+LIMIT 10;
 ```
+
+Si los nombres de tabla aparecen con prefijos o sufijos generados por Airbyte,
+usa el listado de `information_schema.tables` para localizar el nombre real.
 
 ---
 
@@ -131,6 +147,9 @@ Preguntas de reflexión:
     desarrolladores que ya usa Python?** ¿Y en un equipo de analistas
     que no programa?
 
+6.  **Destino de datos**: en esta práctica se usa Postgres. ¿Qué aporta frente
+    a un fichero local como DuckDB? ¿Qué se pierde?
+
 ---
 
 ## 7. Ampliación opcional
@@ -150,4 +169,5 @@ Si el servidor Airbyte lo permite, configura una conexión **incremental**:
 
 | Fecha       | Cambio |
 |-------------|--------|
+| 2026-06-21 | Se cambia el destino principal de DuckDB a Postgres y se añaden verificaciones SQL. |
 | 2026-06-18 | Creación de la práctica Airbyte comparativa. |

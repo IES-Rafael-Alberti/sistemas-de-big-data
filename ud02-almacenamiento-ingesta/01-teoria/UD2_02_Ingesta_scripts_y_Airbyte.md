@@ -82,12 +82,12 @@ if df["fecha"].isna().any() or df["municipio_id"].isna().any():
     raise ValueError("fecha y municipio_id no pueden contener nulos")
 ```
 
-## B) Ingesta con Airbyte OSS (GUI + conectores FT)
+## B) Ingesta con Airbyte OSS (GUI + conectores)
 **Pasos express:**
-1) Desplegar Airbyte (Docker o local).  
-2) Crear **Source** (HTTP API / File) y **Destination** (S3/MinIO o Postgres).  
-3) Definir **catalog** (streams, *primary key*, *incremental append* o *dedupe*).  
-4) Configurar **frecuencia** (manual/cron).  
+1) Acceder al Airbyte ya desplegado en el servidor Proxmox.
+2) Crear **Source** (HTTP API / File) y **Destination** (Postgres).
+3) Definir **catalog** (streams, *primary key*, *incremental append* o *dedupe*).
+4) Configurar **frecuencia** (manual/cron).
 5) Ejecutar y verificar registros/errores.
 
 **Ejemplo de `config.json` (source HTTP):**
@@ -109,15 +109,16 @@ if df["fecha"].isna().any() or df["municipio_id"].isna().any():
 }
 ```
 
-**Ejemplo de destino S3/MinIO (pseudo):**
+**Ejemplo de destino Postgres (pseudo):**
 ```json
 {
-  "endpoint": "http://localhost:9000",
-  "bucket_name": "datalake",
-  "access_key_id": "${MINIO_ACCESS_KEY}",
-  "secret_access_key": "${MINIO_SECRET_KEY}",
-  "path_prefix": "raw/airbyte/",
-  "format": "parquet"
+  "host": "postgres-sbd.local",
+  "port": 5432,
+  "database": "sbd_airbyte",
+  "username": "airbyte_sbd",
+  "password": "${POSTGRES_PASSWORD}",
+  "schema": "bronze",
+  "ssl_mode": "disable"
 }
 ```
 
