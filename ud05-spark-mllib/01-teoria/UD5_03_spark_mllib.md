@@ -16,6 +16,8 @@ MLlib incluye algoritmos para:
 
 Sin embargo, lo más importante de MLlib no son los algoritmos, sino **su arquitectura basada en pipelines**.
 
+En SBD el objetivo no es “usar IA porque sí”. El objetivo es entender cómo un sistema Big Data prepara datos, entrena un modelo distribuido, evalúa resultados y deja evidencias reproducibles.
+
 ---
 
 # Un problema habitual en Machine Learning
@@ -74,6 +76,16 @@ Spark organiza el Machine Learning mediante tres conceptos principales:
 - Pipeline
 
 Estos conceptos permiten construir flujos de trabajo completos.
+
+```mermaid
+flowchart LR
+  A[Datos preparados] --> B[Transformers]
+  B --> C[Vector de features]
+  C --> D[Estimator]
+  D --> E[Modelo entrenado]
+  E --> F[Predicciones]
+  F --> G[Evaluación]
+```
 
 ---
 

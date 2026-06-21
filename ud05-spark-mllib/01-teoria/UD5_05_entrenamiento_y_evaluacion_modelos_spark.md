@@ -14,6 +14,16 @@ En Spark MLlib el proceso es muy similar al que ya conocemos en scikit-learn:
 
 La diferencia principal es que Spark trabaja con **datasets distribuidos** y utiliza **DataFrames de Spark** en lugar de arrays o DataFrames de pandas.
 
+Antes de entrenar, responde por escrito:
+
+| Pregunta | Por qué importa |
+| -------- | --------------- |
+| ¿Cuál es la variable objetivo? | Sin objetivo claro no hay modelo evaluable. |
+| ¿Qué features entran? | Las columnas irrelevantes o mal codificadas empeoran el modelo. |
+| ¿Hay fuga de información (*data leakage*)? | Una columna que revela la respuesta produce métricas falsas. |
+| ¿Cuál es el baseline? | El modelo debe superar una referencia simple. |
+| ¿Qué métrica decide si el modelo es aceptable? | Cada métrica responde a un tipo de problema distinto. |
+
 ---
 
 # Comparación general con scikit-learn
@@ -173,6 +183,12 @@ print("RMSE:", rmse)
 
 Un RMSE más bajo indica un modelo más preciso.
 
+| Métrica | Cuándo usarla | Error común |
+| ------- | ------------- | ----------- |
+| MAE | Cuando quieres un error medio fácil de interpretar en las unidades originales. | Ocultar errores grandes porque todos pesan linealmente. |
+| RMSE | Cuando los errores grandes son especialmente importantes. | Compararlo entre datasets con escalas distintas sin contexto. |
+| R2 | Para explicar proporción de varianza capturada. | Creer que un R2 alto garantiza utilidad práctica. |
+
 ---
 
 # Comparación con scikit-learn
@@ -221,6 +237,15 @@ auc = evaluator.evaluate(predictions)
 ```
 
 Un AUC cercano a 1 indica un buen modelo.
+
+| Métrica | Cuándo usarla | Error común |
+| ------- | ------------- | ----------- |
+| Accuracy | Clases equilibradas y coste de error similar. | Usarla con clases desbalanceadas. |
+| Precision | Importa reducir falsos positivos. | Ignorar que puede bajar el recall. |
+| Recall | Importa detectar la mayoría de positivos. | Ignorar falsos positivos. |
+| AUC | Comparar capacidad global de separar clases. | Presentarla sin revisar umbral de decisión. |
+
+En clasificación, revisa siempre la distribución de clases antes de celebrar una métrica.
 
 ---
 

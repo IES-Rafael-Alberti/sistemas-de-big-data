@@ -18,6 +18,19 @@
 
 Cubre **RA1.f** y **RA1.g** en el contexto de ML.
 
+## Secuencia didáctica recomendada
+
+| Fase | Material | Evidencia esperada |
+| ---- | -------- | ------------------ |
+| 1. Problema y encaje | `01-teoria/UD5_01_intro_ml_bigdata.md` | Explicar por qué usar ML distribuido y cuándo no usarlo. |
+| 2. Pipeline MLlib | `01-teoria/UD5_03_spark_mllib.md` | Identificar Transformer, Estimator y Pipeline en un flujo real. |
+| 3. Features | `01-teoria/UD5_04_preparacion_features_spark.md` | Justificación de columnas, codificación y vector de features. |
+| 4. Evaluación | `01-teoria/UD5_05_entrenamiento_y_evaluacion_modelos_spark.md` | Métrica elegida, baseline y lectura de errores. |
+| 5. Ejemplos guiados | `02-ejemplos/01-EjemploRegresionPySpark.ipynb`, `02-ejemplos/02-EjemploClasificacionBinariaPySpark.ipynb` | Ejecución guiada antes de la práctica evaluable. |
+| 6. Prácticas | `03-practicas/LAB1-*`, `LAB2-*`, `LAB3-*` | Informe con criterio, no solo código ejecutado. |
+
+La ruta principal de SBD debe insistir en el criterio técnico: escalabilidad, preparación de variables, evaluación y coste. La interpretación de negocio puede quedar como conexión con Big Data Aplicado.
+
 ## RA/CE cubiertos
 
 | RA/CE | Material | Tipo |

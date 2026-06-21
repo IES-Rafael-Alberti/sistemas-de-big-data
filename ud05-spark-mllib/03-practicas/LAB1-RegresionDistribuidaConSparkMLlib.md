@@ -15,6 +15,20 @@ Durante el laboratorio se realizarán los siguientes pasos:
 
 Este flujo es muy similar al que ya conocemos en **scikit-learn**, pero utilizando **Spark**.
 
+## Antes de ejecutar código
+
+Completa esta comprobación previa:
+
+| Punto | Decisión |
+| ----- | -------- |
+| Variable objetivo | `price`, porque queremos predecir un valor numérico. |
+| Features iniciales | `size`, `bedrooms`, `age`. |
+| Métrica principal | RMSE o MAE; ambas están en euros y deben interpretarse con el rango de precios. |
+| Baseline | Comparar contra predecir siempre el precio medio. |
+| Riesgo | Dataset pequeño: las métricas pueden ser inestables. |
+
+Si no sabes justificar esta tabla, todavía no deberías entrenar el modelo. Primero entiende el problema.
+
 ---
 
 # Dataset

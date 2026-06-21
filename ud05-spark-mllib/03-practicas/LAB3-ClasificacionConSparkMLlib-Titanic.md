@@ -19,6 +19,22 @@ Durante el laboratorio se realizarán los siguientes pasos:
 
 ---
 
+## Antes de ejecutar código
+
+Completa esta comprobación previa:
+
+| Punto | Decisión |
+| ----- | -------- |
+| Variable objetivo | `survived`, clasificación binaria. |
+| Features iniciales | Clase, sexo, edad, tarifa y puerto de embarque. |
+| Métrica principal | AUC y recall; accuracy puede engañar si las clases están desbalanceadas. |
+| Baseline | Comparar contra predecir siempre la clase mayoritaria. |
+| Riesgos | Nulos en edad, categorías raras y posible desbalance de clases. |
+
+El objetivo no es obtener “un número alto”, sino explicar qué mide ese número y qué errores sigue cometiendo el modelo.
+
+---
+
 # Dataset
 
 Se utilizará el archivo:
@@ -273,7 +289,6 @@ datos
 ```
 
 Este proceso es equivalente al utilizado en scikit-learn, pero adaptado a entornos Big Data.
-
 
 
 
