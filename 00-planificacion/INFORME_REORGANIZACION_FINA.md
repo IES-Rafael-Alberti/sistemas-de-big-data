@@ -1,5 +1,7 @@
 # Informe de reorganización fina
 
+> **Estado:** informe histórico de la reorganización fina. Los pendientes vivos están centralizados en `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md`.
+
 Generado: 2026-06-16T20:28:57
 
 ## Objetivo

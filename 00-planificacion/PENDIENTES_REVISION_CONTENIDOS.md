@@ -1,5 +1,7 @@
 # Pendientes de revisión de contenidos
 
+> **Estado:** documento histórico de detalle. La lista viva de pendientes está centralizada en `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md`.
+
 ## Cierre de la revisión actual
 
 En esta pasada se ha trabajado principalmente sobre la forma del sitio público y sobre el contenido matemático-estadístico de UD1.

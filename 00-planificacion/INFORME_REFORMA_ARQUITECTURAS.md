@@ -1,5 +1,7 @@
 # Informe — Reforma de arquitectura Big Data en UD1
 
+> **Estado:** informe histórico de la reforma de arquitecturas. Los pendientes vivos derivados están centralizados en `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md`.
+
 ## Resumen
 
 Se ha reformado la parte de arquitectura de UD1 para que el bloque de Sistemas de Big Data trabaje arquitecturas actuales con más profundidad: principios, batch/streaming, Lambda, Kappa, arquitectura por capas, lakehouse y Medallion.

@@ -1,5 +1,7 @@
 # Plan de reorganización — Sistemas de Big Data 2026/2027
 
+> **Estado:** plan histórico de reorganización. Para el estado actual y los pendientes vivos, usar `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md`.
+
 ## Estructura final propuesta
 
 ```txt

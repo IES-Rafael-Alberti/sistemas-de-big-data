@@ -1,5 +1,7 @@
 # Nota pendiente — Mejorar bloque de arquitecturas Big Data
 
+> **Estado:** nota histórica de origen. El seguimiento vivo está centralizado en `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md`.
+
 ## Contexto
 
 Queda pendiente mejorar la parte de **arquitecturas Big Data** dentro de Sistemas de Big Data.

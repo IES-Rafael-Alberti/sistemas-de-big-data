@@ -6,11 +6,12 @@ Copia de trabajo reorganizada para preparar el curso 2026/2027. El curso origina
 
 - Reorganización gruesa aplicada por copia.
 - Reorganización fina aplicada dentro de esta copia.
-- Pendiente: alineación curricular RA/CE con Sistemas de Big Data y Big Data Aplicado.
+- Estado y pendientes vivos centralizados en `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md`.
 
 ## Documentos clave
 
 - `PLAN_REORGANIZACION.md` — plan y mapeo inicial.
+- `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md` — fuente única de estado actual y tareas pendientes.
 - `INFORME_COPIA.md` — informe de copia inicial.
 - `00-planificacion/INFORME_REORGANIZACION_FINA.md` — ajustes finos aplicados.
 - `00-planificacion/herramientas_usadas_curso.md` — herramientas detectadas para la fase RA/CE.

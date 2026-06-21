@@ -1,5 +1,9 @@
 # Estado de la reforma — Sistemas de Big Data 2026/2027
 
+> **Estado:** informe histórico de reforma. Para el estado actual y los pendientes vivos, usar `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md`.
+
+> En una fase anterior la reforma se dio por completa; después se abrió una revisión posterior que detectó nuevos ajustes y contenidos por completar.
+
 Documento de traspaso para continuar la reorganización del módulo en otro equipo.
 
 ## Ruta de trabajo

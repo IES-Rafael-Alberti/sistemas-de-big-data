@@ -1,5 +1,7 @@
 # Informe — Práctica local Medallion UD2
 
+> **Estado:** informe histórico de práctica creada. Los pendientes vivos derivados están centralizados en `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md`.
+
 ## Resumen
 
 Se ha creado una práctica local para materializar la arquitectura Big Data moderna sin depender de cloud ni servicios externos.

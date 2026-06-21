@@ -1,5 +1,7 @@
 # Informe — Hueco cubierto: Hadoop histórico vs Spark actual
 
+> **Estado:** informe histórico de un hueco ya cubierto. Los pendientes vivos están centralizados en `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md`.
+
 ## Resumen
 
 Se ha cubierto el hueco de prioridad alta detectado en la propuesta de mejora: crear una cápsula breve para justificar el papel histórico de Hadoop y el uso práctico actual de Spark/PySpark.

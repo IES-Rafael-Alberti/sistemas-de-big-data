@@ -1,5 +1,7 @@
 # Informe de copia — Sistemas de Big Data 2026/2027
 
+> **Estado:** informe histórico de copia inicial. Para el estado actual y los pendientes vivos, usar `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md`.
+
 Generado: 2026-06-16T18:30:05
 
 ## Qué se ha copiado
