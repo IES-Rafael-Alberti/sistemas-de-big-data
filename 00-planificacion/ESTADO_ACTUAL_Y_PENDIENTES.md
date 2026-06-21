@@ -82,6 +82,7 @@ Decisiones cerradas:
 - La actividad de diseño Medallion de UD1 queda fijada en **parejas**. No se convierte en mini-proyecto porque su función es preparar criterio arquitectónico antes de la práctica técnica.
 - La práctica local Medallion de UD2 queda formalizada como evaluable mediante `ud02-almacenamiento-ingesta/04-evaluacion/UD2_Practica_Medallion_Entrega_y_Rubrica.md`.
 - La conexión SBD/BDA queda delimitada: SBD evalúa arquitectura, ingesta, capas, formato, calidad, procesamiento y consulta técnica; BDA puede reutilizar Gold para BI de negocio y toma de decisiones.
+- La revisión posterior de arquitecturas confirma como núcleo **lakehouse/Medallion** y **event-driven/streaming-first**. `Data products/Data Mesh` se incluye como modelo organizativo; `Data Fabric`, `HTAP` y microservicios quedan como mención contextual, no como práctica central.
 
 Fuentes:
 

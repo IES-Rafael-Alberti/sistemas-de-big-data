@@ -35,7 +35,7 @@ Ver `00-planificacion/matriz_ra_ce_materiales.md` para el detalle completo.
 
 ## Material reformado — Arquitecturas Big Data modernas
 
-- `01-teoria/UD1-Parte3/UD1-SGBD-Intro-P3.md` — teoría ampliada de arquitecturas Big Data: principios, batch/streaming, Lambda, Kappa, capas, lakehouse, Medallion, calidad, trazabilidad, Parquet, Spark y DuckDB.
+- `01-teoria/UD1-Parte3/UD1-SGBD-Intro-P3.md` — teoría ampliada de arquitecturas Big Data: principios, batch/streaming, arquitectura orientada a eventos, Lambda, Kappa, capas, lakehouse, Medallion, data products/Data Mesh como modelo organizativo, calidad, trazabilidad, Parquet, Spark y DuckDB.
 - `04-evaluacion/UD1-Parte3/UD1_P3_Actividad_Diseno_Arquitectura_Medallion.md` — actividad evaluable de diseño de arquitectura para un caso turístico, con rúbrica y justificación de tecnologías viables en aula.
 - `90-archivo/reforma-arquitecturas-2026/UD1-SGBD-Intro-P3_original_2026-06-17.md` — copia de seguridad del material original antes de la reforma.
 

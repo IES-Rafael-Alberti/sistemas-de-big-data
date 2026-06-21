@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Diseñar una arquitectura Big Data razonada para un caso de uso realista, usando conceptos de batch, streaming, Lambda, Kappa, capas y Medallion.
+Diseñar una arquitectura Big Data razonada para un caso de uso realista, usando conceptos de batch, streaming, eventos, Lambda, Kappa, capas, lakehouse/Medallion y, si procede, data products.
 
 No se evalúa que el diagrama sea bonito. Se evalúa que las decisiones tengan sentido.
 
@@ -55,7 +55,7 @@ Un documento Markdown con esta estructura:
 
 ## 3. Arquitectura elegida
 
-Indica si usarías batch, streaming, Lambda, Kappa, Medallion o combinación.
+Indica si usarías batch, streaming, arquitectura orientada a eventos, Lambda, Kappa, Medallion o combinación. Si el caso tiene consumidores claros, indica también si algún Gold debería tratarse como data product.
 
 ## 4. Diseño Medallion
 
@@ -71,6 +71,10 @@ Indica si usarías batch, streaming, Lambda, Kappa, Medallion o combinación.
 | ----- | ----------- | ------ | -------------------- |
 
 ## 6. Calidad y trazabilidad
+
+## 6.1 Responsabilidad del dato
+
+¿Quién sería responsable de cada capa o dataset publicado? ¿Quién consumiría Gold?
 
 ## 7. Coste y viabilidad en aula
 
@@ -93,9 +97,9 @@ Puede ser texto, Mermaid o imagen.
 | Criterio | Peso |
 | -------- | ---- |
 | Identifica bien fuentes, tipos y frecuencia | 15% |
-| Justifica batch/streaming/Lambda/Kappa/Medallion | 20% |
+| Justifica batch/streaming/eventos/Lambda/Kappa/Medallion | 20% |
 | Diseña correctamente Bronze/Silver/Gold | 25% |
-| Incluye calidad, trazabilidad y errores | 15% |
+| Incluye calidad, trazabilidad, errores y responsabilidad del dato | 15% |
 | Elige herramientas viables para aula | 15% |
 | Explica coste, limitaciones y alternativas | 10% |
 

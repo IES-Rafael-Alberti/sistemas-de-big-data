@@ -2,7 +2,7 @@
 
 ## Resultado de esta parte
 
-Al terminar esta parte debes poder **elegir y justificar una arquitectura Big Data** según el caso de uso: batch, streaming, Lambda, Kappa, arquitectura por capas o Medallion/lakehouse.
+Al terminar esta parte debes poder **elegir y justificar una arquitectura Big Data** según el caso de uso: batch, streaming, Lambda, Kappa, arquitectura por capas, lakehouse/Medallion, arquitectura orientada a eventos o modelos organizativos como data products.
 
 La idea no es memorizar diagramas. La idea es responder con criterio:
 
@@ -61,9 +61,9 @@ Toda arquitectura Big Data debería mirar estos principios:
 
 La web de referencia de Aitor Medrano insiste en varias ideas útiles para clase: escalabilidad, tolerancia a fallos, datos/procesamiento distribuidos, localidad del dato, seguridad, bajo acoplamiento y evitar sobreingeniería. Encaja bien con nuestro enfoque, aunque allí los materiales se organizan por bloques de curso, no separados estrictamente entre Sistemas de Big Data y Big Data Aplicado.
 
-## 3. Batch y streaming: dos ritmos de procesamiento
+## 3. Batch, streaming y arquitectura orientada a eventos
 
-Antes de elegir arquitectura, pensá el **ritmo** del problema.
+Antes de elegir arquitectura, piensa el **ritmo** del problema.
 
 ### Batch
 
@@ -123,6 +123,35 @@ Limitaciones:
 
 Streaming queda muy bien en un diagrama, pero en producción y en aula se paga con complejidad.
 
+### Event-driven / streaming-first
+
+Una arquitectura **orientada a eventos** no se limita a “usar streaming”. La idea es que los cambios importantes del sistema se publican como eventos y otras piezas reaccionan a ellos.
+
+```txt
+aplicación / sensor / BD
+        ↓ evento
+broker o log de eventos
+        ↓
+consumidores: Spark, alertas, dashboards, almacenamiento
+```
+
+Ejemplos de eventos:
+
+- `venta_realizada`,
+- `sensor_supera_umbral`,
+- `reserva_cancelada`,
+- `pedido_actualizado`,
+- `log_error_servicio`.
+
+Esta arquitectura es relevante cuando:
+
+- hay que reaccionar rápido;
+- varias aplicaciones consumen los mismos eventos;
+- se quiere desacoplar productores y consumidores;
+- se necesita registrar una secuencia de cambios para reprocesar o auditar.
+
+No debe usarse por moda. Si el sistema sólo necesita informes diarios, batch + Medallion suele ser más simple y suficiente.
+
 ## 4. Arquitectura Lambda
 
 La arquitectura **Lambda** combina dos caminos:
@@ -140,7 +169,7 @@ fuentes
 
 ### Cuándo tiene sentido
 
-Cuando necesitás:
+Cuando necesitas:
 
 - histórico completo,
 - resultados precisos,
@@ -180,7 +209,7 @@ Cuando:
 
 ### Problema principal
 
-Si necesitás cálculos históricos muy pesados o muy diferentes del tiempo real, Kappa puede quedarse corta o volverse forzada.
+Si necesitas cálculos históricos muy pesados o muy diferentes del tiempo real, Kappa puede quedarse corta o volverse forzada.
 
 ## 6. Arquitectura por capas
 
@@ -319,7 +348,49 @@ Aquí creamos:
 
 En SBD, Gold no debe convertirse necesariamente en “proyecto de negocio completo”. Eso puede quedar para Big Data Aplicado. En SBD nos interesa que el alumnado entienda cómo se llega técnicamente a una capa Gold fiable.
 
-## 9. Medallion frente a Lambda y Kappa
+## 9. Data products y Data Mesh
+
+Hasta ahora hemos hablado sobre todo de arquitectura técnica. En sistemas grandes aparece otro problema: **quién es responsable de cada dato**.
+
+Un **data product** es un dataset o servicio de datos tratado como producto: tiene responsables, documentación, contrato, calidad esperada, usuarios y ciclo de vida.
+
+Ejemplo:
+
+| Data product | Responsable | Consumidores | Compromiso mínimo |
+| ------------ | ----------- | ------------ | ----------------- |
+| `gold_ventas_diarias` | Equipo de ventas/datos | BI, dirección, modelos ML | Actualización diaria, esquema documentado, calidad ≥ umbral. |
+| `silver_reservas_limpias` | Equipo de integración | Analítica, proyecto final | Sin duplicados críticos, fechas válidas, linaje disponible. |
+
+**Data Mesh** lleva esta idea más lejos: organiza los datos por dominios de negocio o áreas responsables, en lugar de centralizar todo en un único equipo de datos.
+
+Principios útiles para entenderlo:
+
+- propiedad por dominio;
+- datos como producto;
+- plataforma común de autoservicio;
+- gobierno federado.
+
+### Encaje docente
+
+En este módulo no vamos a implantar Data Mesh completo. Sería excesivo. Pero sí conviene mencionarlo porque ayuda a entender una idea importante:
+
+> Gold no es “una carpeta con agregados”; puede ser un producto de datos que otros equipos consumen.
+
+En SBD lo usaremos como criterio de documentación y calidad. En Big Data Aplicado puede servir para hablar de consumidores, usuarios, producto y toma de decisiones.
+
+## 10. Arquitecturas que sólo conviene mencionar
+
+Hay enfoques actuales que son relevantes profesionalmente, pero no deben ocupar el centro de esta unidad.
+
+| Enfoque | Qué es | Tratamiento en SBD |
+| ------- | ------ | ------------------ |
+| Data Fabric | Capa de integración, metadatos, catálogo, gobierno y acceso unificado a datos distribuidos. | Mención breve: útil para gobierno y descubrimiento, no como práctica principal. |
+| HTAP | Sistemas que combinan procesamiento transaccional y analítico con baja latencia. | Mención breve: interesante, pero especializado y menos didáctico para este módulo. |
+| Microservicios | Arquitectura de aplicaciones separadas en servicios pequeños. | No es tema central; sólo usar como analogía si se habla de data products. |
+
+La regla es simple: si una arquitectura no ayuda a tomar mejores decisiones sobre ingesta, almacenamiento, procesamiento, calidad, consulta o coste, no debe ocupar tiempo de aula.
+
+## 11. Medallion frente a Lambda, Kappa y eventos
 
 No son exactamente lo mismo.
 
@@ -329,8 +400,10 @@ No son exactamente lo mismo.
 | Streaming | ¿Necesito procesar continuamente? | Latencia. |
 | Lambda | ¿Necesito precisión histórica + baja latencia? | Dos caminos: batch + speed. |
 | Kappa | ¿Puedo tratar todo como eventos? | Un único flujo. |
+| Event-driven | ¿Necesito desacoplar productores y consumidores mediante eventos? | Log/broker de eventos y consumidores independientes. |
 | Por capas | ¿Qué responsabilidad tiene cada parte? | Ciclo de vida del dato. |
 | Medallion | ¿Qué calidad tiene el dato en cada etapa? | Progresión bronze/silver/gold. |
+| Data products / Mesh | ¿Quién es responsable de cada dato y quién lo consume? | Organización, ownership, contratos y calidad. |
 
 Medallion puede convivir con batch o streaming.
 
@@ -343,7 +416,7 @@ La pregunta ya no es sólo “batch o streaming”. También es:
 
 > ¿En qué capa está este dato y qué calidad puedo prometer?
 
-## 10. Ejemplo didáctico: turismo + ventas
+## 12. Ejemplo didáctico: turismo + ventas
 
 Supongamos que tenemos datos de turismo y ventas:
 
@@ -411,7 +484,7 @@ Ejemplos de KPIs:
 - relación entre meteorología y demanda,
 - productos más vendidos.
 
-## 11. Calidad y trazabilidad por capa
+## 13. Calidad y trazabilidad por capa
 
 Una arquitectura moderna no sólo mueve datos: **explica qué les ha pasado**.
 
@@ -433,7 +506,7 @@ Trazabilidad mínima:
 
 Si no puedes explicar de dónde ha salido un KPI, el dashboard no es fiable.
 
-## 12. Parquet, Spark y DuckDB en esta arquitectura
+## 14. Parquet, Spark y DuckDB en esta arquitectura
 
 ### Parquet
 
@@ -478,9 +551,9 @@ Y, si hay tiempo:
 Silver/Gold con Spark local o Colab
 ```
 
-## 13. Decidir arquitectura sin caer en la moda
+## 15. Decidir arquitectura sin caer en la moda
 
-Usá esta tabla antes de elegir:
+Usa esta tabla antes de elegir:
 
 | Si el problema necesita... | Arquitectura candidata |
 | -------------------------- | ---------------------- |
@@ -504,7 +577,7 @@ Y esta otra para evitar fantasías:
 | ¿Hay volumen real suficiente? | Simula volumen o explica el límite. |
 | ¿La herramienta añade aprendizaje o ruido? | Simplifica. |
 
-## 14. Relación con Big Data Aplicado e IA
+## 16. Relación con Big Data Aplicado e IA
 
 La web de referencia consultada mezcla contenidos de NoSQL, cloud, ingeniería de datos, Hadoop, Spark, flujos, IA y proyectos. Eso es normal en muchos centros: se organiza por bloques de trabajo, no por frontera rígida entre módulos.
 
@@ -516,9 +589,9 @@ Para nuestro curso:
 
 No confundamos “interesante” con “curricularmente central”. Esa es la trampa.
 
-## 15. Actividad rápida de comprensión
+## 17. Actividad rápida de comprensión
 
-Elegí una de estas situaciones y justificá arquitectura:
+Elige una de estas situaciones y justifica la arquitectura:
 
 1. Un ayuntamiento quiere KPIs diarios de turismo por zona.
 2. Una tienda online quiere detectar picos de ventas en tiempo casi real.
@@ -534,7 +607,7 @@ Para cada caso, responde:
 - ¿Qué herramienta usarías en aula?
 - ¿Qué coste o limitación ves?
 
-## 16. Checklist de diseño de arquitectura
+## 18. Checklist de diseño de arquitectura
 
 Antes de cerrar una arquitectura:
 
@@ -550,9 +623,12 @@ Antes de cerrar una arquitectura:
 - [ ] Evalúo coste y viabilidad en aula.
 - [ ] Sé qué parte sería más propia de Big Data Aplicado.
 
-## 17. Referencias consultadas
+## 19. Referencias consultadas
 
 - Aitor Medrano — Arquitecturas Big Data: `https://aitor-medrano.github.io/iabd/de/arq.html`
 - Aitor Medrano — Materiales IABD: `https://aitor-medrano.github.io/iabd/`
 - Databricks — Medallion lakehouse architecture: `https://docs.databricks.com/en/lakehouse/medallion.html`
 - Microsoft Learn / Azure Databricks — Medallion architecture: `https://learn.microsoft.com/en-us/azure/databricks/lakehouse/medallion`
+- Confluent — Event streaming patterns and Kafka architecture: `https://developer.confluent.io/patterns/`
+- Thoughtworks — Data Mesh: `https://www.thoughtworks.com/what-we-do/data-and-ai/data-mesh`
+- IBM — Data Fabric: `https://www.ibm.com/topics/data-fabric`
