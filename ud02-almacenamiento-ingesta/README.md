@@ -29,6 +29,19 @@
 
 Ver `00-planificacion/matriz_ra_ce_materiales.md` para el detalle completo.
 
+## Secuencia didáctica recomendada
+
+| Fase | Material | Evidencia esperada |
+| ---- | -------- | ------------------ |
+| 1. Entender el problema | `01-teoria/UD2_01_Problema_y_arquitectura.md` | Diagrama o explicación de fuentes, destino, frecuencia y restricciones. |
+| 2. Probar una mini-ingesta | `01-teoria/UD2_02_Ingesta_scripts_y_Airbyte.md` | CSV/JSON pequeño convertido a Parquet con nombres deterministas. |
+| 3. Integrar y medir calidad | `01-teoria/UD2_03_Integracion_y_calidad_incremental.md` | Join, reglas de calidad, linaje e idempotencia. |
+| 4. Aplicar RGPD y seguridad | `01-teoria/UD2_04_RGPD_y_seguridad.md` | `README_RGPD.md` o checklist completada. |
+| 5. Construir la práctica completa | `03-practicas/UD2_Practica_Local_Medallion_Parquet_DuckDB_Spark.md` | Pipeline raw → Bronze → Silver → Gold reproducible. |
+| 6. Justificar decisiones | `04-evaluacion/UD2_Actividad_Matriz_Coste_Calidad_Viabilidad.md` | Comparativa coste/calidad/viabilidad entre alternativas. |
+
+La ruta principal de SBD debe poder completarse en local con Python, DuckDB y Parquet. Airbyte y AWS Academy quedan como ampliación si la infraestructura está disponible.
+
 ## Regla transversal desde UD2 — RGPD y anonimización
 
 A partir de esta unidad, toda práctica o proyecto donde se procesen datos debe
