@@ -139,6 +139,51 @@ A partir de ahí:
 
 ---
 
+## 5.2. Conceptos puente antes de los laboratorios
+
+Antes de entrar en los laboratorios, hay tres ideas que conviene tener claras.
+
+### Parquet: leer columnas, no “todo el fichero”
+
+CSV es un formato de texto por filas. Si solo necesitas `ciudad` e `importe`, normalmente el sistema tiene que recorrer la fila completa.
+
+Parquet es columnar: guarda los datos organizados por columnas y con metadatos. Esto permite leer menos datos cuando la consulta solo necesita algunas columnas.
+
+```mermaid
+flowchart LR
+  A[Consulta: ciudad e importe] --> B{Formato}
+  B -->|CSV| C[Leer filas completas]
+  B -->|Parquet| D[Leer columnas necesarias]
+  C --> E[Más E/S]
+  D --> F[Menos E/S]
+```
+
+### Particionado: evitar carpetas que no interesan
+
+Particionar significa guardar el dataset en carpetas por una columna de filtrado frecuente, por ejemplo `ciudad` o `fecha`.
+
+```text
+ventas/
+├── ciudad=Cadiz/
+├── ciudad=Jerez/
+└── ciudad=Sevilla/
+```
+
+Si la consulta pide solo Cádiz, Spark puede saltarse las carpetas que no necesita. Esto se llama **partition pruning**.
+
+### Batch y streaming
+
+En batch, el dataset ya está cerrado. En streaming, los datos siguen llegando.
+
+| Modo | Pregunta típica | Métrica clave |
+| ---- | --------------- | ------------- |
+| Batch | ¿Cuánto tarda en procesarse el lote completo? | Tiempo total de ejecución. |
+| Streaming | ¿Cuánto tarda cada evento en llegar al resultado? | Latencia y throughput. |
+
+En UD3 primero medimos batch con Spark y después pasamos a streaming con Redpanda y Spark Structured Streaming.
+
+---
+
 ## 6. Spark frente a pandas: comparación práctica
 
 Durante la unidad se trabajará con **operaciones equivalentes** en ambos enfoques:

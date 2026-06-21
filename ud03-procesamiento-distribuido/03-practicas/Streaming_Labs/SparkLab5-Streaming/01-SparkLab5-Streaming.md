@@ -14,6 +14,15 @@ La idea no es montar una arquitectura compleja, sino entender el flujo completo:
 
 **fuente de datos → productor → tópico → consumidor → agregaciones**
 
+```mermaid
+flowchart LR
+  A[Fuente CSV o generador] --> B[Productor Python]
+  B --> C[Tópico ventas-stream en Redpanda]
+  C --> D[Spark Structured Streaming]
+  D --> E[Agregaciones por ciudad]
+  E --> F[Salida consola o Parquet]
+```
+
 ---
 
 ## 1. Introducción al streaming
@@ -30,6 +39,18 @@ Conceptos básicos:
 - **broker**: servidor que almacena y distribuye los mensajes
 
 Kafka y Redpanda usan este modelo. Redpanda es compatible con Kafka, así que para empezar nos sirve igual y suele ser más simple de levantar en local.
+
+Dos métricas que debes observar:
+
+| Métrica | Qué significa | Cómo se interpreta en el laboratorio |
+| ------- | ------------- | ------------------------------------ |
+| Latencia | Tiempo entre enviar un mensaje y verlo reflejado en el resultado | Si sube mucho, el consumidor no procesa al ritmo necesario. |
+| Throughput | Mensajes procesados por segundo | Si el productor envía más de lo que Spark consume, se acumula retraso. |
+
+```text
+Productor:  10 msg/s  --->  Consumidor: 10 msg/s  => estable
+Productor:  50 msg/s  --->  Consumidor: 20 msg/s  => cola creciente
+```
 
 ---
 
@@ -291,6 +312,8 @@ En Spark, ambos se parecen mucho en la API, pero cambian la fuente y la forma de
 2. Añadir una ventana temporal (**tumbling window**) a la agregación.
 3. Cambiar el output a un archivo Parquet en lugar de consola.
 4. ¿Qué pasa si detenemos el productor? ¿Y si lo reiniciamos?
+5. Cambia `--delay` en el productor y observa cómo afecta a la latencia percibida.
+6. Dibuja el flujo real de tu ejecución e indica dónde puede aparecer un cuello de botella.
 
 ---
 

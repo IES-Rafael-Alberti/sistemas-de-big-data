@@ -159,6 +159,23 @@ Completa esta tabla (aunque sea mentalmente):
 | Uso de memoria      |        |       |
 | Sensación general   |        |       |
 
+Representa también los tiempos en una gráfica simple. No hace falta una herramienta compleja; basta con una tabla y barras de texto:
+
+```text
+Tiempo de ejecución
+pandas | #################### 20 s
+Spark  | ########             8 s
+```
+
+Lo importante no es que Spark gane siempre. Lo importante es detectar el punto en el que el coste de arrancar Spark se compensa por el volumen procesado.
+
+```mermaid
+flowchart LR
+  A[Dataset pequeño] --> B[pandas suele ser suficiente]
+  C[Dataset medio] --> D[comparar pandas, DuckDB y Spark]
+  E[Dataset grande] --> F[Spark empieza a tener sentido]
+```
+
 ---
 
 ## 7. Preguntas clave (reflexión)
@@ -213,7 +230,6 @@ En el siguiente bloque:
 * Usaremos herramientas específicas de Big Data.
 
 👉 **No corras**: lo importante aquí es entender el porqué.
-
 
 
 

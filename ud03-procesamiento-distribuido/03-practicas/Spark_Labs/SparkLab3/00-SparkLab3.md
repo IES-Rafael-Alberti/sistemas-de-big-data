@@ -57,6 +57,16 @@ Antes de hacer nada, reflexiona:
 
 👉 Aquí es donde entra **Parquet**.
 
+```mermaid
+flowchart TD
+  A[CSV grande] --> B[Leer texto completo]
+  B --> C[Inferir tipos]
+  C --> D[Filtrar/agrupar]
+  E[Parquet] --> F[Leer columnas necesarias]
+  F --> G[Usar metadatos y compresión]
+  G --> D
+```
+
 ---
 
 ## 4. Escritura en formato Parquet
@@ -154,6 +164,15 @@ Esto permite:
 * acelerar consultas
 * reducir E/S
 
+```mermaid
+flowchart LR
+  Q[Consulta: ciudad = Cadiz] --> P{Dataset particionado por ciudad}
+  P --> C[ciudad=Cadiz]
+  P -. se omite .-> J[ciudad=Jerez]
+  P -. se omite .-> S[ciudad=Sevilla]
+  C --> R[Menos lectura y menos tiempo]
+```
+
 ---
 
 ### 6.2 Escritura en Parquet particionado
@@ -209,6 +228,16 @@ Ejemplo mental:
 * CSV → leer todo
 * Parquet → leer columnas
 * Parquet + partición → leer solo Cádiz
+
+Registra una comparación mínima:
+
+| Prueba | Tiempo | Qué se ha leído | Conclusión |
+| ------ | -----: | --------------- | ---------- |
+| CSV completo | | Todas las filas y columnas | Referencia inicial. |
+| Parquet | | Columnas necesarias | Menos E/S. |
+| Parquet particionado | | Solo particiones relevantes | Mejor cuando el filtro coincide con la partición. |
+
+Si no hay una mejora clara, no lo ocultes: explica si el dataset es demasiado pequeño, si la partición no coincide con el filtro o si el coste de arranque de Spark domina.
 
 ---
 
@@ -266,4 +295,3 @@ A partir de aquí:
 * Automatización (Airflow)
 
 👉 **Este laboratorio es el puente** entre procesamiento y explotación.
-
