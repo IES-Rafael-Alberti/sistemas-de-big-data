@@ -9,7 +9,7 @@ Este documento es la **fuente única de seguimiento** para saber qué está term
 | Reorganización gruesa y fina | ✅ Cerrada | No reabrir salvo incidencias concretas. |
 | Sitio público MkDocs | ✅ Cerrado en forma | Mantenerlo sin material interno, docente o archivado. |
 | UD1 — revisión didáctica | ✅ Revisada | Usarla como referencia para el resto de unidades. |
-| UD2–UD6 — revisión didáctica | 🟡 En curso | UD2 y UD3 revisadas; quedan UD4, UD5 y UD6. |
+| UD2–UD6 — revisión didáctica | 🟡 En curso | UD2, UD3 y UD4 revisadas; quedan UD5 y UD6. |
 | Alineación curricular RA/CE | ✅ Criterio cerrado | Aplicarlo al revisar cada unidad; no mover materiales sin revisión de unidad. |
 | Arquitecturas Big Data / Medallion | 🟡 Parcialmente hecho | Revisar pendientes derivados y conexión curricular. |
 | Infraestructura docente | 🟡 No bloqueante | Preparar Airbyte/AWS Academy si se quieren usar como ampliación. |
@@ -59,7 +59,7 @@ Acciones por unidad:
 | ------ | ------------------ |
 | UD2 — Almacenamiento e ingesta | ✅ Revisada: se reforzó la ruta didáctica, mini-ingesta, calidad operativa, RGPD, métricas y costes. |
 | UD3 — Procesamiento distribuido | ✅ Revisada: se reforzó la ruta Spark, Parquet, particionado, benchmark y streaming; Kibana/Grafana quedan como ampliación. |
-| UD4 — BI y orquestación | Reforzar ejemplos visuales de BI, modelado, dashboards y orquestación; añadir criterios de diseño de dashboards. |
+| UD4 — BI y orquestación | ✅ Revisada: se reforzó ruta BI técnica/orquestación, modelo estrella, ejemplos correcto/incorrecto de dashboard y flujo pipeline → dashboard. |
 | UD5 — Spark MLlib | Evitar enfoque de receta; explicar métricas, features, entrenamiento, evaluación y errores comunes antes del código. |
 | UD6 — Proyecto integrador | Hacer el guion más accionable: ejemplos de proyectos, entregables esperados, criterios de calidad y enlaces a plantillas. |
 
@@ -115,7 +115,7 @@ Estos elementos pueden aparecer con palabras como “pendiente”, “revisar”
 
 ## Orden recomendado de trabajo
 
-1. **Revisión UD4–UD6**: aplicar el estándar de UD1/UD2/UD3 unidad por unidad usando el criterio RA/CE ya cerrado.
+1. **Revisión UD5–UD6**: aplicar el estándar de UD1/UD2/UD3/UD4 unidad por unidad usando el criterio RA/CE ya cerrado.
 2. **Flecos de arquitectura/Medallion**: cerrar formato evaluable y conexión curricular.
 3. **Infraestructura docente**: preparar solo si se van a usar las ampliaciones Airbyte/AWS.
 

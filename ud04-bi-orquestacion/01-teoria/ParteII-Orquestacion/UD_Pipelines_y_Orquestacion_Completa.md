@@ -44,6 +44,23 @@ Un pipeline puede ser:
 - automatizado,
 - monitorizado.
 
+Visión completa del flujo que se trabaja en SBD:
+
+```mermaid
+flowchart LR
+  A[Fuentes] --> B[Ingesta]
+  B --> C[Bronze/raw]
+  C --> D[Transformación y calidad]
+  D --> E[Silver/Gold]
+  E --> F[Base analítica]
+  F --> G[Dashboard técnico]
+  H[Airflow/MageAI] -. coordina .-> B
+  H -. coordina .-> D
+  H -. coordina .-> F
+```
+
+El orquestador no sustituye a Spark, DuckDB, SQL o Python. Su función es decidir **cuándo** se ejecuta cada pieza, en qué orden, qué pasa si falla y qué evidencias quedan.
+
 ---
 
 # 3. Orquestación frente a ejecución
@@ -249,4 +266,3 @@ Con Airflow se pasa de ejecuciones manuales a pipelines gestionados.
 ---
 
 ## Fin de la unidad
-

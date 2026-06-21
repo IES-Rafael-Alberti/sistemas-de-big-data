@@ -92,6 +92,33 @@ Ejemplo incorrecto:
 
 Todo debe estar alineado en nivel de detalle.
 
+## 5.1 Ejemplos correctos e incorrectos
+
+### Layout
+
+| Mal diseño | Mejor diseño |
+| ---------- | ------------ |
+| Seis gráficos al mismo tamaño sin prioridad. | KPI principal arriba, tendencia temporal debajo y detalle al final. |
+| Filtros repartidos por toda la pantalla. | Filtros agrupados en una zona estable. |
+| Colores distintos sin significado. | Un color principal y colores de alerta solo cuando aportan información. |
+
+### Métricas
+
+| Mal diseño | Mejor diseño |
+| ---------- | ------------ |
+| “Ventas”, “usuarios”, “errores” y “latencia” mezclados sin contexto. | Separar bloque de negocio y bloque técnico, o explicar su relación. |
+| KPI mensual junto a gráfico diario sin aclaración. | Mismo periodo o etiqueta clara del nivel temporal. |
+| Porcentajes sin denominador. | Indicar “% registros válidos sobre total procesado”. |
+
+### Ejemplo técnico SBD
+
+Un dashboard técnico de pipeline debería responder rápido:
+
+1. ¿Ha entrado el volumen esperado de datos?
+2. ¿La calidad está por encima del umbral?
+3. ¿El procesamiento tarda más de lo habitual?
+4. ¿Qué partición o fuente está fallando?
+
 ---
 
 # 6. Evitar sobrecarga
@@ -182,4 +209,3 @@ El pensamiento analítico es central.
 ---
 
 ## Fin del documento
-

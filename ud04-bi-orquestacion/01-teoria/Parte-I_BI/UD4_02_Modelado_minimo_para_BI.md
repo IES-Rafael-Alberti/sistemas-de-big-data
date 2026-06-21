@@ -64,6 +64,19 @@ Este modelo consta de:
 - una tabla de hechos,
 - varias tablas de dimensiones.
 
+Esquema visual mínimo:
+
+```mermaid
+flowchart LR
+  D1[dim_fecha] --> F[fact_ventas]
+  D2[dim_producto] --> F
+  D3[dim_cliente] --> F
+  D4[dim_canal] --> F
+  F --> M[medidas: cantidad, importe, margen]
+```
+
+La tabla de hechos responde a “qué ha pasado”. Las dimensiones responden a “cuándo”, “dónde”, “con qué producto”, “por qué canal” o “a qué segmento”.
+
 ---
 
 ### 3.1 Tabla de hechos
@@ -137,6 +150,14 @@ Elegir mal la granularidad puede impedir ciertos análisis.
 Regla general:
 
 La tabla de hechos debe tener el nivel más detallado posible razonable.
+
+Ejemplo de decisión:
+
+| Pregunta | Granularidad necesaria | Problema si agregas antes |
+| -------- | ---------------------- | -------------------------- |
+| Ventas por día y ciudad | Día + ciudad | No puedes analizar horas punta. |
+| Ventas por producto | Venta individual o día + producto | Pierdes detalle de producto si solo guardas total mensual. |
+| Evolución mensual | Día o mes, según objetivo | Si guardas solo año, no hay tendencia mensual. |
 
 ---
 

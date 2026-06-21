@@ -45,9 +45,22 @@ En SBD se conserva solo la **comparativa conceptual**:
 > RA2.d cubierto por la sección 10 del Lab6 (predicción con media móvil
 > + conexión a regresión con Spark MLlib de UD5).
 
-> Labs 1-3 (Metabase, Superset, miniProyecto) tienen enfoque de BI de negocio.
-> Pendiente decidir si se mantienen como demo técnica o pasan a BDA. Ver
-> `matriz_ra_ce_materiales.md` para detalle.
+> Labs 1-2 (Metabase y Superset) se mantienen en SBD como demostración técnica de
+> configuración, modelado, consulta y visualización. Lab3 miniProyecto queda como
+> ampliación: si se evalúa como solución de negocio, encaja mejor en Big Data
+> Aplicado; si se usa en SBD, debe centrarse en modelo, calidad, métricas técnicas
+> y trazabilidad del pipeline.
+
+## Secuencia didáctica recomendada
+
+| Fase | Material | Evidencia esperada |
+| ---- | -------- | ------------------ |
+| 1. BI técnica | `01-teoria/Parte-I_BI/UD4_00_Introduccion_BI.md` | Diferenciar dashboard técnico de BI de negocio. |
+| 2. Modelo | `01-teoria/Parte-I_BI/UD4_02_Modelado_minimo_para_BI.md` | Modelo estrella mínimo con granularidad justificada. |
+| 3. Diseño | `01-teoria/Parte-I_BI/UD4_09_Diseno_profesional_de_dashboards.md` | Boceto con KPI, filtros y visualizaciones justificadas. |
+| 4. Herramientas | Labs Metabase/Superset | Dashboard funcional y comparación de herramienta. |
+| 5. Dashboard técnico | `03-practicas/Lab6_Dashboard_Tecnico/` | Métricas de caudal, calidad y rendimiento del pipeline. |
+| 6. Orquestación | Airflow/MageAI | DAG o flujo con dependencias explícitas y evidencias de ejecución. |
 
 ## Cuestionarios semanales (formato Moodle GIFT)
 
