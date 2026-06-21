@@ -1,6 +1,35 @@
 # UD2 · Ingesta con scripts (pandas) y con Airbyte OSS
 
 ## A) Ingesta con scripts (pandas)
+
+### Mini-ingesta: un CSV pequeño antes de automatizar
+
+Empieza con un caso mínimo. El objetivo no es procesar mucho volumen, sino comprobar que entiendes el flujo completo:
+
+```python
+import pandas as pd
+from pathlib import Path
+
+raw = pd.DataFrame({
+    "fecha": ["2026-01-01", "2026-01-02"],
+    "municipio_id": ["CADIZ", "CADIZ"],
+    "visitantes_total": [1250, 1390],
+})
+
+out = Path("data_lake/raw/turismo_parquet")
+out.mkdir(parents=True, exist_ok=True)
+raw.to_parquet(out / "turismo_2026_01.parquet", index=False)
+
+check = pd.read_parquet(out / "turismo_2026_01.parquet")
+print(check)
+```
+
+Este ejemplo ya permite verificar tres decisiones importantes:
+
+- el nombre del fichero es determinista;
+- el formato Parquet se puede leer después de escribirlo;
+- el directorio `data_lake/raw/` separa datos de entrada de datos curados.
+
 **CSV (turismo) → Parquet (raw)**
 ```python
 # ingest/tourism_csv_ingest.py
@@ -38,6 +67,20 @@ pq.write_table(pa.Table.from_pandas(df, preserve_index=False),
 ```
 
 > **Buenas prácticas:** nombres deterministas, validación mínima (columnas esperadas), logs, *exit codes*.
+
+### Validación mínima antes de guardar
+
+No guardes cualquier fichero solo porque se pueda leer. Comprueba al menos columnas obligatorias, tipos y nulos críticos:
+
+```python
+expected = {"fecha", "municipio_id", "visitantes_total"}
+missing = expected - set(df.columns)
+if missing:
+    raise ValueError(f"Faltan columnas obligatorias: {sorted(missing)}")
+
+if df["fecha"].isna().any() or df["municipio_id"].isna().any():
+    raise ValueError("fecha y municipio_id no pueden contener nulos")
+```
 
 ## B) Ingesta con Airbyte OSS (GUI + conectores FT)
 **Pasos express:**

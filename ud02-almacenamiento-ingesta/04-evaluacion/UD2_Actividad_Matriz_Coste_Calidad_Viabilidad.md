@@ -79,6 +79,23 @@ Para cada una, dedica tiempo a buscar información realista:
 Asigna valoraciones **1-5** a cada criterio para cada alternativa.
 Cada valoración debe ir acompañada de una **justificación breve** (1-2 frases).
 
+Usa también una estimación mínima de coste operativo. No tiene que ser exacta, pero sí comparable:
+
+```text
+coste_total_estimado = coste_infraestructura + coste_herramienta + coste_operativo
+coste_operativo = horas_configuracion × coste_hora_estimado
+```
+
+Ejemplo:
+
+| Concepto | Local DuckDB | Spark local | AWS Academy | Airbyte |
+| -------- | -----------: | ----------: | ----------: | ------: |
+| Infraestructura/licencia | 0 € | 0 € | 0 € si entra en Academy | 0 € OSS |
+| Horas de configuración | 1 h | 2 h | 3 h | 4 h |
+| Riesgo de coste inesperado | Bajo | Bajo | Medio | Bajo/medio |
+
+Si no puedes obtener un precio real, indícalo como limitación y justifica la estimación.
+
 ### 4. Responde las preguntas de reflexión
 
 Las 6 preguntas de la plantilla. Son la parte más importante: demuestran que

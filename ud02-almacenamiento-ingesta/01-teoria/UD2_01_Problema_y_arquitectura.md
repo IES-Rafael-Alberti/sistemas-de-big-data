@@ -15,6 +15,23 @@ Un ayuntamiento publica **datos abiertos** de afluencia turística (CSV/mes en u
 - **Idempotencia**: cargas repetibles sin duplicar (nombres deterministas y *upsert*).
 - **RGPD**: sin PII en ejemplo; plantilla para evaluar riesgos si hubiera.
 
+## 2.1. Mini-ejemplo antes del pipeline completo
+
+Antes de montar toda la arquitectura, el primer objetivo es comprobar el patrón mínimo:
+
+```text
+fuente pequeña → fichero Parquet → consulta verificable
+```
+
+Ejemplo de datos de partida:
+
+| fecha | municipio_id | visitantes_total |
+| ----- | ------------ | ----------------: |
+| 2026-01-01 | CADIZ | 1250 |
+| 2026-01-02 | CADIZ | 1390 |
+
+Si este caso pequeño no se puede leer, convertir y consultar de forma reproducible, el pipeline grande tampoco está bien diseñado. Primero se valida el camino corto; después se añaden más fuentes, particiones, reglas de calidad y automatización.
+
 ## 3. Arquitectura mínima (UD2)
 ```mermaid
 flowchart LR

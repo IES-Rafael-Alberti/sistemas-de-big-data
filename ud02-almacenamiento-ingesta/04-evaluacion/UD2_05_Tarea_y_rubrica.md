@@ -13,8 +13,21 @@ Pipeline reproducible: **ingesta → raw Parquet → integración/curado → (op
 - `/data_lake/raw/` y `/data_lake/curated/parquet/` (particionado)  
 - `integrate/merge_curate.sql` (DuckDB) o notebook equivalente  
 - `README_RGPD.md` (búsqueda de datos personales/identificadores y anonimización completada: por ausencia de identificadores o por medidas aplicadas)  
+- `quality_report.md` o `quality_report.json` con métricas mínimas de calidad
 - Diagrama de **linaje** (mermaid/png)  
 - (Opc.) **carga a Postgres** (`schema.sql` + comando de carga)
+
+## Métricas mínimas de calidad
+
+Incluye al menos estas métricas antes de dar por válido el dataset curado:
+
+| Métrica | Mínimo esperado | Evidencia |
+| ------- | --------------- | --------- |
+| Completitud de claves | 100% en `fecha`, `tienda_id` y `sku` o equivalente | Consulta SQL o salida del script. |
+| Dominio de categóricas | Valores fuera de dominio listados y tratados | Tabla de valores inválidos. |
+| Duplicados de clave | 0 duplicados tras el curado | Consulta de duplicados. |
+| Consistencia de importes | Diferencias justificadas o corregidas | Regla aplicada y número de incidencias. |
+| Idempotencia | Reejecutar no duplica registros | Captura/log antes y después de la segunda ejecución. |
 
 ## Rúbrica (/10)
 - (2) Ingesta correcta (2 fuentes) e idempotente  
@@ -28,5 +41,6 @@ Pipeline reproducible: **ingesta → raw Parquet → integración/curado → (op
 - [ ] `.env` sin secretos en repo  
 - [ ] Reprocesado re-escribe solo particiones afectadas  
 - [ ] Consultas DuckDB sobre Parquet OK  
+- [ ] Métricas de calidad calculadas y explicadas
 - [ ] Linaje y RGPD actualizados
 - [ ] No se publican datos que permitan identificar directa o indirectamente a una persona
