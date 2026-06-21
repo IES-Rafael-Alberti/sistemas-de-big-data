@@ -2,6 +2,8 @@
 
 > **Estado:** nota histórica de origen. El seguimiento vivo está centralizado en `00-planificacion/ESTADO_ACTUAL_Y_PENDIENTES.md`.
 
+> **Cierre posterior:** la mejora de arquitecturas/Medallion quedó incorporada a UD1, la práctica local Medallion quedó creada en UD2 y la entrega evaluable formal se cerró en `ud02-almacenamiento-ingesta/04-evaluacion/UD2_Practica_Medallion_Entrega_y_Rubrica.md`.
+
 ## Contexto
 
 Queda pendiente mejorar la parte de **arquitecturas Big Data** dentro de Sistemas de Big Data.

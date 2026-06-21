@@ -243,6 +243,14 @@ No se trata de demostrar que Spark “siempre es mejor”. Eso es falso. Se trat
 
 ## Entregable
 
+La entrega evaluable formal está definida en:
+
+```text
+ud02-almacenamiento-ingesta/04-evaluacion/UD2_Practica_Medallion_Entrega_y_Rubrica.md
+```
+
+Usa esta sección como estructura técnica de la memoria.
+
 Entrega un documento Markdown con esta estructura:
 
 ```md

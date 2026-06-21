@@ -7,7 +7,7 @@
 | `01-teoria/` | Fuentes editables y apuntes principales. | 41 |
 | `02-ejemplos/` | Notebooks, scripts y ejemplos no evaluables. | 0 |
 | `03-practicas/` | Guiones de laboratorio y prácticas de aula. | 50 |
-| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | 2 |
+| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | 3 |
 | `05-recursos/` | Datasets, imágenes, plantillas, ZIPs docentes y dependencias. | 5 |
 | `90-archivo/` | Derivados publicados, histórico y material no canónico. | 30 |
 | `99-profesor/` | Notas internas, guías docentes y corrección reutilizable. | 4 |
@@ -39,6 +39,7 @@ Ver `00-planificacion/matriz_ra_ce_materiales.md` para el detalle completo.
 | 4. Aplicar RGPD y seguridad | `01-teoria/UD2_04_RGPD_y_seguridad.md` | `README_RGPD.md` o checklist completada. |
 | 5. Construir la práctica completa | `03-practicas/UD2_Practica_Local_Medallion_Parquet_DuckDB_Spark.md` | Pipeline raw → Bronze → Silver → Gold reproducible. |
 | 6. Justificar decisiones | `04-evaluacion/UD2_Actividad_Matriz_Coste_Calidad_Viabilidad.md` | Comparativa coste/calidad/viabilidad entre alternativas. |
+| 7. Entregar Medallion | `04-evaluacion/UD2_Practica_Medallion_Entrega_y_Rubrica.md` | Evidencias, memoria y rúbrica específica de la práctica. |
 
 La ruta principal de SBD debe poder completarse en local con Python, DuckDB y Parquet. Airbyte y AWS Academy quedan como ampliación si la infraestructura está disponible.
 
@@ -69,6 +70,7 @@ Cubre **RA1.g** de forma explícita.
 ## Material nuevo — Práctica local Medallion
 
 - `03-practicas/UD2_Practica_Local_Medallion_Parquet_DuckDB_Spark.md` — práctica local reproducible para construir un pipeline raw → Bronze → Silver → Gold con Parquet, DuckDB y ampliación Spark/PySpark.
+- `04-evaluacion/UD2_Practica_Medallion_Entrega_y_Rubrica.md` — ficha evaluable formal con entregables, criterios de aceptación y rúbrica.
 - `05-recursos/practica-local-medallion/generar_datos_turismo.py` — generador de datos sintéticos CSV/JSONL para la práctica.
 
 ## Material principal — Integración con dlt

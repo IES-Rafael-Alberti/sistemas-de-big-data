@@ -6,6 +6,12 @@ Diseñar una arquitectura Big Data razonada para un caso de uso realista, usando
 
 No se evalúa que el diagrama sea bonito. Se evalúa que las decisiones tengan sentido.
 
+## Agrupamiento
+
+Actividad en **parejas**.
+
+La arquitectura se discute mejor entre dos personas porque obliga a justificar decisiones y detectar contradicciones: qué entra en Bronze, qué se limpia en Silver, qué se publica en Gold y qué coste tiene mantener la solución. No se plantea como mini-proyecto porque su función es preparar la práctica técnica de UD2, no sustituirla.
+
 ## Relación curricular
 
 - **RA1.c-d**: combinar fuentes y construir datasets complejos.

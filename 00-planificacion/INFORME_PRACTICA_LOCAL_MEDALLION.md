@@ -31,6 +31,12 @@ La práctica se coloca en UD2 porque cubre almacenamiento, ingesta, formatos, ca
 - Aitor Medrano — Apache Spark.
 - Documentación de DuckDB y Apache Spark.
 
-## Pendiente posterior
+## Pendiente posterior — cerrado posteriormente
+
+La práctica ya queda formalizada como evaluable en:
+
+`ud02-almacenamiento-ingesta/04-evaluacion/UD2_Practica_Medallion_Entrega_y_Rubrica.md`
+
+Pendiente histórico original:
 
 Si se quiere hacer evaluable formalmente, puede extraerse una versión cerrada en `04-evaluacion/` con plantilla de entrega y rúbrica separada.

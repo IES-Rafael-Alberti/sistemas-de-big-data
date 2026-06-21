@@ -69,7 +69,7 @@ Fuente:
 
 ### 3. Arquitecturas Big Data / Medallion
 
-**Estado:** parcialmente hecho, con flecos.
+**Estado:** cerrado.
 
 Ya se amplió la teoría de arquitectura y se creó una actividad Medallion. También se creó una práctica local UD2 con flujo:
 
@@ -77,11 +77,11 @@ Ya se amplió la teoría de arquitectura y se creó una actividad Medallion. Tam
 raw CSV/JSON → Bronze Parquet → Silver limpio → Gold consultable → DuckDB/Spark
 ```
 
-Pendientes derivados:
+Decisiones cerradas:
 
-- Revisar si la actividad Medallion debe ser individual, por parejas o mini-proyecto.
-- Si se quiere evaluar formalmente la práctica local Medallion, crear versión cerrada en `04-evaluacion/` con plantilla de entrega y rúbrica separada.
-- Conectar explícitamente la reforma de arquitecturas con la alineación RA/CE SBD / Big Data Aplicado.
+- La actividad de diseño Medallion de UD1 queda fijada en **parejas**. No se convierte en mini-proyecto porque su función es preparar criterio arquitectónico antes de la práctica técnica.
+- La práctica local Medallion de UD2 queda formalizada como evaluable mediante `ud02-almacenamiento-ingesta/04-evaluacion/UD2_Practica_Medallion_Entrega_y_Rubrica.md`.
+- La conexión SBD/BDA queda delimitada: SBD evalúa arquitectura, ingesta, capas, formato, calidad, procesamiento y consulta técnica; BDA puede reutilizar Gold para BI de negocio y toma de decisiones.
 
 Fuentes:
 
@@ -115,8 +115,7 @@ Estos elementos pueden aparecer con palabras como “pendiente”, “revisar”
 
 ## Orden recomendado de trabajo
 
-1. **Flecos de arquitectura/Medallion**: cerrar formato evaluable y conexión curricular.
-2. **Infraestructura docente**: preparar solo si se van a usar las ampliaciones Airbyte/AWS.
+1. **Infraestructura docente**: preparar solo si se van a usar las ampliaciones Airbyte/AWS.
 
 ## Regla de mantenimiento
 

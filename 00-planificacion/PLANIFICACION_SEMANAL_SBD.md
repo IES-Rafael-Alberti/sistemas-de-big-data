@@ -37,7 +37,7 @@
 | 11 | **UD2** | Pipeline de datos: integración con dlt | L | 3 | **Parejas** | RA1.c, RA3.a | `05-Integracion_y_calidad-tarea.md` |
 | 12 | **UD2** | Calidad de datos, idempotencia y RGPD/anonimización | L | 3 | **Parejas** | RA1.b, RA3.d | Tarea RGPD + `quiz-ud2.gift` (q5‑6) |
 | 13 | **UD2** | Matriz coste‑calidad‑viabilidad | E | 2 | Parejas | RA1.f‑g | `UD2_Actividad_Matriz_Coste_Calidad_Viabilidad.md` |
-| 14 | **UD2** | Práctica Medallion local (Parquet + DuckDB + Spark) | L | 3 | **Parejas** | RA1.d, RA3.b, RA4.a | `UD2_Practica_Local_Medallion_Parquet_DuckDB_Spark.md` |
+| 14 | **UD2** | Práctica Medallion local (Parquet + DuckDB + Spark) | L/E | 3 | **Parejas** | RA1.d, RA3.b, RA4.a | `UD2_Practica_Medallion_Entrega_y_Rubrica.md` |
 | 15 | **UD2** | Cierre UD2 + cuestionario | Q | 1 | Individual | — | `quiz-ud2.gift` (q7‑8) |
 | 16 | **UD3** | Hadoop histórico vs Spark actual (cápsula teórica) | T | 1 | Individual | RA3.c | `quiz-ud3.gift` (q1‑2) |
 | 17 | **UD3** | SparkLab1: primer contacto con Spark (DataFrames) | L | 3 | **Parejas** | RA4.e | Entrega SparkLab1 |

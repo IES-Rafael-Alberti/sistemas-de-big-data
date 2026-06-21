@@ -38,7 +38,15 @@ La web externa consultada incluye materiales de IA, HuggingFace, datasets y apli
 
 Sí pueden servir como conexión posterior si se diseña una práctica donde SBD prepare datasets o pipelines que luego otro módulo explote con IA o producto.
 
-## Pendiente recomendado
+## Pendiente recomendado — cerrado posteriormente
+
+Este pendiente quedó cerrado después en la revisión Medallion:
+
+- la actividad Medallion de UD1 queda fijada en **parejas**;
+- la práctica local Medallion de UD2 queda formalizada como evaluable en `ud02-almacenamiento-ingesta/04-evaluacion/UD2_Practica_Medallion_Entrega_y_Rubrica.md`;
+- la conexión curricular queda delimitada: SBD evalúa arquitectura/pipeline/calidad técnica y BDA puede reutilizar Gold para BI de negocio.
+
+Pendiente histórico original:
 
 - Revisar si la actividad Medallion debe ser individual, por parejas o como mini-proyecto.
 - Crear una práctica técnica posterior que materialice el diseño: raw CSV/JSON → Bronze/Silver/Gold en Parquet → consulta con DuckDB o Spark.

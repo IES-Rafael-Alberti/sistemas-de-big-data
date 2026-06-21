@@ -13,10 +13,10 @@
 | **a** | Matemática discreta, lógica algorítmica, complejidad computacional | Cápsula Matemática Normativa (`UD1_P0_Capsula_Matematica_Normativa.md`) | UD1 |
 | | | Cuestionario Estadística y Normativa (`UD1_P0_Cuestionario_Estadistica_y_Capsula_Normativa.md`) | UD1 |
 | **b** | Extraer información de grandes volúmenes | Práctica EDA + Calidad (`UD1_03_Tarea_y_rubrica.md`) | UD1 |
-| | | Práctica Medallion (`UD2_Practica_Local_Medallion_Parquet_DuckDB_Spark.md`) | UD2 |
+| | | Práctica Medallion (`UD2_Practica_Local_Medallion_Parquet_DuckDB_Spark.md`) + entrega evaluable (`UD2_Practica_Medallion_Entrega_y_Rubrica.md`) | UD2 |
 | | | Práctica integración dlt (Ruta A) | UD2 |
 | **c** | Combinar fuentes y tipos de datos | Actividad Diseño Arquitectura Medallion (`UD1_P3_Actividad_Diseno_Arquitectura_Medallion.md`) | UD1 |
-| | | Práctica Medallion (Bronze: CSV+JSONL → Parquet) | UD2 |
+| | | Práctica Medallion evaluable (Bronze: CSV+JSONL → Parquet) | UD2 |
 | | | Práctica integración dlt (join ventas+reservas+meteo+zonas) | UD2 |
 | **d** | Construir datasets complejos y relacionarlos | Actividad Diseño Arquitectura Medallion | UD1 |
 | | | Práctica Medallion (Silver → Gold) | UD2 |
