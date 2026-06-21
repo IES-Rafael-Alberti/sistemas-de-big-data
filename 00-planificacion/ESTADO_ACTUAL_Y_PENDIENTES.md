@@ -11,7 +11,7 @@ Este documento es la **fuente única de seguimiento** para saber qué está term
 | UD1 — revisión didáctica | ✅ Revisada | Usarla como referencia para el resto de unidades. |
 | UD2–UD6 — revisión didáctica | ✅ Cerrada | UD2, UD3, UD4, UD5 y UD6 revisadas. |
 | Alineación curricular RA/CE | ✅ Criterio cerrado | Aplicarlo al revisar cada unidad; no mover materiales sin revisión de unidad. |
-| Arquitecturas Big Data / Medallion | 🟡 Parcialmente hecho | Revisar pendientes derivados y conexión curricular. |
+| Arquitecturas Big Data / Medallion | ✅ Cerrado | Mantener como núcleo lakehouse/Medallion + streaming-first; no abrir más arquitecturas salvo necesidad concreta. |
 | Infraestructura docente | ✅ Preparada en documentación | Validar acceso real a Airbyte/Postgres y AWS Academy antes de clase. |
 
 ## Criterio de verdad actual
@@ -49,9 +49,9 @@ Fuentes:
 
 ### 2. Revisión didáctica de UD2–UD6
 
-**Estado:** pendiente.
+**Estado:** cerrada.
 
-UD1 ya se revisó en profundidad: forma pública, redacción para alumnado, estadística, fórmulas, ejemplos, gráficas y notebook. Hay que hacer el mismo tipo de revisión en el resto.
+UD1 se revisó en profundidad y UD2–UD6 ya tienen revisión didáctica cerrada. La revisión incluyó ruta pública, navegación, foco evaluativo SBD/BDA, prácticas principales, ampliaciones y actualización de estado.
 
 Acciones por unidad:
 
@@ -105,6 +105,28 @@ Las prácticas principales funcionan con herramientas locales. Las ampliaciones 
 Fuente:
 
 - `00-planificacion/ESTADO_REFORMA_SBD_2026_2027.md`
+- `ud02-almacenamiento-ingesta/05-recursos/practica-herramientas-reales/README.md`
+- `ud02-almacenamiento-ingesta/05-recursos/practica-herramientas-reales/airbyte-comparativa.md`
+- `ud02-almacenamiento-ingesta/05-recursos/practica-herramientas-reales/aws-ingesta-serverless.md`
+
+## Continuación sin memoria externa
+
+Si se retoma este repositorio desde otro ordenador o sin memoria de sesión, leer primero este documento y después revisar los últimos commits locales.
+
+Últimos bloques cerrados:
+
+| Commit | Bloque cerrado | Qué quedó hecho |
+| ------ | -------------- | --------------- |
+| `c4e311b` | Medallion evaluable | Se formalizó la entrega/rúbrica de la práctica Medallion de UD2 y se cerró la conexión curricular SBD/BDA. |
+| `c5fe9b5` | Arquitecturas Big Data | Se ampliaron las arquitecturas relevantes: lakehouse/Medallion y event-driven/streaming-first como núcleo; Data Mesh como contexto organizativo; Data Fabric/HTAP/microservicios como menciones. |
+| `b5ac37b` | Airbyte + AWS Academy | Se prepararon las prácticas optativas de herramientas reales: Airbyte sobre Proxmox con destino Postgres y AWS Academy con S3, Glue Crawler y Athena, incluyendo plan B y limpieza. |
+
+Estado operativo actual:
+
+- La ruta principal del curso queda cubierta con herramientas locales: Python, dlt, DuckDB, Parquet y Spark/PySpark.
+- Airbyte y AWS Academy son ampliaciones realistas, no bloqueantes ni imprescindibles para evaluar UD2.
+- No hay que depender de Engram para saber qué se hizo: este fichero es la fuente viva de continuidad.
+- Antes de impartir las ampliaciones hay que validar infraestructura real: URL/credenciales Airbyte, conectividad a Postgres, conectores disponibles, permisos AWS Academy, región y salida Athena.
 
 ## Elementos que NO son pendientes vivos
 
@@ -117,7 +139,8 @@ Estos elementos pueden aparecer con palabras como “pendiente”, “revisar”
 
 ## Orden recomendado de trabajo
 
-1. **Infraestructura docente**: preparar solo si se van a usar las ampliaciones Airbyte/AWS.
+1. **Validación técnica de infraestructura**: hacer solo antes de impartir las ampliaciones Airbyte/AWS. No bloquea la ruta principal del curso.
+2. **Mantenimiento normal**: cualquier cambio nuevo debe actualizar este documento y quedar en un commit de unidad de trabajo.
 
 ## Regla de mantenimiento
 
