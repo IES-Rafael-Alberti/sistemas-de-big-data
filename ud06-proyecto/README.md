@@ -29,6 +29,16 @@ perspectiva:
 La coordinación entre módulos es responsabilidad del equipo docente. Este guión
 se centra en la **parte SBD** del proyecto.
 
+## Secuencia didáctica recomendada
+
+| Fase | SBD evalúa | BDA/PIA pueden reutilizar |
+| ---- | ---------- | ------------------------- |
+| 0. Tema y alcance | Fuentes, problema técnico, arquitectura inicial, planificación. | Caso de uso, usuario final, hipótesis de negocio o IA. |
+| 1. Ingesta | Scripts reproducibles, Bronze, formatos, particionado inicial. | Fuentes y contexto de negocio. |
+| 2. Calidad y procesamiento | Silver/Gold, métricas, RGPD, linaje, idempotencia. | Dataset fiable para BI o modelos. |
+| 3. Dashboard técnico | Caudal, calidad, latencia, errores, estado del pipeline. | Dashboard de negocio o predicciones. |
+| 4. Defensa | Reproducibilidad, coste, limitaciones y decisiones técnicas. | Impacto, interpretación y producto final. |
+
 ## Uso de IA generativa
 
 En UD6 la declaración de uso de IA es **obligatoria si se ha usado IA**.

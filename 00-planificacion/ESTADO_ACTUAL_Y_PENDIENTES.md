@@ -9,7 +9,7 @@ Este documento es la **fuente única de seguimiento** para saber qué está term
 | Reorganización gruesa y fina | ✅ Cerrada | No reabrir salvo incidencias concretas. |
 | Sitio público MkDocs | ✅ Cerrado en forma | Mantenerlo sin material interno, docente o archivado. |
 | UD1 — revisión didáctica | ✅ Revisada | Usarla como referencia para el resto de unidades. |
-| UD2–UD6 — revisión didáctica | 🟡 En curso | UD2, UD3, UD4 y UD5 revisadas; queda UD6. |
+| UD2–UD6 — revisión didáctica | ✅ Cerrada | UD2, UD3, UD4, UD5 y UD6 revisadas. |
 | Alineación curricular RA/CE | ✅ Criterio cerrado | Aplicarlo al revisar cada unidad; no mover materiales sin revisión de unidad. |
 | Arquitecturas Big Data / Medallion | 🟡 Parcialmente hecho | Revisar pendientes derivados y conexión curricular. |
 | Infraestructura docente | 🟡 No bloqueante | Preparar Airbyte/AWS Academy si se quieren usar como ampliación. |
@@ -61,7 +61,7 @@ Acciones por unidad:
 | UD3 — Procesamiento distribuido | ✅ Revisada: se reforzó la ruta Spark, Parquet, particionado, benchmark y streaming; Kibana/Grafana quedan como ampliación. |
 | UD4 — BI y orquestación | ✅ Revisada: se reforzó ruta BI técnica/orquestación, modelo estrella, ejemplos correcto/incorrecto de dashboard y flujo pipeline → dashboard. |
 | UD5 — Spark MLlib | ✅ Revisada: se reforzó criterio antes del código, features, métricas, baseline, errores comunes y conexión con notebooks/ejemplos. |
-| UD6 — Proyecto integrador | Hacer el guion más accionable: ejemplos de proyectos, entregables esperados, criterios de calidad y enlaces a plantillas. |
+| UD6 — Proyecto integrador | ✅ Revisada: se reforzó ruta por fases, separación SBD/BDA/PIA, plantillas por fase y entregables mínimos aceptables. |
 
 Fuente:
 
@@ -115,9 +115,8 @@ Estos elementos pueden aparecer con palabras como “pendiente”, “revisar”
 
 ## Orden recomendado de trabajo
 
-1. **Revisión UD6**: aplicar el estándar de UD1/UD2/UD3/UD4/UD5 usando el criterio RA/CE ya cerrado.
-2. **Flecos de arquitectura/Medallion**: cerrar formato evaluable y conexión curricular.
-3. **Infraestructura docente**: preparar solo si se van a usar las ampliaciones Airbyte/AWS.
+1. **Flecos de arquitectura/Medallion**: cerrar formato evaluable y conexión curricular.
+2. **Infraestructura docente**: preparar solo si se van a usar las ampliaciones Airbyte/AWS.
 
 ## Regla de mantenimiento
 

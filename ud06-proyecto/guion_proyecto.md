@@ -108,6 +108,19 @@ Usar IA no penaliza. Ocultarla, no entender lo entregado o no verificarlo sí.
 - Acuerdo de alcance: qué hace cada módulo, qué comparten.
 - Primer registro de uso de IA si ya se ha empleado para buscar ideas, fuentes o planteamiento.
 
+**Plantillas a usar ahora**:
+
+- [Plantilla de planificación técnica](../plantillas/plantilla_planificacion_tecnica.md)
+- [Declaración de uso de IA](../plantillas/plantilla_declaracion_uso_ia.md), si se ha usado IA
+
+**Separación por módulo**:
+
+| Módulo | Evidencia en esta fase |
+| ------ | ---------------------- |
+| SBD | Fuentes, arquitectura inicial, viabilidad técnica y planificación. |
+| BDA | Usuario, pregunta de negocio y posible decisión a apoyar. |
+| PIA | Posible variable objetivo, predicción o componente de IA si procede. |
+
 ---
 
 ### Fase 1 — Ingesta y arquitectura (Semana 2)
@@ -140,6 +153,19 @@ Usar IA no penaliza. Ocultarla, no entender lo entregado o no verificarlo sí.
 
 **Cobertura RA/CE**: RA1.c-d (combinar fuentes), RA3.a (extraer y almacenar),
 RA3.d (eficiencia y seguridad).
+
+**Plantillas a usar ahora**:
+
+- [Plantilla de planificación técnica](../plantillas/plantilla_planificacion_tecnica.md)
+- [Matriz coste-calidad-viabilidad](../plantillas/plantilla_matriz_coste_calidad_viabilidad.md)
+
+**Separación por módulo**:
+
+| Módulo | Evidencia en esta fase |
+| ------ | ---------------------- |
+| SBD | Arquitectura Medallion, ingesta reproducible, Bronze y formato de almacenamiento. |
+| BDA | Confirmación de que las fuentes sirven para responder preguntas de negocio. |
+| PIA | Confirmación de que los datos podrán alimentar modelos si el proyecto lo requiere. |
 
 ---
 
@@ -190,6 +216,19 @@ RA3.d (eficiencia y seguridad).
 **Cobertura RA/CE**: RA1.b (extraer información), RA1.e (planificación),
 RA1.g (coste/calidad), RA3.b (tecnologías eficientes), RA3.d (normativa).
 
+**Plantillas a usar ahora**:
+
+- [Checklist calidad/RGPD/seguridad](../plantillas/plantilla_checklist_calidad_rgpd.md)
+- [Declaración de uso de IA](../plantillas/plantilla_declaracion_uso_ia.md), si se ha usado IA
+
+**Separación por módulo**:
+
+| Módulo | Evidencia en esta fase |
+| ------ | ---------------------- |
+| SBD | Silver/Gold, reglas de calidad, RGPD, linaje, idempotencia y métricas. |
+| BDA | Dataset Gold listo para análisis y dashboard de negocio. |
+| PIA | Dataset limpio, variables candidatas y advertencias de calidad para modelos. |
+
 ---
 
 ### Fase 3 — Dashboard técnico (Semana 4)
@@ -223,6 +262,18 @@ RA1.g (coste/calidad), RA3.b (tecnologías eficientes), RA3.d (normativa).
 **Cobertura RA/CE**: RA2.c (cuadro de mando), RA2.d (técnicas predictivas),
 RA2.e (evaluar impacto), RA4.f (visualizar datos).
 
+**Plantillas a usar ahora**:
+
+- [Checklist calidad/RGPD/seguridad](../plantillas/plantilla_checklist_calidad_rgpd.md), para verificar que el dashboard no expone datos sensibles
+
+**Separación por módulo**:
+
+| Módulo | Evidencia en esta fase |
+| ------ | ---------------------- |
+| SBD | Dashboard técnico: volumen, calidad, latencia, errores y estado del pipeline. |
+| BDA | Dashboard de negocio: decisiones, KPIs de cliente y análisis ejecutivo. |
+| PIA | Predicciones integradas o resultados del modelo, si procede. |
+
 ---
 
 ### Fase 4 — Cierre y presentación (Semana 5)
@@ -252,6 +303,31 @@ RA2.e (evaluar impacto), RA4.f (visualizar datos).
 - Memoria técnica.
 - Declaración final de uso de IA (`plantilla_declaracion_uso_ia.md`).
 - Presentación.
+
+**Plantillas a usar ahora**:
+
+- [Declaración de uso de IA](../plantillas/plantilla_declaracion_uso_ia.md)
+- [Matriz coste-calidad-viabilidad](../plantillas/plantilla_matriz_coste_calidad_viabilidad.md)
+
+**Separación por módulo**:
+
+| Módulo | Evidencia en esta fase |
+| ------ | ---------------------- |
+| SBD | Repositorio reproducible, arquitectura, pipeline, calidad, coste y defensa técnica. |
+| BDA | Informe de negocio, interpretación y recomendación. |
+| PIA | Modelo, evaluación, limitaciones y uso responsable de IA. |
+
+---
+
+## Entregable mínimo aceptable por fase
+
+| Fase | Formato mínimo | Criterio de aceptación |
+| ---- | -------------- | ---------------------- |
+| 0 | Documento breve o README inicial | Problema, fuentes, alcance y arquitectura inicial claros. |
+| 1 | Código + datos Bronze + diagrama | La ingesta se puede repetir sin pasos manuales ocultos. |
+| 2 | Código + datos Gold + reporte de calidad | Hay métricas antes/después, linaje y RGPD documentado. |
+| 3 | Dashboard + capturas + explicación | Cada visualización tiene objetivo técnico y fuente clara. |
+| 4 | Repositorio + memoria + presentación | Otra persona puede ejecutar o entender el sistema sin reconstruirlo desde cero. |
 
 ---
 
