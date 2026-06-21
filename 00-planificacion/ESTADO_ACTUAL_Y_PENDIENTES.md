@@ -7,7 +7,7 @@ Este documento es la **fuente única de seguimiento** para saber qué está term
 | Bloque | Estado actual | Qué hacer |
 | ------ | ------------- | -------- |
 | Reorganización gruesa y fina | ✅ Cerrada | No reabrir salvo incidencias concretas. |
-| Sitio público MkDocs | ✅ Cerrado en forma | Mantenerlo sin material interno, docente o archivado. |
+| Sitio público MkDocs | ✅ Cerrado en forma | Mantenerlo sin material interno, docente o archivado; regenerar en destino si se copia con Unison. |
 | UD1 — revisión didáctica | ✅ Revisada | Usarla como referencia para el resto de unidades. |
 | UD2–UD6 — revisión didáctica | ✅ Cerrada | UD2, UD3, UD4, UD5 y UD6 revisadas. |
 | Alineación curricular RA/CE | ✅ Criterio cerrado | Aplicarlo al revisar cada unidad; no mover materiales sin revisión de unidad. |
@@ -109,6 +109,22 @@ Fuente:
 - `ud02-almacenamiento-ingesta/05-recursos/practica-herramientas-reales/airbyte-comparativa.md`
 - `ud02-almacenamiento-ingesta/05-recursos/practica-herramientas-reales/aws-ingesta-serverless.md`
 
+### 5. Sitio público MkDocs
+
+**Estado:** cerrado en forma; requiere regeneración si se copia entre equipos.
+
+El sitio público se genera con MkDocs y no debe tratarse como fuente canónica:
+
+- `site/` está ignorado en Git; no se versiona la salida generada.
+- La publicación se construye desde Markdown con `mkdocs build --strict`.
+- Al copiar el repositorio con **Unison**, los enlaces simbólicos pueden no copiarse correctamente. En el equipo de destino hay que regenerar el sitio con `mkdocs build --strict` en lugar de confiar en una copia previa de `site/`.
+- Si se usa otro ordenador, comprobar primero que el entorno de MkDocs está instalado y después ejecutar el build estricto antes de publicar.
+
+Validación conocida:
+
+- `mkdocs build --strict` pasa correctamente.
+- Los mensajes de anclas antiguas en UD1 aparecen como `INFO`, no como errores bloqueantes.
+
 ## Continuación sin memoria externa
 
 Si se retoma este repositorio desde otro ordenador o sin memoria de sesión, leer primero este documento y después revisar los últimos commits locales.
@@ -120,6 +136,7 @@ Si se retoma este repositorio desde otro ordenador o sin memoria de sesión, lee
 | `c4e311b` | Medallion evaluable | Se formalizó la entrega/rúbrica de la práctica Medallion de UD2 y se cerró la conexión curricular SBD/BDA. |
 | `c5fe9b5` | Arquitecturas Big Data | Se ampliaron las arquitecturas relevantes: lakehouse/Medallion y event-driven/streaming-first como núcleo; Data Mesh como contexto organizativo; Data Fabric/HTAP/microservicios como menciones. |
 | `b5ac37b` | Airbyte + AWS Academy | Se prepararon las prácticas optativas de herramientas reales: Airbyte sobre Proxmox con destino Postgres y AWS Academy con S3, Glue Crawler y Athena, incluyendo plan B y limpieza. |
+| `bf1c600` | Estado portable | Se actualizó este documento para poder continuar desde otro equipo sin depender de memoria externa. |
 
 Estado operativo actual:
 
