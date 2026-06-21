@@ -10,7 +10,7 @@ Este documento es la **fuente única de seguimiento** para saber qué está term
 | Sitio público MkDocs | ✅ Cerrado en forma | Mantenerlo sin material interno, docente o archivado. |
 | UD1 — revisión didáctica | ✅ Revisada | Usarla como referencia para el resto de unidades. |
 | UD2–UD6 — revisión didáctica | 🔴 Pendiente | Aplicar el mismo tipo de revisión hecha en UD1. |
-| Alineación curricular RA/CE | 🔴 Pendiente | Consolidar encaje SBD / Big Data Aplicado. |
+| Alineación curricular RA/CE | ✅ Criterio cerrado | Aplicarlo al revisar cada unidad; no mover materiales sin revisión de unidad. |
 | Arquitecturas Big Data / Medallion | 🟡 Parcialmente hecho | Revisar pendientes derivados y conexión curricular. |
 | Infraestructura docente | 🟡 No bloqueante | Preparar Airbyte/AWS Academy si se quieren usar como ampliación. |
 
@@ -22,27 +22,30 @@ En un momento anterior la reforma se dio por concluida. Después, al revisar con
 - Este documento manda sobre listas antiguas de pendientes.
 - Los documentos de informe siguen siendo útiles como evidencia de lo hecho, pero no como estado vivo.
 
-## Pendientes vivos
+## Bloques de seguimiento
 
 ### 1. Alineación curricular RA/CE
 
-**Estado:** pendiente.
+**Estado:** criterio docente cerrado.
 
-Hay que cerrar la separación entre **Sistemas de Big Data** y **Big Data Aplicado** para evitar duplicidades o descompensaciones.
+La separación entre **Sistemas de Big Data** y **Big Data Aplicado** queda definida por enfoque evaluativo:
 
-Acciones:
+- **SBD**: sistema, arquitectura, integración, almacenamiento, procesamiento, calidad, seguridad, cuadros de mando técnicos y elección de herramientas.
+- **Big Data Aplicado**: solución aplicada, cliente, negocio, explotación, monitorización de servicios, estabilidad, BI final y toma de decisiones.
 
-- Revisar `00-planificacion/matriz_alineacion_curricular_sbd_bigdata_aplicado.md`.
-- Decidir qué contenidos quedan en SBD y cuáles se derivan a Big Data Aplicado.
-- Revisar especialmente cloud, MLOps, Power BI, notebooks sueltos y recursos compartidos.
-- Actualizar la planificación si la alineación cambia pesos, tiempos o ubicación de actividades.
+No se deben mover materiales físicamente todavía. La decisión debe aplicarse al revisar cada unidad, separando qué queda como ruta principal SBD, qué queda como ampliación, qué se archiva y qué se deja preparado para BDA.
+
+Decisiones principales:
+
+- Power BI completo y MLOps/cloud avanzado quedan como material para BDA o archivo en SBD.
+- Spark/PySpark, Spark Structured Streaming, almacenamiento, ingesta, calidad, RGPD y Medallion quedan como núcleo SBD.
+- Metabase/Superset, Airflow, AWS Academy y proyecto integrador son compartidos, pero con enfoque evaluativo distinto.
+- Grafana/Kibana/Prometheus deben tratarse como BDA o ampliación compartida salvo que se reduzcan a visualización técnica mínima.
 
 Fuentes:
 
-- `README.md`
 - `00-planificacion/matriz_alineacion_curricular_sbd_bigdata_aplicado.md`
 - `00-planificacion/herramientas_usadas_curso.md`
-- `00-planificacion/INFORME_REORGANIZACION_FINA.md`
 
 ### 2. Revisión didáctica de UD2–UD6
 
@@ -112,10 +115,9 @@ Estos elementos pueden aparecer con palabras como “pendiente”, “revisar”
 
 ## Orden recomendado de trabajo
 
-1. **Alineación RA/CE**: evita rehacer unidades con una distribución curricular equivocada.
-2. **Revisión UD2–UD6**: aplicar el estándar de UD1 unidad por unidad.
-3. **Flecos de arquitectura/Medallion**: cerrar formato evaluable y conexión curricular.
-4. **Infraestructura docente**: preparar solo si se van a usar las ampliaciones Airbyte/AWS.
+1. **Revisión UD2–UD6**: aplicar el estándar de UD1 unidad por unidad usando el criterio RA/CE ya cerrado.
+2. **Flecos de arquitectura/Medallion**: cerrar formato evaluable y conexión curricular.
+3. **Infraestructura docente**: preparar solo si se van a usar las ampliaciones Airbyte/AWS.
 
 ## Regla de mantenimiento
 

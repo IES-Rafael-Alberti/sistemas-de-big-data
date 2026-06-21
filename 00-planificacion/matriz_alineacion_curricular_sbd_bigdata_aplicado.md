@@ -161,16 +161,57 @@ Tensión principal detectada: la normativa menciona herramientas y enfoques clá
 | `lab_MLMLDD.ipynb` | Falta contexto. | Posible recurso ML. | revision_docente |
 | `skill_builder/Skill Builder Meetings.html` | Pertenencia dudosa al módulo. | Puede ser recurso externo/documental. | archivar_o_revisar |
 
-## 9. Recomendaciones para la siguiente fase
+## 9. Decisión docente final de alineación
+
+La alineación curricular queda cerrada como **criterio de trabajo**, sin mover físicamente materiales todavía. La decisión no es “SBD o BDA” por herramienta, sino por **enfoque evaluativo**:
+
+- **SBD** evalúa el sistema: integración, almacenamiento, procesamiento, arquitectura, calidad, seguridad, cuadros de mando técnicos y elección de herramientas.
+- **Big Data Aplicado** evalúa la solución aplicada: cliente, negocio, explotación, monitorización de servicios, estabilidad, BI final y toma de decisiones.
+
+### Decisiones por bloque
+
+| Bloque | Decisión | Aplicación práctica |
+| ------ | -------- | ------------------- |
+| Fundamentos, arquitecturas, Medallion, batch/streaming, Lambda/Kappa | Se queda en SBD | BDA puede reutilizarlo como contexto, pero no como núcleo evaluable. |
+| Almacenamiento, ingesta, formatos, NoSQL, calidad, RGPD | Se queda en SBD como base técnica | BDA puede reutilizar datasets y casos para solución aplicada. |
+| Spark/PySpark y Spark Structured Streaming | Se queda en SBD | BDA puede usar Spark sobre casos de negocio, pero la competencia técnica se trabaja en SBD. |
+| Spark MLlib | Se queda en SBD si el foco es ML distribuido | BDA puede adaptar el caso si se evalúa decisión de negocio o BI predictiva. |
+| Metabase/Superset/cuadros de mando técnicos | Compartido | En SBD se evalúa configuración, datos, métricas y lectura técnica; en BDA, interpretación de negocio. |
+| Power BI completo | BDA / archivo en SBD | En SBD basta con comparativa o referencia; no debe ocupar la ruta principal. |
+| Mini-proyectos BI de negocio | BDA | SBD puede conservar una versión corta si evidencia RA2/RA4. |
+| Airflow | Compartido | En SBD como orquestación de pipelines; en BDA como operación de solución. |
+| Mage AI / packs de pipeline aplicado | BDA salvo referencia técnica | Mantener en SBD sólo como ejemplo o material archivado. |
+| Grafana, Prometheus, Kibana y observabilidad | BDA o ampliación compartida | En SBD sólo si se presenta como visualización técnica mínima; la monitorización de servicios es BDA RA4. |
+| AWS Academy S3 + Glue + Athena | Optativa SBD y ampliación BDA | En SBD sirve para ingesta/catalogación cloud; BDA puede explotarlo como solución completa. |
+| MLOps/cloud avanzado | BDA / archivo en SBD | Excede la ruta principal de SBD. |
+| Proyecto integrador | Compartido | SBD debe exigir arquitectura, pipeline y calidad; BDA debe exigir solución, BI e impacto en negocio. |
+
+### Casos que no requieren mover ahora
+
+- `ud04-bi-orquestacion/90-archivo/power-bi-para-BDA/` ya está correctamente archivado para posible uso en BDA.
+- `ud04-bi-orquestacion/90-archivo/mlops-cloud-para-BDA/` ya está correctamente archivado para posible uso en BDA.
+- `ud02-almacenamiento-ingesta/05-recursos/practica-herramientas-reales/aws-ingesta-serverless.md` puede quedarse como ampliación SBD si se valida AWS Academy.
+- `ud04-bi-orquestacion/03-practicas/Lab6_Dashboard_Tecnico/` debe quedarse en SBD si el foco es dashboard técnico de pipeline.
+
+### Casos a revisar cuando se toque cada unidad
+
+| Caso | Qué decidir en la revisión de unidad |
+| ---- | ------------------------------------ |
+| `ud03-procesamiento-distribuido/03-practicas/Grafana_Labs/` y Kibana/Grafana heredados | Archivar, dejar como ampliación o reconducir a visualización técnica mínima. |
+| `ud04-bi-orquestacion/03-practicas/Lab1_Metabase/`, `Lab2_Superset/`, `Lab3_miniProy/` | Separar dashboard técnico SBD de BI de negocio BDA. |
+| `ud04-bi-orquestacion/03-practicas/Lab4_Airflow/` | Mantener si se evalúa orquestación técnica; derivar enfoque operativo a BDA. |
+| `ud05-spark-mllib/03-practicas/` y evaluación UD5 | Garantizar que el peso está en ML distribuido, no en receta de ML general. |
+| `ud06-proyecto/` | Definir entregables diferenciados: arquitectura/pipeline/calidad para SBD; solución/BI/decisión para BDA. |
+
+## 10. Recomendaciones para la siguiente fase
 
 1. No mover aún materiales físicamente entre módulos.
-2. Revisar con calma los candidatos a Big Data Aplicado de la sección 5.
-3. Crear una columna de decisión docente final: `se_queda`, `se_duplica`, `se_adapta`, `se_mueve`, `se_archiva`.
-4. Para cada candidato, decidir si se mueve completo, se duplica parcialmente o se deja como referencia transversal.
-5. Separar enfoque técnico de enfoque aplicado:
+2. Usar la sección 9 como criterio docente final al revisar cada unidad.
+3. Para cada candidato, decidir si se queda, se duplica parcialmente, se adapta, se mueve o se archiva.
+4. Separar enfoque técnico de enfoque aplicado:
    - SBD: sistemas, herramientas, procesamiento, almacenamiento, cuadros de mando.
    - BDA: solución, operación, monitorización, cliente, BI aplicada y decisión de negocio.
-6. Preparar infraestructura opcional: Airbyte en Proxmox y AWS Academy (S3, Glue, Athena). No bloquea la ruta principal con dlt.
-7. Mantener Hadoop/HDFS como concepto si ayuda a RA/CE, pero no convertirlo en el centro práctico salvo que sea estrictamente necesario.
-8. Usar Spark/PySpark/MLlib como reinterpretación moderna y defendible de procesamiento distribuido y análisis Big Data.
-9. Preparar después un plan de cambios físicos sobre la copia: mover/duplicar/adaptar sólo lo validado por el docente.
+5. Preparar infraestructura opcional: Airbyte en Proxmox y AWS Academy (S3, Glue, Athena). No bloquea la ruta principal con dlt.
+6. Mantener Hadoop/HDFS como concepto si ayuda a RA/CE, pero no convertirlo en el centro práctico salvo que sea estrictamente necesario.
+7. Usar Spark/PySpark/MLlib como reinterpretación moderna y defendible de procesamiento distribuido y análisis Big Data.
+8. Preparar después un plan de cambios físicos sobre la copia: mover/duplicar/adaptar sólo lo validado por el docente.
