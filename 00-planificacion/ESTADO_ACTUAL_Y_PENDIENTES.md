@@ -117,8 +117,32 @@ El sitio público se genera con MkDocs y no debe tratarse como fuente canónica:
 
 - `site/` está ignorado en Git; no se versiona la salida generada.
 - La publicación se construye desde Markdown con `mkdocs build --strict`.
-- Al copiar el repositorio con **Unison**, los enlaces simbólicos pueden no copiarse correctamente. En el equipo de destino hay que regenerar el sitio con `mkdocs build --strict` en lugar de confiar en una copia previa de `site/`.
+- Al copiar el repositorio con **Unison**, los enlaces simbólicos pueden no copiarse correctamente. En el equipo de destino hay que regenerar el sitio siguiendo el checklist de abajo en lugar de confiar en una copia previa de `site/`.
 - Si se usa otro ordenador, comprobar primero que el entorno de MkDocs está instalado y después ejecutar el build estricto antes de publicar.
+
+**Checklist de regeneración en destino:**
+
+```bash
+# 1. Crear symlinks de unidades (nav_generator.py los necesita)
+cd docs
+ln -sf ../ud01-introduccion-big-data    ud01-introduccion-big-data
+ln -sf ../ud02-almacenamiento-ingesta   ud02-almacenamiento-ingesta
+ln -sf ../ud03-procesamiento-distribuido ud03-procesamiento-distribuido
+ln -sf ../ud04-bi-orquestacion          ud04-bi-orquestacion
+ln -sf ../ud05-spark-mllib              ud05-spark-mllib
+ln -sf ../ud06-proyecto                 ud06-proyecto
+cd ..
+
+# 2. Crear symlinks de plantillas
+ln -sf 00-planificacion/plantillas     plantillas
+ln -sf ../00-planificacion/plantillas  docs/plantillas
+
+# 3. Asegurar que mkdocs + tema material están instalados
+#    (si no: pip install mkdocs mkdocs-material)
+
+# 4. Build estricto
+mkdocs build --strict
+```
 
 Validación conocida:
 

@@ -78,3 +78,18 @@ site/
 
 # Non-canonical pending review area
 00-recursos-comunes/pendiente_revision/
+
+# Professor-only folders (soluciones, material privado)
+**/99-profesor/
+**/99-profesor/**
+
+# Planning templates and raw prompts
+00-planificacion/prompts_base_reforma/
+00-planificacion/prompt_*
+00-planificacion/inventario_*
+00-planificacion/nota_*
+00-planificacion/matriz_*
+00-planificacion/propuesta_*
+00-planificacion/Curriculum Resource Guide v2.pdf
+plantillas
+plantillas/
