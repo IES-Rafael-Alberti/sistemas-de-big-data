@@ -1,3 +1,5 @@
+/home/jmsa/IESRafaelAlberti/RafaelAlberti25_26/Modulos/PIA/PIA_2026_2027_reorganizado/04-deep-learning/01-teoria/vision-teoria/cats_and_dogs_filtered/PetImages
+
 # UD1 · Parte 0 — Estadística aplicada para Big Data
 
 ## Propósito

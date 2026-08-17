@@ -25,8 +25,7 @@ decidir cómo utilizarlos más tarde.
 e) Se ha visualizado que el sistema puede crecer fácilmente añadiendo módulos.
 
 ### 3. Genera mecanismos de integridad de los datos, comprobando su mantenimiento
-en los sistemas de ficheros distribuidos y valorando la sobrecarga que conlleva en el
-tratamiento de los datos.
+en los sistemas de ficheros distribuidos y valorando la sobrecarga que conlleva en el tratamiento de los datos.
 Criterios de evaluación:
 a) Se ha valorado la importancia de la calidad de los datos en los sistemas de ficheros
 distribuidos.
