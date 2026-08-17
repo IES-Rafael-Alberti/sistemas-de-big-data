@@ -4,13 +4,13 @@
 
 | Sección | Uso | Nº archivos |
 | ------- | --- | ----------: |
-| `01-teoria/` | Fuentes editables y apuntes principales. | 50 |
-| `02-ejemplos/` | Notebooks, scripts y ejemplos no evaluables. | 0 |
-| `03-practicas/` | Guiones de laboratorio y prácticas de aula. | 16 |
-| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | 11 |
-| `05-recursos/` | Datasets, imágenes, plantillas, ZIPs docentes y dependencias. | 0 |
+| `01-teoria/` | Fuentes editables y apuntes principales. | 12 |
+| `02-ejemplos/` | Notebooks, scripts y ejemplos no evaluables. | 1 |
+| `03-practicas/` | Guiones de laboratorio y prácticas de aula. | 20 |
+| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | 12 |
+| `05-recursos/` | Datasets, imágenes, plantillas, ZIPs docentes y dependencias. | 25 |
 | `90-archivo/` | Derivados publicados, histórico y material no canónico. | 19 |
-| `99-profesor/` | Notas internas, guías docentes y corrección reutilizable. | 8 |
+| `99-profesor/` | Notas internas, guías docentes y corrección reutilizable. | 10 |
 
 ## Material nuevo — Dashboard técnico de monitorización de pipeline
 
