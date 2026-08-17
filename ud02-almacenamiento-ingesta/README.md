@@ -5,10 +5,10 @@
 | Sección | Uso | Nº archivos |
 | ------- | --- | ----------: |
 | `01-teoria/` | Fuentes editables y apuntes principales. | 41 |
-| `02-ejemplos/` | Notebooks, scripts y ejemplos no evaluables. | 0 |
-| `03-practicas/` | Guiones de laboratorio y prácticas de aula. | 50 |
-| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | 3 |
-| `05-recursos/` | Datasets, imágenes, plantillas, ZIPs docentes y dependencias. | 5 |
+| `02-ejemplos/` | Notebooks, scripts y ejemplos no evaluables. | 1 |
+| `03-practicas/` | Guiones de laboratorio y prácticas de aula. | 37 |
+| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | 5 |
+| `05-recursos/` | Datasets, imágenes, plantillas, ZIPs docentes y dependencias. | 9 |
 | `90-archivo/` | Derivados publicados, histórico y material no canónico. | 30 |
 | `99-profesor/` | Notas internas, guías docentes y corrección reutilizable. | 4 |
 
