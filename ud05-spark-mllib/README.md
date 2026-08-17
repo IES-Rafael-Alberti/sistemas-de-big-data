@@ -4,13 +4,13 @@
 
 | Sección | Uso | Nº archivos |
 | ------- | --- | ----------: |
-| `01-teoria/` | Fuentes editables y apuntes principales. | 7 |
+| `01-teoria/` | Fuentes editables y apuntes principales. | 8 |
 | `02-ejemplos/` | Notebooks, scripts y ejemplos no evaluables. | 8 |
 | `03-practicas/` | Guiones de laboratorio y prácticas de aula. | 4 |
-| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | 10 |
+| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | 11 |
 | `05-recursos/` | Datasets, imágenes, plantillas, ZIPs docentes y dependencias. | 1 |
 | `90-archivo/` | Derivados publicados, histórico y material no canónico. | 10 |
-| `99-profesor/` | Notas internas, guías docentes y corrección reutilizable. | 5 |
+| `99-profesor/` | Notas internas, guías docentes y corrección reutilizable. | 6 |
 
 ## Material nuevo — Guía scikit-learn vs Spark MLlib
 

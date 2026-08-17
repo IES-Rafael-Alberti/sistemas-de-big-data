@@ -2,12 +2,17 @@
 
 ## Estructura
 
-| Elemento | Descripción |
-|----------|-------------|
-| `guion_proyecto.md` | Guión completo del proyecto: objetivos, fases, entregables, evaluación |
-| `05-recursos/ideas_proyecto.md` | Ideas orientativas de dominios y tipos de proyecto |
-| `90-archivo/proyecto-integrador-antiguo/` | Material UD6 anterior archivado tras rescatar las ideas útiles |
-| (Por definir) | Entregas del alumnado |
+| Sección | Uso | Nº archivos |
+| ------- | --- | ----------: |
+| `01-teoria/` | Fuentes editables y apuntes principales. | 1 |
+| `02-ejemplos/` | Notebooks, scripts y ejemplos no evaluables. | 1 |
+| `03-practicas/` | Guiones de laboratorio y prácticas de aula. | 1 |
+| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | 2 |
+| `05-recursos/` | Datasets, imágenes, plantillas, ZIPs docentes y dependencias. | 1 |
+| `90-archivo/` | Derivados publicados, histórico y material no canónico. | 1 |
+| `99-profesor/` | Notas internas, guías docentes y corrección reutilizable. | 1 |
+
+*Nota: La guía técnica principal del proyecto se centraliza en `guion_proyecto.md` en la raíz de esta unidad.*
 
 ## Naturaleza del proyecto
 
