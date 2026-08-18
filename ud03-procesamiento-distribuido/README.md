@@ -24,10 +24,10 @@
 | **RA4.c** | Spark Labs (clúster Master/Worker, HDFS) | Evaluable |
 | **RA4.d** | Benchmark (comparativa pandas/DuckDB/Spark) | Evaluable |
 | **RA4.e** | Spark Labs (scripts PySpark, RDDs, DataFrames) | Evaluable |
-| **RA4.f** | Lab Grafana (monitorización visual) | Evaluable |
-| **RA4.f** | Lab Kibana (exploración y dashboards) | Evaluable |
-| **RA2.c** | Lab Grafana (dashboard monitorización) | Evaluable |
-| **RA2.e** | Lab Grafana (reflexión sobre métricas) | Evaluable |
+| **RA4.f** | Lab Grafana (monitorización visual) | Ampliación |
+| **RA4.f** | Lab Kibana (exploración y dashboards) | Ampliación |
+| **RA2.c** | Lab Grafana (dashboard monitorización) | Ampliación |
+| **RA2.e** | Lab Grafana (reflexión sobre métricas) | Ampliación |
 
 > Los labs de Grafana y Kibana son material heredado y quedan como **ampliación**.
 > Cubren RA2 y RA4, pero no forman parte de la ruta principal de UD3 porque su foco

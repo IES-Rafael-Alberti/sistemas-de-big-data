@@ -54,7 +54,7 @@ flowchart LR
   D --> E[Silver/Gold]
   E --> F[Base analítica]
   F --> G[Dashboard técnico]
-  H[Airflow/MageAI] -. coordina .-> B
+  H[Airflow] -. coordina .-> B
   H -. coordina .-> D
   H -. coordina .-> F
 ```

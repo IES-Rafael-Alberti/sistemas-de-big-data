@@ -60,7 +60,7 @@ En SBD se conserva solo la **comparativa conceptual**:
 | 3. Diseño | `01-teoria/Parte-I_BI/UD4_09_Diseno_profesional_de_dashboards.md` | Boceto con KPI, filtros y visualizaciones justificadas. |
 | 4. Herramientas | Labs Metabase/Superset | Dashboard funcional y comparación de herramienta. |
 | 5. Dashboard técnico | `03-practicas/Lab6_Dashboard_Tecnico/` | Métricas de caudal, calidad y rendimiento del pipeline. |
-| 6. Orquestación | Airflow/MageAI | DAG o flujo con dependencias explícitas y evidencias de ejecución. |
+| 6. Orquestación | Airflow | DAG con dependencias explícitas y evidencias de ejecución. |
 
 ## Cuestionarios semanales (formato Moodle GIFT)
 

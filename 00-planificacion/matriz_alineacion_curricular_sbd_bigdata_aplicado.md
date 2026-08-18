@@ -16,7 +16,7 @@ Parecen más propios de **Big Data Aplicado** o compartibles:
 
 - Laboratorios de monitorización/observabilidad con Prometheus, Grafana y Kibana.
 - Soluciones cloud concretas con AWS, DynamoDB, RDS, EC2 o Step Functions cuando el foco sea resolver un caso extremo a extremo.
-- Orquestación operativa con Airflow/Mage AI si se evalúa como solución desplegada o pipeline de negocio.
+- Orquestación operativa con Airflow si se evalúa como solución desplegada o pipeline de negocio.
 - BI aplicado a modelo de negocio, cliente final, interpretación y toma de decisiones.
 - Proyecto integrador si se plantea como solución completa de negocio.
 
@@ -67,8 +67,8 @@ Tensión principal detectada: la normativa menciona herramientas y enfoques clá
 | `ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/` | UD3 | Spark, rúbricas | SBD RA1, RA3 | BDA RA2 | Sistemas de Big Data | mantener_en_sbd | Evaluación directa de procesamiento distribuido. | No |
 | `ud03-procesamiento-distribuido/99-profesor/` | UD3 | Spark, Kibana, Zeppelin | SBD RA1, RA3, RA4 | BDA RA2, RA4 | Transversal | mantener_como_recurso_profesor | Guías internas útiles para decidir enfoque y adaptar prácticas. | Sí |
 | `ud04-bi-orquestacion/01-teoria/Parte-I_BI/` | UD4 | Metabase, Superset, Power BI, dashboards | SBD RA2, RA4 | BDA RA5 | Ambos | compartir_entre_modulos | SBD cubre cuadros de mando; BDA cubre BI aplicada a negocio. | Sí |
-| `ud04-bi-orquestacion/01-teoria/ParteII-Orquestacion/` | UD4 | Airflow, Mage AI, pipelines | SBD RA1.f-g, RA3, RA4.d-e | BDA RA1, RA2, RA4 | Ambos | compartir_entre_modulos | Orquestación puede ser sistema en SBD o solución aplicada/operativa en BDA. | Sí |
-| `ud04-bi-orquestacion/01-teoria/ParteII-Orquestacion/practica/mage_ai_pack/` | UD4 | Mage AI, Docker, Python, pipelines | SBD RA1.f, RA3, RA4 | BDA RA1, RA2 | Big Data Aplicado | candidato_big_data_aplicado | Pack de solución aplicada/pipeline; mantener copia en SBD sólo si se usa como ejemplo de sistema. | Sí |
+| `ud04-bi-orquestacion/01-teoria/ParteII-Orquestacion/` | UD4 | Airflow, pipelines | SBD RA1.f-g, RA3, RA4.d-e | BDA RA1, RA2, RA4 | Ambos | compartir_entre_modulos | Orquestación puede ser sistema en SBD o solución aplicada/operativa en BDA. | Sí |
+| `90-archivo/mage-ai/` | UD4 | Mage AI, Docker, Python, pipelines | — | — | Archivado | archivado | Alternativa no consolidada: retirada de la ruta activa por su mantenimiento y encaje didáctico. | No |
 | `ud04-bi-orquestacion/01-teoria/UD4_13_BI_Comparativa_Metabase_Superset_PowerBI.md` | UD4 | Metabase, Superset, Power BI | SBD RA2, RA4 | BDA RA5 | Ambos | compartir_entre_modulos | Comparativa de herramientas: útil en SBD y decisión aplicada en BDA. | No |
 | `ud04-bi-orquestacion/03-practicas/Lab1_Metabase/` | UD4 | Metabase, BI | SBD RA2, RA4 | BDA RA5 | Ambos | compartir_entre_modulos | Cuadro de mando sencillo y BI de negocio. | Sí |
 | `ud04-bi-orquestacion/03-practicas/Lab2_Superset/` | UD4 | Superset, BI | SBD RA2, RA4 | BDA RA5 | Ambos | compartir_entre_modulos | Igual que Metabase, con más complejidad de instalación. | Sí |
@@ -90,7 +90,7 @@ Tensión principal detectada: la normativa menciona herramientas y enfoques clá
 | ----------- | -------------------- | ---------------- | ------------------------------ | ------------------- | -------------------- |
 | Hadoop / HDFS | UD1 arquitecturas, UD2 HDFS, TareaHDFS | SBD RA3.c-d, RA4.c | BDA RA2, RA3 | Tecnología clásica/menos usada; útil para concepto de distribución, redundancia e integridad. | mantener_como_base_conceptual |
 | Spark / PySpark | UD2, UD3 Spark Labs, UD5 ejemplos/prácticas | SBD RA1, RA2.d, RA3, RA4.d-e | BDA RA2.b, RA5 | Requiere entorno estable; mucho más actual que MapReduce/Pig/Hive para aula. | mantener_en_sbd_y_compartir |
-| Spark MLlib | UD5, UD4 Mage AI + MLlib | SBD RA1.b, RA2.d-e | BDA RA5 | Puede ser demasiado ML si no se conecta con Big Data distribuido. | compartir_entre_modulos |
+| Spark MLlib | UD5 | SBD RA1.b, RA2.d-e | BDA RA5 | Puede ser demasiado ML si no se conecta con Big Data distribuido. | compartir_entre_modulos |
 | DuckDB | UD1 EDA/modelado, UD1 calidad | SBD RA1, RA3 | BDA RA1, RA5 | No es distribuido, pero excelente para bajo coste y aprendizaje de formatos/SQL/Parquet. | mantener_en_sbd |
 | FireDuck | UD1 tutorial | SBD RA1, RA3 | BDA RA1 | Archivado: paquete no disponible en PyPI (jun 2026). | archivado |
 | MongoDB / Cassandra | UD1/UD2 NoSQL | SBD RA3 | BDA RA1, RA2 | Cassandra puede requerir actualización; MongoDB sigue siendo didáctico. | mantener_en_sbd |
@@ -101,7 +101,7 @@ Tensión principal detectada: la normativa menciona herramientas y enfoques clá
 | Metabase / Superset | UD4 BI Labs | SBD RA2, RA4 | BDA RA5 | Instalación y mantenimiento; Superset puede ser más pesado. | compartir_entre_modulos |
 | Power BI | UD4 teoría/lab | SBD RA2, RA4 | BDA RA5 | Licencias, cuentas, equipos del centro. | compartir_entre_modulos |
 | Airflow | UD4 Lab Airflow | SBD RA1.f, RA4.d-e | BDA RA1, RA2, RA4 | Pesado para aula; fuerte valor profesional. | compartir_con_revision |
-| Mage AI | UD4 práctica/pack | SBD RA1.f, RA3 | BDA RA1, RA2 | Ver continuidad del proyecto, instalación y Docker. | candidato_big_data_aplicado |
+| Mage AI | `90-archivo/mage-ai/` | — | — | Alternativa no consolidada; retirada por mantenimiento, versiones y encaje didáctico. | archivado |
 | Grafana / Prometheus | UD3 monitorización | SBD RA4 | BDA RA4 | Muy claro para monitorización; más BDA que SBD si el foco es operación. | candidato_big_data_aplicado |
 | Kibana / Elastic | UD3 labs | SBD RA4 | BDA RA4, RA5 | Coste/stack/viabilidad. | candidato_big_data_aplicado |
 | Docker | Packs y laboratorios | SBD RA1.f, RA3 | BDA RA1, RA2, RA4 | Apoyo técnico imprescindible, no siempre objetivo evaluable. | recurso_transversal |
@@ -114,7 +114,7 @@ Tensión principal detectada: la normativa menciona herramientas y enfoques clá
 | `ud03-procesamiento-distribuido/03-practicas/Prometheus_grafana_lab/` | UD3 | Monitorización, métricas, alertas y estabilidad. | BDA RA4.a-f | SBD puede conservar mención como visualización/observabilidad, pero no debería ocupar demasiado. |
 | `ud03-procesamiento-distribuido/03-practicas/Kibana_Labs/` | UD3 | Visualización operacional y análisis con stack específico. | BDA RA4, RA5 | SBD puede dejarlo como ampliación o ejemplo de visualización. |
 | `ud04-bi-orquestacion/03-practicas/Lab3_miniProy/` | UD4 | Mini-proyecto de cuadro de mando aplicado a toma de decisiones. | BDA RA5.a-f | SBD puede conservar versión corta para RA2/RA4. |
-| `ud04-bi-orquestacion/01-teoria/ParteII-Orquestacion/practica/mage_ai_pack/` | UD4 | Pack de solución pipeline aplicada con Docker/Mage. | BDA RA1, RA2 | SBD puede mantener la teoría de orquestación, no necesariamente todo el pack. |
+| `90-archivo/mage-ai/` | UD4 | Material histórico de Mage AI. | — | Archivado; no forma parte de SBD ni de Big Data Aplicado mientras no se reevalúe expresamente. |
 | `ud04-bi-orquestacion/03-practicas/Lab4_Airflow/` | UD4 | Orquestación operacional y DAGs; fuerte componente aplicado. | BDA RA1, RA2, RA4 | SBD puede mantener conceptos de pipeline/orquestación. |
 | `ud04-bi-orquestacion/03-practicas/Lab5_Sesion_PowerBI/` | UD4 | BI orientada a resultados de negocio. | BDA RA5 | SBD conserva cuadro de mando básico si se necesita RA2/RA4. |
 | `ud05-spark-mllib/03-practicas/` | UD5 | ML aplicado puede encajar con BI/decisión si se orienta a negocio. | BDA RA5 | SBD mantiene ML distribuido técnico; BDA adapta caso de negocio. |
@@ -143,7 +143,7 @@ Tensión principal detectada: la normativa menciona herramientas y enfoques clá
 | CSV/JSON/Parquet | Formatos y almacenamiento. | Formatos para resolver casos de negocio. | Compartir criterios y datasets. |
 | Spark/PySpark | Procesamiento distribuido/sistemas. | Procesamiento aplicado a casos reales. | SBD base técnica; BDA aplicación. |
 | BI con Metabase/Superset/Power BI | Cuadros de mando y visualización. | BI de negocio y toma de decisiones. | Compartir, pero cambiar enfoque evaluativo. |
-| Airflow/Mage AI | Orquestación de sistemas/pipelines. | Soluciones aplicadas y operación. | Compartir o mover parte práctica avanzada a BDA. |
+| Airflow | Orquestación de sistemas/pipelines. | Soluciones aplicadas y operación. | Compartir con enfoque evaluativo distinto. |
 | Docker | Entornos reproducibles. | Despliegue de soluciones. | Recurso técnico común. |
 | RGPD/calidad | Seguridad, normativa, calidad. | Integridad y fiabilidad de soluciones. | Mantener transversal. |
 
@@ -180,7 +180,7 @@ La alineación curricular queda cerrada como **criterio de trabajo**, sin mover 
 | Power BI completo | BDA / archivo en SBD | En SBD basta con comparativa o referencia; no debe ocupar la ruta principal. |
 | Mini-proyectos BI de negocio | BDA | SBD puede conservar una versión corta si evidencia RA2/RA4. |
 | Airflow | Compartido | En SBD como orquestación de pipelines; en BDA como operación de solución. |
-| Mage AI / packs de pipeline aplicado | BDA salvo referencia técnica | Mantener en SBD sólo como ejemplo o material archivado. |
+| Mage AI / packs de pipeline aplicado | Archivado | Retirado de la ruta activa por falta de consolidación y coste de mantenimiento. |
 | Grafana, Prometheus, Kibana y observabilidad | BDA o ampliación compartida | En SBD sólo si se presenta como visualización técnica mínima; la monitorización de servicios es BDA RA4. |
 | AWS Academy S3 + Glue + Athena | Optativa SBD y ampliación BDA | En SBD sirve para ingesta/catalogación cloud; BDA puede explotarlo como solución completa. |
 | MLOps/cloud avanzado | BDA / archivo en SBD | Excede la ruta principal de SBD. |

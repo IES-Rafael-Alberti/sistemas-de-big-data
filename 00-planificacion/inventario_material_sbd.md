@@ -9,7 +9,7 @@ Las partes mejor cubiertas son:
 - **UD1 — Introducción Big Data**: conceptos, NoSQL inicial, DuckDB, EDA, calidad de datos e ingesta básica.
 - **UD2 — Almacenamiento e ingesta**: almacenamiento distribuido, HDFS, NoSQL, cloud, pipelines, integración, calidad incremental, RGPD y seguridad.
 - **UD3 — Procesamiento distribuido**: Spark, Kibana, Grafana, Prometheus, Zeppelin y laboratorios asociados.
-- **UD4 — BI y orquestación**: Metabase, Superset, Power BI, Airflow, Mage AI, pipelines y dashboards.
+- **UD4 — BI y orquestación**: Metabase, Superset, Power BI, Airflow, pipelines y dashboards.
 - **UD5 — Spark MLlib**: teoría, notebooks, scripts, datasets y laboratorios de regresión, clasificación y clustering.
 - **UD6 — Proyecto integrador**: cierre del módulo con Big Data, BI y ML.
 
@@ -83,8 +83,8 @@ Conviene revisar antes del próximo curso:
 | `ud03-procesamiento-distribuido/99-profesor/` | Material profesor UD3 | Guía docente | UD3 | Versiones profesor de Kibana/Spark, alternativas y presentaciones. | Spark, Kibana, Zeppelin | Vigente / revisar | Muy útil para docencia, pero debe quedar separado de alumnado. |
 | `ud04-bi-orquestacion/README.md` | README.md | Índice de unidad | UD4 | Entrada general de BI y orquestación. | BI, orquestación | Vigente | Debe actuar como índice canónico de UD4. |
 | `ud04-bi-orquestacion/01-teoria/Parte-I_BI/` | Parte I BI | Teoría | UD4 | Fundamentos BI, modelado, preparación de datos, Metabase, Superset, Power BI, diseño de dashboards y analítica predictiva. | Metabase, Superset, Power BI | Vigente / revisar | Mucho material en Markdown/HTML/PDF; decidir fuente principal. |
-| `ud04-bi-orquestacion/01-teoria/ParteII-Orquestacion/` | Parte II Orquestación | Teoría / práctica | UD4 | Airflow, Mage AI, pipelines y orquestación de datos. | Airflow, Mage AI, Spark, MLlib | Vigente / revisar | Mage AI requiere confirmar continuidad y fricción de instalación. |
-| `ud04-bi-orquestacion/01-teoria/ParteII-Orquestacion/practica/mage_ai_pack/` | mage_ai_pack | Proyecto base / pack aula | UD4 | Pack con Docker/requirements, scripts, pipeline Mage AI, notebooks y datos. | Mage AI, Docker, Python | Vigente / revisar | Buen candidato a plantilla de aula; separar fuentes de outputs. |
+| `ud04-bi-orquestacion/01-teoria/ParteII-Orquestacion/` | Parte II Orquestación | Teoría / práctica | UD4 | Airflow, pipelines y orquestación de datos. | Airflow, Spark, MLlib | Vigente | Airflow es la referencia activa y evaluable de orquestación. |
+| `90-archivo/mage-ai/` | Material Mage AI | Archivo histórico | UD4 | Teoría, prácticas, evaluación y pack de Mage AI retirados de la ruta activa. | Mage AI, Docker, Python | Archivado | Alternativa no consolidada; conservar sólo como referencia histórica. |
 | `ud04-bi-orquestacion/01-teoria/UD4_13_BI_Comparativa_Metabase_Superset_PowerBI.md` | Comparativa BI | Teoría | UD4 | Comparativa entre Metabase, Superset y Power BI. | Metabase, Superset, Power BI | Vigente | Muy útil para selección de herramientas y criterio técnico. |
 | `ud04-bi-orquestacion/03-practicas/Lab1_Metabase/` | Lab1 Metabase | Práctica | UD4 | Primer laboratorio BI con Metabase. | Metabase | Vigente | Enunciado reutilizable; mantener separado de correcciones. |
 | `ud04-bi-orquestacion/03-practicas/Lab2_Superset/` | Lab2 Superset | Práctica | UD4 | Laboratorio BI con Superset. | Superset | Vigente / revisar | Revisar viabilidad de instalación/uso en aula. |
@@ -163,7 +163,7 @@ Ejemplos claros detectados:
 - **Zeppelin**: revisar si compensa frente a notebooks/Colab/Jupyter u otras herramientas más sostenibles.
 - **Kibana/Grafana/Prometheus**: vigentes para observabilidad, pero requieren confirmar stack disponible y coste operativo.
 - **Airflow**: muy relevante profesionalmente, pero puede ser pesado para ciertos entornos de aula.
-- **Mage AI**: interesante para orquestación moderna, pero revisar continuidad, documentación y facilidad de instalación.
+- **Mage AI**: archivado; no forma parte de la ruta activa por su mantenimiento y fricción de uso en aula.
 - **Power BI**: útil y vigente, pero revisar licencias, cuentas educativas y viabilidad en equipos del centro.
 - **Airbyte/Redpanda Cloud**: revisar límites gratuitos actuales y alternativas locales.
 - **AWS/GCP/Azure**: revisar coste, cuentas educativas y riesgo de facturación.

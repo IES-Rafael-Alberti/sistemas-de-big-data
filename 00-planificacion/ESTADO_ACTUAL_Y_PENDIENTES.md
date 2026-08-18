@@ -161,13 +161,21 @@ Si se retoma este repositorio desde otro ordenador o sin memoria de sesión, lee
 | `c5fe9b5` | Arquitecturas Big Data | Se ampliaron las arquitecturas relevantes: lakehouse/Medallion y event-driven/streaming-first como núcleo; Data Mesh como contexto organizativo; Data Fabric/HTAP/microservicios como menciones. |
 | `b5ac37b` | Airbyte + AWS Academy | Se prepararon las prácticas optativas de herramientas reales: Airbyte sobre Proxmox con destino Postgres y AWS Academy con S3, Glue Crawler y Athena, incluyendo plan B y limpieza. |
 | `bf1c600` | Estado portable | Se actualizó este documento para poder continuar desde otro equipo sin depender de memoria externa. |
+| `dacf6a5`–`61af324` | Sincronización y limpieza | Exclusión de material profesor/privado en `.gitignore`, commits temáticos de UD1 a UD6, limpieza de borradores/notebooks ajenos en UD5 y subida completa a GitHub. |
 
 Estado operativo actual:
 
 - La ruta principal del curso queda cubierta con herramientas locales: Python, dlt, DuckDB, Parquet y Spark/PySpark.
+- Airflow es la única herramienta de orquestación evaluable de UD4. Mage AI se retiró de la ruta activa y se trasladó a `90-archivo/mage-ai/`: no debe recuperarse salvo revisión docente expresa. Si en el futuro se necesitara una alternativa, se evaluarán Prefect, Dagster o Kestra desde una necesidad didáctica concreta.
 - Airbyte y AWS Academy son ampliaciones realistas, no bloqueantes ni imprescindibles para evaluar UD2.
 - No hay que depender de Engram para saber qué se hizo: este fichero es la fuente viva de continuidad.
 - Antes de impartir las ampliaciones hay que validar infraestructura real: URL/credenciales Airbyte, conectividad a Postgres, conectores disponibles, permisos AWS Academy, región y salida Athena.
+
+## Correcciones verificadas
+
+- Mage AI se archivó y dejó de ser una alternativa activa o evaluable frente a Airflow.
+- La tabla RA/CE de UD03 ya marca Grafana y Kibana como ampliación.
+- `mkdocs build --strict` genera correctamente la página y navegación de `ud06-proyecto/guion_proyecto.md`.
 
 ## Elementos que NO son pendientes vivos
 
@@ -190,3 +198,9 @@ Cuando aparezca un pendiente nuevo:
 1. Añadirlo aquí.
 2. Si procede, enlazar el informe o documento donde se detectó.
 3. No crear nuevas listas paralelas de pendientes salvo que sean checklists internas de una tarea concreta.
+
+## Pendientes finales
+
+1. [ ] **Prefect / Big Data Aplicado:** consultar con su profesorado la propuesta de piloto en `00-planificacion/PROPUESTA_PREFECT_BIG_DATA_APLICADO.md`. No modifica Airflow ni la evaluación de SBD.
+2. [ ] **Infraestructura de ampliaciones:** antes de impartir Airbyte o AWS Academy, validar desde el aula la URL y credenciales de Airbyte, conectividad y conectores de Postgres, y permisos, región y salida Athena de AWS Academy.
+3. [ ] **Cambio de equipo con Unison:** regenerar el sitio en destino con `mkdocs build --strict` después de reconstruir los enlaces simbólicos indicados en este documento.
