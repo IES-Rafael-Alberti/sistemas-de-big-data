@@ -1,5 +1,5 @@
 ---
-title: "SGBD UD1 · Introducción a Big Data · Parte 1"
+title: "SBD UD1 · Fundamentos de Big Data (ampliación)"
 author: "José Manuel Sánchez Álvarez - IES Rafael Alberti"
 output:
   pdf_document:
@@ -16,7 +16,7 @@ editor_options:
     wrap: sentence
 ---
 
-# UD1 · Parte 1 — Big Data 101
+# UD1 · Fundamentos de Big Data — capítulo ampliado
 
 ## 1. Punto de partida: la promesa y el problema
 

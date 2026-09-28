@@ -84,7 +84,7 @@
 | **a** | Escenarios y tipologías de datos no estructurados | Laboratorio MongoDB (`lab_p2_modelado_documental_analitico`) | UD1 |
 | | | Lab Logs JSON (`lab_logs_json/UD1_Lab_Logs_JSON.md`) | UD1 |
 | | | Práctica Medallion (JSONL — datos semiestructurados) | UD2 |
-| | | Teoría UD1-Parte2 (NoSQL, MongoDB, Cassandra) | UD1 |
+| | | Teoría de `01-teoria/02-almacenamiento-y-nosql/` (NoSQL, MongoDB y Cassandra) | UD1 |
 | **b** | Implantar BI | Lab1 Metabase (primer contacto BI) | UD4 |
 | | | Lab2 Superset (dashboard analítico) | UD4 |
 | | | Lab3 miniProyecto BI (proyecto completo) | UD4 |

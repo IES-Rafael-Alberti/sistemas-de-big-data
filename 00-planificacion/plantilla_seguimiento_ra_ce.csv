@@ -1,0 +1,24 @@
+Alumno/a;RA;CE;Peso RA;Peso CE en RA;Unidad primaria;ID Moodle;Evidencia individual;Calificacion CE;Estado;Fecha;Enlace o referencia;Observaciones
+;RA1;a;30%;14,2857%;UD1;ud1-arquitectura-medallion;Explicacion individual de complejidad y arquitectura;;NE;;;
+;RA1;b;30%;14,2857%;UD1;ud1-eda-calidad;Notebook EDA y extraccion explicado;;NE;;;
+;RA1;c;30%;14,2857%;UD2;ud2-pipeline-dlt;Integracion reproducible de fuentes;;NE;;;
+;RA1;d;30%;14,2857%;UD2;ud2-medallion;Dataset Silver Gold relacionado;;NE;;;
+;RA1;e;30%;14,2857%;UD6;ud6-proyecto-sbd;Planificacion tecnica individual;;NE;;;
+;RA1;f;30%;14,2857%;UD2;ud2-coste-calidad;Seleccion razonada de sistemas;;NE;;;
+;RA1;g;30%;14,2857%;UD2;ud2-coste-calidad;Matriz coste calidad viabilidad;;NE;;;
+;RA2;a;20%;20%;UD4;ud4-mini-bi;Comparativa tecnica de herramientas;;NE;;;
+;RA2;b;20%;20%;UD4;ud4-mini-bi;Visualizacion elegida y justificada;;NE;;;
+;RA2;c;20%;20%;UD4;ud4-dashboard-airflow;Dashboard tecnico funcional;;NE;;;
+;RA2;d;20%;20%;UD5;ud5-portfolio-mllib;Modelo predictivo y metricas;;NE;;;
+;RA2;e;20%;20%;UD4;ud4-mini-bi;Reflexion sobre impacto;;NE;;;
+;RA3;a;25%;20%;UD2;ud2-pipeline-dlt;Ingesta multi-fuente reproducible;;NE;;;
+;RA3;b;25%;20%;UD2;ud2-medallion;Formato eficiente y justificacion;;NE;;;
+;RA3;c;25%;20%;UD3;ud3-portfolio-spark;Procesamiento distribuido ejecutado;;NE;;;
+;RA3;d;25%;20%;UD2;ud2-calidad-rgpd;Calidad seguridad y normativa;;NE;;;
+;RA3;e;25%;20%;UD2;ud2-calidad-rgpd;Metodo resultados y conclusiones;;NE;;;
+;RA4;a;25%;16,6667%;UD1;ud1-mongodb-logs;Tipologia y modelado de datos;;NE;;;
+;RA4;b;25%;16,6667%;UD4;ud4-mini-bi;Uso de BI para preguntas tecnicas;;NE;;;
+;RA4;c;25%;16,6667%;UD3;ud3-portfolio-spark;Cluster distribucion y redundancia;;NE;;;
+;RA4;d;25%;16,6667%;UD3;ud3-benchmark;Comparativa de motores;;NE;;;
+;RA4;e;25%;16,6667%;UD3;ud3-portfolio-spark;Script PySpark automatizado;;NE;;;
+;RA4;f;25%;16,6667%;UD4;ud4-dashboard-airflow;Visualizaciones tecnicas justificadas;;NE;;;

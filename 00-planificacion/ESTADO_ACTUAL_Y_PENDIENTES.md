@@ -11,6 +11,8 @@ Este documento es la **fuente única de seguimiento** para saber qué está term
 | UD1 — revisión didáctica | ✅ Revisada | Usarla como referencia para el resto de unidades. |
 | UD2–UD6 — revisión didáctica | ✅ Cerrada | UD2, UD3, UD4, UD5 y UD6 revisadas. |
 | Alineación curricular RA/CE | ✅ Criterio cerrado | Aplicarlo al revisar cada unidad; no mover materiales sin revisión de unidad. |
+| Evaluación criterial y Moodle | ✅ Configurada | Séneca por RA/CE; calificador Moodle, matriz y plantilla preparados. |
+| Inicio de curso SBD | ✅ Material preparado | Presentación breve, diagnóstico inicial y guiones de las dos primeras sesiones. |
 | Arquitecturas Big Data / Medallion | ✅ Cerrado | Mantener como núcleo lakehouse/Medallion + streaming-first; no abrir más arquitecturas salvo necesidad concreta. |
 | Infraestructura docente | ✅ Preparada en documentación | Validar acceso real a Airbyte/Postgres y AWS Academy antes de clase. |
 
@@ -46,6 +48,24 @@ Fuentes:
 
 - `00-planificacion/matriz_alineacion_curricular_sbd_bigdata_aplicado.md`
 - `00-planificacion/herramientas_usadas_curso.md`
+
+### 1.1 Evaluación criterial y Moodle
+
+**Estado:** configuración documental cerrada; pendiente solo de montar y probar
+el curso plantilla cuando Moodle esté disponible.
+
+- Séneca calcula la nota oficial por RA: RA1 30 %, RA2 20 %, RA3 25 % y RA4
+  25 %, con CE uniformes dentro de cada RA.
+- Moodle organiza evidencias por UD con categorías de media ponderada y total
+  informativo; no sustituye la calificación criterial.
+- La cobertura y acreditación individual se registra por CE, incluidas defensas
+  de actividades cooperativas y recuperaciones equivalentes.
+
+Fuentes:
+
+- `00-planificacion/CONFIGURACION_CALIFICADOR_MOODLE_2026_2027.md`
+- `00-planificacion/MATRIZ_SEGUIMIENTO_RA_CE_2026_2027.md`
+- `00-planificacion/plantilla_seguimiento_ra_ce.csv`
 
 ### 2. Revisión didáctica de UD2–UD6
 

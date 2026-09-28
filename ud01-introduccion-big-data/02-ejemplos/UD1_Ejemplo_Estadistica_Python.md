@@ -1,6 +1,6 @@
 # UD1 — Ejemplo de estadística aplicada con Python
 
-Este ejemplo acompaña a la parte de [estadística aplicada](../01-teoria/UD1-Parte0-BaseMatematica/UD1_P0_Estadistica_para_BigData.md). Usa un dataset pequeño para que los cálculos se puedan comprobar a mano antes de automatizarlos.
+Este ejemplo acompaña a la parte de [estadística aplicada](../01-teoria/00-estadistica-y-base-matematica/UD1_P0_Estadistica_para_BigData.md). Usa un dataset pequeño para que los cálculos se puedan comprobar a mano antes de automatizarlos.
 
 También puedes descargar y ejecutar el [notebook de este ejemplo](UD1_Ejemplo_Estadistica_Python.ipynb).
 

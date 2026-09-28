@@ -1,4 +1,4 @@
-# UD1 · Parte 4 — EDA y calidad de datos (capítulo ampliado)
+# UD1 · EDA y calidad de datos — capítulo ampliado
 
 ## 1. Por qué empezamos por EDA y calidad
 
@@ -122,4 +122,3 @@ Llegan ventas diarias y catálogo de productos. Al leer, parseamos `fecha` y tip
 * *Designing Data-Intensive Applications* (Kleppmann): integridad, consistencia y modelos de almacenamiento.
 * Documentación oficial de **pandas/polars**, **DuckDB** y **Parquet** para detalles de tipado, lectura eficiente y *predicate pushdown*.
 * Herramientas de validación basadas en expectativas (por ejemplo, implementar tus propias “reglas” simples y medir su cumplimiento en cada *run*).
-

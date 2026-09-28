@@ -26,7 +26,7 @@ sensores, etc.
 Ejecuta el generador desde la terminal:
 
 ```bash
-cd ud01-introduccion-big-data/03-practicas/UD1-Parte4/lab_logs_json
+cd ud01-introduccion-big-data/03-practicas/eda-calidad-duckdb/lab_logs_json
 python generar_logs_server.py
 ```
 

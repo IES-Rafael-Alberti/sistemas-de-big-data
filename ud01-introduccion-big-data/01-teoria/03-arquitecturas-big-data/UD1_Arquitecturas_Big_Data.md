@@ -1,4 +1,4 @@
-# UD1 · Parte 3 — Arquitecturas Big Data modernas
+# UD1 · Arquitecturas Big Data modernas
 
 ## Resultado de esta parte
 

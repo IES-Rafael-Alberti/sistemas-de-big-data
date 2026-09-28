@@ -115,7 +115,10 @@ def scan_unit(unit_symlink, docs_dir, index_path):
 def on_config(config):
     docs_dir = Path(config['docs_dir'])
 
-    nav = [{'Inicio': 'index.md'}]
+    nav = [
+        {'Inicio': 'index.md'},
+        {'Presentación del curso': 'presentacion-curso.md'},
+    ]
 
     UNIT_NAMES = {
         'ud01-introduccion-big-data': ('UD1 — Introducción Big Data', 'unidades/ud01.md'),

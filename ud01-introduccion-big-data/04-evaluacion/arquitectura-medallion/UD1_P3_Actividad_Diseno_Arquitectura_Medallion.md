@@ -1,4 +1,4 @@
-# UD1 · Parte 3 — Actividad: diseño de arquitectura Big Data con Medallion
+# UD1 · Actividad: diseño de arquitectura Big Data con Medallion
 
 ## Objetivo
 

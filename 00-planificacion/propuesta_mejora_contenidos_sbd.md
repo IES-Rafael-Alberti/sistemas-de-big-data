@@ -224,7 +224,7 @@ La propuesta queda **ejecutada por completo** en la copia reorganizada 2026/2027
 Se han cubierto también los elementos que no estaban en el backlog principal pero
 sí aparecían en el análisis:
 
-- **Mini-práctica de logs JSON/no estructurados**: `ud01-introduccion-big-data/03-practicas/UD1-Parte4/lab_logs_json/`.
+- **Mini-práctica de logs JSON/no estructurados**: `ud01-introduccion-big-data/03-practicas/eda-calidad-duckdb/lab_logs_json/`.
 - **Checklist calidad/RGPD/seguridad**: `00-planificacion/plantillas/plantilla_checklist_calidad_rgpd.md`.
 - **Proyecto integrador UD6**: `ud06-proyecto/guion_proyecto.md`, diseñado para coordinar SBD + BDA + PIA.
 - **RA/CE completos**: `00-planificacion/matriz_ra_ce_materiales.md` confirma cobertura completa de RA1, RA2, RA3 y RA4.

@@ -17,6 +17,11 @@ Copia de trabajo reorganizada para preparar el curso 2026/2027. El curso origina
 - `00-planificacion/herramientas_usadas_curso.md` — herramientas detectadas para la fase RA/CE.
 - `00-planificacion/SistemasDeBIG_DATA-RAs_CE.md` — RA/CE de Sistemas de Big Data.
 - `00-planificacion/BigDataAplicado-RAs_CE.md` — RA/CE de Big Data Aplicado.
+- `00-planificacion/CONFIGURACION_CALIFICADOR_MOODLE_2026_2027.md` — ponderación de RA en Séneca y calificador Moodle.
+- `00-planificacion/MATRIZ_SEGUIMIENTO_RA_CE_2026_2027.md` — cobertura y acreditación individual por CE.
+- `docs/presentacion-curso.md` — guía inicial para el alumnado: ruta, evaluación, entregas y proyecto integrador.
+- `ud01-introduccion-big-data/99-profesor/GUION_PRIMERA_CLASE_SBD_2026_2027.md` y `GUION_SEGUNDA_CLASE_SBD_2026_2027.md` — sesiones iniciales de miércoles y jueves.
+- `ud01-introduccion-big-data/99-profesor/moodle/` — preparación docente de los recursos que se publicarán en Moodle; incluye el formulario inicial no calificable de SBD.
 
 ## Estructura por unidad
 

@@ -1,4 +1,4 @@
-# UD1 · Parte 5 — Ingesta de datos (fundamentos prácticos antes de UD2)
+# UD1 · Ingesta de datos — fundamentos prácticos antes de UD2
 
 ## 1. ¿Qué es “ingesta” y por qué importa?
 

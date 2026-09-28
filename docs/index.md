@@ -4,6 +4,8 @@ Material didáctico del módulo **Sistemas de Big Data** — Curso 2026/2027, IE
 
 Usa esta página como punto de entrada. Cada unidad tiene una guía propia con la ruta recomendada, materiales clave y enlaces directos a teoría, prácticas y entregas.
 
+Lee primero la [presentación del curso](presentacion-curso.md): explica la ruta de trabajo, la evaluación, las entregas y el proyecto compartido con BDA y PIA.
+
 ## Ruta del curso
 
 | Unidad | Descripción |

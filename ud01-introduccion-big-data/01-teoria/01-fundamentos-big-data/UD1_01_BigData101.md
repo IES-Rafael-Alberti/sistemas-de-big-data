@@ -1,5 +1,5 @@
 # UD1 · Big Data 101 (Conceptos esenciales)  
-**Fecha:** 2025-10-01
+**Curso:** 2026/2027
 
 > **Problema de partida (realista):**  
 Una cadena minorista sufre **roturas de stock** y discrepancias en ventas porque recibe datos diarios desde tiendas en **CSV** y de e‑commerce en **JSON**. Hay **retrasos** (datos llegan con 48–72 h), **inconsistencias** en códigos SKU y **duplicados** cuando se reenvían ficheros. Dirección pide **indicadores fiables** y **tiempos de respuesta menores**.
@@ -49,4 +49,4 @@ Una cadena minorista sufre **roturas de stock** y discrepancias en ventas porque
 ---
 
 ## Actividad A (20’) — “Big Data en una página”
-- Entrega un A4/MD con: 5V del caso retail, opción ETL/ELT, diagrama simple de lake → curado, y elección **Parquet vs CSV** con 2 razones.
+- Actividad formativa de aula, integrada en la segunda clase. Completa una página con las 5V del caso, una decisión ETL/ELT, el flujo raw → curado y una comparación **Parquet vs CSV** con dos razones. No se califica ni se entrega como tarea independiente.

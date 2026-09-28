@@ -1,5 +1,5 @@
 ---
-title: "SGBD UD1 · Introducción a Big Data · Parte 1"
+title: "SBD UD1 · Almacenamiento y NoSQL"
 author: "José Manuel Sánchez Álvarez - IES Rafael Alberti"
 output:
   pdf_document:
@@ -13,7 +13,7 @@ header-includes:
   - \renewcommand{\contentsname}{Índice de contenidos}
 ---
 
-# UD1 · Parte 2 — Almacenamiento de datos y NoSQL en Big Data
+# UD1 · Almacenamiento de datos y NoSQL en Big Data
 
 ## 1. De “guardar filas” a “diseñar para escalar”
 
@@ -118,4 +118,3 @@ Tres decisiones tempranas suelen dar **rendimientos compuestos**:
 1. **Modelar desde las consultas**: evitarás particiones y claves que te perjudiquen.
 2. **Persistir el *curated* en Parquet** aunque uses NoSQL para servir: tendrás **batch barato** y **BI rápido**.
 3. **Pactar validaciones** (dominio, rangos, consistencia) aunque trabajes *schema-on-read*: la veracidad no se improvisa.
-

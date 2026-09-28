@@ -24,8 +24,8 @@
 
 | Sem | Unidad | Actividad principal | Tipo | Horas | Agrupamiento | RA/CE | Entregable / Quiz |
 |-----|--------|---------------------|------|------:|--------------|-------|-------------------|
-| 1 | **UD1** | Introducción Big Data: concepto 4V, características | T | 2 | Individual | RA1.a | — |
-| 2 | **UD1** | Base matemática + cápsula normativa | T | 2 | Individual | RA1.a | `quiz-ud1.gift` (q1‑2) |
+| 1 | **UD1** | Introducción Big Data: problema de datos, 4V y flujo general | T | 2 | Individual | RA1.a | Guía PDF de fundamentos + actividad formativa “Big Data en una página” |
+| 2 | **UD1** | Base estadística aplicada para interpretar datos + cápsula matemática normativa mínima | T | 2 | Individual | RA1.a | PDFs estadística/cápsula + `quiz-ud1-parte0.gift` |
 | 3 | **UD1** | EDA y calidad de datos con DuckDB | L | 3 | Individual | RA1.b, RA3.b | `UD1_03_Tarea_y_rubrica.md` |
 | 4 | **UD1** | Modelado documental con MongoDB | L | 3 | Parejas | RA4.a | Lab MongoDB |
 | 5 | **UD1** | Arquitecturas Big Data (Lambda, Kappa, Medallion) | T | 2 | Individual | RA1.c‑d, RA3.a‑d | `quiz-ud1.gift` (q3‑5) |

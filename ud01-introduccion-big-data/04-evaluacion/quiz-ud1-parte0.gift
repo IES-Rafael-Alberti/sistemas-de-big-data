@@ -1,0 +1,11 @@
+$CATEGORY: módulo/SBD/UD1
+
+::UD1_P0_MedianaOutliers::¿Qué medida resume mejor el valor típico de precios cuando existe un valor extremadamente alto?{=La mediana#Es más robusta ante outliers. ~La media#Puede quedar muy distorsionada. ~El máximo#No representa un valor típico. ~El rango#Mide dispersión, no tendencia central.}
+
+::UD1_P0_Correlacion::Una correlación alta entre dos variables...{=puede sugerir relación, pero no demuestra causalidad#Correcto: hay que revisar contexto y posibles variables externas. ~demuestra siempre que una causa la otra#La correlación no prueba causalidad. ~solo existe en datos categóricos#También se estudia en variables numéricas. ~elimina la necesidad de revisar los datos#La calidad de datos sigue siendo necesaria.}
+
+::UD1_P0_Completitud::¿Qué dimensión de calidad se deteriora cuando faltan valores en una columna obligatoria?{=Completitud#Correcto. ~Unicidad#Se refiere a duplicados o claves repetidas. ~Compresión#Es una propiedad de almacenamiento. ~Latencia#Se refiere al tiempo de llegada o respuesta.}
+
+::UD1_P0_ReglaCalidad::¿Cuál es una regla de validación razonable para un dataset de ventas?{=precio_total debe coincidir con unidades por precio_unitario dentro de una tolerancia#Correcto: comprueba consistencia entre columnas. ~Todos los precios deben ser idénticos#No tiene por qué ser cierto. ~Todas las ciudades deben tener el mismo número de ventas#No es una regla de calidad. ~Eliminar automáticamente cualquier valor raro#Primero hay que investigarlo y justificar la decisión.}
+
+::UD1_P0_Complejidad::¿Por qué una operación O(n²) puede ser problemática al crecer mucho un dataset?{=Porque compara muchos elementos entre sí y el coste crece muy rápido#Correcto. ~Porque siempre usa menos memoria#No se deduce de esa complejidad. ~Porque solo funciona con texto#No depende del tipo de dato. ~Porque garantiza resultados incorrectos#El problema es de coste y escalabilidad, no de corrección.}
