@@ -8,6 +8,12 @@ No buscamos hacer matemáticas por hacer matemáticas. Buscamos entender los dat
 
 Esta parte ayuda a cubrir el **RA1** de Sistemas de Big Data, especialmente cuando habla de aplicar técnicas de análisis de datos, extraer información, construir datasets complejos y valorar calidad/coste de una solución.
 
+En UD1 usaremos esta base para interpretar el caso retail: ventas en CSV, pedidos
+web en JSON, códigos SKU inconsistentes, duplicados, importes incoherentes y
+tiempos de entrega anómalos. La estadística nos ayuda a decidir si un valor es
+normal, sospechoso o imposible; también evita que una media, un gráfico o una
+correlación mal leídos nos lleven a una decisión técnica equivocada.
+
 ## 1. Por qué estadística en Big Data
 
 En Big Data no basta con cargar muchos datos. Hay que saber responder preguntas como:
@@ -35,6 +41,11 @@ La estadística aplicada nos da herramientas para detectar estos problemas antes
 | Texto/no estructurada | comentarios, logs, reseñas | extracción, clasificación, búsqueda |
 
 Primera regla práctica: **no se visualiza ni se transforma igual una variable numérica que una categórica o temporal**.
+
+Segunda regla práctica: antes de calcular nada, comprueba si el tipo de variable
+tiene sentido. Un `sku` puede parecer texto cualquiera, pero en realidad es una
+clave categórica. Una fecha leída como texto no permite analizar retrasos. Un
+precio leído como cadena impide sumar, comparar o detectar outliers con garantías.
 
 ## 3. Medidas básicas
 
@@ -69,6 +80,11 @@ Problema: es sensible a outliers.
 
 Aquí la mayoría de ventas están entre 15 y 44 euros, pero la media sale 190,17 euros. Esa media **no representa una venta típica**.
 
+Usa la media cuando la distribución sea razonablemente estable y no haya extremos
+dominantes. Si hay outliers, acompáñala siempre de mediana, percentiles o un
+gráfico. En Big Data es frecuente que la media sea correcta matemáticamente, pero
+pobre como explicación del comportamiento real.
+
 ### Mediana
 
 La mediana es el valor central al ordenar los datos.
@@ -89,11 +105,19 @@ Suele ser más robusta cuando hay outliers.
 
 En este caso, 29 euros describe mucho mejor el comportamiento normal que 190,17 euros.
 
+La mediana es especialmente útil para precios, tiempos de espera, ingresos o
+duraciones, donde unos pocos casos extremos pueden deformar la media. Si alguien
+pregunta “qué suele pasar”, muchas veces la mediana responde mejor que la media.
+
 ### Moda
 
 La moda es el valor más frecuente.
 
 Es útil en variables categóricas.
+
+Por ejemplo, puede indicar el canal más frecuente (`tienda`, `web`, `app`) o la
+ciudad con más registros. No debe confundirse con “mejor” o “más rentable”: solo
+indica frecuencia.
 
 ### Desviación típica
 
@@ -453,6 +477,17 @@ Dimensiones habituales:
 
 Estas dimensiones conectan directamente con limpieza, integración y construcción de datasets complejos.
 
+En el caso retail, las dimensiones se ven así:
+
+| Dimensión | Ejemplo en el caso |
+| --------- | ------------------ |
+| Completitud | faltan precios o fechas de entrega |
+| Validez | `canal` contiene valores fuera de `tienda`, `web`, `app` |
+| Consistencia | `precio_total` no coincide con `unidades * precio_unitario` |
+| Unicidad | una venta se ha cargado dos veces |
+| Actualidad | los pedidos web llegan con 72 horas de retraso |
+| Precisión | un SKU apunta a un producto equivocado del catálogo maestro |
+
 ### Métricas simples de calidad
 
 Completitud de una columna:
@@ -512,6 +547,11 @@ Antes de usar un dataset:
 - [ ] Busco colinealidad.
 - [ ] Reviso posibles sesgos.
 - [ ] Documento decisiones de limpieza.
+
+La checklist no se completa “a ojo”. Debe quedar una evidencia mínima: tabla de
+métricas, capturas o salida de código, gráfico interpretado y breve explicación de
+qué se ha decidido. En UD1 no buscamos informes largos, pero sí decisiones
+reproducibles.
 
 ## 13. Qué debe saber explicar el alumnado
 

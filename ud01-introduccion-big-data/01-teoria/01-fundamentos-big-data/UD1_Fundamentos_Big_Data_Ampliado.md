@@ -25,12 +25,30 @@ El problema es que los datos ya no caben en una sola hoja de cálculo ni obedece
 No llegan todos al mismo ritmo, no tienen la misma calidad y, sobre todo, no cuestan lo mismo de almacenar y procesar.
 Big Data no es un eslogan: es el nombre de un conjunto de prácticas y tecnologías que hacen viable extraer valor de datos **grandes**, **rápidos** y **variados** sin arruinarnos por el camino.
 
+En esta unidad usaremos a menudo un caso sencillo: una cadena minorista que
+recibe ventas desde tiendas físicas en CSV y pedidos de comercio electrónico en
+JSON. El caso parece pequeño, pero contiene muchos problemas reales: retrasos de
+carga, códigos de producto escritos de formas distintas, duplicados al reenviar
+ficheros y dudas sobre qué sistema contiene la versión correcta de cada dato. Un
+**SKU** (*Stock Keeping Unit*) es el código que identifica un producto concreto.
+Si un mismo producto aparece como `ABC-123`, `abc123` y `ABC123`, el sistema puede
+contarlo como tres productos diferentes. Ahí empieza la necesidad de limpiar,
+normalizar y apoyarse en un **catálogo maestro** de productos.
+
 ## 2. Qué es Big Data (y qué no es)
 
 Llamaremos Big Data a la capacidad de **obtener valor accionable** a partir de datos cuyo **volumen**, **velocidad** o **variedad** desbordan las herramientas tradicionales, y que exigen enfoques de **procesamiento y almacenamiento coste-eficientes**.
 No es solo “datos enormes” ni “poner Hadoop/Spark y ya está”.
 Tampoco es únicamente inteligencia artificial.
 Big Data empieza **cuando los límites prácticos** de nuestras herramientas habituales (RAM, CPU de una sola máquina, tiempos de espera razonables) nos obligan a distribuir el almacenamiento y/o el cómputo, a elegir formatos más inteligentes y a automatizar el movimiento de datos con métodos reproducibles.
+
+Tampoco conviene medirlo solo en gigabytes. Puede haber Big Data por **volumen**
+(demasiados datos para una máquina), por **velocidad** (llegan continuamente y el
+valor caduca rápido), por **variedad** (mezcla de CSV, JSON, logs, APIs y tablas)
+o por la combinación de todo ello con exigencias de **calidad** y **coste**. En
+formación trabajaremos con datasets manejables, pero simulando decisiones reales:
+qué guardo como raw, qué limpio, qué formato uso y cómo justifico que el dato ya
+es fiable.
 
 ## 3. Por qué ahora: una convergencia
 
@@ -61,6 +79,12 @@ El volumen no es solo el tamaño total en disco: influye en cómo particionas lo
 -   **Valor.** La V más olvidada y la más decisiva.
     Todo lo anterior tiene sentido si termina en **acciones**: menos roturas de stock, menos abandono de clientes, más eficiencia operativa.
 
+-   **Variabilidad.** A veces se añade como sexta V.
+    Recuerda que los datos no siempre se comportan igual: hay campañas, picos de
+    demanda, cambios de formato, productos nuevos, estacionalidad y errores que
+    aparecen solo en determinadas fuentes. La variabilidad obliga a revisar
+    reglas y métricas, no a darlas por cerradas para siempre.
+
 ## 5. Tipologías de datos: estructura, latencia y sensibilidad
 
 Cuando pensamos *qué datos tenemos*, conviene clasificarlos en tres dimensiones.
@@ -84,12 +108,29 @@ Parquet se ha convertido en la **opción por defecto** para zonas *curated* de u
 Es apropiado cuando importa preservar el esquema versión a versión y la escritura es continua.
 En resumen: **CSV/JSON para ingesta e intercambio**, **Parquet para analítica**, **Avro** para flujos de eventos y contratos de esquema.
 
+Algunas expresiones técnicas aparecen mucho en documentación profesional:
+
+| Concepto | Idea esencial |
+|---|---|
+| **Formato columnar** | Guarda juntas las columnas, no las filas completas. Es eficiente cuando analizas pocas columnas de muchas filas. |
+| **Compresión** | Reduce tamaño en disco y a menudo también tiempo de lectura, porque se mueve menos dato. |
+| **Predicate pushdown** | El motor evita leer datos que no cumplen el filtro de la consulta. Si pides `mes = 6`, no necesita leer todos los meses. |
+| **Schema Registry** | Registro de versiones de esquemas para que productores y consumidores de eventos sepan qué estructura tiene cada mensaje. |
+
 ## 7. Data warehouse, data lake y la idea de “lakehouse”
 
 Un **data warehouse** tradicional prioriza estructura, gobernanza y rendimiento en SQL empresarial; obliga a transformar y cargar datos ya “limpios” y bien modelados.
 Un **data lake** es barato y flexible: puedes aterrizar datos casi crudos, de muchos tipos, y procesarlos después.
 El **lakehouse** intenta unir lo mejor de ambos: mantener datos en formatos de *lake* (Parquet) con **capas transaccionales** que ofrecen *ACID*, *time travel* y *upserts* (ej. Delta Lake, Iceberg, Hudi).
 En la práctica educativa, basta con entender que el warehouse es el salón ordenado, el lake es el trastero enorme, y el lakehouse es el trastero ordenado con estanterías etiquetadas.
+
+Cuando decimos **ACID** hablamos de garantías clásicas de las bases de datos:
+atomicidad, consistencia, aislamiento y durabilidad. Dicho de forma práctica:
+operaciones que se completan enteras o no se completan, datos que no quedan a
+medias y cambios que sobreviven a fallos. En un lakehouse, tecnologías como Delta
+Lake, Iceberg o Hudi intentan llevar parte de esas garantías a ficheros Parquet
+almacenados en un data lake. No necesitamos dominarlas ahora; nos interesa saber
+qué problema resuelven.
 
 ## 8. ETL o ELT: el orden de los factores sí altera el coste
 
@@ -98,16 +139,31 @@ En **ELT** cargas primero al *lake* y transformas después, aprovechando cómput
 Para este módulo trabajaremos mentalmente en **ELT**: aterrizamos en **raw**, estandarizamos en **processed** y publicamos en **curated**, casi siempre en **Parquet** y con **particionado temporal** (año, mes, día).
 Esta estrategia simplifica el re-procesado, abarata experimentación y deja huella clara del linaje.
 
+Las palabras **raw**, **processed** y **curated** no son marcas comerciales, sino
+etiquetas útiles para pensar por capas. *Raw* conserva lo que llegó. *Processed*
+contiene datos ya tipados o normalizados. *Curated* es la versión preparada para
+consulta, informes o modelos, con reglas de calidad aplicadas y decisiones
+documentadas.
+
 ## 9. Un caso pequeño para amarrar ideas
 
-Pensemos en un ayuntamiento que quiere **asignar personal** a oficinas de turismo y coordinarlo con **stock** en tiendas municipales.
-Hay un CSV mensual con **afluencia turística por municipio**, y una API diaria con **ventas por canal** (tienda, web, app).
-El flujo razonable es este, en prosa: los CSV aterrizan tal cual y se **normalizan tipos** (fechas, enteros).
-La API se consulta a diario y se guarda en ficheros Parquet por día.
-Con ambas fuentes en *raw*, se construye un **conjunto curado** uniendo por fecha y municipio.
-A partir de ahí, se calculan **KPIs** sencillos: visitantes por día, venta media por canal, ratio venta/visitante.
-La decisión práctica surge sola: si ayer hubo pico de visitantes y la venta *in situ* crece más que online, el **personal** se refuerza hoy en esas oficinas y se **reposiciona stock**.
-No hace falta “predicción mágica” para crear valor: basta con **datos veraces, oportunos y bien modelados**.
+Pensemos en la cadena minorista del inicio. Tiene un CSV diario con ventas de
+tiendas físicas y una API que devuelve pedidos web en JSON. Ambos sistemas hablan
+de productos, pero no siempre con el mismo formato de SKU. Además, un fichero de
+tienda puede reenviarse y crear duplicados.
+
+El flujo razonable es este, en prosa: el CSV y el JSON aterrizan tal cual en
+**raw** para no perder el original. Después se normalizan tipos (fechas, enteros,
+decimales), se limpian espacios y mayúsculas en `sku`, se valida cada producto
+contra el catálogo maestro y se detectan duplicados por clave natural, por ejemplo
+`fecha + tienda + sku`. Con ambas fuentes controladas, se construye un
+**conjunto curado** en Parquet, particionado por fecha y quizá por canal.
+
+A partir de ahí se calculan **KPIs** sencillos: ventas por día, unidades por canal,
+productos con rotura de stock y diferencias entre tienda física y web. La decisión
+práctica surge sola: si un producto vende mucho en web pero aparece sin stock en
+tiendas, dirección puede revisar reposición. No hace falta “predicción mágica”
+para crear valor: basta con **datos veraces, oportunos y bien modelados**.
 
 ## 10. Coste, calidad y tiempo: tres cuerdas que tensar
 

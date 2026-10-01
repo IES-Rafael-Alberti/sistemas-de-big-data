@@ -252,6 +252,14 @@ Ejemplo:
 | Consulta | DuckDB, Spark SQL, Trino, Athena |
 | Visualización | Metabase, Superset, Power BI, notebook |
 
+No hace falta dominar todas esas herramientas ahora. Lo importante es saber qué
+papel cumple cada una. **Parquet** es un formato de fichero; **DuckDB** y **Spark**
+son motores de consulta/procesamiento; **S3/HDFS/MinIO** son formas de almacenar
+ficheros; **Delta Lake**, **Apache Iceberg** y **Apache Hudi** son capas de tabla
+sobre un data lake que añaden control de versiones, evolución de esquema y
+operaciones más seguras sobre datos en Parquet. En UD1 nos interesa el criterio,
+no instalar todo el ecosistema.
+
 ## 7. Data lake, lakehouse y por qué aparece Medallion
 
 ### Data lake
@@ -286,6 +294,15 @@ Un **lakehouse** intenta combinar lo mejor de ambos:
 - estructura y calidad de warehouse,
 - formatos columnares,
 - transacciones o control de versiones si se usan tecnologías como Delta Lake, Iceberg o Hudi.
+
+Dicho de forma práctica: un data lake permite guardar muchos ficheros, pero por
+sí solo no siempre sabe si una carga quedó a medias, qué versión de una tabla es
+la válida o cómo evolucionó el esquema. Las capas tipo **Delta/Iceberg/Hudi**
+intentan resolver ese problema. Añaden metadatos alrededor de los ficheros para
+que el lake se comporte más como una tabla gestionada. Cuando se habla de
+garantías **ACID**, se alude a operaciones que no dejan el dato a medias:
+atomicidad, consistencia, aislamiento y durabilidad. No vamos a practicar esas
+tecnologías en profundidad en UD1, pero conviene saber por qué aparecen.
 
 ### Medallion
 
@@ -354,6 +371,12 @@ Hasta ahora hemos hablado sobre todo de arquitectura técnica. En sistemas grand
 
 Un **data product** es un dataset o servicio de datos tratado como producto: tiene responsables, documentación, contrato, calidad esperada, usuarios y ciclo de vida.
 
+La idea es pasar de “he dejado una tabla en una carpeta” a “publico un dato que
+alguien puede consumir con confianza”. Un data product debe explicar qué contiene,
+quién lo mantiene, cada cuánto se actualiza, qué calidad promete y qué cambios de
+esquema puede sufrir. Esto encaja con Gold: no basta con generar agregados, hay
+que publicarlos de forma comprensible y mantenible.
+
 Ejemplo:
 
 | Data product | Responsable | Consumidores | Compromiso mínimo |
@@ -362,6 +385,12 @@ Ejemplo:
 | `silver_reservas_limpias` | Equipo de integración | Analítica, proyecto final | Sin duplicados críticos, fechas válidas, linaje disponible. |
 
 **Data Mesh** lleva esta idea más lejos: organiza los datos por dominios de negocio o áreas responsables, en lugar de centralizar todo en un único equipo de datos.
+
+Por ejemplo, el dominio de ventas podría responsabilizarse de `gold_ventas_diarias`
+y el dominio de reservas de `silver_reservas_limpias`. Cada dominio conoce mejor
+sus datos, pero debe cumplir reglas comunes de documentación, calidad, seguridad y
+gobierno. Esa es la razón de mencionarlo aquí: ayuda a entender que la arquitectura
+no es solo técnica; también reparte responsabilidades.
 
 Principios útiles para entenderlo:
 
@@ -387,6 +416,22 @@ Hay enfoques actuales que son relevantes profesionalmente, pero no deben ocupar 
 | Data Fabric | Capa de integración, metadatos, catálogo, gobierno y acceso unificado a datos distribuidos. | Mención breve: útil para gobierno y descubrimiento, no como práctica principal. |
 | HTAP | Sistemas que combinan procesamiento transaccional y analítico con baja latencia. | Mención breve: interesante, pero especializado y menos didáctico para este módulo. |
 | Microservicios | Arquitectura de aplicaciones separadas en servicios pequeños. | No es tema central; sólo usar como analogía si se habla de data products. |
+
+**Data Fabric** intenta que los datos distribuidos sean localizables, gobernables
+y reutilizables mediante catálogo, metadatos, linaje y políticas comunes. Es una
+respuesta al caos de tener datos repartidos en muchos sistemas. En UD1 basta con
+entenderlo como “tejido de integración y gobierno”, no como una herramienta
+concreta.
+
+**HTAP** significa *Hybrid Transactional/Analytical Processing*. Busca que un
+mismo sistema pueda servir operaciones transaccionales (altas, compras,
+actualizaciones) y consultas analíticas rápidas. Es atractivo, pero más complejo
+que lo que necesitamos para aprender capas, calidad, Parquet, DuckDB y Spark.
+
+Los **microservicios** pertenecen sobre todo al diseño de aplicaciones. Pueden
+aparecer alrededor de plataformas de datos, pero no son una arquitectura Big Data
+por sí mismos. Los mencionamos solo para no confundir “muchos servicios” con
+“buen diseño de datos”.
 
 La regla es simple: si una arquitectura no ayuda a tomar mejores decisiones sobre ingesta, almacenamiento, procesamiento, calidad, consulta o coste, no debe ocupar tiempo de aula.
 

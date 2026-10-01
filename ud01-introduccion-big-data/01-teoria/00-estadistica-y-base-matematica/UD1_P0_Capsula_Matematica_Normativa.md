@@ -10,6 +10,10 @@ En este módulo no vamos a estudiar matemática discreta como asignatura teóric
 
 La base principal del curso será estadística aplicada, calidad de datos e interpretación de datos. Esta cápsula sirve para cubrir la parte normativa mínima de forma útil.
 
+La idea es que puedas reconocer la matemática que ya aparece en las tareas del
+módulo: comparar fuentes, validar claves, razonar sobre joins, escribir reglas de
+limpieza y estimar si una solución escalará cuando el dataset crezca.
+
 ## 1. Matemática discreta útil en Big Data
 
 La matemática discreta trabaja con elementos separados o contables.
@@ -36,6 +40,10 @@ A = \{1, 2, 3, 4\}
 \]
 
 Si `A` es el conjunto de clientes de una fuente y `B` el conjunto de clientes de otra fuente, las operaciones de conjuntos ayudan a integrar datos.
+
+En el caso retail, un conjunto puede ser “SKU que aparecen en ventas” y otro
+“SKU que existen en el catálogo maestro”. La diferencia entre ambos detecta
+productos vendidos que no están reconocidos por el sistema de referencia.
 
 Ejemplo:
 
@@ -124,6 +132,10 @@ JOIN ventas v ON c.cliente_id = v.cliente_id;
 
 Si la clave `cliente_id` no es única donde debería serlo, el join puede duplicar filas y falsear métricas. Por eso matemática discreta y calidad de datos van juntas.
 
+La misma idea se aplica a `sku`: si una tabla de ventas se une con un catálogo de
+productos que contiene dos filas para el mismo SKU, el resultado puede duplicar
+ventas. No es un error “visual”; es un error lógico en la relación entre datos.
+
 ### Grafos
 
 Un grafo conecta nodos mediante aristas.
@@ -188,6 +200,9 @@ SI precio_total != unidades * precio_unitario ENTONCES inconsistencia
 ```
 
 En Big Data, estas reglas deben ser reproducibles y automatizables.
+
+Una regla útil debe poder ejecutarse igual en un notebook, en SQL o dentro de un
+pipeline. Si solo existe como “me parece raro”, todavía no es una regla de calidad.
 
 La misma idea en Python:
 
@@ -260,6 +275,10 @@ Mejor enfoque: usar claves, índices, particiones o agregaciones.
 por_cliente = df.groupby('cliente_id')
 ```
 
+En integración de datos ocurre lo mismo. Comparar todas las ventas contra todos
+los productos sería inviable; usar una clave (`sku`) reduce el problema y permite
+detectar coincidencias o ausencias de forma eficiente.
+
 ## 4. Relación con sistemas Big Data
 
 Estas ideas ayudan a entender:
@@ -288,11 +307,11 @@ En esta cápsula no necesitas demostrar teoremas. Necesitas usar estas ideas par
 
 Al terminar, deberías poder:
 
-- conjuntos aplicados a fuentes de datos,
-- relaciones aplicadas a joins/modelado,
-- grafos como idea para datos conectados,
-- reglas lógicas de limpieza,
-- complejidad básica para razonar sobre escalabilidad.
+- explicar conjuntos aplicados a fuentes de datos,
+- interpretar relaciones aplicadas a joins/modelado,
+- reconocer grafos como idea para datos conectados,
+- escribir reglas lógicas de limpieza,
+- usar complejidad básica para razonar sobre escalabilidad.
 
 No hace falta que estudies:
 

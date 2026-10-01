@@ -12,7 +12,7 @@ obtener respuestas reproducibles.
 
 ## Material de partida
 
-Descarga en Moodle `UD1_02_Modelado_documental_y_analitico.zip`. Incluye el
+Descarga en Moodle `lab_p2_modelado_documental_analitico.zip`. Incluye el
 generador de datos, consultas iniciales, `README.md`, `requirements.txt` y un
 `Makefile` opcional. Ejecuta:
 
