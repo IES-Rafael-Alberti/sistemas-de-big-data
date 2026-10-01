@@ -29,7 +29,7 @@
 
 | Carpeta | Contenido |
 |---|---|
-| `01-teoria/00-estadistica-y-base-matematica/` | Estadística aplicada y cápsula matemática normativa. |
+| `01-teoria/00-estadistica-y-base-matematica/` | Puente Big Data → estadística, estadística aplicada y cápsula matemática normativa. |
 | `01-teoria/01-fundamentos-big-data/` | Guía breve Big Data 101 y capítulo ampliado. |
 | `01-teoria/02-almacenamiento-y-nosql/` | Modelos de almacenamiento, NoSQL, MongoDB y DuckDB. |
 | `01-teoria/03-arquitecturas-big-data/` | Batch, streaming, Lambda, Kappa, lakehouse y Medallion. |
@@ -45,9 +45,14 @@ Ver `00-planificacion/matriz_ra_ce_materiales.md` para el detalle completo.
 
 ## Material nuevo — Base matemática aplicada
 
+- `01-teoria/00-estadistica-y-base-matematica/UD1_P0_00_Por_que_estadistica.md` — puente entre el caso Big Data inicial y la necesidad de usar estadística/matemática para interpretar datos antes de EDA.
 - `01-teoria/00-estadistica-y-base-matematica/UD1_P0_Estadistica_para_BigData.md` — base de estadística aplicada para limpieza, calidad, gráficos, correlación y colinealidad.
 - `01-teoria/00-estadistica-y-base-matematica/UD1_P0_Capsula_Matematica_Normativa.md` — cobertura mínima aplicada de matemática discreta, lógica algorítmica y complejidad computacional según RA1/CE1.a.
 - `04-evaluacion/base-matematica/UD1_P0_Cuestionario_Estadistica_y_Capsula_Normativa.md` — cuestionario evaluable para esta base matemática.
+
+Secuencia recomendada: primero el documento puente, después estadística aplicada
+y cápsula normativa, y **después** EDA/calidad. La EDA debe apoyarse en estas
+ideas para no quedarse en gráficos sin interpretación.
 
 ## Material reformado — Arquitecturas Big Data modernas
 
