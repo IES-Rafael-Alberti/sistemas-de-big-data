@@ -1,0 +1,752 @@
+#+TITLE:
+#+AUTHOR:
+#+EMAIL:
+#+DATE:
+#+OPTIONS: texht:t toc:nil num:nil -:nil ^:{} ":nil ':nil
+#+OPTIONS: tex:t
+#+LATEX_CLASS: article
+#+LATEX_HEADER:
+#+LANGUAGE: es
+
+#+BEGIN_COMMENT
+#+LATEX_HEADER: \usepackage[AUTO]{babel}
+#+END_COMMENT
+
+#+LATEX_HEADER: \renewcommand{\contentsname}{Tabla de contenidos}
+
+#+LATEX_HEADER_EXTRA: \usepackage{mdframed}
+#+LATEX_HEADER_EXTRA: \BeforeBeginEnvironment{minted}{\begin{mdframed}}
+#+LATEX_HEADER_EXTRA: \AfterEndEnvironment{minted}{\end{mdframed}}
+
+#+LATEX: \setlength\parindent{10pt}
+#+LATEX_HEADER: \usepackage{parskip}
+
+#+latex_header: \usepackage[utf8]{inputenc} %% For unicode chars
+#+LATEX_HEADER: \usepackage{placeins}
+
+#+LATEX_HEADER: \usepackage[margin=2.50cm]{geometry}
+
+#+LaTeX_HEADER: \usepackage[T1]{fontenc}
+#+LaTeX_HEADER: \usepackage{mathpazo}
+#+LaTeX_HEADER: \linespread{1.05}
+#+LaTeX_HEADER: \usepackage[scaled]{helvet}
+#+LaTeX_HEADER: \usepackage{courier}
+
+#+LaTeX_HEADER: \hypersetup{colorlinks=true,linkcolor=blue}
+#+LATEX_HEADER: \RequirePackage{fancyvrb}
+#+LATEX_HEADER: \DefineVerbatimEnvironment{verbatim}{Verbatim}{fontsize=\small,formatcom = {\color[rgb]{0.5,0,0}}}
+
+* Supuesto Práctico: Primeros Pasos con MongoDB y Python
+
+** Objetivo:
+Este ejercicio te guiará en la instalación de MongoDB en diferentes sistemas operativos y en cómo realizar operaciones básicas (CRUD) con Python. Utilizaremos la biblioteca =pymongo= para conectar y manipular la base de datos MongoDB desde un script en Python.
+
+** Parte 1: Instalación de MongoDB
+
+*** Instalación en Linux (Ubuntu 20.04 o superior)
+
+1. Actualizar los paquetes del sistema:
+   #+begin_src bash
+     sudo apt-get update
+     sudo apt-get upgrade -y
+   #+end_src
+
+2. Agregar el repositorio de MongoDB:
+   #+begin_src bash
+     wget -qO - https://www.mongodb.org/static/pgp/server-6.0.asc | sudo apt-key add -
+     echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/6.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-6.0.list
+   #+end_src
+
+3. Instalar MongoDB:
+   #+begin_src bash
+     sudo apt-get update
+     sudo apt-get install -y mongodb-org
+   #+end_src
+
+4. Iniciar MongoDB:
+   #+begin_src bash
+     sudo systemctl start mongod
+     sudo systemctl enable mongod
+     sudo systemctl status mongod
+   #+end_src
+
+*** Instalación en Windows
+
+1. Descargar MongoDB:
+   - Ve a [[https://www.mongodb.com/try/download/community][MongoDB Download Center]] y descarga el instalador de MongoDB para Windows.
+
+2. Instalar MongoDB:
+   - Ejecuta el instalador y sigue las instrucciones. Asegúrate de marcar la opción para instalar MongoDB como un servicio de Windows.
+
+3. Iniciar MongoDB:
+   - MongoDB se iniciará automáticamente como un servicio en Windows. Para verificar que está corriendo, abre una terminal de comandos y escribe:
+     #+begin_src bash
+     net start MongoDB
+     #+end_src
+
+*** Instalación en macOS
+
+1. Instalar MongoDB utilizando Homebrew:
+   - Si no tienes Homebrew instalado, instala Homebrew desde [[https://brew.sh/][aquí]].
+
+   - Instalar MongoDB:
+     #+begin_src bash
+     brew tap mongodb/brew
+     brew install mongodb-community@6.0
+     #+end_src
+
+2. Iniciar MongoDB:
+   #+begin_src bash
+     brew services start mongodb/brew/mongodb-community
+   #+end_src
+
+** Parte 2: Configuración del Entorno en Python
+
+1. Instalar =pymongo= (Biblioteca de MongoDB para Python):
+   - Asegúrate de tener **Python** instalado. Luego, instala la biblioteca =pymongo= con pip:
+     #+begin_src bash
+     pip install pymongo
+     #+end_src
+
+2. Conectar a MongoDB desde Python:
+   - Crea un archivo llamado =mongo_example.py= e introduce el siguiente código para conectarte a tu instancia de MongoDB local:
+
+   #+begin_src python
+   from pymongo import MongoClient
+
+   # Conexión a MongoDB en localhost
+   client = MongoClient("mongodb://localhost:27017/")
+
+   # Crear o usar una base de datos llamada "tienda"
+   db = client["tienda"]
+
+   # Crear o usar una colección llamada "productos"
+   collection = db["productos"]
+
+   print("Conexión exitosa a MongoDB")
+   #+end_src
+
+** Parte 3: Operaciones CRUD Básicas en MongoDB con Python
+
+*** 1. Insertar Documentos:
+
+   Inserta varios documentos en la colección =productos=.
+
+   #+begin_src python
+   productos = [
+       {"nombre": "Laptop", "precio": 999.99, "cantidad": 10, "categoria": "Electrónica"},
+       {"nombre": "Mouse", "precio": 19.99, "cantidad": 50, "categoria": "Accesorios"},
+       {"nombre": "Teclado", "precio": 49.99, "cantidad": 30, "categoria": "Accesorios"}
+   ]
+
+   collection.insert_many(productos)
+   print("Productos insertados")
+   #+end_src
+
+*** 2. Consultar Documentos:
+
+   Consultar todos los productos:
+
+   #+begin_src python
+   productos = collection.find()
+   for producto in productos:
+       print(producto)
+   #+end_src
+
+   Consultar productos con precio mayor a 20:
+
+   #+begin_src python
+   productos_caros = collection.find({"precio": {"$gt": 20}})
+   for producto in productos_caros:
+       print(producto)
+   #+end_src
+
+*** 3. Actualizar Documentos:
+
+   Aumentar el precio del "Mouse":
+
+   #+begin_src python
+   collection.update_one({"nombre": "Mouse"}, {"$set": {"precio": 24.99}})
+   print("Precio del Mouse actualizado")
+   #+end_src
+
+   Aumentar la cantidad de todos los productos de la categoría "Accesorios":
+
+   #+begin_src python
+   collection.update_many({"categoria": "Accesorios"}, {"$inc": {"cantidad": 5}})
+   print("Cantidad de productos de la categoría 'Accesorios' actualizada")
+   #+end_src
+
+*** 4. Eliminar Documentos:
+
+   Eliminar el producto "Teclado":
+
+   #+begin_src python
+   collection.delete_one({"nombre": "Teclado"})
+   print("Teclado eliminado")
+   #+end_src
+
+** Parte 4: Ejecutar el Código
+
+1. Guarda el archivo =mongo_example.py=.
+
+2. Ejecuta el script:
+
+   #+begin_src bash
+   python mongo_example.py
+   #+end_src
+
+** Parte 5: Consultas Más Avanzadas
+
+- Consultar productos de una categoría específica y solo mostrar el nombre y precio:
+
+   #+begin_src python
+   productos_accesorios = collection.find({"categoria": "Accesorios"}, {"_id": 0, "nombre": 1, "precio": 1})
+   for producto in productos_accesorios:
+       print(producto)
+   #+end_src
+
+- Consultar y ordenar productos por precio en orden descendente:
+
+   #+begin_src python
+   productos_ordenados = collection.find().sort("precio", -1)
+   for producto in productos_ordenados:
+       print(producto)
+   #+end_src
+
+** Conclusión:
+Este supuesto práctico te guiará en la instalación de MongoDB en
+varios sistemas operativos y en la ejecución de operaciones CRUD
+básicas utilizando Python. El foco está en cómo conectar, insertar y
+consultar datos, brindando una base sólida para seguir explorando las
+posibilidades de MongoDB.
+
+* Supuesto Práctico: Uso de MongoDB Atlas con Python
+
+** Parte 1: Configuración de MongoDB Atlas
+
+1. Crear una cuenta en MongoDB Atlas:
+   - Ve a [[https://www.mongodb.com/cloud/atlas][MongoDB Atlas]] y crea una cuenta gratuita.
+   - Si ya tienes una cuenta, inicia sesión.
+
+2. Crear un clúster en MongoDB Atlas:
+   - En el panel de control de MongoDB Atlas, haz clic en =Create a Cluster=.
+   - Selecciona la opción =Free Tier= y configura tu clúster seleccionando una región cercana.
+   - Crea el clúster haciendo clic en =Create Cluster=. Esto puede tomar unos minutos.
+
+3. Crear un usuario para la base de datos:
+   - Ve a =Database Access= en la barra lateral y haz clic en =Add New Database User=.
+   - Crea un usuario y una contraseña que utilizarás para conectarte a la base de datos. Guarda esta información, ya que la necesitarás más adelante.
+
+4. Configurar el acceso a la red:
+   - Ve a =Network Access= y haz clic en =Add IP Address=.
+   - Añade tu dirección IP pública (que puedes encontrar [[https://whatismyipaddress.com/][aquí]]) o selecciona la opción ~0.0.0.0/0~ para permitir el acceso desde cualquier IP (aunque no es recomendado para producción).
+
+5. Obtener la cadena de conexión:
+   - Ve a =Clusters=, haz clic en el botón =Connect= del clúster que has creado, y selecciona =Connect your application=.
+   - Copia la cadena de conexión que aparece, que será algo como esto:
+     #+begin_example
+     mongodb+srv://<username>:<password>@cluster0.mongodb.net/<dbname>?retryWrites=true&w=majority
+     #+end_example
+
+   - Sustituye <username>, <password>, y <dbname> por los valores adecuados que creaste antes.
+
+** Parte 2: Configuración del entorno Python
+
+1. Instalar =pymongo=:
+   - Si no lo tienes instalado, puedes hacerlo con pip:
+     #+begin_src bash
+     pip install pymongo
+     #+end_src
+
+2. Conectar a MongoDB Atlas desde Python:
+   Crea un archivo Python llamado =mongo_atlas.py= y utiliza la cadena de conexión que copiaste en MongoDB Atlas. Aquí tienes un ejemplo básico de cómo conectar y realizar algunas operaciones:
+
+   #+begin_src python
+   from pymongo import MongoClient
+
+   # Conecta con MongoDB Atlas usando la cadena de conexión proporcionada
+   client = MongoClient("mongodb+srv://<username>:<password>@cluster0.mongodb.net/tienda_online?retryWrites=true&w=majority")
+
+   # Selecciona la base de datos
+   db = client["tienda_online"]
+
+   # Selecciona la colección
+   collection = db["productos"]
+
+   print("Conectado a MongoDB Atlas")
+   #+end_src
+
+** Parte 3: Operaciones CRUD con MongoDB Atlas y Python
+
+*** 1. Insertar documentos:
+   Inserta algunos productos en la colección =productos=:
+
+   #+begin_src python
+   productos = [
+       {"nombre": "Laptop", "precio": 999.99, "cantidad": 10, "categoria": "Electrónica"},
+       {"nombre": "Mouse", "precio": 19.99, "cantidad": 50, "categoria": "Accesorios"},
+       {"nombre": "Teclado", "precio": 49.99, "cantidad": 30, "categoria": "Accesorios"}
+   ]
+
+   collection.insert_many(productos)
+   print("Productos insertados")
+   #+end_src
+
+*** 2. Consultar documentos:
+   Consultar todos los productos:
+
+   #+begin_src python
+   productos = collection.find()
+   for producto in productos:
+       print(producto)
+   #+end_src
+
+   Consultar productos con un precio mayor a 20:
+
+   #+begin_src python
+   productos_caros = collection.find({"precio": {"$gt": 20}})
+   for producto in productos_caros:
+       print(producto)
+   #+end_src
+
+*** 3. Actualizar documentos:
+   Aumentar el precio del "Mouse":
+
+   #+begin_src python
+   collection.update_one({"nombre": "Mouse"}, {"$set": {"precio": 24.99}})
+   print("Precio del Mouse actualizado")
+   #+end_src
+
+   Aumentar la cantidad de productos de la categoría "Accesorios":
+
+   #+begin_src python
+   collection.update_many({"categoria": "Accesorios"}, {"$inc": {"cantidad": 5}})
+   print("Cantidad de productos de 'Accesorios' actualizada")
+   #+end_src
+
+*** 4. Eliminar documentos:
+   Eliminar el producto "Teclado":
+
+   #+begin_src python
+   collection.delete_one({"nombre": "Teclado"})
+   print("Teclado eliminado")
+   #+end_src
+
+** Parte 4: Ejecutar el Código
+1. Guarda el archivo =mongo_atlas.py= en tu máquina local.
+
+2. Ejecuta el script desde la terminal:
+
+   #+begin_src bash
+   python mongo_atlas.py
+   #+end_src
+
+   Si todo está correctamente configurado, verás mensajes de éxito para cada operación.
+
+** Parte 5: Consultas más avanzadas
+
+- Consultar productos de una categoría específica y mostrar solo el nombre y el precio:
+
+   #+begin_src python
+   productos_accesorios = collection.find({"categoria": "Accesorios"}, {"_id": 0, "nombre": 1, "precio": 1})
+   for producto in productos_accesorios:
+       print(producto)
+   #+end_src
+
+- Ordenar productos por precio en orden descendente:
+
+   #+begin_src python
+   productos_ordenados = collection.find().sort("precio", -1)
+   for producto in productos_ordenados:
+       print(producto)
+   #+end_src
+
+** Conclusión:
+
+Al usar **MongoDB Atlas**, no necesitas instalar MongoDB en tu máquina local, y puedes beneficiarte de las características de la nube, como la escalabilidad y la seguridad. Este supuesto práctico te ha guiado a través de la creación de un clúster en Atlas y el uso de **Python** para realizar operaciones básicas en MongoDB. Es ideal para trabajar con bases de datos en la nube de manera sencilla y rápida.
+
+
+
+* Supuesto Práctico: Trabajar con MongoDB en un Contenedor Docker
+
+En este supuesto práctico, aprenderás a utilizar **MongoDB** dentro de un contenedor Docker. Esto es útil cuando quieres un entorno aislado para MongoDB sin necesidad de instalarlo directamente en tu sistema operativo. Docker te permitirá desplegar una instancia de MongoDB rápida y fácilmente.
+
+**Requisitos previos:**
+- Tener Docker instalado en tu sistema.
+  - Si no lo tienes, sigue las instrucciones de instalación según tu sistema operativo desde [[https://docs.docker.com/get-docker/][la documentación oficial de Docker]].
+
+** Paso 1: Descargar e iniciar un contenedor de MongoDB
+
+1. **Descargar la imagen de MongoDB**:
+   Ejecuta el siguiente comando en tu terminal para descargar la imagen oficial de MongoDB desde Docker Hub:
+   #+begin_src bash
+     docker pull mongo
+   #+end_src
+
+2. **Iniciar un contenedor de MongoDB**:
+   Una vez descargada la imagen, inicia un contenedor MongoDB con el siguiente comando:
+   #+begin_src bash
+     docker run --name mi_mongodb -d -p 27017:27017 mongo
+   #+end_src
+   Esto hará lo siguiente:
+   - `--name mi_mongodb`: Asigna un nombre al contenedor.
+   - `-d`: Ejecuta el contenedor en segundo plano (modo "detached").
+   - `-p 27017:27017`: Expone el puerto 27017 (el puerto por defecto de MongoDB) en tu máquina local.
+
+3. **Verificar que el contenedor está corriendo**:
+   Ejecuta este comando para verificar que el contenedor está en ejecución:
+   #+begin_src bash
+     docker ps
+   #+end_src
+   Deberías ver tu contenedor MongoDB en la lista de contenedores en ejecución.
+
+---
+
+** Paso 2: Conectar a MongoDB desde Python con Docker
+
+Ahora que tienes MongoDB corriendo en un contenedor Docker, vamos a conectarnos a él usando **Python** y la biblioteca **pymongo**.
+
+1. **Instalar `pymongo`**:
+   Si no tienes pymongo instalado, instálalo usando pip:
+   #+begin_src bash
+     pip install pymongo
+   #+end_src
+
+2. **Conectar a MongoDB desde un script en Python**:
+
+   Crea un archivo Python llamado `mongo_docker.py` con el siguiente código para conectarte al contenedor MongoDB en Docker:
+
+   #+begin_src python
+     from pymongo import MongoClient
+
+     # Conectar a MongoDB en localhost:27017
+     client = MongoClient("mongodb://localhost:27017/")
+
+     # Crear o usar una base de datos llamada "tienda"
+     db = client["tienda"]
+
+     # Crear o usar una colección llamada "productos"
+     collection = db["productos"]
+
+     print("Conectado a MongoDB en Docker")
+   #+end_src
+
+3. **Ejecutar el script**:
+   Guarda el archivo y ejecútalo:
+   #+begin_src bash
+     python mongo_docker.py
+   #+end_src
+
+   Si todo está correctamente configurado, verás el mensaje **"Conectado a MongoDB en Docker"**.
+
+---
+
+** Paso 3: Realizar Operaciones CRUD desde Python
+
+Ahora que has establecido una conexión, puedes realizar operaciones CRUD (Crear, Leer, Actualizar, Borrar) con MongoDB desde el contenedor Docker.
+
+**1. Insertar documentos en MongoDB**:
+
+   Añade la siguiente sección al archivo `mongo_docker.py` para insertar productos en la colección `productos`:
+
+   #+begin_src python
+     productos = [
+         {"nombre": "Laptop", "precio": 999.99, "cantidad": 10, "categoria": "Electrónica"},
+         {"nombre": "Mouse", "precio": 19.99, "cantidad": 50, "categoria": "Accesorios"},
+         {"nombre": "Teclado", "precio": 49.99, "cantidad": 30, "categoria": "Accesorios"}
+     ]
+
+     collection.insert_many(productos)
+     print("Productos insertados")
+   #+end_src
+
+**2. Consultar documentos en MongoDB**:
+
+   Para consultar todos los documentos en la colección `productos`, agrega el siguiente código:
+
+   #+begin_src python
+     productos = collection.find()
+     for producto in productos:
+         print(producto)
+   #+end_src
+
+**3. Actualizar documentos**:
+
+   Actualiza el precio del producto "Mouse":
+
+   #+begin_src python
+     collection.update_one({"nombre": "Mouse"}, {"$set": {"precio": 24.99}})
+     print("Precio del Mouse actualizado")
+   #+end_src
+
+**4. Eliminar documentos**:
+
+   Elimina el producto "Teclado":
+
+   #+begin_src python
+     collection.delete_one({"nombre": "Teclado"})
+     print("Teclado eliminado")
+   #+end_src
+
+---
+
+** Paso 4: Persistir los datos de MongoDB
+
+Cuando el contenedor MongoDB se detiene o se elimina, los datos se perderán a menos que se monte un volumen. Para persistir los datos de MongoDB, sigue estos pasos:
+
+1. **Crear un volumen Docker**:
+   Crea un volumen que puedas asociar al contenedor MongoDB:
+   #+begin_src bash
+     docker volume create mongodb_data
+   #+end_src
+
+2. **Iniciar un contenedor MongoDB con un volumen montado**:
+   Ejecuta el siguiente comando para montar el volumen y asegurarte de que los datos sean persistentes:
+   #+begin_src bash
+     docker run --name mi_mongodb_vol -d -p 27017:27017 -v mongodb_data:/data/db mongo
+   #+end_src
+
+   Ahora, los datos de MongoDB se almacenarán en el volumen **mongodb_data**, y no se perderán al reiniciar o eliminar el contenedor.
+
+---
+
+** Paso 5: Verificar y gestionar los contenedores
+
+Puedes gestionar tus contenedores MongoDB con los siguientes comandos:
+
+1. **Ver los contenedores en ejecución**:
+   #+begin_src bash
+     docker ps
+   #+end_src
+
+2. **Detener un contenedor**:
+   #+begin_src bash
+     docker stop mi_mongodb
+   #+end_src
+
+3. **Eliminar un contenedor**:
+   #+begin_src bash
+     docker rm mi_mongodb
+   #+end_src
+
+4. **Eliminar una imagen de Docker**:
+   #+begin_src bash
+     docker rmi mongo
+   #+end_src
+
+---
+
+** Conclusión
+Este ejercicio te ha mostrado cómo usar MongoDB en un contenedor Docker y cómo interactuar con MongoDB utilizando Python. Docker es ideal para crear entornos aislados, facilitando la ejecución de MongoDB sin instalarlo directamente en tu sistema operativo. Además, el uso de volúmenes asegura que los datos sean persistentes entre reinicios o eliminaciones de contenedores.
+
+
+* Supuesto Práctico: Trabajar con MongoDB usando Docker Compose
+En este ejercicio, aprenderás a usar **Docker Compose** para gestionar contenedores, lo que facilita la creación, administración y persistencia de MongoDB en un entorno Docker. Docker Compose permite definir y correr múltiples servicios en contenedores con un solo comando, y es especialmente útil cuando trabajas con aplicaciones de múltiples partes (por ejemplo, bases de datos, servicios web, etc.).
+
+**Requisitos previos:**
+- Tener Docker y Docker Compose instalados en tu sistema.
+  - Si no lo tienes, sigue las instrucciones de instalación según tu sistema operativo desde [[https://docs.docker.com/get-docker/][la documentación oficial de Docker]].
+  - Docker Compose normalmente se incluye con Docker Desktop en Windows y macOS. Si no lo tienes, instala Docker Compose desde [[https://docs.docker.com/compose/install/][aquí]].
+
+---
+
+** Paso 1: Crear un archivo =docker-compose.yml=
+
+En este paso, vamos a crear un archivo =docker-compose.yml= que define la configuración de MongoDB y su persistencia de datos mediante volúmenes.
+
+**Crear el archivo =docker-compose.yml=:**
+
+Crea una carpeta de proyecto en tu sistema. Dentro de esta carpeta, crea un archivo llamado =docker-compose.yml= con el siguiente contenido:
+
+#+begin_src yaml
+  version: '3.8'
+
+  services:
+    mongodb:
+      image: mongo:latest
+      container_name: mi_mongodb
+      ports:
+        - "27017:27017"
+      volumes:
+        - mongodb_data:/data/db
+      environment:
+        MONGO_INITDB_ROOT_USERNAME: root
+        MONGO_INITDB_ROOT_PASSWORD: example
+
+  volumes:
+    mongodb_data:
+      driver: local
+#+end_src
+
+**Explicación**:
+- **version**: Indica la versión de Docker Compose que estás usando.
+- **services**: Aquí defines los servicios que correrán en contenedores. En este caso, es un solo servicio =mongodb=.
+- **image**: Se utiliza la última imagen oficial de MongoDB.
+- **ports**: Se expone el puerto 27017 en el host para poder conectarte a MongoDB desde tu máquina local.
+- **volumes**: Se monta un volumen llamado =mongodb_data= para asegurar la persistencia de los datos.
+- **environment**: Aquí se definen variables de entorno, como el usuario root y la contraseña para MongoDB.
+
+---
+
+** Paso 2: Ejecutar Docker Compose
+
+**Iniciar los contenedores**:
+
+Dentro de la carpeta donde creaste el archivo =docker-compose.yml=, ejecuta el siguiente comando para iniciar MongoDB:
+
+#+begin_src bash
+  docker-compose up -d
+#+end_src
+
+Esto descargará la imagen de MongoDB (si no la tienes ya) y lanzará un contenedor MongoDB en segundo plano.
+
+**Verificar que MongoDB está corriendo**:
+
+Ejecuta el siguiente comando para verificar que el contenedor MongoDB está corriendo:
+
+#+begin_src bash
+  docker ps
+#+end_src
+
+Deberías ver tu contenedor MongoDB con el nombre =mi_mongodb= en la lista de contenedores en ejecución.
+
+---
+
+** Paso 3: Conectar a MongoDB desde Python usando Docker Compose
+
+Ahora que MongoDB está corriendo en un contenedor Docker, puedes conectarte a él desde un script de Python utilizando la biblioteca **pymongo**.
+
+**Instalar =pymongo=:**
+
+Si aún no tienes =pymongo= instalado en tu entorno de Python, instálalo usando pip:
+
+#+begin_src bash
+  pip install pymongo
+#+end_src
+
+**Crear el archivo =mongo_compose.py=:**
+
+Crea un archivo Python llamado =mongo_compose.py= con el siguiente código:
+
+#+begin_src python
+  from pymongo import MongoClient
+
+  # Conectar a MongoDB en localhost:27017
+  client = MongoClient("mongodb://root:example@localhost:27017/")
+
+  # Crear o usar una base de datos llamada "tienda"
+  db = client["tienda"]
+
+  # Crear o usar una colección llamada "productos"
+  collection = db["productos"]
+
+  print("Conectado a MongoDB usando Docker Compose")
+#+end_src
+
+**Ejecutar el script**:
+
+Guarda el archivo y ejecútalo:
+
+#+begin_src bash
+  python mongo_compose.py
+#+end_src
+
+Si todo está correctamente configurado, verás el mensaje **"Conectado a MongoDB usando Docker Compose"**.
+
+---
+
+** Paso 4: Operaciones CRUD con MongoDB y Docker Compose
+
+Ahora que has establecido una conexión con MongoDB en Docker Compose, puedes realizar operaciones CRUD desde Python.
+
+**Insertar documentos**:
+
+Inserta productos en la colección =productos=:
+
+#+begin_src python
+  productos = [
+      {"nombre": "Laptop", "precio": 999.99, "cantidad": 10, "categoria": "Electrónica"},
+      {"nombre": "Mouse", "precio": 19.99, "cantidad": 50, "categoria": "Accesorios"},
+      {"nombre": "Teclado", "precio": 49.99, "cantidad": 30, "categoria": "Accesorios"}
+  ]
+
+  collection.insert_many(productos)
+  print("Productos insertados")
+#+end_src
+
+**Consultar documentos**:
+
+Para consultar todos los documentos en la colección =productos=:
+
+#+begin_src python
+  productos = collection.find()
+  for producto in productos:
+      print(producto)
+#+end_src
+
+**Actualizar documentos**:
+
+Actualiza el precio del producto "Mouse":
+
+#+begin_src python
+  collection.update_one({"nombre": "Mouse"}, {"$set": {"precio": 24.99}})
+  print("Precio del Mouse actualizado")
+#+end_src
+
+**Eliminar documentos**:
+
+Elimina el producto "Teclado":
+
+#+begin_src python
+  collection.delete_one({"nombre": "Teclado"})
+  print("Teclado eliminado")
+#+end_src
+
+---
+
+** Paso 5: Verificar la persistencia de datos
+
+**Detener los contenedores**:
+
+Detén todos los servicios usando Docker Compose:
+
+#+begin_src bash
+  docker-compose down
+#+end_src
+
+**Reiniciar los contenedores**:
+
+Si vuelves a levantar los contenedores con el comando =docker-compose up -d=, los datos en la base de datos **deben persistir**, ya que están almacenados en el volumen =mongodb_data=.
+
+Puedes verificar esto ejecutando nuevamente el script de Python para ver si los documentos insertados anteriormente aún están disponibles.
+
+---
+
+** Paso 6: Gestionar los Contenedores
+
+Al usar Docker Compose, puedes administrar fácilmente tus contenedores MongoDB con los siguientes comandos:
+
+**Iniciar los contenedores**:
+
+#+begin_src bash
+  docker-compose up -d
+#+end_src
+
+**Detener los contenedores**:
+
+#+begin_src bash
+  docker-compose down
+#+end_src
+
+**Verificar los contenedores en ejecución**:
+
+#+begin_src bash
+  docker-compose ps
+#+end_src
+
+---
+
+** Conclusión
+
+Este supuesto práctico te ha mostrado cómo usar **Docker Compose** para configurar y gestionar MongoDB en contenedores. Con **Docker Compose**, puedes definir un entorno completo en un solo archivo =docker-compose.yml= y gestionar fácilmente la persistencia de datos mediante volúmenes. Además, con la integración de **pymongo** en Python, puedes realizar operaciones CRUD de forma rápida y sencilla.
