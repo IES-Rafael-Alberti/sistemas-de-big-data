@@ -225,3 +225,9 @@ Cuando aparezca un pendiente nuevo:
 2. [ ] **Infraestructura de ampliaciones:** antes de impartir Airbyte o AWS Academy, validar desde el aula la URL y credenciales de Airbyte, conectividad y conectores de Postgres, y permisos, región y salida Athena de AWS Academy.
 3. [ ] **Cambio de equipo con Unison:** regenerar el sitio en destino con `mkdocs build --strict` después de reconstruir los enlaces simbólicos indicados en este documento.
 4. [x] **UD1 — guion de tercera y cuarta sesiones:** preparado en `ud01-introduccion-big-data/99-profesor/GUION_TERCERA_CLASE_SBD_2026_2027.md`, con el documento puente `UD1_P0_00_Por_que_estadistica.md` como arranque antes de estadística aplicada, cápsula matemática y EDA. Tercera sesión: miércoles, 60 minutos, diseño técnico y enganche estadístico. Cuarta sesión: jueves, 120 minutos, estadística y matemática aplicada. Horario semanal confirmado: 1 hora los miércoles y 2 horas los jueves. PDF Moodle generado y build estricto validado. Mantener la segunda sesión centrada en el caso de comercio y «Big Data en una página».
+
+## Agenda para la próxima sesión
+
+- [ ] Revisar los guiones y materiales existentes de las primeras sesiones, la presentación del módulo y el estado real de SBD; no duplicar lo que ya esté preparado o impartido.
+- [ ] A partir de esa revisión, preparar o ajustar el guion de la clase de dos horas con el enfoque de PIA: presentación breve, continuación efectiva de UD1, objetivos y ruta alternativa según el tiempo disponible.
+- [ ] Revisar qué materiales de UD0/inicio y UD1 se publicarán en Moodle; organizar los archivos temporales por unidad y separar documentación PDF, ejemplos y prácticas. Mantener `Moodle/` excluida de Git y los Markdown/notebooks fuente como materiales maestros.
