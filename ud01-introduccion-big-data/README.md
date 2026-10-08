@@ -6,8 +6,7 @@
 | ------- | --- | ----------: |
 | `01-teoria/` | Fuentes editables organizadas por tema. | — |
 | `02-ejemplos/` | Notebooks, scripts y ejemplos no evaluables. | 2 |
-| `03-practicas/` | Guiones de laboratorio y prácticas de aula. | — |
-| `04-evaluacion/` | Enunciados evaluables, rúbricas y documentos de entrega. | — |
+| `03-practicas/` | Todos los ejercicios: enunciado, rúbrica, entrega y materiales juntos por actividad; cuestionarios en subcarpeta propia. | — |
 | `05-recursos/` | Datasets, imágenes, plantillas, ZIPs docentes y dependencias. | 13 |
 | `90-archivo/` | Derivados publicados, histórico y material no canónico. | 15 |
 | `99-profesor/` | Notas internas, guías docentes y corrección reutilizable. | 2 |
@@ -48,7 +47,8 @@ Ver `00-planificacion/matriz_ra_ce_materiales.md` para el detalle completo.
 - `01-teoria/00-estadistica-y-base-matematica/UD1_P0_00_Por_que_estadistica.md` — puente entre el caso Big Data inicial y la necesidad de usar estadística/matemática para interpretar datos antes de EDA.
 - `01-teoria/00-estadistica-y-base-matematica/UD1_P0_Estadistica_para_BigData.md` — base de estadística aplicada para limpieza, calidad, gráficos, correlación y colinealidad.
 - `01-teoria/00-estadistica-y-base-matematica/UD1_P0_Capsula_Matematica_Normativa.md` — cobertura mínima aplicada de matemática discreta, lógica algorítmica y complejidad computacional según RA1/CE1.a.
-- `04-evaluacion/base-matematica/UD1_P0_Cuestionario_Estadistica_y_Capsula_Normativa.md` — cuestionario evaluable para esta base matemática.
+- `03-practicas/fundamentos-matematicos-cadenaretail/UD1_P0_Actividad_Fundamentos_Matematicos_CadenaRetail.md` — mini actividad formativa para aplicar conjuntos, reglas lógicas y complejidad al caso `CadenaRetail`.
+- `03-practicas/cuestionarios/UD1_P0_Cuestionario_Estadistica_y_Capsula_Normativa.md` — banco de preguntas con respuestas y criterios de corrección; referencia para preparar el cuestionario, no recurso para subir tal cual al alumnado.
 
 Secuencia recomendada: primero el documento puente, después estadística aplicada
 y cápsula normativa, y **después** EDA/calidad. La EDA debe apoyarse en estas
@@ -57,11 +57,20 @@ ideas para no quedarse en gráficos sin interpretación.
 ## Material reformado — Arquitecturas Big Data modernas
 
 - `01-teoria/03-arquitecturas-big-data/UD1_Arquitecturas_Big_Data.md` — teoría ampliada de arquitecturas Big Data: principios, batch/streaming, arquitectura orientada a eventos, Lambda, Kappa, capas, lakehouse, Medallion, data products/Data Mesh como modelo organizativo, calidad, trazabilidad, Parquet, Spark y DuckDB.
-- `04-evaluacion/arquitectura-medallion/UD1_P3_Actividad_Diseno_Arquitectura_Medallion.md` — actividad evaluable de diseño de arquitectura para un caso turístico, con rúbrica y justificación de tecnologías viables en aula.
+- `03-practicas/arquitectura-medallion/UD1_P3_Actividad_Diseno_Arquitectura_Medallion.md` — actividad evaluable de diseño de arquitectura para un caso turístico, con rúbrica y justificación de tecnologías viables en aula.
 - `90-archivo/reforma-arquitecturas-2026/UD1-SGBD-Intro-P3_original_2026-06-17.md` — copia de seguridad del material original antes de la reforma.
 
 La reforma usa referencias externas como contraste, no como copia: materiales IABD de Aitor Medrano para organización y conceptos de arquitectura, y documentación oficial de Databricks/Microsoft para Medallion. La parte de IA/HuggingFace queda fuera del núcleo de SBD arquitectura, salvo como posible conexión posterior con datasets, pipelines o proyectos integrados.
 
 ## Cuestionarios semanales (formato Moodle GIFT)
 
-- `04-evaluacion/quiz-ud1.gift` — 8 preguntas en formato GIFT sobre Big Data, EDA, DuckDB, arquitecturas, MongoDB, batch/streaming y coste/calidad/viabilidad.
+- `03-practicas/cuestionarios/quiz-ud1.gift` — 8 preguntas en formato GIFT sobre Big Data, EDA, DuckDB, arquitecturas, MongoDB, batch/streaming y coste/calidad/viabilidad.
+- `03-practicas/cuestionarios/quiz-ud1-parte0.gift` — preguntas GIFT de estadística y base matemática.
+- `03-practicas/cuestionarios/UD1_P0_Cuestionario_Estadistica_y_Capsula_Normativa.gift` — cuestionario completo de 16 preguntas (10 test y 6 ensayos), convertido del Markdown homónimo.
+
+## Ejercicios y publicación en Moodle
+
+El índice de [prácticas](03-practicas/README.md) reúne los enunciados y sus paquetes.
+Cada actividad se conserva en una única carpeta, sea formativa o evaluable.
+La rúbrica y la entrega forman parte del enunciado; no se separan en evaluación.
+El listado docente de publicación está en `99-profesor/moodle/02-actividades/PLAN_PUBLICACION_UD1.md`.

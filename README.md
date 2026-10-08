@@ -39,7 +39,7 @@ Copia de trabajo reorganizada para preparar el curso 2026/2027. El curso origina
 ## Material nuevo en esta reorganización
 
 - **Lab de streaming** (UD3): `ud03-procesamiento-distribuido/03-practicas/Streaming_Labs/SparkLab5-Streaming/` — Redpanda + Spark Structured Streaming con productor Python y consumidor PySpark.
-- **Cuestionarios semanales GIFT** (UD1‑UD6): archivos `quiz-udX.gift` en cada `04-evaluacion/` para importar a Moodle.
+- **Cuestionarios semanales GIFT** (UD1‑UD6): UD1 los reúne en `ud01-introduccion-big-data/03-practicas/cuestionarios/`; las demás unidades mantienen por ahora sus archivos `quiz-udX.gift` en `04-evaluacion/`. Se importan al banco de preguntas Moodle.
 - **Planificación semanal**: `00-planificacion/PLANIFICACION_SEMANAL_SBD.md` — calendario detallado con 30 semanas, horas por unidad, tareas agrupables y RA/CE cubiertos.
 
 ## Regla de trabajo

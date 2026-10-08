@@ -206,6 +206,18 @@ Estos elementos pueden aparecer con palabras como “pendiente”, “revisar”
 - Informes de cierre anteriores: documentan decisiones ya tomadas, aunque incluyan secciones de pendientes ya absorbidas aquí.
 - Material en `90-archivo/`: archivo histórico salvo que este documento diga expresamente que hay que recuperarlo.
 
+## Organización de ejercicios por unidad
+
+- UD1 reúne todos sus ejercicios en `ud01-introduccion-big-data/03-practicas/`:
+  cada actividad conserva juntos enunciado, rúbrica, entrega y materiales de partida.
+  Los cuestionarios están en `03-practicas/cuestionarios/`; se retiró la separación
+  en `04-evaluacion/` de esta unidad.
+- El índice es `ud01-introduccion-big-data/03-practicas/README.md`; el listado de
+  publicación Moodle está en `99-profesor/moodle/02-actividades/PLAN_PUBLICACION_UD1.md`
+  dentro de UD1.
+- Al llegar a las demás unidades, aplicar este mismo criterio si una actividad
+  está repartida entre prácticas y evaluación. No reorganizarlas anticipadamente.
+
 ## Orden recomendado de trabajo
 
 1. **Validación técnica de infraestructura**: hacer solo antes de impartir las ampliaciones Airbyte/AWS. No bloquea la ruta principal del curso.

@@ -137,10 +137,17 @@ Un buen diseño sabe lo que descarta:
 - **No** entrenamos modelos. Primero hacen falta un histórico limpio y una
   pregunta predictiva concreta.
 - **No** usamos streaming. Sería optimizar un problema que aún no está medido.
-- **No** fijamos aún la SLA de entrega. Para eso necesitamos saber cómo se
-  distribuyen los tiempos reales, y eso es un dato estadístico.
+- **No** fijamos aún el SLA de entrega. Para eso necesitamos saber cómo se
+   distribuyen los tiempos reales, y eso es un dato estadístico.
 
-Ese último punto es el puente con la sección siguiente.
+Un **SLA** (*Service Level Agreement*, acuerdo de nivel de servicio) es un
+compromiso medible sobre el comportamiento esperado de un servicio. Por ejemplo:
+«el 90% de los pedidos debe entregarse en menos de 48 horas» o «el informe diario
+de ventas debe estar disponible antes de las 10:00». No basta con decir «rápido»
+o «fiable»: un SLA debe poder comprobarse con datos.
+
+Ese último punto es el puente con la sección siguiente: para proponer un SLA
+razonable necesitamos medir distribuciones, percentiles y valores anómalos.
 
 ## 5. El problema que el diseño no resuelve
 
@@ -503,7 +510,7 @@ Con los diez pedidos de la sección 8, en parejas:
 
 La pregunta 4 es la importante: obliga a convertir un deseo de negocio
 («que llegue rápido») en algo verificable. Con solo diez pedidos no podemos
-proponer una SLA representativa; la respuesta debe indicar qué periodo y volumen
+proponer un SLA representativo; la respuesta debe indicar qué periodo y volumen
 de datos harían falta para fijarla.
 
 ---

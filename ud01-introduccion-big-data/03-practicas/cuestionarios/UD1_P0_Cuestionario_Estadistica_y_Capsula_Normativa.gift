@@ -1,0 +1,92 @@
+// Fuente: UD1_P0_Cuestionario_Estadistica_y_Capsula_Normativa.md
+// Cuestionario completo: 10 test y 6 ensayos (5 abiertas y 1 caso práctico).
+// Configurar en Moodle: P01-P10 = 0,5; P11-P15 = 1; P16 = 2.
+// Total bruto: 12 puntos. Calificación máxima del cuestionario: 10.
+// Las soluciones y los criterios de ensayo están fuera del enunciado.
+
+$CATEGORY: módulo/SBD/UD1/Matemáticas-completo
+
+::UD1_MAT_COMPLETO_P01_Mediana::¿Qué medida es más robusta que la media cuando hay outliers? {
+~La varianza.
+=La mediana.
+~El máximo.
+~El rango.
+}
+
+::UD1_MAT_COMPLETO_P02_Histograma::¿Qué gráfico usarías para detectar la distribución de una variable numérica? {
+=Histograma.
+~Diagrama de Gantt.
+~Mapa conceptual.
+~Tabla de permisos.
+}
+
+::UD1_MAT_COMPLETO_P03_Scatter::Un scatter plot sirve principalmente para... {
+=Comparar dos variables numéricas.
+~Ver permisos de usuario.
+~Ordenar carpetas.
+~Crear claves primarias.
+}
+
+::UD1_MAT_COMPLETO_P04_Pearson::Una correlación cercana a 1 indica... {
+~Ausencia total de relación.
+=Relación positiva fuerte.
+~Relación negativa fuerte.
+~Que una variable causa necesariamente la otra.
+}
+
+::UD1_MAT_COMPLETO_P05_Causalidad::¿Qué afirmación es correcta? {
+~Correlación implica causalidad.
+~Correlación nunca sirve para nada.
+=Correlación puede sugerir relación, pero no demuestra causalidad.
+~Correlación sólo se usa con variables categóricas.
+}
+
+::UD1_MAT_COMPLETO_P06_Colinealidad::La colinealidad aparece cuando... {
+=Dos variables contienen información muy parecida.
+~Un dataset no tiene columnas.
+~Un gráfico tiene muchos colores.
+~Un servidor está caído.
+}
+
+::UD1_MAT_COMPLETO_P07_Completitud::¿Qué dimensión de calidad se relaciona con datos faltantes? {
+=Completitud.
+~Unicidad.
+~Latencia.
+~Compresión.
+}
+
+::UD1_MAT_COMPLETO_P08_Interseccion::En matemática discreta, una intersección de conjuntos puede servir para... {
+=Detectar elementos comunes entre dos fuentes de datos.
+~Borrar una base de datos.
+~Medir temperatura.
+~Crear un histograma.
+}
+
+::UD1_MAT_COMPLETO_P09_ReglaLogica::Una regla lógica de limpieza sería... {
+=Si edad < 0, marcar registro como inválido.
+~Dibujar un gráfico circular.
+~Instalar un sistema operativo.
+~Cambiar el color de un dashboard.
+}
+
+::UD1_MAT_COMPLETO_P10_Complejidad::Una operación O(n²) suele ser problemática en Big Data porque... {
+=Requiere comparar muchos elementos entre sí y escala mal.
+~Siempre es la más rápida.
+~Sólo funciona con texto.
+~No consume memoria.
+}
+
+::UD1_MAT_COMPLETO_P11_Outliers::Explica por qué no se deben borrar outliers automáticamente. {}
+
+::UD1_MAT_COMPLETO_P12_RevisarCorrelacion::Observas una correlación alta entre dos variables. ¿Qué comprobación harías antes de sacar conclusiones? {}
+
+::UD1_MAT_COMPLETO_P13_EjemploColinealidad::Pon un ejemplo de colinealidad en un dataset. {}
+
+::UD1_MAT_COMPLETO_P14_Escalabilidad::Explica con tus palabras por qué la complejidad computacional importa en Big Data. {}
+
+::UD1_MAT_COMPLETO_P15_CombinarFuentes::¿Cómo usarías conjuntos o relaciones al combinar dos fuentes de datos? {}
+
+::UD1_MAT_COMPLETO_P16_CasoPractico::[html]<p>Tienes un dataset de ventas con estas columnas:</p>
+<ul><li><code>id_venta</code></li><li><code>fecha</code></li><li><code>cliente_id</code></li><li><code>producto</code></li><li><code>unidades</code></li><li><code>precio_unitario</code></li><li><code>precio_total</code></li><li><code>ciudad</code></li></ul>
+<p>Responde:</p>
+<ol><li>Indica dos variables numéricas y dos categóricas.</li><li>Indica una regla lógica de validación.</li><li>Indica una posible relación o colinealidad.</li><li>Indica un gráfico útil y qué mirarías en él.</li></ol> {}
