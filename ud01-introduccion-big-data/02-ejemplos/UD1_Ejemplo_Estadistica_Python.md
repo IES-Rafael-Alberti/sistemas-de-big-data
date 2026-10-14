@@ -4,6 +4,10 @@ Este ejemplo acompaña a la parte de [estadística aplicada](../01-teoria/00-est
 
 También puedes descargar y ejecutar el [notebook de este ejemplo](UD1_Ejemplo_Estadistica_Python.ipynb).
 
+Para ver cómo un cálculo correcto puede llevar a una decisión equivocada,
+continúa con [Anscombe y tiempos de respuesta de una web](UD1_Estadistica_Decisiones_Anscombe_Latencias_Web.md).
+Incluye CSV ya generados, tablas, gráficas y una comprobación concreta del tiempo de respuesta.
+
 ## Dataset
 
 Trabajamos con ventas de una tienda. Hay un valor extremo intencionado para ver cómo afecta a media, mediana y outliers.

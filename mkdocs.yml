@@ -26,6 +26,8 @@ exclude_docs: |
   plantillas/referencia_meltano.md
   *.py
   *.csv
+  !ud01-introduccion-big-data/02-ejemplos/anscombe.csv
+  !ud01-introduccion-big-data/02-ejemplos/latencias_web.csv
   *.parquet
   *.zip
   *.tar.gz
