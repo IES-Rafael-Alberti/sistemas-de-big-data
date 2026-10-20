@@ -15,6 +15,7 @@ Este documento es la **fuente única de seguimiento** para saber qué está term
 | Inicio de curso SBD | ✅ Material preparado | Presentación breve, diagnóstico inicial y guiones de las dos primeras sesiones. |
 | Arquitecturas Big Data / Medallion | ✅ Cerrado | Mantener como núcleo lakehouse/Medallion + streaming-first; no abrir más arquitecturas salvo necesidad concreta. |
 | Infraestructura docente | ✅ Preparada en documentación | Validar acceso real a Airbyte/Postgres y AWS Academy antes de clase. |
+| UD1 — mapa y sesión de matemática aplicada | ✅ Material preparado y validado | Notebook guiado de 60 min y mapa complementario creados; pendientes de decidir fecha de uso y publicar junto con los materiales UD1 cuando corresponda. |
 
 ## Criterio de verdad actual
 
