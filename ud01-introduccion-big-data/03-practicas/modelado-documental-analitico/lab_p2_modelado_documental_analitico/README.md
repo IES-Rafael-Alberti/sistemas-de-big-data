@@ -2,6 +2,8 @@
 
 **Objetivo:** comparar cómo resolver las mismas preguntas con (a) un modelo documental y (b) un modelo analítico en Parquet consultado con DuckDB.
 
+Antes de ejecutar, lee la [guía de modelado de datos](../../../01-teoria/02-almacenamiento-y-nosql/UD1_Modelado_de_Datos.md) y decide: entidad, claves y campos a calcular. Después sigue el laboratorio.
+
 ## 0) Requisitos
 pip install pandas pyarrow duckdb
 

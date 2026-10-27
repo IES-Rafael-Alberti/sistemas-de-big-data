@@ -46,6 +46,8 @@ Un documento Markdown con esta estructura:
 ```md
 # Diseño de arquitectura Big Data
 
+## 0. Miembros de la pareja
+
 ## 1. Caso de uso
 
 ## 2. Fuentes de datos
@@ -94,14 +96,14 @@ Puede ser texto, Mermaid o imagen.
 
 ## Rúbrica
 
-| Criterio | Peso |
-| -------- | ---- |
-| Identifica bien fuentes, tipos y frecuencia | 15% |
-| Justifica batch/streaming/eventos/Lambda/Kappa/Medallion | 20% |
-| Diseña correctamente Bronze/Silver/Gold | 25% |
-| Incluye calidad, trazabilidad, errores y responsabilidad del dato | 15% |
-| Elige herramientas viables para aula | 15% |
-| Explica coste, limitaciones y alternativas | 10% |
+| Criterio                                                          | Peso |
+| ----------------------------------------------------------------- | ---- |
+| Identifica bien fuentes, tipos y frecuencia                       | 15%  |
+| Justifica batch/streaming/eventos/Lambda/Kappa/Medallion          | 20%  |
+| Diseña correctamente Bronze/Silver/Gold                           | 25%  |
+| Incluye calidad, trazabilidad, errores y responsabilidad del dato | 15%  |
+| Elige herramientas viables para aula                              | 15%  |
+| Explica coste, limitaciones y alternativas                        | 10%  |
 
 ## Nivel excelente
 

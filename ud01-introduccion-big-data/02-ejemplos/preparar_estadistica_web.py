@@ -258,6 +258,79 @@ Quedarían 900 filas, media 100 ms y cumplimiento del 100 % **entre las filas
 conservadas**. No habríamos arreglado la web: habríamos ocultado las 100 peticiones
 que incumplían. Detectar un dato extremo o lento no autoriza a borrarlo.
 """)
+    md("chuleta-pandas-numpy", """
+## Chuleta: comandos para explorar estos datos
+
+Usa estos ejemplos como punto de partida y cambia los nombres de columna o los
+umbrales cuando la pregunta lo requiera. `anscombe` y `latencias` son los
+DataFrames creados en las celdas anteriores.
+
+### Inspeccionar y comprobar calidad
+
+```python
+latencias.head()                         # primeras filas
+latencias.shape                          # filas y columnas
+latencias.info()                         # tipos y valores no nulos
+latencias.isna().sum()                   # nulos por columna
+latencias['request_id'].is_unique        # ¿identificadores únicos?
+latencias['duracion_ms'].describe()      # resumen numérico
+```
+
+### Filtrar y contar las peticiones que cumplen
+
+```python
+UMBRAL_MS = 500
+mascara = latencias['duracion_ms'] <= UMBRAL_MS
+latencias.loc[mascara].head()            # ver algunas que cumplen
+latencias.loc[~mascara].head()           # ver algunas que superan el umbral
+mascara.sum()                            # número que cumple
+mascara.mean() * 100                     # porcentaje que cumple (True cuenta como 1)
+latencias['duracion_ms'].value_counts().sort_index()  # frecuencias por duración
+```
+
+No borres las peticiones lentas para mejorar el porcentaje: filtra para
+estudiarlas y conserva los datos originales.
+
+### Resumir latencias y percentiles
+
+```python
+t = latencias['duracion_ms']
+t.mean()                                  # media
+t.median()                               # mediana
+t.min(), t.max(), t.max() - t.min()      # extremos y rango
+t.var(ddof=1), t.std(ddof=1)             # varianza y desviación típicas muestrales
+t.quantile([0.50, 0.90, 0.95, 0.99])     # percentiles con pandas
+```
+
+### Comparar los conjuntos de Anscombe
+
+```python
+anscombe.groupby('conjunto')[['x', 'y']].agg(['mean', 'median', 'std'])
+
+for nombre, grupo in anscombe.groupby('conjunto'):
+    r = grupo['x'].corr(grupo['y'])      # correlación de Pearson
+    print(nombre, round(r, 2))
+```
+
+### Las mismas medidas con NumPy
+
+```python
+valores = latencias['duracion_ms'].to_numpy()
+np.mean(valores)
+np.median(valores)
+np.std(valores, ddof=1)                  # ddof=1: desviación muestral
+np.var(valores, ddof=1)                  # ddof=1: varianza muestral
+np.percentile(valores, [50, 90, 95, 99])
+
+grupo = anscombe.loc[anscombe['conjunto'] == 'I']
+np.corrcoef(grupo['x'], grupo['y'])[0, 1]
+```
+
+**Convención:** `ddof=1` usa divisor \(n-1\), habitual para estimar la
+dispersión a partir de una muestra. Con `ddof=0` se calcula la dispersión
+descriptiva de todos los valores disponibles. No confundas ese cambio de
+convención con un cambio en los datos.
+""")
     md("web-ejercicios", """
 ## 3. Trabajo con el CSV (parejas, 20 minutos)
 

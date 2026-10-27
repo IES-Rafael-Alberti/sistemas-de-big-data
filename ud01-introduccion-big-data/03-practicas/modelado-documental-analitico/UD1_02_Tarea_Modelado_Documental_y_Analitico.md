@@ -10,6 +10,10 @@ consultable con DuckDB. No se evalúa instalar MongoDB ni memorizar comandos:
 se evalúa reconocer la estructura de los datos, justificar el modelo elegido y
 obtener respuestas reproducibles.
 
+Antes del laboratorio, lee la [guía de modelado de datos](../../01-teoria/02-almacenamiento-y-nosql/UD1_Modelado_de_Datos.md):
+explica qué es modelar, el modelo documental frente al analítico y cómo elegir
+según cómo vas a leer.
+
 ## Material de partida
 
 Descarga en Moodle `lab_p2_modelado_documental_analitico.zip`. Incluye el
@@ -27,8 +31,22 @@ MongoDB es una ampliación opcional: no es requisito para esta entrega.
 
 ## Trabajo a realizar
 
-1. Genera y revisa los datos. Identifica qué información encaja en un documento
-   JSON y qué relaciones o campos deben conservarse para analizar pedidos.
+Antes de ejecutar, decide el modelado paso a paso (apóyate en la guía):
+
+1. **Identifica la entidad.** Un pedido es la unidad lógica; sus líneas son
+   subelementos.
+2. **Elige la clave.** `order_id` identifica cada pedido; al aplanar se repite en
+   cada fila para relacionar las líneas del mismo pedido.
+3. **Decide campos a conservar y a calcular.** `importe` y `margen` se calculan;
+   decide si conviene guardarlos para que las consultas sean rápidas.
+4. **Elige el modelo de salida.** Analítico plano y Parquet para consultas
+   agregadas; documental JSON si se va a recuperar el pedido completo.
+5. **Justifica y documenta** cada decisión antes de escribir SQL.
+
+Después:
+
+1. Genera y revisa los datos. Comprueba que la entidad, las claves y los campos
+   calculados coinciden con lo que decidiste.
 2. Incluye en `respuestas.md` un ejemplo abreviado de un documento JSON y explica
    dos ventajas y una limitación del modelado documental para este caso.
 3. Completa o adapta `p2_duckdb.sql` para responder, como mínimo, a estas
