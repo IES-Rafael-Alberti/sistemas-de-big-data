@@ -6,6 +6,7 @@ entrega y los materiales de partida. No hay una segunda ubicación en evaluació
 | Actividad | Enunciado | Material de partida |
 |---|---|---|
 | Fundamentos matemáticos CadenaRetail | [Mini actividad](fundamentos-matematicos-cadenaretail/UD1_P0_Actividad_Fundamentos_Matematicos_CadenaRetail.md) | Caso incluido en el enunciado; no necesita ZIP |
+| Modelado completo de datos | [Enunciado y rúbrica](modelado-datos/UD1_Tarea_Modelado_Completo.md) | `modelado-datos/data/` |
 | Modelado documental y analítico | [Enunciado y rúbrica](modelado-documental-analitico/UD1_02_Tarea_Modelado_Documental_y_Analitico.md) | `modelado-documental-analitico/lab_p2_modelado_documental_analitico.zip` |
 | EDA, calidad y Parquet | [Enunciado y rúbrica](eda-calidad-duckdb/UD1_03_Tarea_y_rubrica.md) | `eda-calidad-duckdb/lab_p3_eda_calidad_duckdb.zip` |
 | Logs JSON | [Guion del ejercicio](logs-json/UD1_Lab_Logs_JSON.md) | `logs-json/generar_logs_server.py` |

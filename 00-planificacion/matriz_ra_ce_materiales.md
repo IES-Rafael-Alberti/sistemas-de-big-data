@@ -22,6 +22,7 @@
 | | | Práctica Medallion (Silver → Gold) | UD2 |
 | **e** | Objetivos, prioridades, secuenciación, organización del tiempo | Plantilla planificación técnica (`plantilla_planificacion_tecnica.md` — RA1.e) | Transversal |
 | **f** | Seleccionar e integrar sistemas | Actividad Diseño Arquitectura Medallion (justificación herramientas) | UD1 |
+| | | Tarea independiente de modelado completo (comparación y elección de gestor) | UD1 |
 | | | Matriz coste-calidad-viabilidad (`UD2_Actividad_Matriz_Coste_Calidad_Viabilidad.md`) | UD2 |
 | | | Práctica herramientas reales: Airbyte GUI + AWS Academy (optativa) | UD2 |
 | | | Benchmark pandas vs DuckDB vs Spark (`UD3_Lab_Benchmark_Pandas_DuckDB_Spark.md`) | UD3 |
@@ -63,6 +64,7 @@
 | | | Práctica herramientas reales Airbyte (optativa) | UD2 |
 | | | Práctica AWS Academy serverless: S3 + Glue Crawler + Athena (optativa) | UD2 |
 | **b** | Tecnologías eficientes para extraer valor | Práctica Medallion (Parquet + DuckDB) | UD2 |
+| | | Tarea independiente de modelado completo (elección de formato y motor según carga) | UD1 |
 | | | Práctica AWS Academy serverless (consultar datos en S3 con Athena) | UD2 |
 | | | Benchmark pandas vs DuckDB vs Spark (eficiencia) | UD3 |
 | | | Tutorial DuckDB | UD1 |
@@ -82,6 +84,7 @@
 | CE | Enunciado | Materiales SBD | UD |
 |----|-----------|----------------|----|
 | **a** | Escenarios y tipologías de datos no estructurados | Laboratorio MongoDB (`lab_p2_modelado_documental_analitico`) | UD1 |
+| | | Tarea independiente de modelado completo (ruta documental y comparación de modelos) | UD1 |
 | | | Lab Logs JSON (`lab_logs_json/UD1_Lab_Logs_JSON.md`) | UD1 |
 | | | Práctica Medallion (JSONL — datos semiestructurados) | UD2 |
 | | | Teoría de `01-teoria/02-almacenamiento-y-nosql/` (NoSQL, MongoDB y Cassandra) | UD1 |

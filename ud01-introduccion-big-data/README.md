@@ -18,9 +18,9 @@
 | **RA1.a** | Cápsula Matemática Normativa + Cuestionario | Evaluable |
 | **RA1.b** | Práctica EDA + Calidad (`UD1_03_Tarea_y_rubrica.md`) | Evaluable |
 | **RA1.c-d** | Actividad Diseño Arquitectura Medallion | Evaluable |
-| **RA1.f-g** | Actividad Diseño Arquitectura Medallion (justificación) | Evaluable |
+| **RA1.f-g** | Actividad Diseño Arquitectura Medallion (justificación) + tarea independiente de modelado completo (elección tecnológica) | Evaluable |
 | **RA3.a-d** | Actividad Diseño Arquitectura Medallion (gestión datos) | Evaluable |
-| **RA4.a** | Tarea de modelado documental y analítico (JSON frente a Parquet/DuckDB) | Evaluable; MongoDB es ampliación opcional |
+| **RA4.a** | Tarea independiente de modelado completo + tarea documental y analítica (JSON frente a Parquet/DuckDB) | Evaluable; MongoDB es ampliación opcional |
 | **RA4.c** | Teoría arquitecturas (HDFS, lakehouse, clúster) | Teoría |
 | **RA4.d** | Teoría arquitecturas (comparativa sistemas) | Teoría |
 
@@ -30,7 +30,7 @@
 |---|---|
 | `01-teoria/00-estadistica-y-base-matematica/` | Puente Big Data → estadística, estadística aplicada y cápsula matemática normativa. |
 | `01-teoria/01-fundamentos-big-data/` | Guía breve Big Data 101 y capítulo ampliado. |
-| `01-teoria/02-almacenamiento-y-nosql/` | Modelos de almacenamiento, NoSQL, MongoDB y DuckDB. |
+| `01-teoria/02-almacenamiento-y-nosql/` | Modelado de datos, modelos de almacenamiento, NoSQL, MongoDB y DuckDB. |
 | `01-teoria/03-arquitecturas-big-data/` | Batch, streaming, Lambda, Kappa, lakehouse y Medallion. |
 | `01-teoria/04-eda-calidad-duckdb/` | Guía práctica y capítulo ampliado de EDA/calidad, DuckDB y plantillas. |
 | `01-teoria/05-ingesta-de-datos/` | Fundamentos de ingesta como puente hacia UD2. |
@@ -53,6 +53,11 @@ Ver `00-planificacion/matriz_ra_ce_materiales.md` para el detalle completo.
 Secuencia recomendada: primero el documento puente, después estadística aplicada
 y cápsula normativa, y **después** EDA/calidad. La EDA debe apoyarse en estas
 ideas para no quedarse en gráficos sin interpretación.
+
+El [modelado de datos](01-teoria/02-almacenamiento-y-nosql/UD1_Modelado_de_Datos.md)
+se estudia antes de la práctica documental y analítica: explica cómo elegir una
+representación según el objetivo, las consultas, la granularidad y la carga del
+sistema.
 
 ## Material reformado — Arquitecturas Big Data modernas
 
