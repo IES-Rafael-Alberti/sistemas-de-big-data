@@ -1,0 +1,9 @@
+evento_id,fecha,servicio,estado_http,duracion_ms
+e001,2026-11-18,inicio,200,120
+e002,2026-11-18,inicio,200,340
+e003,2026-11-18,productos,200,280
+e004,2026-11-18,inicio,503,
+e005,2026-11-18,productos,200,610
+e006,2026-11-18,inicio,200,95
+e007,2026-11-18,productos,500,
+e008,2026-11-18,inicio,200,450
