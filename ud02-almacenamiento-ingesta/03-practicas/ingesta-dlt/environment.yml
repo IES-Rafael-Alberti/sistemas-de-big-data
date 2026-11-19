@@ -1,0 +1,15 @@
+name: sbd-lab
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.12.16
+  - dlt=1.30.0
+  - python-duckdb=1.5.6
+  - duckdb-cli=1.5.6
+  - pandas=3.1.1
+  - pyarrow=26.0.1
+  - numpy=2.5.5
+  - pymongo=4.20.0
+  - jupyterlab=4.6.6
+  - ipykernel=7.4.0

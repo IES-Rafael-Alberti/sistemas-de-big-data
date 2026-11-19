@@ -5,6 +5,7 @@ dependencies:
   - python=3.12
   - duckdb>=0.10
   - duckdb-cli    # CLI para ejecutar .read p2_duckdb.sql desde terminal
+  - pymongo>=4.8  # Cliente Python opcional para MongoDB
   - pandas>=2.1
   - pyarrow>=15
   - numpy>=1.26

@@ -9,32 +9,34 @@
         <meta name="description" content="Material del módulo Sistemas de Big Data - Curso 2026/2027">
       
       
-      
-        <link rel="canonical" href="https://ies-rafael-alberti.github.io/sistemas-de-big-data/ud02-almacenamiento-ingesta/01-teoria/UD2_02_Ingesta_scripts_y_Airbyte/">
-      
-      
-        <link rel="prev" href="../UD2_01_Problema_y_arquitectura/">
+        <meta name="author" content="José Manuel Sánchez Álvarez">
       
       
-        <link rel="next" href="../UD2_03_Integracion_y_calidad_incremental/">
+        <link rel="canonical" href="https://ies-rafael-alberti.github.io/sistemas-de-big-data/ud01-introduccion-big-data/01-teoria/02-almacenamiento-y-nosql/UD1_Modelado_de_Datos-Diapo/">
+      
+      
+        <link rel="prev" href="../UD1_Almacenamiento_y_NoSQL/">
+      
+      
+        <link rel="next" href="../UD1_Modelado_de_Datos/">
       
       
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>02 Ingesta scripts y Airbyte - Sistemas de Big Data</title>
+        <title>UD1 — Modelado de datos - Sistemas de Big Data</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +55,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ud2-ingesta-con-scripts-pandas-y-con-airbyte-oss" class="md-skip">
+        <a href="#ud1-modelado-de-datos" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -92,7 +94,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Cabecera">
-    <a href="../../.." title="Sistemas de Big Data" class="md-header__button md-logo" aria-label="Sistemas de Big Data" data-md-component="logo">
+    <a href="../../../.." title="Sistemas de Big Data" class="md-header__button md-logo" aria-label="Sistemas de Big Data" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -112,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              02 Ingesta scripts y Airbyte
+              UD1 — Modelado de datos
             
           </span>
         </div>
@@ -223,7 +225,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
   
@@ -242,7 +244,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../presentacion-curso/" class="md-tabs__link">
+      <a href="../../../../presentacion-curso/" class="md-tabs__link">
         
   
   
@@ -259,11 +261,13 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../unidades/ud01/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../../../unidades/ud01/" class="md-tabs__link">
           
   
   
@@ -279,13 +283,11 @@
   
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../unidades/ud02/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../../unidades/ud02/" class="md-tabs__link">
           
   
   
@@ -305,7 +307,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../unidades/ud03/" class="md-tabs__link">
+        <a href="../../../../unidades/ud03/" class="md-tabs__link">
           
   
   
@@ -325,7 +327,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../unidades/ud04/" class="md-tabs__link">
+        <a href="../../../../unidades/ud04/" class="md-tabs__link">
           
   
   
@@ -345,7 +347,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../unidades/ud05/" class="md-tabs__link">
+        <a href="../../../../unidades/ud05/" class="md-tabs__link">
           
   
   
@@ -365,7 +367,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../unidades/ud06/" class="md-tabs__link">
+        <a href="../../../../unidades/ud06/" class="md-tabs__link">
           
   
   
@@ -385,7 +387,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../plantillas/plantilla_checklist_calidad_rgpd/" class="md-tabs__link">
+        <a href="../../../../plantillas/plantilla_checklist_calidad_rgpd/" class="md-tabs__link">
           
   
   
@@ -419,7 +421,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navegación" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Sistemas de Big Data" class="md-nav__button md-logo" aria-label="Sistemas de Big Data" data-md-component="logo">
+    <a href="../../../.." title="Sistemas de Big Data" class="md-nav__button md-logo" aria-label="Sistemas de Big Data" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -449,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   
@@ -476,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../presentacion-curso/" class="md-nav__link">
+      <a href="../../../../presentacion-curso/" class="md-nav__link">
         
   
   
@@ -500,28 +502,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
-        
-          
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   
@@ -539,7 +544,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -557,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unidades/ud01/" class="md-nav__link">
+      <a href="../../../../unidades/ud01/" class="md-nav__link">
         
   
   
@@ -582,28 +587,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
             
   
   
@@ -621,7 +629,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -693,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/00-estadistica-y-base-matematica/UD1_P0_00_Por_que_estadistica/" class="md-nav__link">
+      <a href="../../00-estadistica-y-base-matematica/UD1_P0_00_Por_que_estadistica/" class="md-nav__link">
         
   
   
@@ -721,7 +729,63 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/00-estadistica-y-base-matematica/UD1_P0_Capsula_Matematica_Normativa/" class="md-nav__link">
+      <a href="../../00-estadistica-y-base-matematica/UD1_P0_01_Centro_y_Dispersion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    01 Centro y Dispersion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-estadistica-y-base-matematica/UD1_P0_02_Donde_Aparecen_las_Matematicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 Donde Aparecen las Matematicas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../00-estadistica-y-base-matematica/UD1_P0_Capsula_Matematica_Normativa/" class="md-nav__link">
         
   
   
@@ -749,7 +813,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/00-estadistica-y-base-matematica/UD1_P0_Estadistica_para_BigData/" class="md-nav__link">
+      <a href="../../00-estadistica-y-base-matematica/UD1_P0_Estadistica_para_BigData/" class="md-nav__link">
         
   
   
@@ -839,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/01-fundamentos-big-data/UD1_01_BigData101/" class="md-nav__link">
+      <a href="../../01-fundamentos-big-data/UD1_01_BigData101/" class="md-nav__link">
         
   
   
@@ -867,7 +931,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/01-fundamentos-big-data/UD1_Fundamentos_Big_Data_Ampliado/" class="md-nav__link">
+      <a href="../../01-fundamentos-big-data/UD1_Fundamentos_Big_Data_Ampliado-Diapo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentos Big Data Ampliado Diapo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../01-fundamentos-big-data/UD1_Fundamentos_Big_Data_Ampliado/" class="md-nav__link">
         
   
   
@@ -900,8 +992,10 @@
                 
   
   
+    
   
   
+  
     
     
     
@@ -912,13 +1006,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-          
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_2_3" id="__nav_3_2_3_label" tabindex="0">
@@ -939,7 +1031,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_2_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -957,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/02-almacenamiento-y-nosql/DuckDB/" class="md-nav__link">
+      <a href="../DuckDB/" class="md-nav__link">
         
   
   
@@ -1039,7 +1131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/02-almacenamiento-y-nosql/MongoDB/MongoDB_ConceptosBasicos/" class="md-nav__link">
+      <a href="../MongoDB/MongoDB_ConceptosBasicos/" class="md-nav__link">
         
   
   
@@ -1067,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/02-almacenamiento-y-nosql/MongoDB/comandosMongoDB_python/" class="md-nav__link">
+      <a href="../MongoDB/comandosMongoDB_python/" class="md-nav__link">
         
   
   
@@ -1095,7 +1187,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/02-almacenamiento-y-nosql/MongoDB/comandosMongoDB_shell/" class="md-nav__link">
+      <a href="../MongoDB/comandosMongoDB_shell/" class="md-nav__link">
         
   
   
@@ -1131,7 +1223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/02-almacenamiento-y-nosql/README_instalacion_duckdb/" class="md-nav__link">
+      <a href="../README_instalacion_duckdb/" class="md-nav__link">
         
   
   
@@ -1159,7 +1251,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/02-almacenamiento-y-nosql/UD1_Almacenamiento_y_NoSQL/" class="md-nav__link">
+      <a href="../UD1_Almacenamiento_y_NoSQL-Diapo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Almacenamiento y NoSQL Diapo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1_Almacenamiento_y_NoSQL/" class="md-nav__link">
         
   
   
@@ -1167,6 +1287,294 @@
     
   
     Almacenamiento y NoSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelado de Datos Diapo
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelado de Datos Diapo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="En esta página">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      En esta página
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ud1-modelado-de-datos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UD1 — Modelado de datos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#el-modelo-empieza-por-el-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        El modelo empieza por el uso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-ganamos-al-modelar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué ganamos al modelar?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antes-de-guardar-entidad-y-granularidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes de guardar: entidad y granularidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claves-identidad-que-sobrevive-a-las-transformaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claves: identidad que sobrevive a las transformaciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#del-dominio-al-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Del dominio al almacenamiento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seis-familias-seis-preguntas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seis familias, seis preguntas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacional-reglas-y-transacciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relacional: reglas y transacciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documental-una-entidad-lista-para-servir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documental: una entidad lista para servir
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clave-valor-grafo-y-series-temporales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clave-valor, grafo y series temporales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#columnar-leer-menos-para-analizar-mas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columnar: leer menos para analizar más
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oltp-y-olap-no-hacen-la-misma-pregunta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OLTP y OLAP no hacen la misma pregunta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-pedido-dos-representaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un pedido, dos representaciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-json-para-servir-parquet-para-preguntar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: JSON para servir, Parquet para preguntar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proceso-de-diseno-de-la-pregunta-al-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proceso de diseño: de la pregunta al modelo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-antes-de-entregar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist antes de entregar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-llevarse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Para llevarse
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../UD1_Modelado_de_Datos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelado de Datos
   
 
     
@@ -1249,7 +1657,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/03-arquitecturas-big-data/UD1_Arquitecturas_Big_Data/" class="md-nav__link">
+      <a href="../../03-arquitecturas-big-data/UD1_Arquitecturas_Big_Data-Diapo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitecturas Big Data Diapo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../03-arquitecturas-big-data/UD1_Arquitecturas_Big_Data/" class="md-nav__link">
         
   
   
@@ -1339,7 +1775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/04-eda-calidad-duckdb/UD1-Plantilla-Medidas-Calidad/" class="md-nav__link">
+      <a href="../../04-eda-calidad-duckdb/UD1-Plantilla-Medidas-Calidad/" class="md-nav__link">
         
   
   
@@ -1367,7 +1803,35 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/04-eda-calidad-duckdb/UD1_02_EDA_y_calidad/" class="md-nav__link">
+      <a href="../../04-eda-calidad-duckdb/UD1_02_EDA_y_calidad-Diapo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    02 EDA y calidad Diapo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-eda-calidad-duckdb/UD1_02_EDA_y_calidad/" class="md-nav__link">
         
   
   
@@ -1395,7 +1859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/04-eda-calidad-duckdb/UD1_EDA_y_Calidad_Capitulo_Ampliado/" class="md-nav__link">
+      <a href="../../04-eda-calidad-duckdb/UD1_EDA_y_Calidad_Capitulo_Ampliado/" class="md-nav__link">
         
   
   
@@ -1423,7 +1887,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/04-eda-calidad-duckdb/UD1_Informe_Calidad_template/" class="md-nav__link">
+      <a href="../../04-eda-calidad-duckdb/UD1_Informe_Calidad_template/" class="md-nav__link">
         
   
   
@@ -1466,10 +1930,10 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_5_5" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2_5_6" >
         
           
-          <label class="md-nav__link" for="__nav_3_2_5_5" id="__nav_3_2_5_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_2_5_6" id="__nav_3_2_5_6_label" tabindex="0">
             
   
   
@@ -1487,8 +1951,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_2_5_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_2_5_5">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_2_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2_5_6">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -1505,7 +1969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/04-eda-calidad-duckdb/docs/00-DuckDB/" class="md-nav__link">
+      <a href="../../04-eda-calidad-duckdb/docs/00-DuckDB/" class="md-nav__link">
         
   
   
@@ -1533,7 +1997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/04-eda-calidad-duckdb/docs/01-tutorial-duckdb/" class="md-nav__link">
+      <a href="../../04-eda-calidad-duckdb/docs/01-tutorial-duckdb/" class="md-nav__link">
         
   
   
@@ -1541,6 +2005,34 @@
     
   
     tutorial duckdb
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../04-eda-calidad-duckdb/docs/OLAP_vs_OLTP/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OLAP vs OLTP
   
 
     
@@ -1631,7 +2123,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/01-teoria/05-ingesta-de-datos/UD1_Ingesta_de_Datos/" class="md-nav__link">
+      <a href="../../05-ingesta-de-datos/UD1_Ingesta_de_Datos/" class="md-nav__link">
         
   
   
@@ -1681,10 +2173,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1693,7 +2188,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
             
   
   
@@ -1729,7 +2224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/02-ejemplos/UD1_Ejemplo_Estadistica_Python/" class="md-nav__link">
+      <a href="../../../02-ejemplos/UD1_Ejemplo_Estadistica_Python/" class="md-nav__link">
         
   
   
@@ -1757,7 +2252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/02-ejemplos/UD1_Estadistica_Decisiones_Anscombe_Latencias_Web/" class="md-nav__link">
+      <a href="../../../02-ejemplos/UD1_Estadistica_Decisiones_Anscombe_Latencias_Web/" class="md-nav__link">
         
   
   
@@ -1785,7 +2280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/02-ejemplos/UD1_Repaso_Estadistica_Antes_de_Ejemplos/" class="md-nav__link">
+      <a href="../../../02-ejemplos/UD1_Repaso_Estadistica_Antes_de_Ejemplos/" class="md-nav__link">
         
   
   
@@ -1801,14 +2296,6 @@
   
 
       </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -1836,10 +2323,111 @@
         
           
         
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3_4" id="__nav_3_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingesta Local
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ingesta Local
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../02-ejemplos/ingesta-local/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
         
           
-          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="">
             
   
   
@@ -1875,7 +2463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/" class="md-nav__link">
+      <a href="../../../03-practicas/" class="md-nav__link">
         
   
   
@@ -1957,7 +2545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/arquitectura-medallion/UD1_P3_Actividad_Diseno_Arquitectura_Medallion/" class="md-nav__link">
+      <a href="../../../03-practicas/arquitectura-medallion/UD1_P3_Actividad_Diseno_Arquitectura_Medallion/" class="md-nav__link">
         
   
   
@@ -2047,7 +2635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/cuestionarios/UD1_P0_Cuestionario_Estadistica_y_Capsula_Normativa/" class="md-nav__link">
+      <a href="../../../03-practicas/cuestionarios/UD1_P0_Cuestionario_Estadistica_y_Capsula_Normativa/" class="md-nav__link">
         
   
   
@@ -2137,7 +2725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/eda-calidad-duckdb/UD1_03_Tarea_y_rubrica/" class="md-nav__link">
+      <a href="../../../03-practicas/eda-calidad-duckdb/UD1_03_Tarea_y_rubrica/" class="md-nav__link">
         
   
   
@@ -2219,7 +2807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/eda-calidad-duckdb/lab_p3_eda_calidad_duckdb/" class="md-nav__link">
+      <a href="../../../03-practicas/eda-calidad-duckdb/lab_p3_eda_calidad_duckdb/" class="md-nav__link">
         
   
   
@@ -2247,7 +2835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/eda-calidad-duckdb/lab_p3_eda_calidad_duckdb/UD1_Informe_Calidad_template/" class="md-nav__link">
+      <a href="../../../03-practicas/eda-calidad-duckdb/lab_p3_eda_calidad_duckdb/UD1_Informe_Calidad_template/" class="md-nav__link">
         
   
   
@@ -2337,7 +2925,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/eda-calidad-duckdb/labp3/README_conda/" class="md-nav__link">
+      <a href="../../../03-practicas/eda-calidad-duckdb/labp3/README_conda/" class="md-nav__link">
         
   
   
@@ -2435,7 +3023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/fundamentos-matematicos-cadenaretail/UD1_P0_Actividad_Fundamentos_Matematicos_CadenaRetail/" class="md-nav__link">
+      <a href="../../../03-practicas/fundamentos-matematicos-cadenaretail/UD1_P0_Actividad_Fundamentos_Matematicos_CadenaRetail/" class="md-nav__link">
         
   
   
@@ -2496,7 +3084,7 @@
   <span class="md-ellipsis">
     
   
-    Logs Json
+    Ingesta Datos
   
 
     
@@ -2512,7 +3100,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Logs Json
+    Ingesta Datos
   
 
           </label>
@@ -2525,14 +3113,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/logs-json/UD1_Lab_Logs_JSON/" class="md-nav__link">
+      <a href="../../../03-practicas/ingesta-datos/UD1_Ingesta_Practica_Aula/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Lab Logs JSON
+    Ingesta Practica Aula
   
 
     
@@ -2586,7 +3174,7 @@
   <span class="md-ellipsis">
     
   
-    Modelado Documental Analitico
+    Logs Json
   
 
     
@@ -2599,6 +3187,186 @@
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Logs Json
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-practicas/logs-json/UD1_Lab_Logs_JSON/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab Logs JSON
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_8" id="__nav_3_4_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelado Datos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modelado Datos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-practicas/modelado-datos/UD1_Tarea_Modelado_Completo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea Modelado Completo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_9" id="__nav_3_4_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelado Documental Analitico
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_4_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_9">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2615,7 +3383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/modelado-documental-analitico/UD1_02_Tarea_Modelado_Documental_y_Analitico/" class="md-nav__link">
+      <a href="../../../03-practicas/modelado-documental-analitico/UD1_02_Tarea_Modelado_Documental_y_Analitico/" class="md-nav__link">
         
   
   
@@ -2623,6 +3391,34 @@
     
   
     02 Tarea Modelado Documental y Analitico
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-practicas/modelado-documental-analitico/UD1_07_Taller_Del_Problema_al_Modelo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    07 Taller Del Problema al Modelo
   
 
     
@@ -2658,10 +3454,100 @@
         
           
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4_7_2" >
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4_9_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_4_7_2" id="__nav_3_4_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_4_9_3" id="__nav_3_4_9_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demo P2 Reservas Hotel
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Demo P2 Reservas Hotel
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-practicas/modelado-documental-analitico/demo_p2_reservas_hotel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4_9_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4_9_4" id="__nav_3_4_9_4_label" tabindex="0">
             
   
   
@@ -2679,8 +3565,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_4_7_2">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_3_4_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4_9_4">
             <span class="md-nav__icon md-icon"></span>
             
   
@@ -2697,35 +3583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/modelado-documental-analitico/lab_p2_modelado_documental_analitico/README%20%281%29/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    README (1)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/modelado-documental-analitico/lab_p2_modelado_documental_analitico/" class="md-nav__link">
+      <a href="../../../03-practicas/modelado-documental-analitico/lab_p2_modelado_documental_analitico/" class="md-nav__link">
         
   
   
@@ -2753,14 +3611,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/modelado-documental-analitico/lab_p2_modelado_documental_analitico/README_conda/" class="md-nav__link">
+      <a href="../../../03-practicas/modelado-documental-analitico/lab_p2_modelado_documental_analitico/README_entorno_conda/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    README conda
+    README entorno conda
   
 
     
@@ -2781,14 +3639,42 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/03-practicas/modelado-documental-analitico/lab_p2_modelado_documental_analitico/READMEbis/" class="md-nav__link">
+      <a href="../../../03-practicas/modelado-documental-analitico/lab_p2_modelado_documental_analitico/README_practica_modelado_completa/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    READMEbis
+    README practica modelado completa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../03-practicas/modelado-documental-analitico/lab_p2_modelado_documental_analitico/README_practica_modelado_extendida/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README practica modelado extendida
   
 
     
@@ -2839,10 +3725,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -2851,7 +3740,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_5" >
         
           
-          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="">
             
   
   
@@ -2887,7 +3776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/05-recursos/UD1_04_Recursos/" class="md-nav__link">
+      <a href="../../../05-recursos/UD1_04_Recursos/" class="md-nav__link">
         
   
   
@@ -2969,7 +3858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/05-recursos/plantillas/UD1_README_esqueleto/" class="md-nav__link">
+      <a href="../../../05-recursos/plantillas/UD1_README_esqueleto/" class="md-nav__link">
         
   
   
@@ -2997,7 +3886,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud01-introduccion-big-data/05-recursos/plantillas/UD1_plantilla_tabla_metricas/" class="md-nav__link">
+      <a href="../../../05-recursos/plantillas/UD1_plantilla_tabla_metricas/" class="md-nav__link">
         
   
   
@@ -3045,31 +3934,28 @@
       
   
   
-    
   
   
-  
     
     
     
     
-      
-        
-        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
             
   
   
@@ -3087,7 +3973,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3105,7 +3991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unidades/ud02/" class="md-nav__link">
+      <a href="../../../../unidades/ud02/" class="md-nav__link">
         
   
   
@@ -3130,31 +4016,28 @@
                 
   
   
-    
   
   
-  
     
     
     
     
       
       
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
         
           
-          
         
-      
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
             
   
   
@@ -3172,7 +4055,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -3190,7 +4073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../001-AlmacenamientoDeDatos/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/001-AlmacenamientoDeDatos/" class="md-nav__link">
         
   
   
@@ -3218,7 +4101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../002-AlmacenamientoDistribuido-HDFS/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/002-AlmacenamientoDistribuido-HDFS/" class="md-nav__link">
         
   
   
@@ -3246,7 +4129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../002-AlmacenamientoDistribuido/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/002-AlmacenamientoDistribuido/" class="md-nav__link">
         
   
   
@@ -3274,7 +4157,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../003-BBDD_EnBigData/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/003-BBDD_EnBigData/" class="md-nav__link">
         
   
   
@@ -3302,7 +4185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../004-NoSQL_MongoDB-Cassandra/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/004-NoSQL_MongoDB-Cassandra/" class="md-nav__link">
         
   
   
@@ -3330,35 +4213,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../005-IntegracionTransferenciaDatos-II_Actividades/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    IntegracionTransferenciaDatos II Actividades
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../005-IntegracionTransferenciaDatos/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/005-IntegracionTransferenciaDatos/" class="md-nav__link">
         
   
   
@@ -3386,7 +4241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../006-GestGranVolumenHADOOp_SPARK/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/006-GestGranVolumenHADOOp_SPARK/" class="md-nav__link">
         
   
   
@@ -3414,7 +4269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../007-SistAlmacenamientoNube-AWSGCAZ/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/007-SistAlmacenamientoNube-AWSGCAZ/" class="md-nav__link">
         
   
   
@@ -3442,7 +4297,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../008-AlmacenNubeBuenasPract_Compres-REplica/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/008-AlmacenNubeBuenasPract_Compres-REplica/" class="md-nav__link">
         
   
   
@@ -3470,7 +4325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../010-PIpelineDeDatos/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/010-PIpelineDeDatos/" class="md-nav__link">
         
   
   
@@ -3498,7 +4353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../011-RGPDyBIGData-V2/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/011-RGPDyBIGData-V2/" class="md-nav__link">
         
   
   
@@ -3529,7 +4384,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../011-RGPDyBIGDataResumen/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/011-RGPDyBIGDataResumen/" class="md-nav__link">
         
   
   
@@ -3560,7 +4415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../UD2_01_Problema_y_arquitectura/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/UD2_01_Problema_y_arquitectura/" class="md-nav__link">
         
   
   
@@ -3585,44 +4440,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    02 Ingesta scripts y Airbyte
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/UD2_02_Ingesta_con_scripts_y_dlt/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    02 Ingesta scripts y Airbyte
+    02 Ingesta con scripts y dlt
   
 
     
@@ -3631,78 +4459,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="En esta página">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      En esta página
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#a-ingesta-con-scripts-pandas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        A) Ingesta con scripts (pandas)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="A) Ingesta con scripts (pandas)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mini-ingesta-un-csv-pequeno-antes-de-automatizar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mini-ingesta: un CSV pequeño antes de automatizar
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validacion-minima-antes-de-guardar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validación mínima antes de guardar
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#b-ingesta-con-airbyte-oss-gui-conectores" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        B) Ingesta con Airbyte OSS (GUI + conectores)
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -3715,7 +4471,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../UD2_03_Integracion_y_calidad_incremental/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/UD2_03_Integracion_y_calidad_incremental/" class="md-nav__link">
         
   
   
@@ -3743,7 +4499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../UD2_04_RGPD_y_seguridad/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/01-teoria/UD2_04_RGPD_y_seguridad/" class="md-nav__link">
         
   
   
@@ -3785,13 +4541,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -3800,7 +4553,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
             
   
   
@@ -3944,7 +4697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/002/TareaHDFS/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/002/TareaHDFS/" class="md-nav__link">
         
   
   
@@ -4034,7 +4787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/003/cluster_spark_hadoop_ec2/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/003/cluster_spark_hadoop_ec2/" class="md-nav__link">
         
   
   
@@ -4062,7 +4815,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/003/tareaNO_SQL-AWS/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/003/tareaNO_SQL-AWS/" class="md-nav__link">
         
   
   
@@ -4090,7 +4843,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/003/tareaSQL-AWS/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/003/tareaSQL-AWS/" class="md-nav__link">
         
   
   
@@ -4180,7 +4933,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/004/ActividadCassandraMongoDB/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/004/ActividadCassandraMongoDB/" class="md-nav__link">
         
   
   
@@ -4324,7 +5077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/005/00-Integracion_y_calidad/05-Integracion_y_calidad-tarea/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/005/00-Integracion_y_calidad/05-Integracion_y_calidad-tarea/" class="md-nav__link">
         
   
   
@@ -4425,7 +5178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/006/006-TareaGestGranVolumenHADOOp_SPARK/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/006/006-TareaGestGranVolumenHADOOp_SPARK/" class="md-nav__link">
         
   
   
@@ -4453,7 +5206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/006/006-TareaGestGranVolumenHADOOp_SPARK_alternativa1/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/006/006-TareaGestGranVolumenHADOOp_SPARK_alternativa1/" class="md-nav__link">
         
   
   
@@ -4543,7 +5296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/007-RGPD/01-AnonimizacionRGPD-Herramientas/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/007-RGPD/01-AnonimizacionRGPD-Herramientas/" class="md-nav__link">
         
   
   
@@ -4571,7 +5324,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/007-RGPD/01-AnonimizacionRGPD-Tarea/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/007-RGPD/01-AnonimizacionRGPD-Tarea/" class="md-nav__link">
         
   
   
@@ -4661,7 +5414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/008-CreacionDataset/008.1-CreacionDatasets/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/008-CreacionDataset/008.1-CreacionDatasets/" class="md-nav__link">
         
   
   
@@ -4689,7 +5442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/008-CreacionDataset/008.1-CreacionDatasetsV2/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/008-CreacionDataset/008.1-CreacionDatasetsV2/" class="md-nav__link">
         
   
   
@@ -4725,7 +5478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/CuestionariosPipelineDeDatos/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/CuestionariosPipelineDeDatos/" class="md-nav__link">
         
   
   
@@ -4807,7 +5560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/TareaLargaPasoPaso/00-TareaCompleta/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/TareaLargaPasoPaso/00-TareaCompleta/" class="md-nav__link">
         
   
   
@@ -4835,7 +5588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/TareaLargaPasoPaso/01-SimulacionPipelineDatos/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/TareaLargaPasoPaso/01-SimulacionPipelineDatos/" class="md-nav__link">
         
   
   
@@ -4863,7 +5616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/TareaLargaPasoPaso/02-CompararFormatosDatos_AWS/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/TareaLargaPasoPaso/02-CompararFormatosDatos_AWS/" class="md-nav__link">
         
   
   
@@ -4891,7 +5644,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/TareaLargaPasoPaso/03-ExploraHerraminetasAlmacenmntAWS/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/TareaLargaPasoPaso/03-ExploraHerraminetasAlmacenmntAWS/" class="md-nav__link">
         
   
   
@@ -4927,7 +5680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/TareaPipelineAlamacenamientoDatos/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/TareaPipelineAlamacenamientoDatos/" class="md-nav__link">
         
   
   
@@ -4955,7 +5708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/Tareas/TareaPipelineAlmacenamientoDatosCrieriosEval/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/Tareas/TareaPipelineAlmacenamientoDatosCrieriosEval/" class="md-nav__link">
         
   
   
@@ -4991,7 +5744,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../03-practicas/UD2_Practica_Local_Medallion_Parquet_DuckDB_Spark/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/UD2_Practica_Local_Medallion_Parquet_DuckDB_Spark/" class="md-nav__link">
         
   
   
@@ -5007,6 +5760,96 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3_3" id="__nav_4_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ingesta Dlt
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ingesta Dlt
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../ud02-almacenamiento-ingesta/03-practicas/ingesta-dlt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    README
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -5033,13 +5876,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -5048,7 +5888,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
         
           
-          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
             
   
   
@@ -5084,7 +5924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-evaluacion/UD2_05_Tarea_y_rubrica/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/04-evaluacion/UD2_05_Tarea_y_rubrica/" class="md-nav__link">
         
   
   
@@ -5112,7 +5952,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-evaluacion/UD2_Actividad_Matriz_Coste_Calidad_Viabilidad/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/04-evaluacion/UD2_Actividad_Matriz_Coste_Calidad_Viabilidad/" class="md-nav__link">
         
   
   
@@ -5140,7 +5980,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../04-evaluacion/UD2_Practica_Medallion_Entrega_y_Rubrica/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/04-evaluacion/UD2_Practica_Medallion_Entrega_y_Rubrica/" class="md-nav__link">
         
   
   
@@ -5182,13 +6022,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -5197,7 +6034,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5" >
         
           
-          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="">
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
             
   
   
@@ -5233,7 +6070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-recursos/UD2_06_Recursos/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/05-recursos/UD2_06_Recursos/" class="md-nav__link">
         
   
   
@@ -5315,7 +6152,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-recursos/practica-herramientas-reales/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/05-recursos/practica-herramientas-reales/" class="md-nav__link">
         
   
   
@@ -5343,14 +6180,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-recursos/practica-herramientas-reales/airbyte-comparativa/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/05-recursos/practica-herramientas-reales/aws-ingesta-serverless/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    airbyte comparativa
+    aws ingesta serverless
   
 
     
@@ -5371,14 +6208,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-recursos/practica-herramientas-reales/aws-ingesta-serverless/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/05-recursos/practica-herramientas-reales/comparativa-airbyte-dlt-kafka/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    aws ingesta serverless
+    comparativa airbyte dlt kafka
   
 
     
@@ -5461,7 +6298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../05-recursos/practica-local-medallion/" class="md-nav__link">
+      <a href="../../../../ud02-almacenamiento-ingesta/05-recursos/practica-local-medallion/" class="md-nav__link">
         
   
   
@@ -5566,7 +6403,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unidades/ud03/" class="md-nav__link">
+      <a href="../../../../unidades/ud03/" class="md-nav__link">
         
   
   
@@ -5648,7 +6485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/01-teoria/00-UD3-ProcesamientoDistribuidoAnaliticaEscalable/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/01-teoria/00-UD3-ProcesamientoDistribuidoAnaliticaEscalable/" class="md-nav__link">
         
   
   
@@ -5676,7 +6513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/01-teoria/003-CierreParteSparkUD3/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/01-teoria/003-CierreParteSparkUD3/" class="md-nav__link">
         
   
   
@@ -5704,7 +6541,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/01-teoria/UD3-ProcesamientoDistribuidoAnaliticaEscalable-Diapo/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/01-teoria/UD3-ProcesamientoDistribuidoAnaliticaEscalable-Diapo/" class="md-nav__link">
         
   
   
@@ -5732,7 +6569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/01-teoria/UD3-ProcesamientoDistribuidoAnaliticaEscalable/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/01-teoria/UD3-ProcesamientoDistribuidoAnaliticaEscalable/" class="md-nav__link">
         
   
   
@@ -5760,7 +6597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/01-teoria/UD3_Ampliacion-Zeppelin/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/01-teoria/UD3_Ampliacion-Zeppelin/" class="md-nav__link">
         
   
   
@@ -5788,7 +6625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/01-teoria/UD3_Capsula_Hadoop_historico_vs_Spark_actual/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/01-teoria/UD3_Capsula_Hadoop_historico_vs_Spark_actual/" class="md-nav__link">
         
   
   
@@ -5816,7 +6653,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/01-teoria/UD3_Cierre_Kibana_vs_Grafana/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/01-teoria/UD3_Cierre_Kibana_vs_Grafana/" class="md-nav__link">
         
   
   
@@ -5960,7 +6797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Grafana_Labs/00-Introduccion-Grafana/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Grafana_Labs/00-Introduccion-Grafana/" class="md-nav__link">
         
   
   
@@ -5988,7 +6825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Grafana_Labs/02-LaboratorioGrafana-Part1_Introduccion_y_Practica/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Grafana_Labs/02-LaboratorioGrafana-Part1_Introduccion_y_Practica/" class="md-nav__link">
         
   
   
@@ -6016,7 +6853,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Grafana_Labs/03-LaboratorioGrafana-Part2_Configuracion_y_Arranque/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Grafana_Labs/03-LaboratorioGrafana-Part2_Configuracion_y_Arranque/" class="md-nav__link">
         
   
   
@@ -6106,7 +6943,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Kibana_Labs/00-IntroduccionKibana/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Kibana_Labs/00-IntroduccionKibana/" class="md-nav__link">
         
   
   
@@ -6188,7 +7025,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Kibana_Labs/KibanaLab1/01-KibanaLab1-PrimerContacto/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Kibana_Labs/KibanaLab1/01-KibanaLab1-PrimerContacto/" class="md-nav__link">
         
   
   
@@ -6278,7 +7115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Kibana_Labs/KibanaLab2/01-KibanaLab2-DashboardAnalitica/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Kibana_Labs/KibanaLab2/01-KibanaLab2-DashboardAnalitica/" class="md-nav__link">
         
   
   
@@ -6368,7 +7205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Kibana_Labs/KibanaLab3/01-KibanaLab3-VisualizaInterpretaDecide/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Kibana_Labs/KibanaLab3/01-KibanaLab3-VisualizaInterpretaDecide/" class="md-nav__link">
         
   
   
@@ -6458,7 +7295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Kibana_Labs/KibanaLab4/01-KibanaLab4-Observabilidad/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Kibana_Labs/KibanaLab4/01-KibanaLab4-Observabilidad/" class="md-nav__link">
         
   
   
@@ -6610,7 +7447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab1/00-SparkLab1-Preparacion/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab1/00-SparkLab1-Preparacion/" class="md-nav__link">
         
   
   
@@ -6638,7 +7475,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab1/01-SparkLab1/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab1/01-SparkLab1/" class="md-nav__link">
         
   
   
@@ -6666,7 +7503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab1/02-SparkLab1-PlanesAlrternativos/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab1/02-SparkLab1-PlanesAlrternativos/" class="md-nav__link">
         
   
   
@@ -6756,7 +7593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab2/02-SparkLab2/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab2/02-SparkLab2/" class="md-nav__link">
         
   
   
@@ -6846,7 +7683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab3/00-SparkLab3/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab3/00-SparkLab3/" class="md-nav__link">
         
   
   
@@ -6936,7 +7773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab4-Zeppelin/00-SparkLab4-Zeppelin-V2/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab4-Zeppelin/00-SparkLab4-Zeppelin-V2/" class="md-nav__link">
         
   
   
@@ -6964,7 +7801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab4-Zeppelin/00-SparkLab4-Zeppelin/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab4-Zeppelin/00-SparkLab4-Zeppelin/" class="md-nav__link">
         
   
   
@@ -6992,7 +7829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab4-Zeppelin/02-SparkLab-Zeppelin-DockerSwarm/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/SparkLab4-Zeppelin/02-SparkLab-Zeppelin-DockerSwarm/" class="md-nav__link">
         
   
   
@@ -7028,7 +7865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/UD3_Lab_Benchmark_Pandas_DuckDB_Spark/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/UD3_Lab_Benchmark_Pandas_DuckDB_Spark/" class="md-nav__link">
         
   
   
@@ -7110,7 +7947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/UD3_Spark_Kit_Aula_3.5.4/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Spark_Labs/UD3_Spark_Kit_Aula_3.5.4/" class="md-nav__link">
         
   
   
@@ -7262,7 +8099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Streaming_Labs/SparkLab5-Streaming/01-SparkLab5-Streaming/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Streaming_Labs/SparkLab5-Streaming/01-SparkLab5-Streaming/" class="md-nav__link">
         
   
   
@@ -7290,7 +8127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/03-practicas/Streaming_Labs/SparkLab5-Streaming/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/03-practicas/Streaming_Labs/SparkLab5-Streaming/" class="md-nav__link">
         
   
   
@@ -7450,7 +8287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Grafana_Labs/04-ENTREGA_LAB_GRAFANA/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Grafana_Labs/04-ENTREGA_LAB_GRAFANA/" class="md-nav__link">
         
   
   
@@ -7594,7 +8431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Kibana_Labs/KibanaLab1/02-KibanaLab1-Entrega/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Kibana_Labs/KibanaLab1/02-KibanaLab1-Entrega/" class="md-nav__link">
         
   
   
@@ -7684,7 +8521,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Kibana_Labs/KibanaLab2/02-KibanaLab2-Entrega/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Kibana_Labs/KibanaLab2/02-KibanaLab2-Entrega/" class="md-nav__link">
         
   
   
@@ -7774,7 +8611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Kibana_Labs/KibanaLab3/02-KibanaLab3-Entrega/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Kibana_Labs/KibanaLab3/02-KibanaLab3-Entrega/" class="md-nav__link">
         
   
   
@@ -7864,7 +8701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Kibana_Labs/KibanaLab4/02-KibanaLab4-Obsrvabilidad-Entrega/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Kibana_Labs/KibanaLab4/02-KibanaLab4-Obsrvabilidad-Entrega/" class="md-nav__link">
         
   
   
@@ -7962,7 +8799,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/Rubrica-3-labs/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/Rubrica-3-labs/" class="md-nav__link">
         
   
   
@@ -7990,7 +8827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/RubricaCheckBoxes/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/RubricaCheckBoxes/" class="md-nav__link">
         
   
   
@@ -8018,7 +8855,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/RubricaCheckBoxesMoodle/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/RubricaCheckBoxesMoodle/" class="md-nav__link">
         
   
   
@@ -8100,7 +8937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/SparkLab1/03-SparkLab1-Entrega/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/SparkLab1/03-SparkLab1-Entrega/" class="md-nav__link">
         
   
   
@@ -8190,7 +9027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/SparkLab2/03-SparkLab2-Entrega/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/SparkLab2/03-SparkLab2-Entrega/" class="md-nav__link">
         
   
   
@@ -8280,7 +9117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/SparkLab3/01-SparkLab3-Entrega/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/SparkLab3/01-SparkLab3-Entrega/" class="md-nav__link">
         
   
   
@@ -8370,7 +9207,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/SparkLab4-Zeppelin/01-SparkLab4-Zepelin-Entrega/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/04-evaluacion/Spark_Labs/SparkLab4-Zeppelin/01-SparkLab4-Zepelin-Entrega/" class="md-nav__link">
         
   
   
@@ -8530,7 +9367,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud03-procesamiento-distribuido/05-recursos/benchmark-pandas-duckdb-spark/" class="md-nav__link">
+      <a href="../../../../ud03-procesamiento-distribuido/05-recursos/benchmark-pandas-duckdb-spark/" class="md-nav__link">
         
   
   
@@ -8635,7 +9472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unidades/ud04/" class="md-nav__link">
+      <a href="../../../../unidades/ud04/" class="md-nav__link">
         
   
   
@@ -8771,7 +9608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_00_Introduccion_BI/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_00_Introduccion_BI/" class="md-nav__link">
         
   
   
@@ -8799,7 +9636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_01_Fundamentos_BI/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_01_Fundamentos_BI/" class="md-nav__link">
         
   
   
@@ -8827,7 +9664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_02_Modelado_minimo_para_BI/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_02_Modelado_minimo_para_BI/" class="md-nav__link">
         
   
   
@@ -8855,7 +9692,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_03_Preparacion_datos_BI/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_03_Preparacion_datos_BI/" class="md-nav__link">
         
   
   
@@ -8883,7 +9720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_04_Metabase_Guia/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_04_Metabase_Guia/" class="md-nav__link">
         
   
   
@@ -8911,7 +9748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_05_Superset_Introduccion/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_05_Superset_Introduccion/" class="md-nav__link">
         
   
   
@@ -8939,7 +9776,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_09_Diseno_profesional_de_dashboards/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_09_Diseno_profesional_de_dashboards/" class="md-nav__link">
         
   
   
@@ -8967,7 +9804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_10_De_BI_Descriptivo_a_Analitica_Predictiva/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/01-teoria/Parte-I_BI/UD4_10_De_BI_Descriptivo_a_Analitica_Predictiva/" class="md-nav__link">
         
   
   
@@ -9057,7 +9894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/01-teoria/ParteII-Orquestacion/UD4_07_Orquestacion_con_Airflow/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/01-teoria/ParteII-Orquestacion/UD4_07_Orquestacion_con_Airflow/" class="md-nav__link">
         
   
   
@@ -9085,7 +9922,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/01-teoria/ParteII-Orquestacion/UD_Pipelines_y_Orquestacion_Completa/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/01-teoria/ParteII-Orquestacion/UD_Pipelines_y_Orquestacion_Completa/" class="md-nav__link">
         
   
   
@@ -9121,7 +9958,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/01-teoria/UD4_13_BI_Comparativa_Metabase_Superset_PowerBI/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/01-teoria/UD4_13_BI_Comparativa_Metabase_Superset_PowerBI/" class="md-nav__link">
         
   
   
@@ -9265,7 +10102,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/03-practicas/Lab1_Metabase/UD4_06_Primer_Laboratorio_BI_Metabase/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/03-practicas/Lab1_Metabase/UD4_06_Primer_Laboratorio_BI_Metabase/" class="md-nav__link">
         
   
   
@@ -9355,7 +10192,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/03-practicas/Lab2_Superset/UD4_11_Laboratorio_2_Superset/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/03-practicas/Lab2_Superset/UD4_11_Laboratorio_2_Superset/" class="md-nav__link">
         
   
   
@@ -9445,7 +10282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/03-practicas/Lab3_miniProy/UD4_12_MiniProyecto_CuadroDeMando/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/03-practicas/Lab3_miniProy/UD4_12_MiniProyecto_CuadroDeMando/" class="md-nav__link">
         
   
   
@@ -9535,7 +10372,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/03-practicas/Lab4_Airflow/Manual_Creacion_DAGs_Airflow/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/03-practicas/Lab4_Airflow/Manual_Creacion_DAGs_Airflow/" class="md-nav__link">
         
   
   
@@ -9563,7 +10400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/03-practicas/Lab4_Airflow/UD4_08_Laboratorio_Airflow_Basico/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/03-practicas/Lab4_Airflow/UD4_08_Laboratorio_Airflow_Basico/" class="md-nav__link">
         
   
   
@@ -9591,7 +10428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/03-practicas/Lab4_Airflow/UD4_15_Ejemplo_Orquestacion_Airflow_Paso_a_Paso/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/03-practicas/Lab4_Airflow/UD4_15_Ejemplo_Orquestacion_Airflow_Paso_a_Paso/" class="md-nav__link">
         
   
   
@@ -9681,7 +10518,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/03-practicas/Lab6_Dashboard_Tecnico/UD4_Lab6_Dashboard_Tecnico_Pipeline_Medallion/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/03-practicas/Lab6_Dashboard_Tecnico/UD4_Lab6_Dashboard_Tecnico_Pipeline_Medallion/" class="md-nav__link">
         
   
   
@@ -9833,7 +10670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/04-evaluacion/Lab1_Metabase/UD4_06_Primer_Laboratorio_BI_Metabase/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/04-evaluacion/Lab1_Metabase/UD4_06_Primer_Laboratorio_BI_Metabase/" class="md-nav__link">
         
   
   
@@ -9861,7 +10698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/04-evaluacion/Lab1_Metabase/UD4_Lab1_Entrega_BI_Metabase/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/04-evaluacion/Lab1_Metabase/UD4_Lab1_Entrega_BI_Metabase/" class="md-nav__link">
         
   
   
@@ -9889,7 +10726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/04-evaluacion/Lab1_Metabase/rubrica_operativa/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/04-evaluacion/Lab1_Metabase/rubrica_operativa/" class="md-nav__link">
         
   
   
@@ -9979,7 +10816,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/04-evaluacion/Lab2_Superset/UD4_11_Laboratorio_2_Superset/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/04-evaluacion/Lab2_Superset/UD4_11_Laboratorio_2_Superset/" class="md-nav__link">
         
   
   
@@ -10007,7 +10844,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/04-evaluacion/Lab2_Superset/UD4_Lab2_Superset_Entrega/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/04-evaluacion/Lab2_Superset/UD4_Lab2_Superset_Entrega/" class="md-nav__link">
         
   
   
@@ -10097,7 +10934,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/04-evaluacion/Lab3_miniProy/UD4_12_MiniProyecto_CuadroDeMando/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/04-evaluacion/Lab3_miniProy/UD4_12_MiniProyecto_CuadroDeMando/" class="md-nav__link">
         
   
   
@@ -10125,7 +10962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/04-evaluacion/Lab3_miniProy/UD4_MiniProyecto_Entrega/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/04-evaluacion/Lab3_miniProy/UD4_MiniProyecto_Entrega/" class="md-nav__link">
         
   
   
@@ -10153,7 +10990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/04-evaluacion/Lab3_miniProy/UD4_MiniProyecto_Rubrica/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/04-evaluacion/Lab3_miniProy/UD4_MiniProyecto_Rubrica/" class="md-nav__link">
         
   
   
@@ -10243,7 +11080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud04-bi-orquestacion/04-evaluacion/Lab4_Airflow/UD4_Lab_Airflow_Entrega/" class="md-nav__link">
+      <a href="../../../../ud04-bi-orquestacion/04-evaluacion/Lab4_Airflow/UD4_Lab_Airflow_Entrega/" class="md-nav__link">
         
   
   
@@ -10348,7 +11185,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unidades/ud05/" class="md-nav__link">
+      <a href="../../../../unidades/ud05/" class="md-nav__link">
         
   
   
@@ -10430,7 +11267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/01-teoria/UD5_01_intro_ml_bigdata/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/01-teoria/UD5_01_intro_ml_bigdata/" class="md-nav__link">
         
   
   
@@ -10458,7 +11295,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/01-teoria/UD5_02_ENcajeUNidades/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/01-teoria/UD5_02_ENcajeUNidades/" class="md-nav__link">
         
   
   
@@ -10486,7 +11323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/01-teoria/UD5_02_pipeline_datos_bigdata/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/01-teoria/UD5_02_pipeline_datos_bigdata/" class="md-nav__link">
         
   
   
@@ -10514,7 +11351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/01-teoria/UD5_03_spark_mllib/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/01-teoria/UD5_03_spark_mllib/" class="md-nav__link">
         
   
   
@@ -10542,7 +11379,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/01-teoria/UD5_04_preparacion_features_spark/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/01-teoria/UD5_04_preparacion_features_spark/" class="md-nav__link">
         
   
   
@@ -10570,7 +11407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/01-teoria/UD5_05_entrenamiento_y_evaluacion_modelos_spark/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/01-teoria/UD5_05_entrenamiento_y_evaluacion_modelos_spark/" class="md-nav__link">
         
   
   
@@ -10598,7 +11435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/01-teoria/UD5_Guia_ScikitLearn_vs_SparkMLlib/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/01-teoria/UD5_Guia_ScikitLearn_vs_SparkMLlib/" class="md-nav__link">
         
   
   
@@ -10688,7 +11525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/03-practicas/LAB1-RegresionDistribuidaConSparkMLlib/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/03-practicas/LAB1-RegresionDistribuidaConSparkMLlib/" class="md-nav__link">
         
   
   
@@ -10716,7 +11553,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/03-practicas/LAB2-RegresionDistribuidaConDatasetReal/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/03-practicas/LAB2-RegresionDistribuidaConDatasetReal/" class="md-nav__link">
         
   
   
@@ -10744,7 +11581,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/03-practicas/LAB3-ClasificacionConSparkMLlib-Titanic/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/03-practicas/LAB3-ClasificacionConSparkMLlib-Titanic/" class="md-nav__link">
         
   
   
@@ -10888,7 +11725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/04-evaluacion/Lab1-Spark_Mlib/LAB1-DocumentoDeEntrega/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/04-evaluacion/Lab1-Spark_Mlib/LAB1-DocumentoDeEntrega/" class="md-nav__link">
         
   
   
@@ -10916,7 +11753,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/04-evaluacion/Lab1-Spark_Mlib/LAB1-RegresionDistribuidaConSparkMLlib/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/04-evaluacion/Lab1-Spark_Mlib/LAB1-RegresionDistribuidaConSparkMLlib/" class="md-nav__link">
         
   
   
@@ -10944,7 +11781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/04-evaluacion/Lab1-Spark_Mlib/rubrica_operativa/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/04-evaluacion/Lab1-Spark_Mlib/rubrica_operativa/" class="md-nav__link">
         
   
   
@@ -11034,7 +11871,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/04-evaluacion/Lab2_Spark_Mlib/LAB2-DocumentoDeEntrega/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/04-evaluacion/Lab2_Spark_Mlib/LAB2-DocumentoDeEntrega/" class="md-nav__link">
         
   
   
@@ -11062,7 +11899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/04-evaluacion/Lab2_Spark_Mlib/LAB2-RegresionDistribuidaConDatasetReal/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/04-evaluacion/Lab2_Spark_Mlib/LAB2-RegresionDistribuidaConDatasetReal/" class="md-nav__link">
         
   
   
@@ -11090,7 +11927,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/04-evaluacion/Lab2_Spark_Mlib/rubrica_operativa/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/04-evaluacion/Lab2_Spark_Mlib/rubrica_operativa/" class="md-nav__link">
         
   
   
@@ -11180,7 +12017,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/04-evaluacion/desde_practicas/LAB1-DocumentoDeEntrega/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/04-evaluacion/desde_practicas/LAB1-DocumentoDeEntrega/" class="md-nav__link">
         
   
   
@@ -11208,7 +12045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/04-evaluacion/desde_practicas/LAB2-DocumentoDeEntrega/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/04-evaluacion/desde_practicas/LAB2-DocumentoDeEntrega/" class="md-nav__link">
         
   
   
@@ -11236,7 +12073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/04-evaluacion/desde_practicas/LAB3-DocumentoDeEntrega/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/04-evaluacion/desde_practicas/LAB3-DocumentoDeEntrega/" class="md-nav__link">
         
   
   
@@ -11264,7 +12101,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud05-spark-mllib/04-evaluacion/desde_practicas/LABS-RubricaGeneral/" class="md-nav__link">
+      <a href="../../../../ud05-spark-mllib/04-evaluacion/desde_practicas/LABS-RubricaGeneral/" class="md-nav__link">
         
   
   
@@ -11369,7 +12206,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../unidades/ud06/" class="md-nav__link">
+      <a href="../../../../unidades/ud06/" class="md-nav__link">
         
   
   
@@ -11397,7 +12234,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud06-proyecto/guion_proyecto/" class="md-nav__link">
+      <a href="../../../../ud06-proyecto/guion_proyecto/" class="md-nav__link">
         
   
   
@@ -11479,7 +12316,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud06-proyecto/01-teoria/" class="md-nav__link">
+      <a href="../../../../ud06-proyecto/01-teoria/" class="md-nav__link">
         
   
   
@@ -11569,7 +12406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud06-proyecto/02-ejemplos/" class="md-nav__link">
+      <a href="../../../../ud06-proyecto/02-ejemplos/" class="md-nav__link">
         
   
   
@@ -11659,7 +12496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud06-proyecto/03-practicas/" class="md-nav__link">
+      <a href="../../../../ud06-proyecto/03-practicas/" class="md-nav__link">
         
   
   
@@ -11749,7 +12586,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud06-proyecto/04-evaluacion/" class="md-nav__link">
+      <a href="../../../../ud06-proyecto/04-evaluacion/" class="md-nav__link">
         
   
   
@@ -11839,7 +12676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../ud06-proyecto/05-recursos/ideas_proyecto/" class="md-nav__link">
+      <a href="../../../../ud06-proyecto/05-recursos/ideas_proyecto/" class="md-nav__link">
         
   
   
@@ -11936,7 +12773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../plantillas/plantilla_checklist_calidad_rgpd/" class="md-nav__link">
+      <a href="../../../../plantillas/plantilla_checklist_calidad_rgpd/" class="md-nav__link">
         
   
   
@@ -11964,7 +12801,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../plantillas/plantilla_declaracion_uso_ia/" class="md-nav__link">
+      <a href="../../../../plantillas/plantilla_declaracion_uso_ia/" class="md-nav__link">
         
   
   
@@ -11992,7 +12829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../plantillas/plantilla_matriz_coste_calidad_viabilidad/" class="md-nav__link">
+      <a href="../../../../plantillas/plantilla_matriz_coste_calidad_viabilidad/" class="md-nav__link">
         
   
   
@@ -12020,7 +12857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../plantillas/plantilla_planificacion_tecnica/" class="md-nav__link">
+      <a href="../../../../plantillas/plantilla_planificacion_tecnica/" class="md-nav__link">
         
   
   
@@ -12048,7 +12885,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../plantillas/rubrica_comun_SBD_por_RA_CE/" class="md-nav__link">
+      <a href="../../../../plantillas/rubrica_comun_SBD_por_RA_CE/" class="md-nav__link">
         
   
   
@@ -12095,8 +12932,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -12105,49 +12940,186 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#a-ingesta-con-scripts-pandas" class="md-nav__link">
+  <a href="#ud1-modelado-de-datos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        A) Ingesta con scripts (pandas)
+        UD1 — Modelado de datos
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="A) Ingesta con scripts (pandas)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#mini-ingesta-un-csv-pequeno-antes-de-automatizar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Mini-ingesta: un CSV pequeño antes de automatizar
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#validacion-minima-antes-de-guardar" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Validación mínima antes de guardar
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#b-ingesta-con-airbyte-oss-gui-conectores" class="md-nav__link">
+  <a href="#el-modelo-empieza-por-el-uso" class="md-nav__link">
     <span class="md-ellipsis">
       
-        B) Ingesta con Airbyte OSS (GUI + conectores)
+        El modelo empieza por el uso
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-ganamos-al-modelar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué ganamos al modelar?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#antes-de-guardar-entidad-y-granularidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Antes de guardar: entidad y granularidad
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#claves-identidad-que-sobrevive-a-las-transformaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Claves: identidad que sobrevive a las transformaciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#del-dominio-al-almacenamiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Del dominio al almacenamiento
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seis-familias-seis-preguntas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Seis familias, seis preguntas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacional-reglas-y-transacciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relacional: reglas y transacciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documental-una-entidad-lista-para-servir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documental: una entidad lista para servir
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clave-valor-grafo-y-series-temporales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clave-valor, grafo y series temporales
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#columnar-leer-menos-para-analizar-mas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columnar: leer menos para analizar más
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oltp-y-olap-no-hacen-la-misma-pregunta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        OLTP y OLAP no hacen la misma pregunta
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-pedido-dos-representaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Un pedido, dos representaciones
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-json-para-servir-parquet-para-preguntar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo: JSON para servir, Parquet para preguntar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proceso-de-diseno-de-la-pregunta-al-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Proceso de diseño: de la pregunta al modelo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checklist-antes-de-entregar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Checklist antes de entregar
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#para-llevarse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Para llevarse
       
     </span>
   </a>
@@ -12174,114 +13146,274 @@
   
 
 
-<h1 id="ud2-ingesta-con-scripts-pandas-y-con-airbyte-oss">UD2 · Ingesta con scripts (pandas) y con Airbyte OSS<a class="headerlink" href="#ud2-ingesta-con-scripts-pandas-y-con-airbyte-oss" title="Permanent link">&para;</a></h1>
-<h2 id="a-ingesta-con-scripts-pandas">A) Ingesta con scripts (pandas)<a class="headerlink" href="#a-ingesta-con-scripts-pandas" title="Permanent link">&para;</a></h2>
-<h3 id="mini-ingesta-un-csv-pequeno-antes-de-automatizar">Mini-ingesta: un CSV pequeño antes de automatizar<a class="headerlink" href="#mini-ingesta-un-csv-pequeno-antes-de-automatizar" title="Permanent link">&para;</a></h3>
-<p>Empieza con un caso mínimo. El objetivo no es procesar mucho volumen, sino comprobar que entiendes el flujo completo:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">raw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="s2">&quot;fecha&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;2026-01-01&quot;</span><span class="p">,</span> <span class="s2">&quot;2026-01-02&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="s2">&quot;municipio_id&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;CADIZ&quot;</span><span class="p">,</span> <span class="s2">&quot;CADIZ&quot;</span><span class="p">],</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="s2">&quot;visitantes_total&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1250</span><span class="p">,</span> <span class="mi">1390</span><span class="p">],</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">})</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">out</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data_lake/raw/turismo_parquet&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="n">out</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="n">raw</span><span class="o">.</span><span class="n">to_parquet</span><span class="p">(</span><span class="n">out</span> <span class="o">/</span> <span class="s2">&quot;turismo_2026_01.parquet&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="n">check</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="n">out</span> <span class="o">/</span> <span class="s2">&quot;turismo_2026_01.parquet&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">check</span><span class="p">)</span>
+  <h1>Modelado de Datos Diapo</h1>
+
+<h2 id="ud1-modelado-de-datos">UD1 — Modelado de datos<a class="headerlink" href="#ud1-modelado-de-datos" title="Permanent link">&para;</a></h2>
+<p>Cómo convertir una pregunta en una estructura que funciona</p>
+<hr />
+<h2 id="el-modelo-empieza-por-el-uso">El modelo empieza por el uso<a class="headerlink" href="#el-modelo-empieza-por-el-uso" title="Permanent link">&para;</a></h2>
+<p>Modelar datos es decidir <strong>cómo organizarlos para guardarlos y consultarlos</strong> según el objetivo del sistema.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pregunta de negocio → patrón de lectura → modelo → formato → tecnología
 </code></pre></div>
-<p>Este ejemplo ya permite verificar tres decisiones importantes:</p>
+<p>No hay un modelo universalmente mejor: hay un modelo adecuado para cada acceso.</p>
+<hr />
+<h2 id="que-ganamos-al-modelar">¿Qué ganamos al modelar?<a class="headerlink" href="#que-ganamos-al-modelar" title="Permanent link">&para;</a></h2>
 <ul>
-<li>el nombre del fichero es determinista;</li>
-<li>el formato Parquet se puede leer después de escribirlo;</li>
-<li>el directorio <code>data_lake/raw/</code> separa datos de entrada de datos curados.</li>
+<li><strong>Significado:</strong> cada campo tiene una definición, unidad y regla.</li>
+<li><strong>Integridad:</strong> menos duplicidades, referencias rotas y contradicciones.</li>
+<li><strong>Rendimiento:</strong> consultas y agregaciones más directas.</li>
+<li><strong>Evolución:</strong> cambios de esquema visibles y controlables.</li>
+<li><strong>Coste:</strong> menos datos leídos, mejor compresión y menos memoria.</li>
 </ul>
-<p><strong>CSV (turismo) → Parquet (raw)</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># ingest/tourism_csv_ingest.py</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span><span class="o">,</span><span class="w"> </span><span class="nn">os</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span><span class="o">,</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span><span class="o">,</span><span class="w"> </span><span class="nn">pyarrow.parquet</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pq</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">SRC</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data_sources/turismo_csv&quot;</span><span class="p">)</span>  <span class="c1"># carpeta con CSVs</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">OUT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data_lake/raw/turismo_parquet&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">OUT</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">for</span> <span class="n">csv</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">SRC</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;*.csv&quot;</span><span class="p">)):</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv</span><span class="p">)</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">table</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">preserve_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">pq</span><span class="o">.</span><span class="n">write_table</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="n">OUT</span> <span class="o">/</span> <span class="p">(</span><span class="n">csv</span><span class="o">.</span><span class="n">stem</span> <span class="o">+</span> <span class="s2">&quot;.parquet&quot;</span><span class="p">),</span> <span class="n">compression</span><span class="o">=</span><span class="s2">&quot;snappy&quot;</span><span class="p">)</span>
-</code></pre></div></p>
-<p><strong>API REST (ventas) → Parquet (raw)</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># ingest/sales_api_ingest.py</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span><span class="o">,</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span><span class="o">,</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span><span class="o">,</span><span class="w"> </span><span class="nn">pyarrow.parquet</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pq</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">date</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">BASE</span> <span class="o">=</span> <span class="s2">&quot;https://api.example.com/sales&quot;</span>  <span class="c1"># simulado</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">OUT</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data_lake/raw/ventas_parquet&quot;</span><span class="p">);</span> <span class="n">OUT</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">d</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;date&quot;</span><span class="p">:</span> <span class="n">d</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()}</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="n">resp</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">BASE</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">params</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="n">resp</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="n">data</span> <span class="o">=</span> <span class="n">resp</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">json_normalize</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="n">pq</span><span class="o">.</span><span class="n">write_table</span><span class="p">(</span><span class="n">pa</span><span class="o">.</span><span class="n">Table</span><span class="o">.</span><span class="n">from_pandas</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">preserve_index</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>               <span class="n">OUT</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">&quot;sales_</span><span class="si">{</span><span class="n">d</span><span class="o">.</span><span class="n">isoformat</span><span class="p">()</span><span class="si">}</span><span class="s2">.parquet&quot;</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="s2">&quot;snappy&quot;</span><span class="p">)</span>
-</code></pre></div></p>
 <blockquote>
-<p><strong>Buenas prácticas:</strong> nombres deterministas, validación mínima (columnas esperadas), logs, <em>exit codes</em>.</p>
+<p>Un buen modelo hace explícitas decisiones que, de otro modo, aparecen como errores.</p>
 </blockquote>
-<h3 id="validacion-minima-antes-de-guardar">Validación mínima antes de guardar<a class="headerlink" href="#validacion-minima-antes-de-guardar" title="Permanent link">&para;</a></h3>
-<p>No guardes cualquier fichero solo porque se pueda leer. Comprueba al menos columnas obligatorias, tipos y nulos críticos:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">expected</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;fecha&quot;</span><span class="p">,</span> <span class="s2">&quot;municipio_id&quot;</span><span class="p">,</span> <span class="s2">&quot;visitantes_total&quot;</span><span class="p">}</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">missing</span> <span class="o">=</span> <span class="n">expected</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">if</span> <span class="n">missing</span><span class="p">:</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Faltan columnas obligatorias: </span><span class="si">{</span><span class="nb">sorted</span><span class="p">(</span><span class="n">missing</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="k">if</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;fecha&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()</span> <span class="ow">or</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;municipio_id&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">():</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;fecha y municipio_id no pueden contener nulos&quot;</span><span class="p">)</span>
+<hr />
+<h2 id="antes-de-guardar-entidad-y-granularidad">Antes de guardar: entidad y granularidad<a class="headerlink" href="#antes-de-guardar-entidad-y-granularidad" title="Permanent link">&para;</a></h2>
+<p>La <strong>granularidad</strong> dice qué representa exactamente cada registro.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>un pedido       → 1 documento
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>una línea       → 1 fila
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>un cambio       → 1 evento
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>una medición    → 1 sensor y minuto
 </code></pre></div>
-<h2 id="b-ingesta-con-airbyte-oss-gui-conectores">B) Ingesta con Airbyte OSS (GUI + conectores)<a class="headerlink" href="#b-ingesta-con-airbyte-oss-gui-conectores" title="Permanent link">&para;</a></h2>
-<p><strong>Pasos express:</strong>
-1) Acceder al Airbyte ya desplegado en el servidor Proxmox.
-2) Crear <strong>Source</strong> (HTTP API / File) y <strong>Destination</strong> (Postgres).
-3) Definir <strong>catalog</strong> (streams, <em>primary key</em>, <em>incremental append</em> o <em>dedupe</em>).
-4) Configurar <strong>frecuencia</strong> (manual/cron).
-5) Ejecutar y verificar registros/errores.</p>
-<p><strong>Ejemplo de <code>config.json</code> (source HTTP):</strong>
+<p>Completa siempre la frase: <strong>«Cada registro representa exactamente…»</strong></p>
+<p>Si no está clara, un <code>SUM</code> puede contar el mismo pedido varias veces.</p>
+<hr />
+<h2 id="claves-identidad-que-sobrevive-a-las-transformaciones">Claves: identidad que sobrevive a las transformaciones<a class="headerlink" href="#claves-identidad-que-sobrevive-a-las-transformaciones" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Clave</th>
+<th>Papel</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primaria</td>
+<td>identifica una entidad</td>
+<td><code>order_id</code></td>
+</tr>
+<tr>
+<td>Foránea</td>
+<td>conserva una relación</td>
+<td><code>customer_id</code> en <code>orders</code></td>
+</tr>
+<tr>
+<td>Natural</td>
+<td>viene del dominio</td>
+<td>ISBN, SKU</td>
+</tr>
+<tr>
+<td>Técnica</td>
+<td>la genera el sistema</td>
+<td>entero, UUID</td>
+</tr>
+</tbody>
+</table>
+<p>Al aplanar un pedido, repetir <code>order_id</code> en sus filas permite reconstruir la relación con sus líneas.</p>
+<hr />
+<h2 id="del-dominio-al-almacenamiento">Del dominio al almacenamiento<a class="headerlink" href="#del-dominio-al-almacenamiento" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>CONCEPTUAL           LÓGICO                    FÍSICO
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Cliente realiza      orders(order_id,          PostgreSQL / MongoDB /
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Pedidos              customer_id, fecha)       Parquet + DuckDB
+</code></pre></div>
+<ul>
+<li><strong>Conceptual:</strong> objetos y relaciones, sin casarse con una tecnología.</li>
+<li><strong>Lógico:</strong> atributos, claves, cardinalidades y reglas.</li>
+<li><strong>Físico:</strong> índices, particiones, tipos, compresión y formato.</li>
+</ul>
+<hr />
+<h2 id="seis-familias-seis-preguntas">Seis familias, seis preguntas<a class="headerlink" href="#seis-familias-seis-preguntas" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Modelo</th>
+<th>Unidad</th>
+<th>Encaja cuando preguntamos…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relacional</td>
+<td>fila relacionada</td>
+<td>¿qué transacción e integridad necesito?</td>
+</tr>
+<tr>
+<td>Documental</td>
+<td>documento JSON</td>
+<td>¿puedo devolver la entidad completa?</td>
+</tr>
+<tr>
+<td>Clave-valor</td>
+<td>clave → valor</td>
+<td>¿cuál es el valor de esta clave exacta?</td>
+</tr>
+<tr>
+<td>Grafo</td>
+<td>nodos + aristas</td>
+<td>¿qué conexiones y rutas existen?</td>
+</tr>
+<tr>
+<td>Series temporales</td>
+<td>medición + tiempo</td>
+<td>¿cómo evoluciona esta señal?</td>
+</tr>
+<tr>
+<td>Columnar</td>
+<td>columnas de muchas filas</td>
+<td>¿qué agregación analítica calculo?</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="relacional-reglas-y-transacciones">Relacional: reglas y transacciones<a class="headerlink" href="#relacional-reglas-y-transacciones" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>customers ──1:N──► orders ──1:N──► order_items
+</code></pre></div>
+<ul>
+<li>Tablas, claves, relaciones y restricciones explícitas.</li>
+<li>Adecuado para <strong>OLTP</strong>: muchas operaciones pequeñas y consistentes.</li>
+<li>Los <code>JOIN</code> recomponen información repartida sin duplicarla.</li>
+</ul>
+<p><strong>Elegirlo</strong> cuando importan la integridad referencial y las transacciones entre entidades.</p>
+<hr />
+<h2 id="documental-una-entidad-lista-para-servir">Documental: una entidad lista para servir<a class="headerlink" href="#documental-una-entidad-lista-para-servir" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;base_url&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://api.example.com&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;auth_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;api_key&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&quot;api_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${API_KEY}&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="nt">&quot;streams&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="p">{</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">      </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sales&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="nt">&quot;path&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;/sales&quot;</span><span class="p">,</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">      </span><span class="nt">&quot;params&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;{{ today }}&quot;</span><span class="p">},</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="nt">&quot;primary_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="nt">&quot;incremental&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">      </span><span class="nt">&quot;cursor_field&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;updated_at&quot;</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="p">}</span>
-</code></pre></div></p>
-<p><strong>Ejemplo de destino Postgres (pseudo):</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">&quot;host&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;postgres-sbd.local&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nt">&quot;port&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5432</span><span class="p">,</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">  </span><span class="nt">&quot;database&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;sbd_airbyte&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nt">&quot;username&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;airbyte_sbd&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">&quot;password&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${POSTGRES_PASSWORD}&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="nt">&quot;schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;bronze&quot;</span><span class="p">,</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">  </span><span class="nt">&quot;ssl_mode&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;disable&quot;</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">}</span>
-</code></pre></div></p>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">&quot;order_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">&quot;customer_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">234</span><span class="p">,</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span><span class="nt">&quot;items&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="nt">&quot;sku&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SKU0007&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;qty&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;price&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">12.50</span><span class="p">}]</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">}</span>
+</code></pre></div>
+<ul>
+<li>Pedido y líneas viajan juntos: una lectura, sin <code>JOIN</code>.</li>
+<li>Flexible ante campos que evolucionan.</li>
+<li>No es la mejor opción para agregaciones globales muy repetidas.</li>
+</ul>
+<p>Ideal para APIs que recuperan <strong>un objeto completo</strong>.</p>
+<hr />
+<h2 id="clave-valor-grafo-y-series-temporales">Clave-valor, grafo y series temporales<a class="headerlink" href="#clave-valor-grafo-y-series-temporales" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Si el dato principal es…</th>
+<th>Modelo</th>
+<th>Ejemplo de acceso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>una clave exacta</td>
+<td>Clave-valor</td>
+<td><code>sesion:ana → carrito</code></td>
+</tr>
+<tr>
+<td>una relación</td>
+<td>Grafo</td>
+<td>rutas, recomendaciones, fraude</td>
+</tr>
+<tr>
+<td>una señal en el tiempo</td>
+<td>Series temporales</td>
+<td>sensor por minuto, métricas</td>
+</tr>
+</tbody>
+</table>
+<p>La relación o el tiempo no son adornos: determinan la consulta que conviene optimizar.</p>
+<hr />
+<h2 id="columnar-leer-menos-para-analizar-mas">Columnar: leer menos para analizar más<a class="headerlink" href="#columnar-leer-menos-para-analizar-mas" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>filas:  pedido  cliente  fecha  sku  qty  importe
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>columnas:       [fecha] [sku] [importe]
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                         └── leer sólo lo necesario ──┘
+</code></pre></div>
+<ul>
+<li>Agrupa valores por columna y comprime muy bien.</li>
+<li>Adecuado para <strong>OLAP</strong>: muchas filas, pocas columnas y agregaciones.</li>
+<li>Parquet aporta tipos, compresión y lectura selectiva; DuckDB consulta localmente con SQL.</li>
+</ul>
+<hr />
+<h2 id="oltp-y-olap-no-hacen-la-misma-pregunta">OLTP y OLAP no hacen la misma pregunta<a class="headerlink" href="#oltp-y-olap-no-hacen-la-misma-pregunta" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>OLTP</th>
+<th>OLAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Objetivo</td>
+<td>registrar/servir operaciones</td>
+<td>explorar y resumir histórico</td>
+</tr>
+<tr>
+<td>Acceso</td>
+<td>pequeño, frecuente, concurrente</td>
+<td>grande, analítico, por lotes</td>
+</tr>
+<tr>
+<td>Modelo típico</td>
+<td>relacional o documental</td>
+<td>plano, columnar, Parquet</td>
+</tr>
+<tr>
+<td>Pregunta</td>
+<td>«¿qué pedido tiene Ana?»</td>
+<td>«¿ventas por canal y mes?»</td>
+</tr>
+</tbody>
+</table>
+<p>En un sistema real se combinan: servir no es lo mismo que analizar.</p>
+<hr />
+<h2 id="un-pedido-dos-representaciones">Un pedido, dos representaciones<a class="headerlink" href="#un-pedido-dos-representaciones" title="Permanent link">&para;</a></h2>
+<p><strong>Documental (JSON):</strong> un documento por pedido, con <code>items</code> anidados.</p>
+<p><strong>Analítica (plana + Parquet):</strong> una fila por línea, repitiendo la clave del pedido.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>JSON:     pedido 1 ──► [línea A, línea B]
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Parquet:  pedido 1 ──► fila A
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>                     └► fila B
+</code></pre></div>
+<p>La elección depende de la lectura: entidad completa frente a agregación masiva.</p>
+<hr />
+<h2 id="ejemplo-json-para-servir-parquet-para-preguntar">Ejemplo: JSON para servir, Parquet para preguntar<a class="headerlink" href="#ejemplo-json-para-servir-parquet-para-preguntar" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">canal</span><span class="p">,</span><span class="w"> </span><span class="n">date_trunc</span><span class="p">(</span><span class="s1">&#39;month&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">fecha</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">mes</span><span class="p">,</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">qty</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ventas</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">FROM</span><span class="w"> </span><span class="s1">&#39;orders.parquet&#39;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">canal</span><span class="p">,</span><span class="w"> </span><span class="n">mes</span><span class="p">;</span>
+</code></pre></div>
+<ul>
+<li>JSON/documental: la aplicación recupera un pedido sin reconstruirlo.</li>
+<li>Parquet + DuckDB: el motor lee <code>canal</code>, <code>fecha</code>, <code>qty</code> y <code>price</code>, no todo el fichero.</li>
+<li>El dato derivado (<code>importe</code>) debe documentar su fórmula y momento de cálculo.</li>
+</ul>
+<hr />
+<h2 id="proceso-de-diseno-de-la-pregunta-al-modelo">Proceso de diseño: de la pregunta al modelo<a class="headerlink" href="#proceso-de-diseno-de-la-pregunta-al-modelo" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>1 objetivo → 2 entidades/eventos → 3 granularidad → 4 claves
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>     → 5 originales/derivados → 6 formato → 7 justificación y pruebas
+</code></pre></div>
+<p>Diseñar desde las consultas evita elegir una tecnología por moda.</p>
+<p>Pregunta de control: <strong>¿qué operación debe ser rápida y qué consistencia necesita?</strong></p>
+<hr />
+<h2 id="checklist-antes-de-entregar">Checklist antes de entregar<a class="headerlink" href="#checklist-antes-de-entregar" title="Permanent link">&para;</a></h2>
+<ul>
+<li>[ ] Puedo explicar qué representa cada fila, documento o medición.</li>
+<li>[ ] Las claves conservan identidad y relaciones.</li>
+<li>[ ] El modelo responde a consultas reales, no sólo a un diagrama.</li>
+<li>[ ] He separado necesidades OLTP y OLAP.</li>
+<li>[ ] El formato elegido justifica coste, compresión y lectura.</li>
+<li>[ ] Los campos derivados tienen fórmula, tipos y fecha de cálculo.</li>
+<li>[ ] He documentado anticasos y cómo evolucionará el esquema.</li>
+</ul>
+<hr />
+<h2 id="para-llevarse">Para llevarse<a class="headerlink" href="#para-llevarse" title="Permanent link">&para;</a></h2>
+<p><strong>Modelar es decidir antes de almacenar.</strong></p>
+<ol>
+<li>Empieza por cómo vas a leer.</li>
+<li>Fija la granularidad y protege las claves.</li>
+<li>Elige el modelo que hace natural la consulta.</li>
+<li>Combina documental para servir y columnar para analizar cuando tenga sentido.</li>
+</ol>
 <blockquote>
-<p><strong>Tip:</strong> si no usas Airbyte, conserva la <strong>misma convención de carpetas</strong> y <em>naming</em> para poder mezclar métodos sin fricción.</p>
+<p>La mejor tecnología es la que hace explícito el patrón de acceso.</p>
 </blockquote>
 
 
@@ -12289,6 +13421,9 @@
 
 
 
+
+  
+  
 
 
 
@@ -12356,12 +13491,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "content.code.copy", "content.tabs.link"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
