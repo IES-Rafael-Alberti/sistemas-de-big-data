@@ -57,6 +57,15 @@ Productor:  50 msg/s  --->  Consumidor: 20 msg/s  => cola creciente
 ## 2. Arranque del entorno con Docker
 
 Vamos a usar Docker para levantar Redpanda y dejar preparado Spark para pruebas.
+La imagen de Redpanda está fijada a `v24.2.7` para evitar que un cambio de
+`latest` altere el laboratorio. El conjunto completo debe probarse antes de clase;
+la imagen de Spark todavía usa `latest`.
+
+> **Medición de referencia (19-11-2026):** en un equipo, un nodo de Redpanda
+> configurado con `--smp 1 --memory 1G` utilizó aproximadamente **241 MB de
+> RAM** y un **3,5 % de CPU en reposo**; la imagen ocupaba 425 MB. Son cifras
+> de esa prueba, no requisitos garantizados para otros equipos ni para el
+> laboratorio completo con Spark.
 
 ### 2.1 `docker-compose.yml`
 
@@ -64,7 +73,7 @@ Vamos a usar Docker para levantar Redpanda y dejar preparado Spark para pruebas.
 version: '3.8'
 services:
   redpanda:
-    image: docker.redpanda.com/vectorized/redpanda:latest
+    image: docker.redpanda.com/redpandadata/redpanda:v24.2.7
     command:
       - redpanda start
       - --smp 1
